@@ -56,6 +56,7 @@ for jaguar=1:7 % 6 of these files will be for the main blocks. The last one with
         %there is going to be the table that has 6 columns; the 1st column is the target; the 2nd and 3rd are distractor faces; 4th column is stimNum; 5th column is congrunet?; 6th is the target.
         rightCong = randsample(rightDir_faces, 20/4); % Congruent faces.
         rightCong_intact = rightCong; % We need this for the next step.
+        nav_temp1 = rightCong;
         % Let's create right-directed congruent rows.
         for zebra=1:length(rightCong)
             rightCong(zebra,1)= rightArrow;
@@ -74,6 +75,7 @@ for jaguar=1:7 % 6 of these files will be for the main blocks. The last one with
         end
         rightIncong = ~contains(rightDir_faces, rightCong_intact, 'IgnoreCase',true);
         rightIncong = rightDir_faces(rightIncong); % the target faces that will be incongruent.
+        nav_temp2 = rightIncong; 
         % Let's create right-directed incongruent rows.
         for zebra2=1:length(rightIncong)
             rightIncong(zebra2,1)= rightArrow;
@@ -92,6 +94,7 @@ for jaguar=1:7 % 6 of these files will be for the main blocks. The last one with
 
         leftCong = randsample(leftDir_faces, 20/4); % Congruent faces.
         leftCong_intact = leftCong; % We need this for the next step.
+        nav_temp3 = leftCong;
         % Let's create left-directed congruent rows.
         for zebra3=1:length(leftCong)
             leftCong(zebra3,1)= leftArrow;
@@ -109,6 +112,7 @@ for jaguar=1:7 % 6 of these files will be for the main blocks. The last one with
         end
         leftIncong = ~contains(leftDir_faces, leftCong_intact, 'IgnoreCase',true);
         leftIncong = leftDir_faces(leftIncong); % the target faces that will be incongruent.
+        nav_temp4 = leftIncong;
         % Let's create left-directed incongruent rows.
         for zebra4=1:length(leftIncong)
             leftIncong(zebra4,1)= leftArrow;
