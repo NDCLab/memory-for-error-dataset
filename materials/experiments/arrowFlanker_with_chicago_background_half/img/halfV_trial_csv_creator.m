@@ -26,6 +26,7 @@ for lisar1=1:length(allFaces)
 end
 
 %% After creating a list of all faces, randomly sample 192 faces. 192 is the number of trials. We also select additional 20 faces as practice trials.
+% So, we load 212 faces in total.
 faces = randsample(allFaces, 212);
 trialFaces_for_surprise = faces; % This stores the list of faces that are going to be shown in practicae and main trials. 
 surpriseFaces = ~contains(allFaces, faces, 'IgnoreCase',true);
@@ -255,7 +256,8 @@ end
 for abrak2=1:length(trialFaces_for_surprise) % adding a second column that mentions  if this is a new face (i.e., foil). For old faces, we have "0" as true.
     trialFaces_for_surprise(abrak2,2) = '0'; % new?
 end
-surpriseTable = table([foilFaces(:,1);trialFaces_for_surprise(:,1)],[foilFaces(:,2);trialFaces_for_surprise(:,2)]);
+%surpriseTable = table([foilFaces(:,1);trialFaces_for_surprise(:,1)],[foilFaces(:,2);trialFaces_for_surprise(:,2)]);
+surpriseTable = table([trialFaces_for_surprise(:,1)],[trialFaces_for_surprise(:,2)]);
 surpriseTable = table2array(surpriseTable);
 surpriseTable = surpriseTable(randperm(size(surpriseTable, 1)), : ); % Shuffle the data randomly by rows.
 surpriseTable = array2table(surpriseTable);
