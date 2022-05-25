@@ -6,17 +6,17 @@
 
 library(tidyverse)
 #Working directory should be the Psychopy experiment directory. 
-setwd("~/OneDrive - Florida International University/Projects/Psychopy/half_mfeFlanker_version")
+setwd("/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half")
 
 # Defining the input and output folders.
-input_path <- "~/OneDrive - Florida International University/Projects/Psychopy/half_mfeFlanker_version/data"
-output_path <- "~/OneDrive - Florida International University/Projects/Psychopy/half_mfeFlanker_version/stat_output"
+input_path <- "~/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/data"
+output_path <- "~/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/stat_output"
 today <- Sys.Date()
 today <- format(today, "%Y%m%d")
 proc_fileName <- paste(today, "_mfeProj.csv", sep ="", collapse = NULL) # output filename
 
 #identify data files 
-datafiles_list <- c() # an empty list that will be filed in the next for loop! 
+datafiles_list <- c() # an empty list that will be filled in the next for loop! 
 csvSelect = list.files(input_path, pattern = "*.csv") # listing only csv files
 for (lisar1 in 1:length(csvSelect)){
   temp_for_file <- ifelse (str_detect(csvSelect[lisar1], "face_flanker_v1", negate = FALSE), 1, 0)
