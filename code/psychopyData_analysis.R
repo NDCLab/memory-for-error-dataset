@@ -5,19 +5,23 @@
 
 
 library(tidyverse)
+library(dplyr)
+library(stringr)
+
 #Working directory should be the Psychopy experiment directory. 
-setwd("/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half")
+#setwd("/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half")
+setwd("C://Users/kihossei/Desktop/Github_repos/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half")
 
 # Defining the input and output folders.
-input_path <- "~/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/data"
-output_path <- "~/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/stat_output"
+input_path <- "C:/Users/kihossei/Desktop/Github_repos/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/data/"
+output_path <- "C:/Users/kihossei/Desktop/Github_repos/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/stat_output"
 today <- Sys.Date()
 today <- format(today, "%Y%m%d")
 proc_fileName <- paste(today, "_mfeProj.csv", sep ="", collapse = NULL) # output filename
 
 #identify data files 
 datafiles_list <- c() # an empty list that will be filled in the next for loop! 
-csvSelect = list.files(input_path, pattern = "*.csv") # listing only csv files
+csvSelect = list.files(input_path, pattern = ".csv") # listing only csv files
 for (lisar1 in 1:length(csvSelect)){
   temp_for_file <- ifelse (str_detect(csvSelect[lisar1], "face_flanker_v1", negate = FALSE), 1, 0)
   if (temp_for_file == 1){
@@ -27,7 +31,7 @@ for (lisar1 in 1:length(csvSelect)){
 }
 
 # Creating the main empty dataframe that will be filled with the data from the loop below:
-mainDat <- setNames(data.frame(matrix(ncol = 15, nrow = 0)), c("id", "flankEff_meanACC", "flankEff_meanRT", "flankEff_logMeanRT","reported_errors", "committed_errors", "memoryBias_score", "num_errorFaces_reported_old", "num_errorFaces_reported_new","num_corrFaces_reported_old", "num_corrFaces_reported_new","num_errorFaces_reported_friendly", "num_errorFaces_reported_unfriendly", "num_corrFaces_reported_friendly", "num_corrFaces_reported_unfriendly"))
+mainDat <- setNames(data.frame(matrix(ncol = 21, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT", "flankEff_meanACC", "flankEff_meanRT", "flankEff_logMeanRT","reported_errors", "committed_errors", "memoryBias_score", "num_errorFaces_reported_old", "num_errorFaces_reported_new","num_corrFaces_reported_old", "num_corrFaces_reported_new","num_errorFaces_reported_friendly", "num_errorFaces_reported_unfriendly", "num_corrFaces_reported_friendly", "num_corrFaces_reported_unfriendly"))
 
 
 # will loop over all participant datafiles. 
@@ -70,7 +74,17 @@ for(i in 1:length(datafiles_list)){
   
   keep_rows_with_acc_vals <- subset(remove_prac_trials, complete.cases(remove_prac_trials$accuracy))
   errorDat <- filter(keep_rows_with_acc_vals, accuracy ==0) # subset error trials
+  errorDat$task1_stim_keyResp.rt <- gsub("[", "", errorDat$task1_stim_keyResp.rt, fixed = TRUE) #removing brackets and converting to numeric
+  errorDat$task1_stim_keyResp.rt <- gsub("]", "", errorDat$task1_stim_keyResp.rt, fixed = TRUE)
+  errorDat$task1_stim_keyResp.rt <- gsub(",.*","",errorDat$task1_stim_keyResp.rt) # removing the RT for the second response within the same trial.
+  errorDat$task1_stim_keyResp.rt <- as.numeric(errorDat$task1_stim_keyResp.rt) # 
+  errorDat <- subset(errorDat, complete.cases(errorDat$task1_stim_keyResp.rt))
   corrDat <- filter(keep_rows_with_acc_vals, accuracy ==1) # subset correct trials
+  corrDat$task1_stim_keyResp.rt <- gsub("[", "", corrDat$task1_stim_keyResp.rt, fixed = TRUE)
+  corrDat$task1_stim_keyResp.rt <- gsub("]", "", corrDat$task1_stim_keyResp.rt, fixed = TRUE)
+  corrDat$task1_stim_keyResp.rt <-  gsub(",.*","",corrDat$task1_stim_keyResp.rt)
+  corrDat$task1_stim_keyResp.rt <- as.numeric(corrDat$task1_stim_keyResp.rt) # 
+  corrDat <- subset(corrDat, complete.cases(corrDat$task1_stim_keyResp.rt))
   
   # subset the data for correct trials only, separately for congruent and incongruent trials, creating new data frames for each
   cong_corrDat <- corrDat[corrDat$congruent == 1,]
@@ -188,7 +202,7 @@ for(i in 1:length(datafiles_list)){
   }
   
   ########## 
-  mainDat[nrow(mainDat) + 1,] <-c(id, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_errorFaces_reported_old, num_errorFaces_reported_new,num_corrFaces_reported_old, num_corrFaces_reported_new,num_errorFaces_reported_friendly, num_errorFaces_reported_unfriendly, num_corrFaces_reported_friendly, num_corrFaces_reported_unfriendly)
+  mainDat[nrow(mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_errorFaces_reported_old, num_errorFaces_reported_new,num_corrFaces_reported_old, num_corrFaces_reported_new,num_errorFaces_reported_friendly, num_errorFaces_reported_unfriendly, num_corrFaces_reported_friendly, num_corrFaces_reported_unfriendly)
   
 }
 #write the extracted summary scores to disk

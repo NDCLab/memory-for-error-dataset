@@ -1,8 +1,8 @@
 ﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-This experiment was created using PsychoPy3 Experiment Builder (v2021.2.3),
-    on Tue May 24 15:49:19 2022
+This experiment was created using PsychoPy3 Experiment Builder (v2022.1.3),
+    on May 27, 2022, at 15:13
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -11,11 +11,9 @@ If you publish work using this script the most relevant publication is:
 
 """
 
-from __future__ import absolute_import, division
-
 from psychopy import locale_setup
 from psychopy import prefs
-from psychopy import sound, gui, visual, core, data, event, logging, clock, colors
+from psychopy import sound, gui, visual, core, data, event, logging, clock, colors, layout
 from psychopy.constants import (NOT_STARTED, STARTED, PLAYING, PAUSED,
                                 STOPPED, FINISHED, PRESSED, RELEASED, FOREVER)
 
@@ -26,6 +24,7 @@ from numpy.random import random, randint, normal, shuffle, choice as randchoice
 import os  # handy system and path functions
 import sys  # to get file system encoding
 
+import psychopy.iohub as io
 from psychopy.hardware import keyboard
 
 
@@ -33,11 +32,10 @@ from psychopy.hardware import keyboard
 # Ensure that relative paths start from the same directory as this script
 _thisDir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(_thisDir)
-
 # Store info about the experiment session
-psychopyVersion = '2021.2.3'
+psychopyVersion = '2022.1.3'
 expName = 'face_flanker_v1'  # from the Builder filename that created this script
-expInfo = {'id': '', 'cb': ['A', 'B'], 'friendly': ['A', 'B']}
+expInfo = {'id': '', 'cb': ['A', 'B'], 'friendly': ['A', 'B'], 'errorComm': ['A', 'B']}
 dlg = gui.DlgFromDict(dictionary=expInfo, sortKeys=False, title=expName)
 if dlg.OK == False:
     core.quit()  # user pressed cancel
@@ -51,7 +49,7 @@ filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['id'], expName, expIn
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/halfVfaceFlanker_v1_lastrun.py',
+    originPath='C:\\Users\\kihossei\\Desktop\\Github_repos\\memory-for-error-dataset\\materials\\experiments\\arrowFlanker_with_chicago_background_half\\halfVfaceFlanker_v1_lastrun.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 # save a log file for detail verbose info
@@ -76,12 +74,20 @@ if expInfo['frameRate'] != None:
     frameDur = 1.0 / round(expInfo['frameRate'])
 else:
     frameDur = 1.0 / 60.0  # could not measure, so guess
+# Setup ioHub
+ioConfig = {}
 
-# Setup eyetracking
-ioDevice = ioConfig = ioSession = ioServer = eyetracker = None
+# Setup iohub keyboard
+ioConfig['Keyboard'] = dict(use_keymap='psychopy')
+
+ioSession = '1'
+if 'session' in expInfo:
+    ioSession = str(expInfo['session'])
+ioServer = io.launchHubServer(window=win, **ioConfig)
+eyetracker = None
 
 # create a default keyboard (e.g. to check for escape)
-defaultKeyboard = keyboard.Keyboard()
+defaultKeyboard = keyboard.Keyboard(backend='iohub')
 
 # Initialize components for Routine "JS_code"
 JS_codeClock = core.Clock()
@@ -112,7 +118,7 @@ instructRight_text = visual.TextStim(win=win, name='instructRight_text',
 instructRight_centerImg = visual.ImageStim(
     win=win,
     name='instructRight_centerImg', 
-    image='img/rightArrow.png', mask=None,
+    image='img/rightArrow.png', mask=None, anchor='center',
     ori=0, pos=(0, -.3), size=(.02, .02),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -120,7 +126,7 @@ instructRight_centerImg = visual.ImageStim(
 instructRight_rightImg1 = visual.ImageStim(
     win=win,
     name='instructRight_rightImg1', 
-    image='img/rightArrow.png', mask=None,
+    image='img/rightArrow.png', mask=None, anchor='center',
     ori=0, pos=(.03, -.3), size=(.02, .02),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -128,7 +134,7 @@ instructRight_rightImg1 = visual.ImageStim(
 instructRight_leftImg1 = visual.ImageStim(
     win=win,
     name='instructRight_leftImg1', 
-    image='img/rightArrow.png', mask=None,
+    image='img/rightArrow.png', mask=None, anchor='center',
     ori=0, pos=(-.03, -.3), size=(.02, .02),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -147,7 +153,7 @@ instructLeft_text = visual.TextStim(win=win, name='instructLeft_text',
 instructLeft_centerImg = visual.ImageStim(
     win=win,
     name='instructLeft_centerImg', 
-    image='img/leftArrow.png', mask=None,
+    image='img/leftArrow.png', mask=None, anchor='center',
     ori=0, pos=(0, -.3), size=(.02, .02),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -155,7 +161,7 @@ instructLeft_centerImg = visual.ImageStim(
 instructLeft_rightImg1 = visual.ImageStim(
     win=win,
     name='instructLeft_rightImg1', 
-    image='img/leftArrow.png', mask=None,
+    image='img/leftArrow.png', mask=None, anchor='center',
     ori=0, pos=(.03, -.3), size=(.02, .02),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -163,7 +169,7 @@ instructLeft_rightImg1 = visual.ImageStim(
 instructLeft_leftImg1 = visual.ImageStim(
     win=win,
     name='instructLeft_leftImg1', 
-    image='img/leftArrow.png', mask=None,
+    image='img/leftArrow.png', mask=None, anchor='center',
     ori=0, pos=(-.03, -.3), size=(.02, .02),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -182,7 +188,7 @@ instructInconRight_text = visual.TextStim(win=win, name='instructInconRight_text
 instructIncon_centerImg = visual.ImageStim(
     win=win,
     name='instructIncon_centerImg', 
-    image='img/rightArrow.png', mask=None,
+    image='img/rightArrow.png', mask=None, anchor='center',
     ori=0, pos=(0, -.3), size=(.02, .02),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -190,7 +196,7 @@ instructIncon_centerImg = visual.ImageStim(
 instructIncon_rightImg1 = visual.ImageStim(
     win=win,
     name='instructIncon_rightImg1', 
-    image='img/leftArrow.png', mask=None,
+    image='img/leftArrow.png', mask=None, anchor='center',
     ori=0, pos=(.03, -.3), size=(.02, .02),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -198,7 +204,7 @@ instructIncon_rightImg1 = visual.ImageStim(
 instructIncon_leftImg1 = visual.ImageStim(
     win=win,
     name='instructIncon_leftImg1', 
-    image='img/leftArrow.png', mask=None,
+    image='img/leftArrow.png', mask=None, anchor='center',
     ori=0, pos=(-.03, -.3), size=(.02, .02),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -217,7 +223,7 @@ instructInconLeft_text = visual.TextStim(win=win, name='instructInconLeft_text',
 instructInconLeft_centerImg = visual.ImageStim(
     win=win,
     name='instructInconLeft_centerImg', 
-    image='img/leftArrow.png', mask=None,
+    image='img/leftArrow.png', mask=None, anchor='center',
     ori=0, pos=(0, -.3), size=(.02, .02),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -225,7 +231,7 @@ instructInconLeft_centerImg = visual.ImageStim(
 instructInconLeft_rightImg1 = visual.ImageStim(
     win=win,
     name='instructInconLeft_rightImg1', 
-    image='img/rightArrow.png', mask=None,
+    image='img/rightArrow.png', mask=None, anchor='center',
     ori=0, pos=(.03, -.3), size=(.02, .02),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -233,7 +239,7 @@ instructInconLeft_rightImg1 = visual.ImageStim(
 instructInconLeft_leftImg1 = visual.ImageStim(
     win=win,
     name='instructInconLeft_leftImg1', 
-    image='img/rightArrow.png', mask=None,
+    image='img/rightArrow.png', mask=None, anchor='center',
     ori=0, pos=(-.03, -.3), size=(.02, .02),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -268,7 +274,7 @@ initFixationClock = core.Clock()
 initFixation_img = visual.ImageStim(
     win=win,
     name='initFixation_img', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0, pos=(0, -.015), size=(0.26, 0.22),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -281,7 +287,7 @@ thisISI = 0
 bigFace = visual.ImageStim(
     win=win,
     name='bigFace', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0.0, pos=(0, 0.0), size=(0.3, 0.3),
     color=[1,1,1], colorSpace='rgb', opacity=0.85,
     flipHoriz=False, flipVert=False,
@@ -289,7 +295,7 @@ bigFace = visual.ImageStim(
 cover_background_2 = visual.ImageStim(
     win=win,
     name='cover_background_2', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0.0, pos=(0, -.015), size=(0.26, 0.22),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
@@ -297,7 +303,7 @@ cover_background_2 = visual.ImageStim(
 prac_centerImg = visual.ImageStim(
     win=win,
     name='prac_centerImg', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -305,7 +311,7 @@ prac_centerImg = visual.ImageStim(
 prac_rightImg1 = visual.ImageStim(
     win=win,
     name='prac_rightImg1', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -313,7 +319,7 @@ prac_rightImg1 = visual.ImageStim(
 prac_leftImg1 = visual.ImageStim(
     win=win,
     name='prac_leftImg1', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -321,7 +327,7 @@ prac_leftImg1 = visual.ImageStim(
 prac_fixImg = visual.ImageStim(
     win=win,
     name='prac_fixImg', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0, pos=(0, -.015), size=(0.26, 0.22),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -374,7 +380,7 @@ initFixationClock = core.Clock()
 initFixation_img = visual.ImageStim(
     win=win,
     name='initFixation_img', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0, pos=(0, -.015), size=(0.26, 0.22),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -386,7 +392,7 @@ task_stimRoutineClock = core.Clock()
 bigFace_2 = visual.ImageStim(
     win=win,
     name='bigFace_2', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0.0, pos=(0, 0.0), size=(0.3, 0.3),
     color=[1,1,1], colorSpace='rgb', opacity=0.85,
     flipHoriz=False, flipVert=False,
@@ -394,7 +400,7 @@ bigFace_2 = visual.ImageStim(
 cover_background = visual.ImageStim(
     win=win,
     name='cover_background', 
-    image='img/cover_background.png', mask=None,
+    image='img/cover_background.png', mask=None, anchor='center',
     ori=0.0, pos=(0, -.015), size=(0.3, 0.22),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
@@ -402,7 +408,7 @@ cover_background = visual.ImageStim(
 task_centerImg = visual.ImageStim(
     win=win,
     name='task_centerImg', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -410,7 +416,7 @@ task_centerImg = visual.ImageStim(
 task_rightImg1 = visual.ImageStim(
     win=win,
     name='task_rightImg1', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -418,7 +424,7 @@ task_rightImg1 = visual.ImageStim(
 task_leftImg1 = visual.ImageStim(
     win=win,
     name='task_leftImg1', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -426,7 +432,7 @@ task_leftImg1 = visual.ImageStim(
 task_fixImg = visual.ImageStim(
     win=win,
     name='task_fixImg', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0, pos=(0, -.015), size=(0.26, 0.22),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
@@ -474,14 +480,14 @@ textbox_2 = visual.TextBox2(
      win, text=None, font='Open Sans',
      pos=(0, -0.3),     letterHeight=0.05,
      size=(0.2, 0.2), borderWidth=2.0,
-     color='-1.0000, -1.0000, -1.0000', colorSpace='rgb',
+     color=[-1.0000, -1.0000, -1.0000], colorSpace='rgb',
      opacity=None,
      bold=True, italic=False,
      lineSpacing=1.0,
-     padding=0.0,
+     padding=0.0, alignment='center',
      anchor='bottom-center',
-     fillColor='1.0000, 1.0000, 1.0000', borderColor='-1.0000, -1.0000, -1.0000',
-     flipHoriz=False, flipVert=False,
+     fillColor=[1.0000, 1.0000, 1.0000], borderColor=[-1.0000, -1.0000, -1.0000],
+     flipHoriz=False, flipVert=False, languageStyle='LTR',
      editable=True,
      name='textbox_2',
      autoLog=True,
@@ -515,7 +521,7 @@ surpriseTaskClock = core.Clock()
 stimulus = visual.ImageStim(
     win=win,
     name='stimulus', units='height', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0.0, pos=(0, 0.2), size=(0.5, 0.5),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
@@ -563,7 +569,7 @@ friendlyTaskClock = core.Clock()
 stimulus_2 = visual.ImageStim(
     win=win,
     name='stimulus_2', units='height', 
-    image='sin', mask=None,
+    image='sin', mask=None, anchor='center',
     ori=0.0, pos=(0, 0.2), size=(0.5, 0.5),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
@@ -583,6 +589,54 @@ instructsurpA2_left_2 = visual.TextStim(win=win, name='instructsurpA2_left_2',
     languageStyle='LTR',
     depth=-2.0);
 friendly_key_resp = keyboard.Keyboard()
+
+# Initialize components for Routine "errorComm_Instruct"
+errorComm_InstructClock = core.Clock()
+instruct_surprise1_3 = visual.TextStim(win=win, name='instruct_surprise1_3',
+    text='You will now begin a game in which you will be asked if you made an error/errors around the displayed face on the screen.\n\n\nFor example, if you think that you have made an error/errors around (before/during/after) the displayed face, you should select "I made an error around this face" as your response.\n\nPress right key to proceed.',
+    font='Open Sans',
+    pos=(0, 0), height=0.04, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=0.0);
+instruct_surp1_key_resp_3 = keyboard.Keyboard()
+
+# Initialize components for Routine "errorInstruct"
+errorInstructClock = core.Clock()
+instructMainTask_text_3 = visual.TextStim(win=win, name='instructMainTask_text_3',
+    text='',
+    font='Arial',
+    pos=(0, 0), height=0.04, wrapWidth=1.3, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=0.0);
+instructMainTask_keyResp_3 = keyboard.Keyboard()
+
+# Initialize components for Routine "error_commitTask"
+error_commitTaskClock = core.Clock()
+stimulus_3 = visual.ImageStim(
+    win=win,
+    name='stimulus_3', units='height', 
+    image='sin', mask=None, anchor='center',
+    ori=0.0, pos=(0, 0.2), size=(0.5, 0.5),
+    color=[1,1,1], colorSpace='rgb', opacity=None,
+    flipHoriz=False, flipVert=False,
+    texRes=128.0, interpolate=True, depth=0.0)
+instructsurpA1_right_3 = visual.TextStim(win=win, name='instructsurpA1_right_3',
+    text='',
+    font='Open Sans',
+    pos=[0,0], height=0.025, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-1.0);
+instructsurpA2_left_3 = visual.TextStim(win=win, name='instructsurpA2_left_3',
+    text='',
+    font='Open Sans',
+    pos=(-0.4, -0.03), height=0.025, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-2.0);
+friendly_key_resp_2 = keyboard.Keyboard()
 
 # Initialize components for Routine "finishMessage"
 finishMessageClock = core.Clock()
@@ -1234,7 +1288,7 @@ for thisComponent in instructInconLeftComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-prac_block_loop = data.TrialHandler(nReps=999, method='random', 
+prac_block_loop = data.TrialHandler(nReps=0, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('blockSelect_practice.csv'),
     seed=None, name='prac_block_loop')
@@ -1630,7 +1684,7 @@ for thisPrac_block_loop in prac_block_loop:
                     win.timeOnFlip(prac_stim_keyResp, 'tStopRefresh')  # time at next scr refresh
                     prac_stim_keyResp.status = FINISHED
             if prac_stim_keyResp.status == STARTED and not waitOnFlip:
-                theseKeys = prac_stim_keyResp.getKeys(keyList=['1', '8'], waitRelease=False)
+                theseKeys = prac_stim_keyResp.getKeys(keyList=['1','8'], waitRelease=False)
                 _prac_stim_keyResp_allKeys.extend(theseKeys)
                 if len(_prac_stim_keyResp_allKeys):
                     prac_stim_keyResp.keys = [key.name for key in _prac_stim_keyResp_allKeys]  # storing all keys
@@ -1816,11 +1870,11 @@ for thisPrac_block_loop in prac_block_loop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 999 repeats of 'prac_block_loop'
+# completed 0 repeats of 'prac_block_loop'
 
 
 # set up handler to look after randomisation of conditions etc
-task_block_loop = data.TrialHandler(nReps=1.0, method='random', 
+task_block_loop = data.TrialHandler(nReps=0.0, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('blockSelect.csv'),
     seed=None, name='task_block_loop')
@@ -2226,7 +2280,7 @@ for thisTask_block_loop in task_block_loop:
                     win.timeOnFlip(task1_stim_keyResp, 'tStopRefresh')  # time at next scr refresh
                     task1_stim_keyResp.status = FINISHED
             if task1_stim_keyResp.status == STARTED and not waitOnFlip:
-                theseKeys = task1_stim_keyResp.getKeys(keyList=['1', '8'], waitRelease=False)
+                theseKeys = task1_stim_keyResp.getKeys(keyList=['1','8'], waitRelease=False)
                 _task1_stim_keyResp_allKeys.extend(theseKeys)
                 if len(_task1_stim_keyResp_allKeys):
                     task1_stim_keyResp.keys = [key.name for key in _task1_stim_keyResp_allKeys]  # storing all keys
@@ -2423,7 +2477,7 @@ for thisTask_block_loop in task_block_loop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 1.0 repeats of 'task_block_loop'
+# completed 0.0 repeats of 'task_block_loop'
 
 
 # ------Prepare to start Routine "fixation1"-------
@@ -2701,7 +2755,7 @@ thisExp.nextEntry()
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-surprise_block_loop = data.TrialHandler(nReps=1.0, method='sequential', 
+surprise_block_loop = data.TrialHandler(nReps=0.0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions("surpriseBlock_select_"+expInfo['cb']+".xlsx"),
     seed=None, name='surprise_block_loop')
@@ -2909,7 +2963,7 @@ for thisSurprise_block_loop in surprise_block_loop:
                 win.callOnFlip(surprise_key_resp.clock.reset)  # t=0 on next screen flip
                 win.callOnFlip(surprise_key_resp.clearEvents, eventType='keyboard')  # clear events on next screen flip
             if surprise_key_resp.status == STARTED and not waitOnFlip:
-                theseKeys = surprise_key_resp.getKeys(keyList=['1', '8'], waitRelease=False)
+                theseKeys = surprise_key_resp.getKeys(keyList=['1','8'], waitRelease=False)
                 _surprise_key_resp_allKeys.extend(theseKeys)
                 if len(_surprise_key_resp_allKeys):
                     surprise_key_resp.keys = _surprise_key_resp_allKeys[-1].name  # just the last key pressed
@@ -2960,7 +3014,7 @@ for thisSurprise_block_loop in surprise_block_loop:
     
     thisExp.nextEntry()
     
-# completed 1.0 repeats of 'surprise_block_loop'
+# completed 0.0 repeats of 'surprise_block_loop'
 
 
 # ------Prepare to start Routine "friendlyInstruct1"-------
@@ -3058,7 +3112,7 @@ thisExp.nextEntry()
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-friendly_block_loop = data.TrialHandler(nReps=1.0, method='sequential', 
+friendly_block_loop = data.TrialHandler(nReps=0.0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions("friendlyBlock_select_"+expInfo['friendly']+".xlsx"),
     seed=None, name='friendly_block_loop')
@@ -3266,7 +3320,7 @@ for thisFriendly_block_loop in friendly_block_loop:
                 win.callOnFlip(friendly_key_resp.clock.reset)  # t=0 on next screen flip
                 win.callOnFlip(friendly_key_resp.clearEvents, eventType='keyboard')  # clear events on next screen flip
             if friendly_key_resp.status == STARTED and not waitOnFlip:
-                theseKeys = friendly_key_resp.getKeys(keyList=['1', '8'], waitRelease=False)
+                theseKeys = friendly_key_resp.getKeys(keyList=['1','8'], waitRelease=False)
                 _friendly_key_resp_allKeys.extend(theseKeys)
                 if len(_friendly_key_resp_allKeys):
                     friendly_key_resp.keys = _friendly_key_resp_allKeys[-1].name  # just the last key pressed
@@ -3317,7 +3371,364 @@ for thisFriendly_block_loop in friendly_block_loop:
     
     thisExp.nextEntry()
     
-# completed 1.0 repeats of 'friendly_block_loop'
+# completed 0.0 repeats of 'friendly_block_loop'
+
+
+# ------Prepare to start Routine "errorComm_Instruct"-------
+continueRoutine = True
+# update component parameters for each repeat
+instruct_surp1_key_resp_3.keys = []
+instruct_surp1_key_resp_3.rt = []
+_instruct_surp1_key_resp_3_allKeys = []
+# keep track of which components have finished
+errorComm_InstructComponents = [instruct_surprise1_3, instruct_surp1_key_resp_3]
+for thisComponent in errorComm_InstructComponents:
+    thisComponent.tStart = None
+    thisComponent.tStop = None
+    thisComponent.tStartRefresh = None
+    thisComponent.tStopRefresh = None
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+# reset timers
+t = 0
+_timeToFirstFrame = win.getFutureFlipTime(clock="now")
+errorComm_InstructClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
+frameN = -1
+
+# -------Run Routine "errorComm_Instruct"-------
+while continueRoutine:
+    # get current time
+    t = errorComm_InstructClock.getTime()
+    tThisFlip = win.getFutureFlipTime(clock=errorComm_InstructClock)
+    tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    # *instruct_surprise1_3* updates
+    if instruct_surprise1_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # keep track of start time/frame for later
+        instruct_surprise1_3.frameNStart = frameN  # exact frame index
+        instruct_surprise1_3.tStart = t  # local t and not account for scr refresh
+        instruct_surprise1_3.tStartRefresh = tThisFlipGlobal  # on global time
+        win.timeOnFlip(instruct_surprise1_3, 'tStartRefresh')  # time at next scr refresh
+        instruct_surprise1_3.setAutoDraw(True)
+    
+    # *instruct_surp1_key_resp_3* updates
+    waitOnFlip = False
+    if instruct_surp1_key_resp_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # keep track of start time/frame for later
+        instruct_surp1_key_resp_3.frameNStart = frameN  # exact frame index
+        instruct_surp1_key_resp_3.tStart = t  # local t and not account for scr refresh
+        instruct_surp1_key_resp_3.tStartRefresh = tThisFlipGlobal  # on global time
+        win.timeOnFlip(instruct_surp1_key_resp_3, 'tStartRefresh')  # time at next scr refresh
+        instruct_surp1_key_resp_3.status = STARTED
+        # keyboard checking is just starting
+        waitOnFlip = True
+        win.callOnFlip(instruct_surp1_key_resp_3.clock.reset)  # t=0 on next screen flip
+        win.callOnFlip(instruct_surp1_key_resp_3.clearEvents, eventType='keyboard')  # clear events on next screen flip
+    if instruct_surp1_key_resp_3.status == STARTED and not waitOnFlip:
+        theseKeys = instruct_surp1_key_resp_3.getKeys(keyList=['8'], waitRelease=False)
+        _instruct_surp1_key_resp_3_allKeys.extend(theseKeys)
+        if len(_instruct_surp1_key_resp_3_allKeys):
+            instruct_surp1_key_resp_3.keys = _instruct_surp1_key_resp_3_allKeys[-1].name  # just the last key pressed
+            instruct_surp1_key_resp_3.rt = _instruct_surp1_key_resp_3_allKeys[-1].rt
+            # a response ends the routine
+            continueRoutine = False
+    
+    # check for quit (typically the Esc key)
+    if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in errorComm_InstructComponents:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "errorComm_Instruct"-------
+for thisComponent in errorComm_InstructComponents:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+thisExp.addData('instruct_surprise1_3.started', instruct_surprise1_3.tStartRefresh)
+thisExp.addData('instruct_surprise1_3.stopped', instruct_surprise1_3.tStopRefresh)
+# check responses
+if instruct_surp1_key_resp_3.keys in ['', [], None]:  # No response was made
+    instruct_surp1_key_resp_3.keys = None
+thisExp.addData('instruct_surp1_key_resp_3.keys',instruct_surp1_key_resp_3.keys)
+if instruct_surp1_key_resp_3.keys != None:  # we had a response
+    thisExp.addData('instruct_surp1_key_resp_3.rt', instruct_surp1_key_resp_3.rt)
+thisExp.nextEntry()
+# the Routine "errorComm_Instruct" was not non-slip safe, so reset the non-slip timer
+routineTimer.reset()
+
+# set up handler to look after randomisation of conditions etc
+errorComm_block_loop = data.TrialHandler(nReps=1.0, method='sequential', 
+    extraInfo=expInfo, originPath=-1,
+    trialList=data.importConditions("error_commBlock_select_"+expInfo['errorComm']+".xlsx"),
+    seed=None, name='errorComm_block_loop')
+thisExp.addLoop(errorComm_block_loop)  # add the loop to the experiment
+thisErrorComm_block_loop = errorComm_block_loop.trialList[0]  # so we can initialise stimuli with some values
+# abbreviate parameter names if possible (e.g. rgb = thisErrorComm_block_loop.rgb)
+if thisErrorComm_block_loop != None:
+    for paramName in thisErrorComm_block_loop:
+        exec('{} = thisErrorComm_block_loop[paramName]'.format(paramName))
+
+for thisErrorComm_block_loop in errorComm_block_loop:
+    currentLoop = errorComm_block_loop
+    # abbreviate parameter names if possible (e.g. rgb = thisErrorComm_block_loop.rgb)
+    if thisErrorComm_block_loop != None:
+        for paramName in thisErrorComm_block_loop:
+            exec('{} = thisErrorComm_block_loop[paramName]'.format(paramName))
+    
+    # ------Prepare to start Routine "errorInstruct"-------
+    continueRoutine = True
+    # update component parameters for each repeat
+    instructMainTask_text_3.setText(taskTextSource)
+    instructMainTask_keyResp_3.keys = []
+    instructMainTask_keyResp_3.rt = []
+    _instructMainTask_keyResp_3_allKeys = []
+    # keep track of which components have finished
+    errorInstructComponents = [instructMainTask_text_3, instructMainTask_keyResp_3]
+    for thisComponent in errorInstructComponents:
+        thisComponent.tStart = None
+        thisComponent.tStop = None
+        thisComponent.tStartRefresh = None
+        thisComponent.tStopRefresh = None
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    # reset timers
+    t = 0
+    _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+    errorInstructClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
+    frameN = -1
+    
+    # -------Run Routine "errorInstruct"-------
+    while continueRoutine:
+        # get current time
+        t = errorInstructClock.getTime()
+        tThisFlip = win.getFutureFlipTime(clock=errorInstructClock)
+        tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        
+        # *instructMainTask_text_3* updates
+        if instructMainTask_text_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            instructMainTask_text_3.frameNStart = frameN  # exact frame index
+            instructMainTask_text_3.tStart = t  # local t and not account for scr refresh
+            instructMainTask_text_3.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(instructMainTask_text_3, 'tStartRefresh')  # time at next scr refresh
+            instructMainTask_text_3.setAutoDraw(True)
+        
+        # *instructMainTask_keyResp_3* updates
+        waitOnFlip = False
+        if instructMainTask_keyResp_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            instructMainTask_keyResp_3.frameNStart = frameN  # exact frame index
+            instructMainTask_keyResp_3.tStart = t  # local t and not account for scr refresh
+            instructMainTask_keyResp_3.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(instructMainTask_keyResp_3, 'tStartRefresh')  # time at next scr refresh
+            instructMainTask_keyResp_3.status = STARTED
+            # keyboard checking is just starting
+            waitOnFlip = True
+            win.callOnFlip(instructMainTask_keyResp_3.clock.reset)  # t=0 on next screen flip
+            win.callOnFlip(instructMainTask_keyResp_3.clearEvents, eventType='keyboard')  # clear events on next screen flip
+        if instructMainTask_keyResp_3.status == STARTED and not waitOnFlip:
+            theseKeys = instructMainTask_keyResp_3.getKeys(keyList=['8'], waitRelease=False)
+            _instructMainTask_keyResp_3_allKeys.extend(theseKeys)
+            if len(_instructMainTask_keyResp_3_allKeys):
+                instructMainTask_keyResp_3.keys = _instructMainTask_keyResp_3_allKeys[-1].name  # just the last key pressed
+                instructMainTask_keyResp_3.rt = _instructMainTask_keyResp_3_allKeys[-1].rt
+                # a response ends the routine
+                continueRoutine = False
+        
+        # check for quit (typically the Esc key)
+        if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+            core.quit()
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in errorInstructComponents:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # -------Ending Routine "errorInstruct"-------
+    for thisComponent in errorInstructComponents:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    errorComm_block_loop.addData('instructMainTask_text_3.started', instructMainTask_text_3.tStartRefresh)
+    errorComm_block_loop.addData('instructMainTask_text_3.stopped', instructMainTask_text_3.tStopRefresh)
+    # check responses
+    if instructMainTask_keyResp_3.keys in ['', [], None]:  # No response was made
+        instructMainTask_keyResp_3.keys = None
+    errorComm_block_loop.addData('instructMainTask_keyResp_3.keys',instructMainTask_keyResp_3.keys)
+    if instructMainTask_keyResp_3.keys != None:  # we had a response
+        errorComm_block_loop.addData('instructMainTask_keyResp_3.rt', instructMainTask_keyResp_3.rt)
+    errorComm_block_loop.addData('instructMainTask_keyResp_3.started', instructMainTask_keyResp_3.tStartRefresh)
+    errorComm_block_loop.addData('instructMainTask_keyResp_3.stopped', instructMainTask_keyResp_3.tStopRefresh)
+    # the Routine "errorInstruct" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset()
+    
+    # set up handler to look after randomisation of conditions etc
+    trials_3 = data.TrialHandler(nReps=1.0, method='random', 
+        extraInfo=expInfo, originPath=-1,
+        trialList=data.importConditions(whichSurpriseBlock),
+        seed=None, name='trials_3')
+    thisExp.addLoop(trials_3)  # add the loop to the experiment
+    thisTrial_3 = trials_3.trialList[0]  # so we can initialise stimuli with some values
+    # abbreviate parameter names if possible (e.g. rgb = thisTrial_3.rgb)
+    if thisTrial_3 != None:
+        for paramName in thisTrial_3:
+            exec('{} = thisTrial_3[paramName]'.format(paramName))
+    
+    for thisTrial_3 in trials_3:
+        currentLoop = trials_3
+        # abbreviate parameter names if possible (e.g. rgb = thisTrial_3.rgb)
+        if thisTrial_3 != None:
+            for paramName in thisTrial_3:
+                exec('{} = thisTrial_3[paramName]'.format(paramName))
+        
+        # ------Prepare to start Routine "error_commitTask"-------
+        continueRoutine = True
+        # update component parameters for each repeat
+        stimulus_3.setImage(surpriseFaces)
+        instructsurpA1_right_3.setPos((0.4, -0.03))
+        instructsurpA1_right_3.setText(instructsurpA1)
+        instructsurpA2_left_3.setText(instructsurpA2)
+        friendly_key_resp_2.keys = []
+        friendly_key_resp_2.rt = []
+        _friendly_key_resp_2_allKeys = []
+        # keep track of which components have finished
+        error_commitTaskComponents = [stimulus_3, instructsurpA1_right_3, instructsurpA2_left_3, friendly_key_resp_2]
+        for thisComponent in error_commitTaskComponents:
+            thisComponent.tStart = None
+            thisComponent.tStop = None
+            thisComponent.tStartRefresh = None
+            thisComponent.tStopRefresh = None
+            if hasattr(thisComponent, 'status'):
+                thisComponent.status = NOT_STARTED
+        # reset timers
+        t = 0
+        _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+        error_commitTaskClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
+        frameN = -1
+        
+        # -------Run Routine "error_commitTask"-------
+        while continueRoutine:
+            # get current time
+            t = error_commitTaskClock.getTime()
+            tThisFlip = win.getFutureFlipTime(clock=error_commitTaskClock)
+            tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+            # update/draw components on each frame
+            
+            # *stimulus_3* updates
+            if stimulus_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                stimulus_3.frameNStart = frameN  # exact frame index
+                stimulus_3.tStart = t  # local t and not account for scr refresh
+                stimulus_3.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(stimulus_3, 'tStartRefresh')  # time at next scr refresh
+                stimulus_3.setAutoDraw(True)
+            
+            # *instructsurpA1_right_3* updates
+            if instructsurpA1_right_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                instructsurpA1_right_3.frameNStart = frameN  # exact frame index
+                instructsurpA1_right_3.tStart = t  # local t and not account for scr refresh
+                instructsurpA1_right_3.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(instructsurpA1_right_3, 'tStartRefresh')  # time at next scr refresh
+                instructsurpA1_right_3.setAutoDraw(True)
+            
+            # *instructsurpA2_left_3* updates
+            if instructsurpA2_left_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                instructsurpA2_left_3.frameNStart = frameN  # exact frame index
+                instructsurpA2_left_3.tStart = t  # local t and not account for scr refresh
+                instructsurpA2_left_3.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(instructsurpA2_left_3, 'tStartRefresh')  # time at next scr refresh
+                instructsurpA2_left_3.setAutoDraw(True)
+            
+            # *friendly_key_resp_2* updates
+            waitOnFlip = False
+            if friendly_key_resp_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                friendly_key_resp_2.frameNStart = frameN  # exact frame index
+                friendly_key_resp_2.tStart = t  # local t and not account for scr refresh
+                friendly_key_resp_2.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(friendly_key_resp_2, 'tStartRefresh')  # time at next scr refresh
+                friendly_key_resp_2.status = STARTED
+                # keyboard checking is just starting
+                waitOnFlip = True
+                win.callOnFlip(friendly_key_resp_2.clock.reset)  # t=0 on next screen flip
+                win.callOnFlip(friendly_key_resp_2.clearEvents, eventType='keyboard')  # clear events on next screen flip
+            if friendly_key_resp_2.status == STARTED and not waitOnFlip:
+                theseKeys = friendly_key_resp_2.getKeys(keyList=['1','8'], waitRelease=False)
+                _friendly_key_resp_2_allKeys.extend(theseKeys)
+                if len(_friendly_key_resp_2_allKeys):
+                    friendly_key_resp_2.keys = _friendly_key_resp_2_allKeys[-1].name  # just the last key pressed
+                    friendly_key_resp_2.rt = _friendly_key_resp_2_allKeys[-1].rt
+                    # a response ends the routine
+                    continueRoutine = False
+            
+            # check for quit (typically the Esc key)
+            if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+                core.quit()
+            
+            # check if all components have finished
+            if not continueRoutine:  # a component has requested a forced-end of Routine
+                break
+            continueRoutine = False  # will revert to True if at least one component still running
+            for thisComponent in error_commitTaskComponents:
+                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                    continueRoutine = True
+                    break  # at least one component has not yet finished
+            
+            # refresh the screen
+            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                win.flip()
+        
+        # -------Ending Routine "error_commitTask"-------
+        for thisComponent in error_commitTaskComponents:
+            if hasattr(thisComponent, "setAutoDraw"):
+                thisComponent.setAutoDraw(False)
+        trials_3.addData('stimulus_3.started', stimulus_3.tStartRefresh)
+        trials_3.addData('stimulus_3.stopped', stimulus_3.tStopRefresh)
+        trials_3.addData('instructsurpA1_right_3.started', instructsurpA1_right_3.tStartRefresh)
+        trials_3.addData('instructsurpA1_right_3.stopped', instructsurpA1_right_3.tStopRefresh)
+        trials_3.addData('instructsurpA2_left_3.started', instructsurpA2_left_3.tStartRefresh)
+        trials_3.addData('instructsurpA2_left_3.stopped', instructsurpA2_left_3.tStopRefresh)
+        # check responses
+        if friendly_key_resp_2.keys in ['', [], None]:  # No response was made
+            friendly_key_resp_2.keys = None
+        trials_3.addData('friendly_key_resp_2.keys',friendly_key_resp_2.keys)
+        if friendly_key_resp_2.keys != None:  # we had a response
+            trials_3.addData('friendly_key_resp_2.rt', friendly_key_resp_2.rt)
+        trials_3.addData('friendly_key_resp_2.started', friendly_key_resp_2.tStartRefresh)
+        trials_3.addData('friendly_key_resp_2.stopped', friendly_key_resp_2.tStopRefresh)
+        # the Routine "error_commitTask" was not non-slip safe, so reset the non-slip timer
+        routineTimer.reset()
+        thisExp.nextEntry()
+        
+    # completed 1.0 repeats of 'trials_3'
+    
+    thisExp.nextEntry()
+    
+# completed 1.0 repeats of 'errorComm_block_loop'
 
 
 # ------Prepare to start Routine "finishMessage"-------
@@ -3398,6 +3809,8 @@ thisExp.saveAsWideText(filename+'.csv', delim='auto')
 thisExp.saveAsPickle(filename)
 logging.flush()
 # make sure everything is closed down
+if eyetracker:
+    eyetracker.setConnectionState(False)
 thisExp.abort()  # or data files will save again on exit
 win.close()
 core.quit()
