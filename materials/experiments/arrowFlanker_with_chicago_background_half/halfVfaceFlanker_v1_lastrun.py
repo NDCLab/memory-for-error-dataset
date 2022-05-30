@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2022.1.3),
-    on May 27, 2022, at 16:09
+    on May 30, 2022, at 17:21
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -401,7 +401,7 @@ cover_background = visual.ImageStim(
     win=win,
     name='cover_background', 
     image='img/cover_background.png', mask=None, anchor='center',
-    ori=0.0, pos=(0, -.015), size=(0.3, 0.22),
+    ori=0.0, pos=(0, -.015), size=(0.26, 0.22),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=-2.0)
@@ -1288,7 +1288,7 @@ for thisComponent in instructInconLeftComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-prac_block_loop = data.TrialHandler(nReps=0, method='random', 
+prac_block_loop = data.TrialHandler(nReps=999, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('blockSelect_practice.csv'),
     seed=None, name='prac_block_loop')
@@ -1870,11 +1870,11 @@ for thisPrac_block_loop in prac_block_loop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0 repeats of 'prac_block_loop'
+# completed 999 repeats of 'prac_block_loop'
 
 
 # set up handler to look after randomisation of conditions etc
-task_block_loop = data.TrialHandler(nReps=0.0, method='random', 
+task_block_loop = data.TrialHandler(nReps=1.0, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('blockSelect.csv'),
     seed=None, name='task_block_loop')
@@ -2477,7 +2477,7 @@ for thisTask_block_loop in task_block_loop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0.0 repeats of 'task_block_loop'
+# completed 1.0 repeats of 'task_block_loop'
 
 
 # ------Prepare to start Routine "fixation1"-------
@@ -2755,7 +2755,7 @@ thisExp.nextEntry()
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-surprise_block_loop = data.TrialHandler(nReps=0.0, method='sequential', 
+surprise_block_loop = data.TrialHandler(nReps=1.0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions("surpriseBlock_select_"+expInfo['cb']+".xlsx"),
     seed=None, name='surprise_block_loop')
@@ -3014,7 +3014,7 @@ for thisSurprise_block_loop in surprise_block_loop:
     
     thisExp.nextEntry()
     
-# completed 0.0 repeats of 'surprise_block_loop'
+# completed 1.0 repeats of 'surprise_block_loop'
 
 
 # ------Prepare to start Routine "friendlyInstruct1"-------
@@ -3112,7 +3112,7 @@ thisExp.nextEntry()
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-friendly_block_loop = data.TrialHandler(nReps=0.0, method='sequential', 
+friendly_block_loop = data.TrialHandler(nReps=1.0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions("friendlyBlock_select_"+expInfo['friendly']+".xlsx"),
     seed=None, name='friendly_block_loop')
@@ -3371,7 +3371,7 @@ for thisFriendly_block_loop in friendly_block_loop:
     
     thisExp.nextEntry()
     
-# completed 0.0 repeats of 'friendly_block_loop'
+# completed 1.0 repeats of 'friendly_block_loop'
 
 
 # ------Prepare to start Routine "errorComm_Instruct"-------

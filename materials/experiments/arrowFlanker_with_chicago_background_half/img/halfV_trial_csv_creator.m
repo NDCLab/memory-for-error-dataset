@@ -10,7 +10,8 @@ clear % clear matlab workspace
 clc % clear matlab command window
 
 %% Loading all the neutral Chicago faces. 
-main_dir = '/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/img';
+%main_dir = '/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/img';
+main_dir = 'C:\Users\kihossei\Desktop\Github_repos\memory-for-error-dataset\materials\experiments\arrowFlanker_with_chicago_background_half\img';
 faceData_location = [main_dir filesep 'neutralC']; %Location of stored faces (i.e., renders folder)
 cd(faceData_location)
 data_file_lists = dir; 
@@ -67,8 +68,8 @@ for jaguar=1:7 % 6 of these files will be for the main blocks. The last one with
             rightCong(zebra,5)= 1; %congruent?
             rightCong(zebra,6)= 'right'; %target
             rightCong(zebra,7)= '[0,0]'; % Center image Location on the screen for the Psychopy
-            rightCong(zebra,8)= '[.036,0]'; % Right image Location on the screen for the Psychopy
-            rightCong(zebra,9)= '[-.036,0]'; % Left image Location on the screen for the Psychopy
+            rightCong(zebra,8)= '[.033,0]'; % Right image Location on the screen for the Psychopy
+            rightCong(zebra,9)= '[-.033,0]'; % Left image Location on the screen for the Psychopy
             
             nav_temp = nav_temp1(zebra);
             rightCong(zebra,10)= nav_temp; % Straight_face
@@ -86,8 +87,8 @@ for jaguar=1:7 % 6 of these files will be for the main blocks. The last one with
             rightIncong(zebra2,5)= 0; % congruent?
             rightIncong(zebra2,6)= 'right'; %target
             rightIncong(zebra2,7)= '[0,0]'; % Center image Location on the screen for the Psychopy
-            rightIncong(zebra2,8)= '[.036,0]'; % Right image Location on the screen for the Psychopy
-            rightIncong(zebra2,9)= '[-.036,0]'; % Left image Location on the screen for the Psychopy
+            rightIncong(zebra2,8)= '[.033,0]'; % Right image Location on the screen for the Psychopy
+            rightIncong(zebra2,9)= '[-.033,0]'; % Left image Location on the screen for the Psychopy
             nav_temp = nav_temp2(zebra2);
             rightIncong(zebra2,10)= nav_temp; % Straight_face
             rightIncong(zebra2,11)= '[.03, .03]'; % Size for the image
@@ -105,8 +106,8 @@ for jaguar=1:7 % 6 of these files will be for the main blocks. The last one with
             leftCong(zebra3,5)= 1; % congruent?
             leftCong(zebra3,6)= 'left'; %target
             leftCong(zebra3,7)= '[0,0]'; % Center image Location on the screen for the Psychopy
-            leftCong(zebra3,8)= '[.036,0]'; % Right image Location on the screen for the Psychopy
-            leftCong(zebra3,9)= '[-.036,0]'; % Left image Location on the screen for the Psychopy
+            leftCong(zebra3,8)= '[.033,0]'; % Right image Location on the screen for the Psychopy
+            leftCong(zebra3,9)= '[-.033,0]'; % Left image Location on the screen for the Psychopy
             nav_temp = nav_temp3(zebra3);
             leftCong(zebra3,10)= nav_temp; % Straight_face
             leftCong(zebra3,11)= '[.03, .03]'; % Size for the image
@@ -123,8 +124,8 @@ for jaguar=1:7 % 6 of these files will be for the main blocks. The last one with
             leftIncong(zebra4,5)= 0; % congruent?
             leftIncong(zebra4,6)= 'left'; %target
             leftIncong(zebra4,7)= '[0,0]'; % Center image Location on the screen for the Psychopy
-            leftIncong(zebra4,8)= '[.036,0]'; % Right image Location on the screen for the Psychopy
-            leftIncong(zebra4,9)= '[-.036,0]'; % Left image Location on the screen for the Psychopy
+            leftIncong(zebra4,8)= '[.033,0]'; % Right image Location on the screen for the Psychopy
+            leftIncong(zebra4,9)= '[-.033,0]'; % Left image Location on the screen for the Psychopy
             nav_temp = nav_temp4(zebra4);
             leftIncong(zebra4,10)= nav_temp; % Straight_face
             leftIncong(zebra4,11)= '[.03, .03]'; % Size for the image
@@ -167,8 +168,8 @@ for jaguar=1:7 % 6 of these files will be for the main blocks. The last one with
             rightCong(zebra,5)= 1; %congruent?
             rightCong(zebra,6)= 'right'; %target
             rightCong(zebra,7)= '[0,0]'; % Center image Location on the screen for the Psychopy
-            rightCong(zebra,8)= '[.036,0]'; % Right image Location on the screen for the Psychopy
-            rightCong(zebra,9)= '[-.036,0]'; % Left image Location on the screen for the Psychopy
+            rightCong(zebra,8)= '[.033,0]'; % Right image Location on the screen for the Psychopy
+            rightCong(zebra,9)= '[-.033,0]'; % Left image Location on the screen for the Psychopy
             % in the lines below, I am creating a column consisting the
             % straight looking faces for the background.
             nav_temp = nav_temp1(zebra);
@@ -188,8 +189,8 @@ for jaguar=1:7 % 6 of these files will be for the main blocks. The last one with
             rightIncong(zebra2,5)= 0; % congruent?
             rightIncong(zebra2,6)= 'right'; %target
             rightIncong(zebra2,7)= '[0,0]'; % Center image Location on the screen for the Psychopy
-            rightIncong(zebra2,8)= '[.036,0]'; % Right image Location on the screen for the Psychopy
-            rightIncong(zebra2,9)= '[-.036,0]'; % Left image Location on the screen for the Psychopy
+            rightIncong(zebra2,8)= '[.033,0]'; % Right image Location on the screen for the Psychopy
+            rightIncong(zebra2,9)= '[-.033,0]'; % Left image Location on the screen for the Psychopy
             nav_temp = nav_temp2(zebra2);
             rightIncong(zebra2,10)= nav_temp; % Straight_face
             rightIncong(zebra2,11)= '[.03, .03]'; % Size for the image
@@ -225,8 +226,8 @@ for jaguar=1:7 % 6 of these files will be for the main blocks. The last one with
             leftIncong(zebra4,5)= 0; % congruent?
             leftIncong(zebra4,6)= 'left'; %target
             leftIncong(zebra4,7)= '[0,0]'; % Center image Location on the screen for the Psychopy
-            leftIncong(zebra4,8)= '[.036,0]'; % Right image Location on the screen for the Psychopy
-            leftIncong(zebra4,9)= '[-.036,0]'; % Left image Location on the screen for the Psychopy
+            leftIncong(zebra4,8)= '[.033,0]'; % Right image Location on the screen for the Psychopy
+            leftIncong(zebra4,9)= '[-.033,0]'; % Left image Location on the screen for the Psychopy
             nav_temp = nav_temp4(zebra4);
             leftIncong(zebra4,10)= nav_temp; % Straight_face
             leftIncong(zebra4,11)= '[.03, .03]'; % Size for the image
