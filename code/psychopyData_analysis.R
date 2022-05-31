@@ -10,11 +10,11 @@ library(stringr)
 
 #Working directory should be the Psychopy experiment directory. 
 #setwd("/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half")
-setwd("C://Users/kihossei/Desktop/Github_repos/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half")
+setwd("C:/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half")
 
 # Defining the input and output folders.
-input_path <- "C:/Users/kihossei/Desktop/Github_repos/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/data/"
-output_path <- "C:/Users/kihossei/Desktop/Github_repos/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/stat_output"
+input_path <- "C:/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/data"
+output_path <- "C:/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/stat_output"
 today <- Sys.Date()
 today <- format(today, "%Y%m%d")
 proc_fileName <- paste(today, "_mfeProj.csv", sep ="", collapse = NULL) # output filename
@@ -152,7 +152,7 @@ for(i in 1:length(datafiles_list)){
     temp_for_friendly <- filter(friendlyDat, surpriseFaces == temp_face) # find the error face in the friendlyDat
     identified_friendly <- ifelse (temp_for_friendly$FriendlyKey == temp_for_friendly$friendly_key_resp.keys, 1, 0) #returns 1 when participant identifies the face as friendly!
     if (identified_friendly == 1){
-      num_errorFaces_reported_friendly <- num_errorFaces_reported_friendly + 1 # The number of error faces that they report as OLD 
+      num_errorFaces_reported_friendly <- num_errorFaces_reported_friendly + 1 # The number of error faces that they report as friendly 
     }
   }
   num_errorFaces_reported_unfriendly <- committed_errors - num_errorFaces_reported_friendly 
