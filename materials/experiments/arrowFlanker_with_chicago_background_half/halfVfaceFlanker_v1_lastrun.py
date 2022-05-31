@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2022.1.3),
-    on May 30, 2022, at 17:21
+    on May 31, 2022, at 11:24
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -288,7 +288,7 @@ bigFace = visual.ImageStim(
     win=win,
     name='bigFace', 
     image='sin', mask=None, anchor='center',
-    ori=0.0, pos=(0, 0.0), size=(0.3, 0.3),
+    ori=0.0, pos=(0, 0.0), size=(0.4267, .3),
     color=[1,1,1], colorSpace='rgb', opacity=0.85,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=-1.0)
@@ -367,7 +367,7 @@ task_blockText = visual.TextStim(win=win, name='task_blockText',
     languageStyle='LTR',
     depth=-1.0);
 task_blockReminders_text = visual.TextStim(win=win, name='task_blockReminders_text',
-    text='Remember to always respond to the direction of the MIDDLE face.\n\nRespond as quickly as you can without making mistakes.\n\nTo get ready, rest your right and left index fingers on the right and left buttons, then press the right button when you are ready to begin.\n',
+    text='Remember to always respond to the direction of the MIDDLE arrow.\n\nRespond as quickly as you can without making mistakes.\n\nTo get ready, rest your right and left index fingers on the right and left buttons, then press the right button when you are ready to begin.\n',
     font='Arial',
     pos=(0, 0), height=0.04, wrapWidth=1.3, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -494,6 +494,17 @@ textbox_2 = visual.TextBox2(
 )
 errorN_key_resp_2 = keyboard.Keyboard()
 
+# Initialize components for Routine "askExperimenter"
+askExperimenterClock = core.Clock()
+instruct_surprise1_4 = visual.TextStim(win=win, name='instruct_surprise1_4',
+    text='Congradulations! \nYou completed the arrow game and answered the question!\n\nPlease do not proceed and let the experimenter you completed the game.\n\n\n',
+    font='Open Sans',
+    pos=(0, 0), height=0.04, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=0.0);
+instruct_surp1_key_resp_4 = keyboard.Keyboard()
+
 # Initialize components for Routine "surpriseInstruct"
 surpriseInstructClock = core.Clock()
 instruct_surprise1 = visual.TextStim(win=win, name='instruct_surprise1',
@@ -593,7 +604,7 @@ friendly_key_resp = keyboard.Keyboard()
 # Initialize components for Routine "errorComm_Instruct"
 errorComm_InstructClock = core.Clock()
 instruct_surprise1_3 = visual.TextStim(win=win, name='instruct_surprise1_3',
-    text='You will now begin a game in which you will be asked if you made an error/errors around the displayed face on the screen.\n\n\nFor example, if you think that you have made an error/errors around (before/during/after) the displayed face, you should select "I made an error around this face" as your response.\n\nPress right key to proceed.',
+    text='You will now begin a game in which you will be asked if you made an error/errors around the displayed face on the screen during the arrow game.\n\n\nFor example, if you think that you have made an error/errors around (before/during/after) the displayed face during the arrow game, you should select "I made an error around this face" as your response.\n\nPress right key to proceed.',
     font='Open Sans',
     pos=(0, 0), height=0.04, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
@@ -2658,6 +2669,100 @@ thisExp.addData('errorN_key_resp_2.started', errorN_key_resp_2.tStartRefresh)
 thisExp.addData('errorN_key_resp_2.stopped', errorN_key_resp_2.tStopRefresh)
 thisExp.nextEntry()
 # the Routine "errorNumbers_2" was not non-slip safe, so reset the non-slip timer
+routineTimer.reset()
+
+# ------Prepare to start Routine "askExperimenter"-------
+continueRoutine = True
+# update component parameters for each repeat
+instruct_surp1_key_resp_4.keys = []
+instruct_surp1_key_resp_4.rt = []
+_instruct_surp1_key_resp_4_allKeys = []
+# keep track of which components have finished
+askExperimenterComponents = [instruct_surprise1_4, instruct_surp1_key_resp_4]
+for thisComponent in askExperimenterComponents:
+    thisComponent.tStart = None
+    thisComponent.tStop = None
+    thisComponent.tStartRefresh = None
+    thisComponent.tStopRefresh = None
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+# reset timers
+t = 0
+_timeToFirstFrame = win.getFutureFlipTime(clock="now")
+askExperimenterClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
+frameN = -1
+
+# -------Run Routine "askExperimenter"-------
+while continueRoutine:
+    # get current time
+    t = askExperimenterClock.getTime()
+    tThisFlip = win.getFutureFlipTime(clock=askExperimenterClock)
+    tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    # *instruct_surprise1_4* updates
+    if instruct_surprise1_4.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # keep track of start time/frame for later
+        instruct_surprise1_4.frameNStart = frameN  # exact frame index
+        instruct_surprise1_4.tStart = t  # local t and not account for scr refresh
+        instruct_surprise1_4.tStartRefresh = tThisFlipGlobal  # on global time
+        win.timeOnFlip(instruct_surprise1_4, 'tStartRefresh')  # time at next scr refresh
+        instruct_surprise1_4.setAutoDraw(True)
+    
+    # *instruct_surp1_key_resp_4* updates
+    waitOnFlip = False
+    if instruct_surp1_key_resp_4.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # keep track of start time/frame for later
+        instruct_surp1_key_resp_4.frameNStart = frameN  # exact frame index
+        instruct_surp1_key_resp_4.tStart = t  # local t and not account for scr refresh
+        instruct_surp1_key_resp_4.tStartRefresh = tThisFlipGlobal  # on global time
+        win.timeOnFlip(instruct_surp1_key_resp_4, 'tStartRefresh')  # time at next scr refresh
+        instruct_surp1_key_resp_4.status = STARTED
+        # keyboard checking is just starting
+        waitOnFlip = True
+        win.callOnFlip(instruct_surp1_key_resp_4.clock.reset)  # t=0 on next screen flip
+        win.callOnFlip(instruct_surp1_key_resp_4.clearEvents, eventType='keyboard')  # clear events on next screen flip
+    if instruct_surp1_key_resp_4.status == STARTED and not waitOnFlip:
+        theseKeys = instruct_surp1_key_resp_4.getKeys(keyList=['8'], waitRelease=False)
+        _instruct_surp1_key_resp_4_allKeys.extend(theseKeys)
+        if len(_instruct_surp1_key_resp_4_allKeys):
+            instruct_surp1_key_resp_4.keys = _instruct_surp1_key_resp_4_allKeys[-1].name  # just the last key pressed
+            instruct_surp1_key_resp_4.rt = _instruct_surp1_key_resp_4_allKeys[-1].rt
+            # a response ends the routine
+            continueRoutine = False
+    
+    # check for quit (typically the Esc key)
+    if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in askExperimenterComponents:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "askExperimenter"-------
+for thisComponent in askExperimenterComponents:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+thisExp.addData('instruct_surprise1_4.started', instruct_surprise1_4.tStartRefresh)
+thisExp.addData('instruct_surprise1_4.stopped', instruct_surprise1_4.tStopRefresh)
+# check responses
+if instruct_surp1_key_resp_4.keys in ['', [], None]:  # No response was made
+    instruct_surp1_key_resp_4.keys = None
+thisExp.addData('instruct_surp1_key_resp_4.keys',instruct_surp1_key_resp_4.keys)
+if instruct_surp1_key_resp_4.keys != None:  # we had a response
+    thisExp.addData('instruct_surp1_key_resp_4.rt', instruct_surp1_key_resp_4.rt)
+thisExp.nextEntry()
+# the Routine "askExperimenter" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
 
 # ------Prepare to start Routine "surpriseInstruct"-------
