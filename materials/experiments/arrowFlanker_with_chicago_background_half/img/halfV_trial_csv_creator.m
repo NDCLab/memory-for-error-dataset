@@ -270,7 +270,7 @@ friendlyTable = table([trialFaces_for_surprise(:,1)],[trialFaces_for_surprise(:,
 friendlyTable = table2array(friendlyTable);
 friendlyTable = friendlyTable(randperm(size(friendlyTable, 1)), : ); % Shuffle the data randomly by rows.
 friendlyTable = array2table(friendlyTable);
-friendlyTable.Properties.VariableNames = {'Faces', 'new'};
+friendlyTable.Properties.VariableNames = {'surpriseFaces', 'new'};
 writetable(friendlyTable(1:height(friendlyTable)/2,:), "a_halfV_friendlyTable1.csv")
 writetable(friendlyTable((height(friendlyTable)/2)+1:end,:), "a_halfV_friendlyTable2.csv")
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
