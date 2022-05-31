@@ -11,7 +11,7 @@ clc % clear matlab command window
 
 %% Loading all the neutral Chicago faces. 
 %main_dir = '/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/img';
-main_dir = 'C:\Users\kihossei\Desktop\Github_repos\memory-for-error-dataset\materials\experiments\arrowFlanker_with_chicago_background_half\img';
+main_dir = 'C:\Users\kihossei\Documents\GitHub\memory-for-error-dataset\materials\experiments\arrowFlanker_with_chicago_background_half\img';
 faceData_location = [main_dir filesep 'neutralC']; %Location of stored faces (i.e., renders folder)
 cd(faceData_location)
 data_file_lists = dir; 
@@ -257,8 +257,7 @@ end
 for abrak2=1:length(trialFaces_for_surprise) % adding a second column that mentions  if this is a new face (i.e., foil). For old faces, we have "0" as true.
     trialFaces_for_surprise(abrak2,2) = '0'; % new?
 end
-%surpriseTable = table([foilFaces(:,1);trialFaces_for_surprise(:,1)],[foilFaces(:,2);trialFaces_for_surprise(:,2)]);
-surpriseTable = table([trialFaces_for_surprise(:,1)],[trialFaces_for_surprise(:,2)]);
+surpriseTable = table([foilFaces(:,1);trialFaces_for_surprise(:,1)],[foilFaces(:,2);trialFaces_for_surprise(:,2)]);
 surpriseTable = table2array(surpriseTable);
 surpriseTable = surpriseTable(randperm(size(surpriseTable, 1)), : ); % Shuffle the data randomly by rows.
 surpriseTable = array2table(surpriseTable);
@@ -266,7 +265,14 @@ surpriseTable.Properties.VariableNames = {'surpriseFaces', 'new'};
 writetable(surpriseTable(1:height(surpriseTable)/2,:), "a_halfV_surpriseTable1.csv")
 writetable(surpriseTable((height(surpriseTable)/2)+1:end,:), "a_halfV_surpriseTable2.csv")
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+friendlyTable = table([trialFaces_for_surprise(:,1)],[trialFaces_for_surprise(:,2)]);
+friendlyTable = table2array(friendlyTable);
+friendlyTable = friendlyTable(randperm(size(friendlyTable, 1)), : ); % Shuffle the data randomly by rows.
+friendlyTable = array2table(friendlyTable);
+friendlyTable.Properties.VariableNames = {'Faces', 'new'};
+writetable(friendlyTable(1:height(friendlyTable)/2,:), "a_halfV_friendlyTable1.csv")
+writetable(friendlyTable((height(friendlyTable)/2)+1:end,:), "a_halfV_friendlyTable2.csv")
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
