@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2022.1.3),
-    on May 31, 2022, at 11:41
+    on May 31, 2022, at 13:41
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -288,7 +288,7 @@ bigFace = visual.ImageStim(
     win=win,
     name='bigFace', 
     image='sin', mask=None, anchor='center',
-    ori=0.0, pos=(0, 0.0), size=(0.4267, .3),
+    ori=0.0, pos=(0, 0.0), size=[.3, .3],
     color=[1,1,1], colorSpace='rgb', opacity=0.85,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=-1.0)
@@ -393,7 +393,7 @@ bigFace_2 = visual.ImageStim(
     win=win,
     name='bigFace_2', 
     image='sin', mask=None, anchor='center',
-    ori=0.0, pos=(0, 0.0), size=(0.4267, .3),
+    ori=0.0, pos=(0, 0.0), size=(0.3, .3),
     color=[1,1,1], colorSpace='rgb', opacity=0.85,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=-1.0)
