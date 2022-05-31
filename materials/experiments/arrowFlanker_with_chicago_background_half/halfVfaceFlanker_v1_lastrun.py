@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2022.1.3),
-    on May 31, 2022, at 15:30
+    on May 31, 2022, at 17:11
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -288,7 +288,7 @@ bigFace = visual.ImageStim(
     win=win,
     name='bigFace', 
     image='sin', mask=None, anchor='center',
-    ori=0.0, pos=(0, 0.0), size=[0.4267753201396974, .3],
+    ori=0.0, pos=(0, 0.0), size=(0.4267, .3),
     color=[1,1,1], colorSpace='rgb', opacity=0.85,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=-1.0)
@@ -393,7 +393,7 @@ bigFace_2 = visual.ImageStim(
     win=win,
     name='bigFace_2', 
     image='sin', mask=None, anchor='center',
-    ori=0.0, pos=(0, 0.0), size=(0.4267753201396974, .3),
+    ori=0.0, pos=(0, 0.0), size=(0.4267, .3),
     color=[1,1,1], colorSpace='rgb', opacity=0.85,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=-1.0)
@@ -533,7 +533,7 @@ stimulus = visual.ImageStim(
     win=win,
     name='stimulus', units='height', 
     image='sin', mask=None, anchor='center',
-    ori=0.0, pos=(0, 0.2), size=(0.711292200232829, 0.5),
+    ori=0.0, pos=(0, 0.2), size=(0.5, 0.5),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=0.0)
@@ -547,7 +547,7 @@ instructsurpA1_right = visual.TextStim(win=win, name='instructsurpA1_right',
 instructsurpA2_left = visual.TextStim(win=win, name='instructsurpA2_left',
     text='',
     font='Open Sans',
-    pos=(-0.6, -0.03), height=0.025, wrapWidth=None, ori=0.0, 
+    pos=(-0.4, -0.03), height=0.025, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-2.0);
@@ -581,7 +581,7 @@ stimulus_2 = visual.ImageStim(
     win=win,
     name='stimulus_2', units='height', 
     image='sin', mask=None, anchor='center',
-    ori=0.0, pos=(0, 0.2), size=(0.711292200232829, 0.5),
+    ori=0.0, pos=(0, 0.2), size=(0.5, 0.5),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=0.0)
@@ -595,7 +595,7 @@ instructsurpA1_right_2 = visual.TextStim(win=win, name='instructsurpA1_right_2',
 instructsurpA2_left_2 = visual.TextStim(win=win, name='instructsurpA2_left_2',
     text='',
     font='Open Sans',
-    pos=(-0.6, -0.03), height=0.025, wrapWidth=None, ori=0.0, 
+    pos=(-0.4, -0.03), height=0.025, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-2.0);
@@ -629,7 +629,7 @@ stimulus_3 = visual.ImageStim(
     win=win,
     name='stimulus_3', units='height', 
     image='sin', mask=None, anchor='center',
-    ori=0.0, pos=(0, 0.2), size=(0.711292200232829, 0.5),
+    ori=0.0, pos=(0, 0.2), size=(0.5, 0.5),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=0.0)
@@ -643,7 +643,7 @@ instructsurpA1_right_3 = visual.TextStim(win=win, name='instructsurpA1_right_3',
 instructsurpA2_left_3 = visual.TextStim(win=win, name='instructsurpA2_left_3',
     text='',
     font='Open Sans',
-    pos=(-0.6, -0.03), height=0.025, wrapWidth=None, ori=0.0, 
+    pos=(-0.4, -0.03), height=0.025, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-2.0);
@@ -1299,7 +1299,7 @@ for thisComponent in instructInconLeftComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-prac_block_loop = data.TrialHandler(nReps=0, method='random', 
+prac_block_loop = data.TrialHandler(nReps=999, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('blockSelect_practice.csv'),
     seed=None, name='prac_block_loop')
@@ -1881,11 +1881,11 @@ for thisPrac_block_loop in prac_block_loop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0 repeats of 'prac_block_loop'
+# completed 999 repeats of 'prac_block_loop'
 
 
 # set up handler to look after randomisation of conditions etc
-task_block_loop = data.TrialHandler(nReps=0.0, method='random', 
+task_block_loop = data.TrialHandler(nReps=1.0, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('blockSelect.csv'),
     seed=None, name='task_block_loop')
@@ -2488,7 +2488,7 @@ for thisTask_block_loop in task_block_loop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0.0 repeats of 'task_block_loop'
+# completed 1.0 repeats of 'task_block_loop'
 
 
 # ------Prepare to start Routine "fixation1"-------
@@ -2860,7 +2860,7 @@ thisExp.nextEntry()
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-surprise_block_loop = data.TrialHandler(nReps=0.0, method='sequential', 
+surprise_block_loop = data.TrialHandler(nReps=1.0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions("surpriseBlock_select_"+expInfo['cb']+".xlsx"),
     seed=None, name='surprise_block_loop')
@@ -2997,7 +2997,7 @@ for thisSurprise_block_loop in surprise_block_loop:
         continueRoutine = True
         # update component parameters for each repeat
         stimulus.setImage(surpriseFaces)
-        instructsurpA1_right.setPos((0.6, -0.03))
+        instructsurpA1_right.setPos((0.4, -0.03))
         instructsurpA1_right.setText(instructsurpA1)
         instructsurpA2_left.setText(instructsurpA2)
         surprise_key_resp.keys = []
@@ -3119,7 +3119,7 @@ for thisSurprise_block_loop in surprise_block_loop:
     
     thisExp.nextEntry()
     
-# completed 0.0 repeats of 'surprise_block_loop'
+# completed 1.0 repeats of 'surprise_block_loop'
 
 
 # ------Prepare to start Routine "friendlyInstruct1"-------
@@ -3354,7 +3354,7 @@ for thisFriendly_block_loop in friendly_block_loop:
         continueRoutine = True
         # update component parameters for each repeat
         stimulus_2.setImage(surpriseFaces)
-        instructsurpA1_right_2.setPos((0.6, -0.03))
+        instructsurpA1_right_2.setPos((0.4, -0.03))
         instructsurpA1_right_2.setText(instructsurpA1)
         instructsurpA2_left_2.setText(instructsurpA2)
         friendly_key_resp.keys = []
@@ -3711,7 +3711,7 @@ for thisErrorComm_block_loop in errorComm_block_loop:
         continueRoutine = True
         # update component parameters for each repeat
         stimulus_3.setImage(surpriseFaces)
-        instructsurpA1_right_3.setPos((0.6, -0.03))
+        instructsurpA1_right_3.setPos((0.4, -0.03))
         instructsurpA1_right_3.setText(instructsurpA1)
         instructsurpA2_left_3.setText(instructsurpA2)
         friendly_key_resp_2.keys = []
