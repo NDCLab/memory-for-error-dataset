@@ -164,7 +164,7 @@ for(i in 1:length(datafiles_list)){
       num_errorFaces_reported_old <- num_errorFaces_reported_old + 1 # The number of error faces that they report as OLD 
     }
   }
-  num_errorFaces_reported_new <- committed_errors - num_errorFaces_reported_old # stores the # of error faces that the participant incorrectly identifies as new.
+  num_errorFaces_reported_new <- nrow(incong_errorDat) - num_errorFaces_reported_old # stores the # of error faces that the participant incorrectly identifies as new.
   num_corrFaces_reported_old <- 0  
   for (Jafa2 in 1:nrow(incong_corrDat)){
     temp_face <- incong_corrDat$straightFace[Jafa2]
@@ -191,7 +191,7 @@ for(i in 1:length(datafiles_list)){
       num_errorFaces_reported_friendly <- num_errorFaces_reported_friendly + 1 # The number of error faces that they report as friendly 
     }
   }
-  num_errorFaces_reported_unfriendly <- committed_errors - num_errorFaces_reported_friendly 
+  num_errorFaces_reported_unfriendly <- nrow(incong_errorDat) - num_errorFaces_reported_friendly 
   num_corrFaces_reported_friendly <- 0 
   for (salsal2 in 1:nrow(incong_corrDat)){
     temp_face <- incong_corrDat$straightFace[salsal2]
