@@ -89,12 +89,14 @@ for(i in 1:length(datafiles_list)){
   errorDat$task1_stim_keyResp.rt <- gsub(",.*","",errorDat$task1_stim_keyResp.rt) # removing the RT for the second response within the same trial.
   errorDat$task1_stim_keyResp.rt <- as.numeric(errorDat$task1_stim_keyResp.rt) # 
   errorDat <- subset(errorDat, complete.cases(errorDat$task1_stim_keyResp.rt))
+  incong_errorDat <- filter(errorDat, congruent ==0) # subset incongruent error trials
   corrDat <- filter(keep_rows_with_acc_vals, accuracy ==1) # subset correct trials
   corrDat$task1_stim_keyResp.rt <- gsub("[", "", corrDat$task1_stim_keyResp.rt, fixed = TRUE)
   corrDat$task1_stim_keyResp.rt <- gsub("]", "", corrDat$task1_stim_keyResp.rt, fixed = TRUE)
   corrDat$task1_stim_keyResp.rt <-  gsub(",.*","",corrDat$task1_stim_keyResp.rt)
   corrDat$task1_stim_keyResp.rt <- as.numeric(corrDat$task1_stim_keyResp.rt) # 
   corrDat <- subset(corrDat, complete.cases(corrDat$task1_stim_keyResp.rt))
+  
   
   #### For pre/post error/correct measures we need to have data from each block in a separate dataframe.
   # I need to add a column to keep_rows_with_acc_vals that shows that trial belongs to which block.
@@ -154,8 +156,8 @@ for(i in 1:length(datafiles_list)){
   # Let's keep only the surprise trials that have faces from error trials in the main task. Then, we will be able to easily use that smaller dataframe to calculate the number of OLD faces among error trials.
   # Loop over the faces from error trials.
   num_errorFaces_reported_old <- 0 # this is the number of error faces that they report as OLD and will be updated in the loop below:
-  for (Jafa in 1:nrow(errorDat)){
-    temp_face <- errorDat$straightFace[Jafa]
+  for (Jafa in 1:nrow(incong_errorDat)){
+    temp_face <- incong_errorDat$straightFace[Jafa]
     temp_for_surp <- filter(surpDat, surpriseFaces == temp_face)
     identified_old_correctly <- ifelse (temp_for_surp$newKey != temp_for_surp$surprise_key_resp.keys, 1, 0) #returns 1 when participant correctly identifies the face as OLD!
     if (identified_old_correctly == 1){
@@ -164,15 +166,15 @@ for(i in 1:length(datafiles_list)){
   }
   num_errorFaces_reported_new <- committed_errors - num_errorFaces_reported_old # stores the # of error faces that the participant incorrectly identifies as new.
   num_corrFaces_reported_old <- 0  
-  for (Jafa2 in 1:nrow(corrDat)){
-    temp_face <- corrDat$straightFace[Jafa2]
+  for (Jafa2 in 1:nrow(incong_corrDat)){
+    temp_face <- incong_corrDat$straightFace[Jafa2]
     temp_for_surp <- filter(surpDat, surpriseFaces == temp_face) # find the error face in the surpDat
     identified_old_correctly <- ifelse (temp_for_surp$newKey != temp_for_surp$surprise_key_resp.keys, 1, 0) #returns 1 when participant correctly identifies the face as OLD!
     if (identified_old_correctly == 1){
       num_corrFaces_reported_old <- num_corrFaces_reported_old + 1 # The number of correct faces that they report as OLD 
     }
   }
-  num_corrFaces_reported_new <- nrow(corrDat) - num_corrFaces_reported_old # The number of correct faces that they report as new
+  num_corrFaces_reported_new <- nrow(incong_corrDat) - num_corrFaces_reported_old # The number of correct faces that they report as new
   ######################################
   #SECTION 3: Friendly Task
   friendlyDat <- subset(remove_prac_trials, complete.cases(remove_prac_trials$FriendlyKey)) # keeps only the rows from the friendly task 
@@ -181,8 +183,8 @@ for(i in 1:length(datafiles_list)){
   friendlyDat <- subset(friendlyDat, complete.cases(friendlyDat$surpriseFaces))
   num_errorFaces_reported_friendly <- 0 # this is the number of error faces that they report as OLD and will be updated in the loop below:
   # Loop over the faces from error trials.
-  for (salsal in 1:nrow(errorDat)){
-    temp_face <- errorDat$straightFace[salsal]
+  for (salsal in 1:nrow(incong_errorDat)){
+    temp_face <- incong_errorDat$straightFace[salsal]
     temp_for_friendly <- filter(friendlyDat, surpriseFaces == temp_face) # find the error face in the friendlyDat
     identified_friendly <- ifelse (temp_for_friendly$FriendlyKey == temp_for_friendly$friendly_key_resp.keys, 1, 0) #returns 1 when participant identifies the face as friendly!
     if (identified_friendly == 1){
@@ -191,15 +193,15 @@ for(i in 1:length(datafiles_list)){
   }
   num_errorFaces_reported_unfriendly <- committed_errors - num_errorFaces_reported_friendly 
   num_corrFaces_reported_friendly <- 0 
-  for (salsal2 in 1:nrow(corrDat)){
-    temp_face <- corrDat$straightFace[salsal2]
+  for (salsal2 in 1:nrow(incong_corrDat)){
+    temp_face <- incong_corrDat$straightFace[salsal2]
     temp_for_friendly <- filter(friendlyDat, surpriseFaces == temp_face) # find the error face in the friendlyDat
     identified_friendly <- ifelse (temp_for_friendly$FriendlyKey == temp_for_friendly$friendly_key_resp.keys, 1, 0) #returns 1 when participant identifies the face as friendly!
     if (identified_friendly == 1){
       num_corrFaces_reported_friendly <- num_corrFaces_reported_friendly + 1 # The number of error faces that they report as OLD 
     }
   }
-  num_corrFaces_reported_unfriendly <- nrow(corrDat) - num_corrFaces_reported_friendly 
+  num_corrFaces_reported_unfriendly <- nrow(incong_corrDat) - num_corrFaces_reported_friendly 
   ######################################
   #Section 4: Do they remember post-error faces?
   # I should loop over the data frame that has only the main task with accuracy vals, i.e., keep_rows_with_acc_vals

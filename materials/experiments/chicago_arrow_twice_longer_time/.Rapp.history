@@ -1,0 +1,90 @@
+install.packages("languageserver")
+library(tidyverse)#
+#Working directory should be the Psychopy experiment directory. #
+setwd("/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half")#
+#
+# Defining the input and output folders.#
+input_path <- "~/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/data"#
+output_path <- "~/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/stat_output"#
+today <- Sys.Date()#
+today <- format(today, "%Y%m%d")#
+proc_fileName <- paste(today, "_mfeProj.csv", sep ="", collapse = NULL) # output filename#
+#
+#identify data files
+#identify data files #
+datafiles_list <- c() # an empty list that will be filled in the next for loop! #
+csvSelect = list.files(input_path, pattern = "*.csv") # listing only csv files#
+for (lisar1 in 1:length(csvSelect)){#
+  temp_for_file <- ifelse (str_detect(csvSelect[lisar1], "face_flanker_v1", negate = FALSE), 1, 0)#
+  if (temp_for_file == 1){#
+    temp_list <- csvSelect[lisar1]#
+    datafiles_list <- c(datafiles_list, temp_list)#
+  }#
+}
+csvSelect
+#identify data files #
+datafiles_list <- c() # an empty list that will be filled in the next for loop! #
+csvSelect = list.files(input_path, pattern = "*.csv") # listing only csv files#
+for (lisar1 in 1:length(csvSelect)){#
+  temp_for_file <- ifelse (str_detect(csvSelect[lisar1], "face_flanker_v1", negate = FALSE), 1, 0)#
+  if (temp_for_file == 1){#
+    temp_list <- csvSelect[lisar1]#
+    datafiles_list <- c(datafiles_list, temp_list)#
+  }#
+}
+library(tidyverse)#
+#Working directory should be the Psychopy experiment directory. #
+setwd("/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half")#
+#
+# Defining the input and output folders.#
+input_path <- "~/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/data"#
+output_path <- "~/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/stat_output"#
+today <- Sys.Date()#
+today <- format(today, "%Y%m%d")#
+proc_fileName <- paste(today, "_mfeProj.csv", sep ="", collapse = NULL) # output filename#
+#
+#identify data files #
+datafiles_list <- c() # an empty list that will be filled in the next for loop! #
+csvSelect = list.files(input_path, pattern = "*.csv") # listing only csv files#
+for (lisar1 in 1:length(csvSelect)){#
+  temp_for_file <- ifelse (str_detect(csvSelect[lisar1], "face_flanker_v1", negate = FALSE), 1, 0)#
+  if (temp_for_file == 1){#
+    temp_list <- csvSelect[lisar1]#
+    datafiles_list <- c(datafiles_list, temp_list)#
+  }#
+}
+csvSelect = list.files(input_path, pattern = "*.csv") # listing only csv files
+library(tidyverse)#
+#Working directory should be the Psychopy experiment directory. #
+setwd("/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half")#
+#
+# Defining the input and output folders.#
+input_path <- "~/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/data"#
+output_path <- "~/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/stat_output"#
+today <- Sys.Date()#
+today <- format(today, "%Y%m%d")#
+proc_fileName <- paste(today, "_mfeProj.csv", sep ="", collapse = NULL) # output filename#
+#
+#identify data files #
+datafiles_list <- c() # an empty list that will be filled in the next for loop! #
+csvSelect = list.files(input_path, pattern = "*.csv") # listing only csv files#
+for (lisar1 in 1:length(csvSelect)){#
+  temp_for_file <- ifelse (str_detect(csvSelect[lisar1], "face_flanker_v1", negate = FALSE), 1, 0)#
+  if (temp_for_file == 1){#
+    temp_list <- csvSelect[lisar1]#
+    datafiles_list <- c(datafiles_list, temp_list)#
+  }#
+}
+library(tidyverse)#
+#Working directory should be the Psychopy experiment directory. #
+setwd("/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half")#
+#
+# Defining the input and output folders.#
+input_path <- "~/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/data"#
+output_path <- "~/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/stat_output"#
+today <- Sys.Date()#
+today <- format(today, "%Y%m%d")#
+proc_fileName <- paste(today, "_mfeProj.csv", sep ="", collapse = NULL) # output filename
+datafiles_list <- c() # an empty list that will be filled in the next for loop! #
+csvSelect = list.files(input_path, pattern = "*.csv") # listing only csv files
+csvSelect
