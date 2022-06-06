@@ -1,0 +1,20 @@
+0.7356 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+7.0132 	INFO 	Loaded monitor calibration from ['2021_09_14 11:10']
+7.0140 	ERROR 	'0.5000, 0.5000, 0.5000' is not a valid rgb color
+10.3506 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000024532BFCBE0>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000024532C50C18>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+10.3509 	EXP 	window1: mouseVisible = True
+10.3509 	EXP 	window1: recordFrameIntervals = False
+10.3909 	EXP 	window1: recordFrameIntervals = True
+10.4368 	DEBUG 	Screen (0) actual frame rate measured at 240.52
+10.4368 	EXP 	window1: recordFrameIntervals = False
+10.6035 	INFO 	keyboard.Keyboard is using ptb backend.
+10.6039 	INFO 	Loaded monitor calibration from ['2021_09_14 11:10']
+10.6042 	DEPRECATION 	'0.5000, 0.5000, 0.5000' is not a valid rgb color
+13.9259 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000024532BFCBE0>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000002453B0E9048>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+13.9263 	EXP 	window1: mouseVisible = True
+13.9264 	EXP 	window1: mouseVisible = False
+14.9736 	EXP 	window1: mouseVisible = True
+14.9964 	EXP 	window1: mouseVisible = True
+14.9965 	DEBUG 	Saving data for face_flanker_v1 ExperimentHandler
+15.0379 	INFO 	saved data to D:\twice_longer_with_triggers\data/999_face_flanker_v1_2022_Jun_06_1546.psydat
+15.0684 	INFO 	saved data to 'D:\\twice_longer_with_triggers\\data/999_face_flanker_v1_2022_Jun_06_1546.csv'

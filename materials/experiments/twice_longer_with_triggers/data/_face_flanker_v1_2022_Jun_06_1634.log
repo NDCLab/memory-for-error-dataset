@@ -1,0 +1,229 @@
+0.7446 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+3.4640 	INFO 	Loaded monitor calibration from ['2021_09_14 11:10']
+3.4644 	ERROR 	'0.5000, 0.5000, 0.5000' is not a valid rgb color
+6.7744 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001BA593AEB00>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000001BA59400B00>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+6.7749 	EXP 	window1: mouseVisible = True
+6.7750 	EXP 	window1: recordFrameIntervals = False
+6.8150 	EXP 	window1: recordFrameIntervals = True
+6.8610 	DEBUG 	Screen (0) actual frame rate measured at 240.57
+6.8611 	EXP 	window1: recordFrameIntervals = False
+7.0152 	INFO 	keyboard.Keyboard is using ptb backend.
+7.0155 	EXP 	window1: mouseVisible = False
+7.2068 	EXP 	Created welcome_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='welcome_text', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1.3)
+7.2068 	INFO 	keyboard.Keyboard is using ptb backend.
+7.2142 	EXP 	Created instructRight_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instructRight_text', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1.3)
+7.2556 	EXP 	Created instructRight_centerImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='img/rightArrow.png', interpolate=True, mask=None, maskParams=None, name='instructRight_centerImg', opacity=1, ori=0.0, pos=array([ 0. , -0.3]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+7.2927 	EXP 	Created instructRight_rightImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='img/rightArrow.png', interpolate=True, mask=None, maskParams=None, name='instructRight_rightImg1', opacity=1, ori=0.0, pos=array([ 0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+7.3295 	EXP 	Created instructRight_leftImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='img/rightArrow.png', interpolate=True, mask=None, maskParams=None, name='instructRight_leftImg1', opacity=1, ori=0.0, pos=array([-0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+7.3296 	INFO 	keyboard.Keyboard is using ptb backend.
+7.3641 	EXP 	Created instructLeft_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instructLeft_text', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1.3)
+7.4012 	EXP 	Created instructLeft_centerImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='img/leftArrow.png', interpolate=True, mask=None, maskParams=None, name='instructLeft_centerImg', opacity=1, ori=0.0, pos=array([ 0. , -0.3]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+7.4376 	EXP 	Created instructLeft_rightImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='img/leftArrow.png', interpolate=True, mask=None, maskParams=None, name='instructLeft_rightImg1', opacity=1, ori=0.0, pos=array([ 0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+7.4746 	EXP 	Created instructLeft_leftImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='img/leftArrow.png', interpolate=True, mask=None, maskParams=None, name='instructLeft_leftImg1', opacity=1, ori=0.0, pos=array([-0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+7.4746 	INFO 	keyboard.Keyboard is using ptb backend.
+7.4903 	EXP 	Created instructInconRight_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instructInconRight_text', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1.3)
+7.5142 	EXP 	Created instructIncon_centerImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='img/rightArrow.png', interpolate=True, mask=None, maskParams=None, name='instructIncon_centerImg', opacity=1, ori=0.0, pos=array([ 0. , -0.3]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+7.5379 	EXP 	Created instructIncon_rightImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='img/leftArrow.png', interpolate=True, mask=None, maskParams=None, name='instructIncon_rightImg1', opacity=1, ori=0.0, pos=array([ 0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+7.5613 	EXP 	Created instructIncon_leftImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='img/leftArrow.png', interpolate=True, mask=None, maskParams=None, name='instructIncon_leftImg1', opacity=1, ori=0.0, pos=array([-0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+7.5613 	INFO 	keyboard.Keyboard is using ptb backend.
+7.5685 	EXP 	Created instructInconLeft_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instructInconLeft_text', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1.3)
+7.5924 	EXP 	Created instructInconLeft_centerImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='img/leftArrow.png', interpolate=True, mask=None, maskParams=None, name='instructInconLeft_centerImg', opacity=1, ori=0.0, pos=array([ 0. , -0.3]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+7.6175 	EXP 	Created instructInconLeft_rightImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='img/rightArrow.png', interpolate=True, mask=None, maskParams=None, name='instructInconLeft_rightImg1', opacity=1, ori=0.0, pos=array([ 0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+7.6418 	EXP 	Created instructInconLeft_leftImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='img/rightArrow.png', interpolate=True, mask=None, maskParams=None, name='instructInconLeft_leftImg1', opacity=1, ori=0.0, pos=array([-0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+7.6418 	INFO 	keyboard.Keyboard is using ptb backend.
+7.6521 	EXP 	Created prac_blockText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='prac_blockText', opacity=1, ori=0.0, pos=array([0. , 0.3]), rgb=UNKNOWN, text='Practice', units='height', win=Window(...), wrapWidth=1.3)
+7.6650 	EXP 	Created prac_reminder_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='prac_reminder_text', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1.3)
+7.6650 	INFO 	keyboard.Keyboard is using ptb backend.
+7.6680 	EXP 	Created initFixation_img = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='initFixation_img', opacity=1, ori=0.0, pos=array([ 0.   , -0.015]), size=array([0.26, 0.22]), texRes=512, units='height', win=Window(...))
+7.6708 	EXP 	Created bigFace = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='bigFace', opacity=0.85, ori=0.0, pos=array([0., 0.]), size=array([0.4267, 0.3   ]), texRes=128.0, units='height', win=Window(...))
+7.6736 	EXP 	Created cover_background_2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='cover_background_2', opacity=1, ori=0.0, pos=array([ 0.   , -0.015]), size=array([0.26, 0.22]), texRes=128.0, units='height', win=Window(...))
+7.6764 	EXP 	Created prac_centerImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='prac_centerImg', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+7.6793 	EXP 	Created prac_rightImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='prac_rightImg1', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+7.6821 	EXP 	Created prac_leftImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='prac_leftImg1', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+7.6850 	EXP 	Created prac_fixImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='prac_fixImg', opacity=1, ori=0.0, pos=array([ 0.   , -0.015]), size=array([0.26, 0.22]), texRes=512, units='height', win=Window(...))
+7.6850 	INFO 	keyboard.Keyboard is using ptb backend.
+7.6861 	EXP 	Created prac_blockFeed_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='prac_blockFeed_text', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1.3)
+7.6891 	EXP 	Created prac_pressContinue = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='prac_pressContinue', opacity=1, ori=0.0, pos=array([ 0. , -0.3]), rgb=UNKNOWN, text='Press the right key', units='height', win=Window(...), wrapWidth=1.3)
+7.6891 	INFO 	keyboard.Keyboard is using ptb backend.
+7.6902 	EXP 	Created task_blockText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='task_blockText', opacity=1, ori=0.0, pos=array([0. , 0.3]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1.3)
+7.6993 	EXP 	Created task_blockReminders_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='task_blockReminders_text', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1.3)
+7.6993 	INFO 	keyboard.Keyboard is using ptb backend.
+7.7023 	EXP 	Created initFixation_img = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='initFixation_img', opacity=1, ori=0.0, pos=array([ 0.   , -0.015]), size=array([0.26, 0.22]), texRes=512, units='height', win=Window(...))
+7.7052 	EXP 	Created bigFace_2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='bigFace_2', opacity=0.85, ori=0.0, pos=array([0., 0.]), size=array([0.4267, 0.3   ]), texRes=128.0, units='height', win=Window(...))
+7.7498 	EXP 	Created cover_background = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='img/cover_background.png', interpolate=True, mask=None, maskParams=None, name='cover_background', opacity=1, ori=0.0, pos=array([ 0.   , -0.015]), size=array([0.26, 0.22]), texRes=128.0, units='height', win=Window(...))
+7.7527 	EXP 	Created task_centerImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='task_centerImg', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+7.7556 	EXP 	Created task_rightImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='task_rightImg1', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+7.7585 	EXP 	Created task_leftImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='task_leftImg1', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+7.7615 	EXP 	Created task_fixImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='task_fixImg', opacity=1, ori=0.0, pos=array([ 0.   , -0.015]), size=array([0.26, 0.22]), texRes=512, units='height', win=Window(...))
+7.7615 	INFO 	keyboard.Keyboard is using ptb backend.
+7.7630 	EXP 	Created task_blockFeed_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.12, italic=False, languageStyle='LTR', name='task_blockFeed_text', opacity=1, ori=0, pos=array([0. , 0.1]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1.8)
+7.7640 	EXP 	Created task_blockFeed_text2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='task_blockFeed_text2', opacity=1, ori=0, pos=array([ 0. , -0.3]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1.3)
+7.7640 	INFO 	keyboard.Keyboard is using ptb backend.
+7.7695 	EXP 	Created fix = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fix', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+7.7877 	EXP 	Created errorNumbers_text_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='errorNumbers_text_2', opacity=1, ori=0.0, pos=array([0.  , 0.12]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+7.7880 	DEPRECATION 	'-1.0000, -1.0000, -1.0000' is not a valid rgb color
+7.7959 	DEPRECATION 	'-1.0000, -1.0000, -1.0000' is not a valid rgb color
+7.7961 	DEPRECATION 	'1.0000, 1.0000, 1.0000' is not a valid rgb color
+7.7969 	DEPRECATION 	'1.0000, 1.0000, 1.0000' is not a valid rgb color
+7.7971 	DEPRECATION 	'-1.0000, -1.0000, -1.0000' is not a valid rgb color
+7.7975 	DEPRECATION 	'1.0000, 1.0000, 1.0000' is not a valid rgb color
+7.7981 	INFO 	keyboard.Keyboard is using ptb backend.
+7.8088 	EXP 	Created botherRate_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='botherRate_text', opacity=1, ori=0.0, pos=array([0.  , 0.12]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+7.8091 	DEPRECATION 	'-1.0000, -1.0000, -1.0000' is not a valid rgb color
+7.8164 	DEPRECATION 	'-1.0000, -1.0000, -1.0000' is not a valid rgb color
+7.8166 	DEPRECATION 	'1.0000, 1.0000, 1.0000' is not a valid rgb color
+7.8169 	DEPRECATION 	'1.0000, 1.0000, 1.0000' is not a valid rgb color
+7.8171 	DEPRECATION 	'-1.0000, -1.0000, -1.0000' is not a valid rgb color
+7.8174 	DEPRECATION 	'1.0000, 1.0000, 1.0000' is not a valid rgb color
+7.8180 	INFO 	keyboard.Keyboard is using ptb backend.
+7.8345 	EXP 	Created instruct_surprise1_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instruct_surprise1_4', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+7.8345 	INFO 	keyboard.Keyboard is using ptb backend.
+7.8479 	EXP 	Created instruct_surprise1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instruct_surprise1', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+7.8479 	INFO 	keyboard.Keyboard is using ptb backend.
+7.8489 	EXP 	Created instructMainTask_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instructMainTask_text', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1.3)
+7.8489 	INFO 	keyboard.Keyboard is using ptb backend.
+7.8513 	EXP 	Created stimulus = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='stimulus', opacity=1, ori=0.0, pos=array([0. , 0.2]), size=array([0.5, 0.5]), texRes=128.0, units='height', win=Window(...))
+7.8526 	EXP 	Created instructsurpA1_right = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.025, italic=False, languageStyle='LTR', name='instructsurpA1_right', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+7.8536 	EXP 	Created instructsurpA2_left = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.025, italic=False, languageStyle='LTR', name='instructsurpA2_left', opacity=1, ori=0.0, pos=array([-0.4 , -0.03]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+7.8537 	INFO 	keyboard.Keyboard is using ptb backend.
+7.8629 	EXP 	Created instruct_surprise1_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instruct_surprise1_2', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+7.8629 	INFO 	keyboard.Keyboard is using ptb backend.
+7.8640 	EXP 	Created instructMainTask_text_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instructMainTask_text_2', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1.3)
+7.8640 	INFO 	keyboard.Keyboard is using ptb backend.
+7.8663 	EXP 	Created stimulus_2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='stimulus_2', opacity=1, ori=0.0, pos=array([0. , 0.2]), size=array([0.5, 0.5]), texRes=128.0, units='height', win=Window(...))
+7.8673 	EXP 	Created instructsurpA1_right_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.025, italic=False, languageStyle='LTR', name='instructsurpA1_right_2', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+7.8683 	EXP 	Created instructsurpA2_left_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.025, italic=False, languageStyle='LTR', name='instructsurpA2_left_2', opacity=1, ori=0.0, pos=array([-0.4 , -0.03]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+7.8683 	INFO 	keyboard.Keyboard is using ptb backend.
+7.8748 	EXP 	Created finishMessage_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='finishMessage_text', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='Thank you for your participation!', units='height', win=Window(...), wrapWidth=1.3)
+7.9072 	EXP 	textbox_2: autoLog = True
+7.9072 	EXP 	textbox_3: autoLog = True
+7.9072 	EXP 	welcome_text: autoDraw = True
+8.9057 	DATA 	Keypress: 8
+8.9084 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+8.9085 	DEBUG 	Uploading Texture Font fontname to graphics card
+8.9164 	DEBUG 	Upload of Texture Font fontname complete
+8.9504 	EXP 	welcome_text: autoDraw = False
+8.9504 	EXP 	instructRight_text: autoDraw = True
+8.9504 	EXP 	instructRight_centerImg: autoDraw = True
+8.9504 	EXP 	instructRight_rightImg1: autoDraw = True
+8.9504 	EXP 	instructRight_leftImg1: autoDraw = True
+9.2124 	DATA 	Keypress: 8
+9.2242 	EXP 	instructRight_text: autoDraw = False
+9.2242 	EXP 	instructRight_centerImg: autoDraw = False
+9.2242 	EXP 	instructRight_rightImg1: autoDraw = False
+9.2242 	EXP 	instructRight_leftImg1: autoDraw = False
+9.2242 	EXP 	instructLeft_text: autoDraw = True
+9.2242 	EXP 	instructLeft_centerImg: autoDraw = True
+9.2242 	EXP 	instructLeft_rightImg1: autoDraw = True
+9.2242 	EXP 	instructLeft_leftImg1: autoDraw = True
+9.4767 	DATA 	Keypress: 1
+9.4788 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.4788 	DEBUG 	Uploading Texture Font fontname to graphics card
+9.4796 	DEBUG 	Upload of Texture Font fontname complete
+9.4936 	EXP 	instructLeft_text: autoDraw = False
+9.4936 	EXP 	instructLeft_centerImg: autoDraw = False
+9.4936 	EXP 	instructLeft_rightImg1: autoDraw = False
+9.4936 	EXP 	instructLeft_leftImg1: autoDraw = False
+9.4936 	EXP 	instructInconRight_text: autoDraw = True
+9.4936 	EXP 	instructIncon_centerImg: autoDraw = True
+9.4936 	EXP 	instructIncon_rightImg1: autoDraw = True
+9.4936 	EXP 	instructIncon_leftImg1: autoDraw = True
+9.6516 	DATA 	Keypress: 8
+9.6545 	EXP 	instructInconRight_text: autoDraw = False
+9.6545 	EXP 	instructIncon_centerImg: autoDraw = False
+9.6545 	EXP 	instructIncon_rightImg1: autoDraw = False
+9.6545 	EXP 	instructIncon_leftImg1: autoDraw = False
+9.6545 	EXP 	instructInconLeft_text: autoDraw = True
+9.6545 	EXP 	instructInconLeft_centerImg: autoDraw = True
+9.6545 	EXP 	instructInconLeft_rightImg1: autoDraw = True
+9.6545 	EXP 	instructInconLeft_leftImg1: autoDraw = True
+9.9100 	DEBUG 	Read csv file with pandas: blockSelect_practice.csv
+9.9112 	DEBUG 	Clearing unnamed columns from blockSelect_practice.csv
+9.9113 	EXP 	Imported blockSelect_practice.csv as conditions, 1 conditions, 1 params
+9.9116 	EXP 	Created sequence: random, trialTypes=1, nReps=0, seed=None
+9.9127 	DEBUG 	Read csv file with pandas: blockSelect.csv
+9.9132 	DEBUG 	Clearing unnamed columns from blockSelect.csv
+9.9134 	EXP 	Imported blockSelect.csv as conditions, 5 conditions, 1 params
+9.9135 	EXP 	Created sequence: random, trialTypes=5, nReps=0, seed=None
+9.9137 	DATA 	Keypress: 1
+9.9185 	EXP 	instructInconLeft_text: autoDraw = False
+9.9185 	EXP 	instructInconLeft_centerImg: autoDraw = False
+9.9185 	EXP 	instructInconLeft_rightImg1: autoDraw = False
+9.9185 	EXP 	instructInconLeft_leftImg1: autoDraw = False
+9.9185 	EXP 	fix: autoDraw = True
+10.0544 	DATA 	Keypress: 8
+10.3668 	DATA 	Keypress: 8
+10.4195 	EXP 	fix: autoDraw = False
+10.4195 	EXP 	errorNumbers_text_2: autoDraw = True
+10.4195 	EXP 	textbox_2: autoDraw = True
+10.7544 	DATA 	Keypress: 1
+11.0359 	DATA 	Keypress: 8
+11.3694 	DATA 	Keypress: 8
+12.8349 	DATA 	Keypress: space
+12.8359 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.8366 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+12.8367 	DEBUG 	Uploading Texture Font fontname to graphics card
+12.8371 	DEBUG 	Upload of Texture Font fontname complete
+12.8438 	EXP 	errorNumbers_text_2: autoDraw = False
+12.8438 	EXP 	textbox_2: autoDraw = False
+12.8438 	EXP 	botherRate_text: autoDraw = True
+12.8438 	EXP 	textbox_3: autoDraw = True
+14.9603 	DATA 	Keypress: space
+14.9702 	EXP 	botherRate_text: autoDraw = False
+14.9702 	EXP 	textbox_3: autoDraw = False
+14.9702 	EXP 	instruct_surprise1_4: autoDraw = True
+16.4129 	DATA 	Keypress: space
+17.6875 	DATA 	Keypress: 8
+17.6972 	EXP 	instruct_surprise1_4: autoDraw = False
+17.6972 	EXP 	instruct_surprise1: autoDraw = True
+20.7296 	DEBUG 	Read excel file with openpyxl: surpriseBlock_select_A.xlsx
+20.7299 	EXP 	Imported surpriseBlock_select_A.xlsx as conditions, 2 conditions, 5 params
+20.7302 	EXP 	Created sequence: sequential, trialTypes=2, nReps=1, seed=None
+20.7304 	EXP 	New trial (rep=0, index=0): {'whichSurpriseBlock': 'a_halfV_surpriseTable1.csv', 'instructsurpA1': 'OLD - Right Key', 'instructsurpA2': 'NEW - Left Key', 'newKey': 'left', 'taskTextSource': 'In this round, press Right key when the face is OLD and the left key when it is new.\n\nTo get ready, rest your right and left index fingers on the right and left buttons, then press the right button when you are ready to begin.'}
+20.7433 	DATA 	Keypress: 8
+20.7453 	EXP 	instruct_surprise1: autoDraw = False
+20.7453 	EXP 	instructMainTask_text: text = 'In this round, press Right key when the face is OLD and the left key when it is new.\n\nTo get ready, rest your right and left index fingers on the right and left buttons, then press the right button when you are ready to begin.'
+20.7453 	EXP 	instructMainTask_text: autoDraw = True
+21.6740 	DEBUG 	Read csv file with pandas: a_halfV_surpriseTable1.csv
+21.6746 	DEBUG 	Clearing unnamed columns from a_halfV_surpriseTable1.csv
+21.6761 	EXP 	Imported a_halfV_surpriseTable1.csv as conditions, 120 conditions, 2 params
+21.6765 	EXP 	Created sequence: random, trialTypes=120, nReps=1, seed=None
+21.6767 	EXP 	New trial (rep=0, index=0): OrderedDict([('surpriseFaces', 'img/neutralC/CFD-BF-024-002-N.jpg'), ('new', 1)])
+21.7598 	DATA 	Keypress: 8
+21.7639 	EXP 	instructMainTask_text: autoDraw = False
+21.7639 	EXP 	stimulus: image = 'img/neutralC/CFD-BF-024-002-N.jpg'
+21.7639 	EXP 	instructsurpA1_right: pos = array([ 0.4 , -0.03])
+21.7639 	EXP 	instructsurpA1_right: text = 'OLD - Right Key'
+21.7639 	EXP 	instructsurpA2_left: text = 'NEW - Left Key'
+21.7639 	EXP 	stimulus: autoDraw = True
+21.7639 	EXP 	instructsurpA1_right: autoDraw = True
+21.7639 	EXP 	instructsurpA2_left: autoDraw = True
+29.9767 	EXP 	New trial (rep=0, index=1): OrderedDict([('surpriseFaces', 'img/neutralC/CFD-MM-322-002-N.jpg'), ('new', 0)])
+30.0361 	DATA 	Keypress: 8
+30.0405 	EXP 	stimulus: autoDraw = False
+30.0405 	EXP 	instructsurpA1_right: autoDraw = False
+30.0405 	EXP 	instructsurpA2_left: autoDraw = False
+30.0405 	EXP 	stimulus: image = 'img/neutralC/CFD-MM-322-002-N.jpg'
+30.0405 	EXP 	instructsurpA1_right: pos = array([ 0.4 , -0.03])
+30.0405 	EXP 	instructsurpA1_right: text = 'OLD - Right Key'
+30.0405 	EXP 	instructsurpA2_left: text = 'NEW - Left Key'
+30.0405 	EXP 	stimulus: autoDraw = True
+30.0405 	EXP 	instructsurpA1_right: autoDraw = True
+30.0405 	EXP 	instructsurpA2_left: autoDraw = True
+43.9133 	DATA 	Keypress: 1
+43.9220 	EXP 	New trial (rep=0, index=2): OrderedDict([('surpriseFaces', 'img/neutralC/CFD-WM-025-002-N.jpg'), ('new', 0)])
+44.0122 	EXP 	stimulus: autoDraw = False
+44.0122 	EXP 	instructsurpA1_right: autoDraw = False
+44.0122 	EXP 	instructsurpA2_left: autoDraw = False
+44.0122 	EXP 	stimulus: image = 'img/neutralC/CFD-WM-025-002-N.jpg'
+44.0122 	EXP 	instructsurpA1_right: pos = array([ 0.4 , -0.03])
+44.0122 	EXP 	instructsurpA1_right: text = 'OLD - Right Key'
+44.0122 	EXP 	instructsurpA2_left: text = 'NEW - Left Key'
+44.0122 	EXP 	stimulus: autoDraw = True
+44.0122 	EXP 	instructsurpA1_right: autoDraw = True
+44.0122 	EXP 	instructsurpA2_left: autoDraw = True
+55.4956 	DATA 	Keypress: escape
+58.1472 	EXP 	window1: mouseVisible = True
+58.1473 	DEBUG 	Saving data for face_flanker_v1 ExperimentHandler
+58.1776 	INFO 	saved data to D:\twice_longer_with_triggers\data/_face_flanker_v1_2022_Jun_06_1634.psydat
+58.2105 	INFO 	saved data to 'D:\\twice_longer_with_triggers\\data/_face_flanker_v1_2022_Jun_06_1634.csv'
