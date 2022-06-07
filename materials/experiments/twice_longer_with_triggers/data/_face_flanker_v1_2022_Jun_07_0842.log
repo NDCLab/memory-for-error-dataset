@@ -1,0 +1,15 @@
+0.7505 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+3.4351 	INFO 	Loaded monitor calibration from ['2021_09_14 11:10']
+3.4357 	ERROR 	'0.5000, 0.5000, 0.5000' is not a valid rgb color
+6.9126 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x000002193FCCFA20>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000002193FD209E8>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+6.9131 	EXP 	window1: mouseVisible = True
+6.9132 	EXP 	window1: recordFrameIntervals = False
+6.9516 	EXP 	window1: recordFrameIntervals = True
+6.9972 	DEBUG 	Screen (0) actual frame rate measured at 242.41
+6.9973 	EXP 	window1: recordFrameIntervals = False
+7.1688 	INFO 	keyboard.Keyboard is using ptb backend.
+7.1692 	EXP 	window1: mouseVisible = False
+9.0156 	EXP 	window1: mouseVisible = True
+9.0224 	DEBUG 	Saving data for face_flanker_v1 ExperimentHandler
+9.0583 	INFO 	saved data to D:\twice_longer_with_triggers\data/_face_flanker_v1_2022_Jun_07_0842.psydat
+9.0862 	INFO 	saved data to 'D:\\twice_longer_with_triggers\\data/_face_flanker_v1_2022_Jun_07_0842.csv'

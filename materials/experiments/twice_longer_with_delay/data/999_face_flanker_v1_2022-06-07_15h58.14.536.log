@@ -1,0 +1,14 @@
+2.3310 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+11.8687 	INFO 	Loaded monitor calibration from ['2022_06_03 06:43']
+11.8699 	ERROR 	'0.5000, 0.5000, 0.5000' is not a valid rgb color
+13.3897 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x7fab62407580>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x7fab61d6ea30>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+13.3900 	EXP 	window1: mouseVisible = True
+13.3901 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+13.3901 	EXP 	window1: recordFrameIntervals = False
+13.5557 	EXP 	window1: recordFrameIntervals = True
+13.7391 	EXP 	Screen (0) actual frame rate measured at 60.05Hz
+13.7392 	EXP 	window1: recordFrameIntervals = False
+44.7100 	EXP 	window1: mouseVisible = True
+44.7107 	DEBUG 	Saving data for face_flanker_v1 ExperimentHandler
+44.7116 	INFO 	saved data to /Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/twice_longer_with_delay/data/999_face_flanker_v1_2022-06-07_15h58.14.536.psydat
+44.7124 	INFO 	saved data to '/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/twice_longer_with_delay/data/999_face_flanker_v1_2022-06-07_15h58.14.536.csv'

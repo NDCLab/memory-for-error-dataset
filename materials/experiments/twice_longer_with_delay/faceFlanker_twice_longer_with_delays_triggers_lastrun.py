@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2022.1.4),
-    on June 06, 2022, at 12:52
+    on Tue Jun  7 16:05:42 2022
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -39,7 +39,6 @@ expInfo = {
     'id': '',
     'cb': ['A', 'B'],
     'friendly': ['A', 'B'],
-    'errorComm': ['A', 'B'],
 }
 dlg = gui.DlgFromDict(dictionary=expInfo, sortKeys=False, title=expName)
 if dlg.OK == False:
@@ -54,7 +53,7 @@ filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['id'], expName, expIn
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='C:\\Users\\kihossei\\Documents\\GitHub\\memory-for-error-dataset\\materials\\experiments\\chicago_arrow_twice_longer_time\\faceFlanker_twice_longer_lastrun.py',
+    originPath='/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/twice_longer_with_delay/faceFlanker_twice_longer_with_delays_triggers_lastrun.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 # save a log file for detail verbose info
@@ -321,6 +320,14 @@ prac_rightImg1 = visual.ImageStim(
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
     texRes=512, interpolate=True, depth=-4.0)
+prac_rightImg2 = visual.ImageStim(
+    win=win,
+    name='prac_rightImg2', 
+    image='sin', mask=None, anchor='center',
+    ori=0, pos=[0,0], size=1.0,
+    color=[1,1,1], colorSpace='rgb', opacity=1,
+    flipHoriz=False, flipVert=False,
+    texRes=512, interpolate=True, depth=-5.0)
 prac_leftImg1 = visual.ImageStim(
     win=win,
     name='prac_leftImg1', 
@@ -328,7 +335,15 @@ prac_leftImg1 = visual.ImageStim(
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
-    texRes=512, interpolate=True, depth=-5.0)
+    texRes=512, interpolate=True, depth=-6.0)
+prac_leftImg2 = visual.ImageStim(
+    win=win,
+    name='prac_leftImg2', 
+    image='sin', mask=None, anchor='center',
+    ori=0, pos=[0,0], size=1.0,
+    color=[1,1,1], colorSpace='rgb', opacity=1,
+    flipHoriz=False, flipVert=False,
+    texRes=512, interpolate=True, depth=-7.0)
 prac_fixImg = visual.ImageStim(
     win=win,
     name='prac_fixImg', 
@@ -336,7 +351,7 @@ prac_fixImg = visual.ImageStim(
     ori=0, pos=(0, -.015), size=(0.26, 0.22),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
-    texRes=512, interpolate=True, depth=-6.0)
+    texRes=512, interpolate=True, depth=-8.0)
 prac_stim_keyResp = keyboard.Keyboard()
 
 # Initialize components for Routine "prac_blockFeed"
@@ -502,7 +517,7 @@ errorN_key_resp_2 = keyboard.Keyboard()
 # Initialize components for Routine "botherRate"
 botherRateClock = core.Clock()
 botherRate_text = visual.TextStim(win=win, name='botherRate_text',
-    text='How much did the game you played bother you?\n\nTo answer this question: \nType your answer on a scale from 0 (not at all) to 10 (very much). \n\nAfter responding to the question, press the "space" key to proceed.',
+    text='How much did it bother you when you made an error during the arrow game? \n\nTo answer this question: \nType your answer on a scale from 0 (not at all) to 10 (very much). \n\nAfter responding to the question, press the "space" key to proceed.',
     font='Open Sans',
     pos=(0, 0.12), height=0.03, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
@@ -529,7 +544,7 @@ botherRate_key_resp = keyboard.Keyboard()
 # Initialize components for Routine "askExperimenter"
 askExperimenterClock = core.Clock()
 instruct_surprise1_4 = visual.TextStim(win=win, name='instruct_surprise1_4',
-    text='Congradulations! \nYou completed the arrow game and answered the question!\n\nPlease do not proceed and let the experimenter you completed the game.\n\n\n',
+    text='Congradulations! \nYou completed the arrow game and answered the questions!\n\nPlease do not proceed and let the experimenter you completed the game.\n\n\n',
     font='Open Sans',
     pos=(0, 0), height=0.04, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
@@ -1524,15 +1539,21 @@ for thisPrac_block_loop in prac_block_loop:
         prac_rightImg1.setPos(locationR)
         prac_rightImg1.setSize(imageSize)
         prac_rightImg1.setImage(rightStim)
+        prac_rightImg2.setPos([.066,0])
+        prac_rightImg2.setSize(imageSize)
+        prac_rightImg2.setImage(rightStim)
         prac_leftImg1.setPos(locationL)
         prac_leftImg1.setSize(imageSize)
         prac_leftImg1.setImage(leftStim)
+        prac_leftImg2.setPos([-.066,0])
+        prac_leftImg2.setSize(imageSize)
+        prac_leftImg2.setImage(leftStim)
         prac_fixImg.setImage('img/transp_fixation.png')
         prac_stim_keyResp.keys = []
         prac_stim_keyResp.rt = []
         _prac_stim_keyResp_allKeys = []
         # keep track of which components have finished
-        prac_stimRoutineComponents = [bigFace, cover_background_2, prac_centerImg, prac_rightImg1, prac_leftImg1, prac_fixImg, prac_stim_keyResp]
+        prac_stimRoutineComponents = [bigFace, cover_background_2, prac_centerImg, prac_rightImg1, prac_rightImg2, prac_leftImg1, prac_leftImg2, prac_fixImg, prac_stim_keyResp]
         for thisComponent in prac_stimRoutineComponents:
             thisComponent.tStart = None
             thisComponent.tStop = None
@@ -1582,7 +1603,7 @@ for thisPrac_block_loop in prac_block_loop:
                 cover_background_2.setAutoDraw(True)
             if cover_background_2.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > cover_background_2.tStartRefresh + 0.2-frameTolerance:
+                if tThisFlipGlobal > cover_background_2.tStartRefresh + 0.35-frameTolerance:
                     # keep track of stop time/frame for later
                     cover_background_2.tStop = t  # not accounting for scr refresh
                     cover_background_2.frameNStop = frameN  # exact frame index
@@ -1599,7 +1620,7 @@ for thisPrac_block_loop in prac_block_loop:
                 prac_centerImg.setAutoDraw(True)
             if prac_centerImg.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > prac_centerImg.tStartRefresh + .1-frameTolerance:
+                if tThisFlipGlobal > prac_centerImg.tStartRefresh + .2-frameTolerance:
                     # keep track of stop time/frame for later
                     prac_centerImg.tStop = t  # not accounting for scr refresh
                     prac_centerImg.frameNStop = frameN  # exact frame index
@@ -1616,12 +1637,29 @@ for thisPrac_block_loop in prac_block_loop:
                 prac_rightImg1.setAutoDraw(True)
             if prac_rightImg1.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > prac_rightImg1.tStartRefresh + .25-frameTolerance:
+                if tThisFlipGlobal > prac_rightImg1.tStartRefresh + .350-frameTolerance:
                     # keep track of stop time/frame for later
                     prac_rightImg1.tStop = t  # not accounting for scr refresh
                     prac_rightImg1.frameNStop = frameN  # exact frame index
                     win.timeOnFlip(prac_rightImg1, 'tStopRefresh')  # time at next scr refresh
                     prac_rightImg1.setAutoDraw(False)
+            
+            # *prac_rightImg2* updates
+            if prac_rightImg2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                prac_rightImg2.frameNStart = frameN  # exact frame index
+                prac_rightImg2.tStart = t  # local t and not account for scr refresh
+                prac_rightImg2.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(prac_rightImg2, 'tStartRefresh')  # time at next scr refresh
+                prac_rightImg2.setAutoDraw(True)
+            if prac_rightImg2.status == STARTED:
+                # is it time to stop? (based on global clock, using actual start)
+                if tThisFlipGlobal > prac_rightImg2.tStartRefresh + .350-frameTolerance:
+                    # keep track of stop time/frame for later
+                    prac_rightImg2.tStop = t  # not accounting for scr refresh
+                    prac_rightImg2.frameNStop = frameN  # exact frame index
+                    win.timeOnFlip(prac_rightImg2, 'tStopRefresh')  # time at next scr refresh
+                    prac_rightImg2.setAutoDraw(False)
             
             # *prac_leftImg1* updates
             if prac_leftImg1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
@@ -1633,12 +1671,29 @@ for thisPrac_block_loop in prac_block_loop:
                 prac_leftImg1.setAutoDraw(True)
             if prac_leftImg1.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > prac_leftImg1.tStartRefresh + .25-frameTolerance:
+                if tThisFlipGlobal > prac_leftImg1.tStartRefresh + .350-frameTolerance:
                     # keep track of stop time/frame for later
                     prac_leftImg1.tStop = t  # not accounting for scr refresh
                     prac_leftImg1.frameNStop = frameN  # exact frame index
                     win.timeOnFlip(prac_leftImg1, 'tStopRefresh')  # time at next scr refresh
                     prac_leftImg1.setAutoDraw(False)
+            
+            # *prac_leftImg2* updates
+            if prac_leftImg2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                prac_leftImg2.frameNStart = frameN  # exact frame index
+                prac_leftImg2.tStart = t  # local t and not account for scr refresh
+                prac_leftImg2.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(prac_leftImg2, 'tStartRefresh')  # time at next scr refresh
+                prac_leftImg2.setAutoDraw(True)
+            if prac_leftImg2.status == STARTED:
+                # is it time to stop? (based on global clock, using actual start)
+                if tThisFlipGlobal > prac_leftImg2.tStartRefresh + .350-frameTolerance:
+                    # keep track of stop time/frame for later
+                    prac_leftImg2.tStop = t  # not accounting for scr refresh
+                    prac_leftImg2.frameNStop = frameN  # exact frame index
+                    win.timeOnFlip(prac_leftImg2, 'tStopRefresh')  # time at next scr refresh
+                    prac_leftImg2.setAutoDraw(False)
             
             # *prac_fixImg* updates
             if prac_fixImg.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
