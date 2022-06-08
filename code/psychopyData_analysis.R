@@ -10,11 +10,11 @@ library(stringr)
 
 #Working directory should be the Psychopy experiment directory. 
 #setwd("/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half")
-setwd("C:/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half")
+setwd("~/Documents/GitHub/memory-for-error-dataset/materials/experiments/larger_arrows_triggers")
 
 # Defining the input and output folders.
-input_path <- "C:/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/data"
-output_path <- "C:/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/stat_output"
+input_path <- "~/Documents/GitHub/memory-for-error-dataset/materials/experiments/larger_arrows_triggers/data"
+output_path <- "~/Documents/GitHub/memory-for-error-dataset/materials/experiments/larger_arrows_triggers/stat_output"
 today <- Sys.Date()
 today <- format(today, "%Y%m%d")
 proc_fileName <- paste(today, "_mfeProj.csv", sep ="", collapse = NULL) # output filename
