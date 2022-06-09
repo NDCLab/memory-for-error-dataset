@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2022.1.4),
-    on Wed Jun  8 11:02:32 2022
+    on Thu Jun  9 09:43:38 2022
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -596,7 +596,7 @@ stimulus = visual.ImageStim(
     win=win,
     name='stimulus', units='height', 
     image='sin', mask=None, anchor='center',
-    ori=0.0, pos=(0, 0.2), size=(0.5, 0.5),
+    ori=0.0, pos=(0, 0.2), size=(0.71116667, 0.5),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=0.0)
@@ -610,7 +610,7 @@ instructsurpA1_right = visual.TextStim(win=win, name='instructsurpA1_right',
 instructsurpA2_left = visual.TextStim(win=win, name='instructsurpA2_left',
     text='',
     font='Open Sans',
-    pos=(-0.4, -0.03), height=0.025, wrapWidth=None, ori=0.0, 
+    pos=(-0.6, -0.03), height=0.025, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-2.0);
@@ -640,11 +640,11 @@ instructMainTask_keyResp_2 = keyboard.Keyboard()
 
 # Initialize components for Routine "friendlyTask"
 friendlyTaskClock = core.Clock()
-stimulus_2 = visual.ImageStim(
+stimulus12 = visual.ImageStim(
     win=win,
-    name='stimulus_2', units='height', 
+    name='stimulus12', units='height', 
     image='sin', mask=None, anchor='center',
-    ori=0.0, pos=(0, 0.2), size=(0.5, 0.5),
+    ori=0.0, pos=(0, 0.2), size=(0.71116667, 0.5),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=0.0)
@@ -658,7 +658,7 @@ instructsurpA1_right_2 = visual.TextStim(win=win, name='instructsurpA1_right_2',
 instructsurpA2_left_2 = visual.TextStim(win=win, name='instructsurpA2_left_2',
     text='',
     font='Open Sans',
-    pos=(-0.4, -0.03), height=0.025, wrapWidth=None, ori=0.0, 
+    pos=(-0.6, -0.03), height=0.025, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-2.0);
@@ -1314,7 +1314,7 @@ for thisComponent in instructInconLeftComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-prac_block_loop = data.TrialHandler(nReps=999, method='random', 
+prac_block_loop = data.TrialHandler(nReps=0, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('blockSelect_practice.csv'),
     seed=None, name='prac_block_loop')
@@ -1936,11 +1936,11 @@ for thisPrac_block_loop in prac_block_loop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 999 repeats of 'prac_block_loop'
+# completed 0 repeats of 'prac_block_loop'
 
 
 # set up handler to look after randomisation of conditions etc
-task_block_loop = data.TrialHandler(nReps=1.0, method='random', 
+task_block_loop = data.TrialHandler(nReps=0.0, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('blockSelect.csv'),
     seed=None, name='task_block_loop')
@@ -2583,7 +2583,7 @@ for thisTask_block_loop in task_block_loop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 1.0 repeats of 'task_block_loop'
+# completed 0.0 repeats of 'task_block_loop'
 
 
 # ------Prepare to start Routine "fixation1"-------
@@ -3065,7 +3065,7 @@ thisExp.nextEntry()
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-surprise_block_loop = data.TrialHandler(nReps=1.0, method='sequential', 
+surprise_block_loop = data.TrialHandler(nReps=0.0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions("surpriseBlock_select_"+expInfo['cb']+".xlsx"),
     seed=None, name='surprise_block_loop')
@@ -3202,7 +3202,7 @@ for thisSurprise_block_loop in surprise_block_loop:
         continueRoutine = True
         # update component parameters for each repeat
         stimulus.setImage(surpriseFaces)
-        instructsurpA1_right.setPos((0.4, -0.03))
+        instructsurpA1_right.setPos((0.6, -0.03))
         instructsurpA1_right.setText(instructsurpA1)
         instructsurpA2_left.setText(instructsurpA2)
         surprise_key_resp.keys = []
@@ -3324,7 +3324,7 @@ for thisSurprise_block_loop in surprise_block_loop:
     
     thisExp.nextEntry()
     
-# completed 1.0 repeats of 'surprise_block_loop'
+# completed 0.0 repeats of 'surprise_block_loop'
 
 
 # ------Prepare to start Routine "friendlyInstruct1"-------
@@ -3558,15 +3558,15 @@ for thisFriendly_block_loop in friendly_block_loop:
         # ------Prepare to start Routine "friendlyTask"-------
         continueRoutine = True
         # update component parameters for each repeat
-        stimulus_2.setImage(surpriseFaces)
-        instructsurpA1_right_2.setPos((0.4, -0.03))
+        stimulus12.setImage(surpriseFaces)
+        instructsurpA1_right_2.setPos((0.6, -0.03))
         instructsurpA1_right_2.setText(instructsurpA1)
         instructsurpA2_left_2.setText(instructsurpA2)
         friendly_key_resp.keys = []
         friendly_key_resp.rt = []
         _friendly_key_resp_allKeys = []
         # keep track of which components have finished
-        friendlyTaskComponents = [stimulus_2, instructsurpA1_right_2, instructsurpA2_left_2, friendly_key_resp]
+        friendlyTaskComponents = [stimulus12, instructsurpA1_right_2, instructsurpA2_left_2, friendly_key_resp]
         for thisComponent in friendlyTaskComponents:
             thisComponent.tStart = None
             thisComponent.tStop = None
@@ -3589,14 +3589,14 @@ for thisFriendly_block_loop in friendly_block_loop:
             frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
             # update/draw components on each frame
             
-            # *stimulus_2* updates
-            if stimulus_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # *stimulus12* updates
+            if stimulus12.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                 # keep track of start time/frame for later
-                stimulus_2.frameNStart = frameN  # exact frame index
-                stimulus_2.tStart = t  # local t and not account for scr refresh
-                stimulus_2.tStartRefresh = tThisFlipGlobal  # on global time
-                win.timeOnFlip(stimulus_2, 'tStartRefresh')  # time at next scr refresh
-                stimulus_2.setAutoDraw(True)
+                stimulus12.frameNStart = frameN  # exact frame index
+                stimulus12.tStart = t  # local t and not account for scr refresh
+                stimulus12.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(stimulus12, 'tStartRefresh')  # time at next scr refresh
+                stimulus12.setAutoDraw(True)
             
             # *instructsurpA1_right_2* updates
             if instructsurpA1_right_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
@@ -3659,8 +3659,8 @@ for thisFriendly_block_loop in friendly_block_loop:
         for thisComponent in friendlyTaskComponents:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
-        trials_2.addData('stimulus_2.started', stimulus_2.tStartRefresh)
-        trials_2.addData('stimulus_2.stopped', stimulus_2.tStopRefresh)
+        trials_2.addData('stimulus12.started', stimulus12.tStartRefresh)
+        trials_2.addData('stimulus12.stopped', stimulus12.tStopRefresh)
         trials_2.addData('instructsurpA1_right_2.started', instructsurpA1_right_2.tStartRefresh)
         trials_2.addData('instructsurpA1_right_2.stopped', instructsurpA1_right_2.tStopRefresh)
         trials_2.addData('instructsurpA2_left_2.started', instructsurpA2_left_2.tStartRefresh)
