@@ -35,15 +35,15 @@ for (lisar1 in 1:length(csvSelect)){
 mainDat <- setNames(data.frame(matrix(ncol = 31, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
                                                                "flankEff_meanACC", "flankEff_meanRT", "flankEff_logMeanRT",
                                                                "reported_errors", "committed_errors", "memoryBias_score", 
-                                                               "num_errorFaces_reported_old", "num_errorFaces_reported_new",
-                                                               "num_corrFaces_reported_old", "num_corrFaces_reported_new",
+                                                               "num_incong_errorFaces_reported_old", "num_incong_errorFaces_reported_new",
+                                                               "num_incong_corrFaces_reported_old", "num_incong_corrFaces_reported_new",
                                                                "num_foilFaces_reported_new", "num_foilFaces_reported_old",
-                                                               "num_errorFaces_reported_friendly", "num_errorFaces_reported_unfriendly",
-                                                               "num_corrFaces_reported_friendly", "num_corrFaces_reported_unfriendly",
-                                                               "num_post_errorFaces_reported_old", "num_post_correctFaces_reported_old",
-                                                               "num_pre_errorFaces_reported_old", "num_pre_correctFaces_reported_old",
-                                                               "num_post_errorFaces_reported_friendly", "num_post_correctFaces_reported_friendly", 
-                                                               "num_pre_errorFaces_reported_friendly", "num_pre_correctFaces_reported_friendly"))
+                                                               "num_incong_errorFaces_reported_friendly", "num_incong_errorFaces_reported_unfriendly",
+                                                               "num_incong_corrFaces_reported_friendly", "num_incong_corrFaces_reported_unfriendly",
+                                                               "num_post_incong_errorFaces_reported_old", "num_post_incong_correctFaces_reported_old",
+                                                               "num_pre_incong_errorFaces_reported_old", "num_pre_incong_correctFaces_reported_old",
+                                                               "num_post_incong_errorFaces_reported_friendly", "num_post_incong_correctFaces_reported_friendly",
+                                                               "num_pre_incong_errorFaces_reported_friendly", "num_pre_incong_correctFaces_reported_friendly"))
 
 
 # will loop over all participant datafiles. 
@@ -127,7 +127,7 @@ for(i in 1:length(datafiles_list)){
   }
   reported_errors <- subset(remove_prac_trials, complete.cases(remove_prac_trials$textbox_2.text))
   reported_errors <- reported_errors$textbox_2.text # number of reported errors by participants
-  memoryBias_score <- (committed_errors - reported_errors)/ committed_errors
+  memoryBias_score <- (committed_errors - reported_errors)/ abs(committed_errors) # percent bias score calculation
   surpDat <- subset(remove_prac_trials, !complete.cases(remove_prac_trials$FriendlyKey)) 
   surpDat <- subset(surpDat, complete.cases(surpDat$newKey)) 
   surpDat <- subset(surpDat, complete.cases(surpDat$new)) #contains all the data we need from the surprise task
@@ -137,26 +137,26 @@ for(i in 1:length(datafiles_list)){
   ######## SECTION 2: Surprise Task
   # Let's keep only the surprise trials that have faces from error trials in the main task. Then, we will be able to easily use that smaller dataframe to calculate the number of OLD faces among error trials.
   # Loop over the faces from error trials.
-  num_errorFaces_reported_old <- 0 # this is the number of error faces that they report as OLD and will be updated in the loop below:
-  for (Jafa in 1:nrow(errorDat)){
-    temp_face <- errorDat$straightFace[Jafa]
+  num_incong_errorFaces_reported_old <- 0 # this is the number of error faces that they report as OLD and will be updated in the loop below:
+  for (Jafa in 1:nrow(incong_errorDat)){
+    temp_face <- incong_errorDat$straightFace[Jafa]
     temp_for_surp <- filter(surpDat, surpriseFaces == temp_face)
     identified_old_correctly <- ifelse (temp_for_surp$newKey != temp_for_surp$surprise_key_resp.keys, 1, 0) #returns 1 when participant correctly identifies the face as OLD!
     if (identified_old_correctly == 1){
-      num_errorFaces_reported_old <- num_errorFaces_reported_old + 1 # The number of error faces that they report as OLD
+      num_incong_errorFaces_reported_old <- num_incong_errorFaces_reported_old + 1 # The number of error faces that they report as OLD
     }
   }
-  num_errorFaces_reported_new <- nrow(errorDat) - num_errorFaces_reported_old # stores the # of error faces that the participant incorrectly identifies as new.
-  num_corrFaces_reported_old <- 0
-  for (Jafa2 in 1:nrow(corrDat)){
-    temp_face <- corrDat$straightFace[Jafa2]
+  num_incong_errorFaces_reported_new <- nrow(incong_errorDat) - num_incong_errorFaces_reported_old # stores the # of error faces that the participant incorrectly identifies as new.
+  num_incong_corrFaces_reported_old <- 0
+  for (Jafa2 in 1:nrow(incong_corrDat)){
+    temp_face <- incong_corrDat$straightFace[Jafa2]
     temp_for_surp <- filter(surpDat, surpriseFaces == temp_face) # find the error face in the surpDat
     identified_old_correctly <- ifelse (temp_for_surp$newKey != temp_for_surp$surprise_key_resp.keys, 1, 0) #returns 1 when participant correctly identifies the face as OLD!
     if (identified_old_correctly == 1){
-      num_corrFaces_reported_old <- num_corrFaces_reported_old + 1 # The number of correct faces that they report as OLD
+      num_incong_corrFaces_reported_old <- num_incong_corrFaces_reported_old + 1 # The number of correct faces that they report as OLD
     }
   }
-  num_corrFaces_reported_new <- nrow(corrDat) - num_corrFaces_reported_old # The number of correct faces that they report as new
+  num_incong_corrFaces_reported_new <- nrow(incong_corrDat) - num_incong_corrFaces_reported_old # The number of correct faces that they report as new
   #####
   # Number of foil faces reported new? old?
   num_foilFaces_reported_new <- 0
@@ -177,53 +177,55 @@ for(i in 1:length(datafiles_list)){
   friendlyDat$FriendlyKey <- replace(friendlyDat$FriendlyKey, friendlyDat$FriendlyKey =='right', 8) # replace 8 values with right for the next loop.
   friendlyDat$FriendlyKey <- replace(friendlyDat$FriendlyKey, friendlyDat$FriendlyKey =='left', 1) 
   friendlyDat <- subset(friendlyDat, complete.cases(friendlyDat$surpriseFaces))
-  num_errorFaces_reported_friendly <- 0 # this is the number of error faces that they report as OLD and will be updated in the loop below:
+  num_incong_errorFaces_reported_friendly <- 0 # this is the number of error faces that they report as OLD and will be updated in the loop below:
   # Loop over the faces from error trials.
-  for (salsal in 1:nrow(errorDat)){
-    temp_face <- errorDat$straightFace[salsal]
+  for (salsal in 1:nrow(incong_errorDat)){
+    temp_face <- incong_errorDat$straightFace[salsal]
     temp_for_friendly <- filter(friendlyDat, surpriseFaces == temp_face) # find the error face in the friendlyDat
     identified_friendly <- ifelse (temp_for_friendly$FriendlyKey == temp_for_friendly$friendly_key_resp.keys, 1, 0) #returns 1 when participant identifies the face as friendly!
     if (identified_friendly == 1){
-      num_errorFaces_reported_friendly <- num_errorFaces_reported_friendly + 1 # The number of error faces that they report as friendly
+      num_incong_errorFaces_reported_friendly <- num_incong_errorFaces_reported_friendly + 1 # The number of error faces that they report as friendly
     }
   }
-  num_errorFaces_reported_unfriendly <- nrow(errorDat) - num_errorFaces_reported_friendly
-  num_corrFaces_reported_friendly <- 0
-  for (salsal2 in 1:nrow(corrDat)){
-    temp_face <- corrDat$straightFace[salsal2]
+  num_incong_errorFaces_reported_unfriendly <- nrow(incong_errorDat) - num_incong_errorFaces_reported_friendly
+  num_incong_corrFaces_reported_friendly <- 0
+  for (salsal2 in 1:nrow(incong_corrDat)){
+    temp_face <- incong_corrDat$straightFace[salsal2]
     temp_for_friendly <- filter(friendlyDat, surpriseFaces == temp_face) # find the error face in the friendlyDat
     identified_friendly <- ifelse (temp_for_friendly$FriendlyKey == temp_for_friendly$friendly_key_resp.keys, 1, 0) #returns 1 when participant identifies the face as friendly!
     if (identified_friendly == 1){
-      num_corrFaces_reported_friendly <- num_corrFaces_reported_friendly + 1 # The number of error faces that they report as OLD
+      num_incong_corrFaces_reported_friendly <- num_incong_corrFaces_reported_friendly + 1 # The number of error faces that they report as OLD
     }
   }
-  num_corrFaces_reported_unfriendly <- nrow(corrDat) - num_corrFaces_reported_friendly
+  num_incong_corrFaces_reported_unfriendly <- nrow(incong_corrDat) - num_incong_corrFaces_reported_friendly
 
   ######################################
   #Section 4: Do they remember post-error faces?
   # I should loop over the data frame that has only the main task with accuracy vals, i.e., keep_rows_with_acc_vals
-  # The goal is to create a data frame of post-error faces. 
+  # The goal is to create a data frame of post-error faces. We will just use incongruent pre/post data.
   post_error_faces <- c() # will be filled in the loop below.
   for (zaman in 1:nrow(keep_rows_with_acc_vals)){
     next_idx <- zaman + 1
     if (keep_rows_with_acc_vals$accuracy[zaman] ==0){
-      if (keep_rows_with_acc_vals$task_trial_loop.thisTrialN[zaman] == 31){ # Trial #31 is the last trial in a block and
+      if (keep_rows_with_acc_vals$congruent[zaman] == 0){
+        if (keep_rows_with_acc_vals$task_trial_loop.thisTrialN[zaman] == 31){ # Trial #31 is the last trial in a block and
         # the face after that is the first trial of the next block. So, that face cannot be among post_error_faces.
         post_error_faces <- post_error_faces
       } else {
         post_error_faces <- rbind(post_error_faces, keep_rows_with_acc_vals[next_idx,])
+        }
       }
     }
   }
   post_error_faces <- subset(post_error_faces, complete.cases(post_error_faces$id))
   # Let's find out how many of the post-error faces were correctly identified as OLD!
-  num_post_errorFaces_reported_old <- 0 # this is the number of error faces that they report as OLD and will be updated in the loop below:
+  num_post_incong_errorFaces_reported_old <- 0 # this is the number of error faces that they report as OLD and will be updated in the loop below:
   for (zaman2 in 1:nrow(post_error_faces)){
     temp_face <- post_error_faces$straightFace[zaman2]
     temp_for_surp <- filter(surpDat, surpriseFaces == temp_face)
     identified_old_correctly <- ifelse (temp_for_surp$newKey != temp_for_surp$surprise_key_resp.keys, 1, 0) #returns 1 when participant correctly identifies the face as OLD!
     if (identified_old_correctly == 1){
-      num_post_errorFaces_reported_old <- num_post_errorFaces_reported_old + 1 # The number of post-error faces that they report as OLD  1111111111111111111
+      num_post_incong_errorFaces_reported_old <- num_post_incong_errorFaces_reported_old + 1 # The number of post-error faces that they report as OLD  1111111111111111111
     }
   }
   # What about post-correct faces?
@@ -231,22 +233,24 @@ for(i in 1:length(datafiles_list)){
   for (zaman in 1:nrow(keep_rows_with_acc_vals)){
     next_idx <- zaman + 1
     if (keep_rows_with_acc_vals$accuracy[zaman] ==1){
-      if (keep_rows_with_acc_vals$task_trial_loop.thisTrialN[zaman] == 31){ #Checks if this is the last trial of the block.
+      if (keep_rows_with_acc_vals$congruent[zaman] == 0){
+        if (keep_rows_with_acc_vals$task_trial_loop.thisTrialN[zaman] == 31){ #Checks if this is the last trial of the block.
         post_correct_faces <- post_correct_faces
       } else {
         post_correct_faces <- rbind(post_correct_faces, keep_rows_with_acc_vals[next_idx,])
+        }
       }
     }
   }
   post_correct_faces <- subset(post_correct_faces, complete.cases(post_correct_faces$id))
   # Let's find out how many of the post-correct faces were correctly identified as OLD!
-  num_post_correctFaces_reported_old <- 0 # this is the number of correct faces that they report as OLD and will be updated in the loop below:
+  num_post_incong_correctFaces_reported_old <- 0 # this is the number of correct faces that they report as OLD and will be updated in the loop below:
   for (zaman2 in 1:nrow(post_correct_faces)){
     temp_face <- post_correct_faces$straightFace[zaman2]
     temp_for_surp <- filter(surpDat, surpriseFaces == temp_face)
     identified_old_correctly <- ifelse (temp_for_surp$newKey != temp_for_surp$surprise_key_resp.keys, 1, 0) #returns 1 when participant correctly identifies the face as OLD!
     if (identified_old_correctly == 1){
-      num_post_correctFaces_reported_old <- num_post_correctFaces_reported_old + 1 # The number of post-correct faces that they report as OLD  1111111111111111111
+      num_post_incong_correctFaces_reported_old <- num_post_incong_correctFaces_reported_old + 1 # The number of post-correct faces that they report as OLD  1111111111111111111
     }
   }
   ##############
@@ -255,22 +259,24 @@ for(i in 1:length(datafiles_list)){
   for (zaman in 1:nrow(keep_rows_with_acc_vals)){
     prior_idx <- zaman - 1
     if (keep_rows_with_acc_vals$accuracy[zaman] ==0){
-      if (keep_rows_with_acc_vals$task_trial_loop.thisTrialN[zaman] == 0){ #Checks if this is the first trial of the block.
+      if (keep_rows_with_acc_vals$congruent[zaman] ==0){
+        if (keep_rows_with_acc_vals$task_trial_loop.thisTrialN[zaman] == 0){ #Checks if this is the first trial of the block.
         pre_error_faces <- pre_error_faces
       } else {
         pre_error_faces <- rbind(pre_error_faces, keep_rows_with_acc_vals[prior_idx,])
+        }
       }
     }
   }
   pre_error_faces <- subset(pre_error_faces, complete.cases(pre_error_faces$id))
   # Let's find out how many of the pre-error faces were correctly identified as OLD!
-  num_pre_errorFaces_reported_old <- 0 # this is the number of correct faces that they report as OLD and will be updated in the loop below:
+  num_pre_incong_errorFaces_reported_old <- 0 # this is the number of correct faces that they report as OLD and will be updated in the loop below:
   for (zaman2 in 1:nrow(pre_error_faces)){
     temp_face <- pre_error_faces$straightFace[zaman2]
     temp_for_surp <- filter(surpDat, surpriseFaces == temp_face)
     identified_old_correctly <- ifelse (temp_for_surp$newKey != temp_for_surp$surprise_key_resp.keys, 1, 0) #returns 1 when participant correctly identifies the face as OLD!
     if (identified_old_correctly == 1){
-      num_pre_errorFaces_reported_old <- num_pre_errorFaces_reported_old + 1 # The number of pre-error faces that they report as OLD  1111111111111111111
+      num_pre_incong_errorFaces_reported_old <- num_pre_incong_errorFaces_reported_old + 1 # The number of pre-error faces that they report as OLD  1111111111111111111
     }
   }
   
@@ -278,69 +284,71 @@ for(i in 1:length(datafiles_list)){
   for (zaman in 1:nrow(keep_rows_with_acc_vals)){
     prior_idx <- zaman - 1
     if (keep_rows_with_acc_vals$accuracy[zaman] ==1){
-      if (keep_rows_with_acc_vals$task_trial_loop.thisTrialN[zaman] == 0){ #Checks if this is the first trial of the block.
+      if (keep_rows_with_acc_vals$congruent[zaman] ==0){
+        if (keep_rows_with_acc_vals$task_trial_loop.thisTrialN[zaman] == 0){ #Checks if this is the first trial of the block.
         pre_correct_faces <- pre_correct_faces
       } else {
         pre_correct_faces <- rbind(pre_correct_faces, keep_rows_with_acc_vals[prior_idx,])
+        }
       }
     }
   }
   # What about pre-correct faces?
   pre_correct_faces <- subset(pre_correct_faces, complete.cases(pre_correct_faces$id))
   # Let's find out how many of the post-correct faces were correctly identified as OLD!
-  num_pre_correctFaces_reported_old <- 0 # this is the number of correct faces that they report as OLD and will be updated in the loop below:
+  num_pre_incong_correctFaces_reported_old <- 0 # this is the number of correct faces that they report as OLD and will be updated in the loop below:
   for (zaman2 in 1:nrow(pre_correct_faces)){
     temp_face <- pre_correct_faces$straightFace[zaman2]
     temp_for_surp <- filter(surpDat, surpriseFaces == temp_face)
     identified_old_correctly <- ifelse (temp_for_surp$newKey != temp_for_surp$surprise_key_resp.keys, 1, 0) #returns 1 when participant correctly identifies the face as OLD!
     if (identified_old_correctly == 1){
-      num_pre_correctFaces_reported_old <- num_pre_correctFaces_reported_old + 1 # The number of pre-correct faces that they report as OLD  1111111111111111111
+      num_pre_incong_correctFaces_reported_old <- num_pre_incong_correctFaces_reported_old + 1 # The number of pre-correct faces that they report as OLD  1111111111111111111
     }
   }
   
   ##############
   #Section 6: How do they rate post-error faces? [friendly vs. unfriendly] 
-  num_post_errorFaces_reported_friendly <- 0
+  num_post_incong_errorFaces_reported_friendly <- 0
   for (realMadrid in 1:nrow(post_error_faces)){
     temp_face <- post_error_faces$straightFace[realMadrid]
     temp_for_friendly <- filter(friendlyDat, surpriseFaces == temp_face) # find the error face in the friendlyDat
     identified_friendly <- ifelse (temp_for_friendly$FriendlyKey == temp_for_friendly$friendly_key_resp.keys, 1, 0) #returns 1 when participant identifies the face as friendly!
     if (identified_friendly == 1){
-      num_post_errorFaces_reported_friendly <- num_post_errorFaces_reported_friendly + 1 # The number of post_error faces that they report as friendly  1111111111111111111
+      num_post_incong_errorFaces_reported_friendly <- num_post_incong_errorFaces_reported_friendly + 1 # The number of post_error faces that they report as friendly  1111111111111111111
     }
   }
   # What about post-correct faces?
-  num_post_correctFaces_reported_friendly <- 0
+  num_post_incong_correctFaces_reported_friendly <- 0
   for (realMadrid in 1:nrow(post_correct_faces)){
     temp_face <- post_correct_faces$straightFace[realMadrid]
     temp_for_friendly <- filter(friendlyDat, surpriseFaces == temp_face) # find the error face in the friendlyDat
     identified_friendly <- ifelse (temp_for_friendly$FriendlyKey == temp_for_friendly$friendly_key_resp.keys, 1, 0) #returns 1 when participant identifies the face as friendly!
     if (identified_friendly == 1){
-      num_post_correctFaces_reported_friendly <- num_post_correctFaces_reported_friendly + 1 # The number of post_correct faces that they report as friendly  1111111111111111111
+      num_post_incong_correctFaces_reported_friendly <- num_post_incong_correctFaces_reported_friendly + 1 # The number of post_correct faces that they report as friendly  1111111111111111111
     }
   }
   # What about pre-error faces?
-  num_pre_errorFaces_reported_friendly <- 0
+  num_pre_incong_errorFaces_reported_friendly <- 0
   for (realMadrid in 1:nrow(pre_error_faces)){
     temp_face <- pre_error_faces$straightFace[realMadrid]
     temp_for_friendly <- filter(friendlyDat, surpriseFaces == temp_face) # find the error face in the friendlyDat
     identified_friendly <- ifelse (temp_for_friendly$FriendlyKey == temp_for_friendly$friendly_key_resp.keys, 1, 0) #returns 1 when participant identifies the face as friendly!
     if (identified_friendly == 1){
-      num_pre_errorFaces_reported_friendly <- num_pre_errorFaces_reported_friendly + 1 # The number of pre_error faces that they report as friendly  1111111111111111111
+      num_pre_incong_errorFaces_reported_friendly <- num_pre_incong_errorFaces_reported_friendly + 1 # The number of pre_error faces that they report as friendly  1111111111111111111
     }
   }
   # What about pre-correct faces?
-  num_pre_correctFaces_reported_friendly <- 0
+  num_pre_incong_correctFaces_reported_friendly <- 0
   for (realMadrid in 1:nrow(pre_correct_faces)){
     temp_face <- pre_correct_faces$straightFace[realMadrid]
     temp_for_friendly <- filter(friendlyDat, surpriseFaces == temp_face) # find the error face in the friendlyDat
     identified_friendly <- ifelse (temp_for_friendly$FriendlyKey == temp_for_friendly$friendly_key_resp.keys, 1, 0) #returns 1 when participant identifies the face as friendly!
     if (identified_friendly == 1){
-      num_pre_correctFaces_reported_friendly <- num_pre_correctFaces_reported_friendly + 1 # The number of pre_error faces that they report as friendly  1111111111111111111
+      num_pre_incong_correctFaces_reported_friendly <- num_pre_incong_correctFaces_reported_friendly + 1 # The number of pre_error faces that they report as friendly  1111111111111111111
     }
   }
   ########## 
-  mainDat[nrow(mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_errorFaces_reported_old, num_errorFaces_reported_new,num_corrFaces_reported_old, num_corrFaces_reported_new, num_foilFaces_reported_new, num_foilFaces_reported_old, num_errorFaces_reported_friendly, num_errorFaces_reported_unfriendly, num_corrFaces_reported_friendly, num_corrFaces_reported_unfriendly, num_post_errorFaces_reported_old, num_post_correctFaces_reported_old, num_pre_errorFaces_reported_old, num_pre_correctFaces_reported_old, num_post_errorFaces_reported_friendly, num_post_correctFaces_reported_friendly, num_pre_errorFaces_reported_friendly, num_pre_correctFaces_reported_friendly)
+  mainDat[nrow(mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_incong_errorFaces_reported_old, num_incong_errorFaces_reported_new,num_incong_corrFaces_reported_old, num_incong_corrFaces_reported_new, num_foilFaces_reported_new, num_foilFaces_reported_old, num_incong_errorFaces_reported_friendly, num_incong_errorFaces_reported_unfriendly, num_incong_corrFaces_reported_friendly, num_incong_corrFaces_reported_unfriendly, num_post_incong_errorFaces_reported_old, num_post_incong_correctFaces_reported_old, num_pre_incong_errorFaces_reported_old, num_pre_incong_correctFaces_reported_old, num_post_incong_errorFaces_reported_friendly, num_post_incong_correctFaces_reported_friendly, num_pre_incong_errorFaces_reported_friendly, num_pre_incong_correctFaces_reported_friendly)
   
 }
 #write the extracted summary scores to disk
