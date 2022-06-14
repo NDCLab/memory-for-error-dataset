@@ -32,7 +32,7 @@ for (lisar1 in 1:length(csvSelect)){
 }
 
 # Creating the main empty dataframe that will be filled with the data from the loop below:
-mainDat <- setNames(data.frame(matrix(ncol = 31, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
+mainDat <- setNames(data.frame(matrix(ncol = 39, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
                                                                "flankEff_meanACC", "flankEff_meanRT", "flankEff_logMeanRT",
                                                                "reported_errors", "committed_errors", "memoryBias_score", 
                                                                "num_incong_errorFaces_reported_old", "num_incong_errorFaces_reported_new",
@@ -40,10 +40,10 @@ mainDat <- setNames(data.frame(matrix(ncol = 31, nrow = 0)), c("id", "congAcc", 
                                                                "num_foilFaces_reported_new", "num_foilFaces_reported_old",
                                                                "num_incong_errorFaces_reported_friendly", "num_incong_errorFaces_reported_unfriendly",
                                                                "num_incong_corrFaces_reported_friendly", "num_incong_corrFaces_reported_unfriendly",
-                                                               "num_post_incong_errorFaces_reported_old", "num_post_incong_correctFaces_reported_old",
-                                                               "num_pre_incong_errorFaces_reported_old", "num_pre_incong_correctFaces_reported_old",
-                                                               "num_post_incong_errorFaces_reported_friendly", "num_post_incong_correctFaces_reported_friendly",
-                                                               "num_pre_incong_errorFaces_reported_friendly", "num_pre_incong_correctFaces_reported_friendly"))
+                                                               "num_post_incong_errorFaces_reported_old", "num_post_incong_errorFaces_reported_new", "num_post_incong_correctFaces_reported_old", "num_post_incong_correctFaces_reported_new",
+                                                               "num_pre_incong_errorFaces_reported_old", "num_pre_incong_errorFaces_reported_new", "num_pre_incong_correctFaces_reported_old", "num_pre_incong_correctFaces_reported_new",
+                                                               "num_post_incong_errorFaces_reported_friendly", "num_post_incong_errorFaces_reported_unfriendly", "num_post_incong_correctFaces_reported_friendly", "num_post_incong_correctFaces_reported_unfriendly",
+                                                               "num_pre_incong_errorFaces_reported_friendly", "num_pre_incong_errorFaces_reported_unfriendly", "num_pre_incong_correctFaces_reported_friendly", "num_pre_incong_correctFaces_reported_unfriendly"))
 
 
 # will loop over all participant datafiles. 
@@ -127,7 +127,12 @@ for(i in 1:length(datafiles_list)){
   }
   reported_errors <- subset(remove_prac_trials, complete.cases(remove_prac_trials$textbox_2.text))
   reported_errors <- reported_errors$textbox_2.text # number of reported errors by participants
-  memoryBias_score <- (committed_errors - reported_errors)/ abs(committed_errors) # percent bias score calculation
+  if (length(reported_errors) == 0){ # in case a participant does not answer the question, this code will prevent from future errors.
+    reported_errors <- 'Missing'
+    memoryBias_score <- 'Missing'
+  } else {
+    memoryBias_score <- (committed_errors - reported_errors)/ abs(committed_errors) # percent bias score calculation
+  }
   surpDat <- subset(remove_prac_trials, !complete.cases(remove_prac_trials$FriendlyKey)) 
   surpDat <- subset(surpDat, complete.cases(surpDat$newKey)) 
   surpDat <- subset(surpDat, complete.cases(surpDat$new)) #contains all the data we need from the surprise task
@@ -228,6 +233,7 @@ for(i in 1:length(datafiles_list)){
       num_post_incong_errorFaces_reported_old <- num_post_incong_errorFaces_reported_old + 1 # The number of post-error faces that they report as OLD  1111111111111111111
     }
   }
+  num_post_incong_errorFaces_reported_new <- nrow(post_error_faces) - num_post_incong_errorFaces_reported_old
   # What about post-correct faces?
   post_correct_faces <- c()
   for (zaman in 1:nrow(keep_rows_with_acc_vals)){
@@ -253,6 +259,7 @@ for(i in 1:length(datafiles_list)){
       num_post_incong_correctFaces_reported_old <- num_post_incong_correctFaces_reported_old + 1 # The number of post-correct faces that they report as OLD  1111111111111111111
     }
   }
+  num_post_incong_correctFaces_reported_new <- nrow(post_correct_faces) - num_post_incong_correctFaces_reported_old
   ##############
   #Section 5: Do they remember pre-error faces?
   pre_error_faces <- c() # will be filled in the loop below.
@@ -279,7 +286,7 @@ for(i in 1:length(datafiles_list)){
       num_pre_incong_errorFaces_reported_old <- num_pre_incong_errorFaces_reported_old + 1 # The number of pre-error faces that they report as OLD  1111111111111111111
     }
   }
-  
+  num_pre_incong_errorFaces_reported_new <- nrow(pre_error_faces) - num_pre_incong_errorFaces_reported_old
   pre_correct_faces <- c()
   for (zaman in 1:nrow(keep_rows_with_acc_vals)){
     prior_idx <- zaman - 1
@@ -305,7 +312,7 @@ for(i in 1:length(datafiles_list)){
       num_pre_incong_correctFaces_reported_old <- num_pre_incong_correctFaces_reported_old + 1 # The number of pre-correct faces that they report as OLD  1111111111111111111
     }
   }
-  
+  num_pre_incong_correctFaces_reported_new <- nrow(pre_correct_faces) - num_pre_incong_correctFaces_reported_old
   ##############
   #Section 6: How do they rate post-error faces? [friendly vs. unfriendly] 
   num_post_incong_errorFaces_reported_friendly <- 0
@@ -317,6 +324,7 @@ for(i in 1:length(datafiles_list)){
       num_post_incong_errorFaces_reported_friendly <- num_post_incong_errorFaces_reported_friendly + 1 # The number of post_error faces that they report as friendly  1111111111111111111
     }
   }
+  num_post_incong_errorFaces_reported_unfriendly <- nrow(post_error_faces) - num_post_incong_errorFaces_reported_friendly
   # What about post-correct faces?
   num_post_incong_correctFaces_reported_friendly <- 0
   for (realMadrid in 1:nrow(post_correct_faces)){
@@ -327,6 +335,7 @@ for(i in 1:length(datafiles_list)){
       num_post_incong_correctFaces_reported_friendly <- num_post_incong_correctFaces_reported_friendly + 1 # The number of post_correct faces that they report as friendly  1111111111111111111
     }
   }
+  num_post_incong_correctFaces_reported_unfriendly <- nrow(post_error_faces) - num_post_incong_correctFaces_reported_friendly
   # What about pre-error faces?
   num_pre_incong_errorFaces_reported_friendly <- 0
   for (realMadrid in 1:nrow(pre_error_faces)){
@@ -337,6 +346,7 @@ for(i in 1:length(datafiles_list)){
       num_pre_incong_errorFaces_reported_friendly <- num_pre_incong_errorFaces_reported_friendly + 1 # The number of pre_error faces that they report as friendly  1111111111111111111
     }
   }
+  num_pre_incong_errorFaces_reported_unfriendly <- nrow(pre_error_faces) - num_pre_incong_errorFaces_reported_friendly
   # What about pre-correct faces?
   num_pre_incong_correctFaces_reported_friendly <- 0
   for (realMadrid in 1:nrow(pre_correct_faces)){
@@ -347,8 +357,9 @@ for(i in 1:length(datafiles_list)){
       num_pre_incong_correctFaces_reported_friendly <- num_pre_incong_correctFaces_reported_friendly + 1 # The number of pre_error faces that they report as friendly  1111111111111111111
     }
   }
+  num_pre_incong_correctFaces_reported_unfriendly <- nrow(pre_correct_faces) - num_pre_incong_correctFaces_reported_friendly
   ########## 
-  mainDat[nrow(mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_incong_errorFaces_reported_old, num_incong_errorFaces_reported_new,num_incong_corrFaces_reported_old, num_incong_corrFaces_reported_new, num_foilFaces_reported_new, num_foilFaces_reported_old, num_incong_errorFaces_reported_friendly, num_incong_errorFaces_reported_unfriendly, num_incong_corrFaces_reported_friendly, num_incong_corrFaces_reported_unfriendly, num_post_incong_errorFaces_reported_old, num_post_incong_correctFaces_reported_old, num_pre_incong_errorFaces_reported_old, num_pre_incong_correctFaces_reported_old, num_post_incong_errorFaces_reported_friendly, num_post_incong_correctFaces_reported_friendly, num_pre_incong_errorFaces_reported_friendly, num_pre_incong_correctFaces_reported_friendly)
+  mainDat[nrow(mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_incong_errorFaces_reported_old, num_incong_errorFaces_reported_new,num_incong_corrFaces_reported_old, num_incong_corrFaces_reported_new, num_foilFaces_reported_new, num_foilFaces_reported_old, num_incong_errorFaces_reported_friendly, num_incong_errorFaces_reported_unfriendly, num_incong_corrFaces_reported_friendly, num_incong_corrFaces_reported_unfriendly, num_post_incong_errorFaces_reported_old, num_post_incong_errorFaces_reported_new, num_post_incong_correctFaces_reported_old, num_post_incong_correctFaces_reported_new, num_pre_incong_errorFaces_reported_old, num_pre_incong_errorFaces_reported_new, num_pre_incong_correctFaces_reported_old, num_pre_incong_correctFaces_reported_new, num_post_incong_errorFaces_reported_friendly, num_post_incong_errorFaces_reported_unfriendly, num_post_incong_correctFaces_reported_friendly, num_post_incong_correctFaces_reported_unfriendly, num_pre_incong_errorFaces_reported_friendly, num_pre_incong_errorFaces_reported_unfriendly, num_pre_incong_correctFaces_reported_friendly, num_pre_incong_correctFaces_reported_unfriendly)
   
 }
 #write the extracted summary scores to disk
