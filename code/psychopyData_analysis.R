@@ -7,6 +7,8 @@
 library(tidyverse)
 library(dplyr)
 library(stringr)
+library(ggplot2)
+
 
 #Working directory should be the Psychopy experiment directory. 
 proje_wd <- "~/Documents/GitHub/memory-for-error-dataset/materials/experiments/larger_arrows_triggers"
@@ -32,7 +34,7 @@ for (lisar1 in 1:length(csvSelect)){
 }
 
 # Creating the main empty dataframe that will be filled with the data from the loop below:
-mainDat <- setNames(data.frame(matrix(ncol = 39, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
+mainDat <- setNames(data.frame(matrix(ncol = 44, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
                                                                "flankEff_meanACC", "flankEff_meanRT", "flankEff_logMeanRT",
                                                                "reported_errors", "committed_errors", "memoryBias_score", 
                                                                "num_incong_errorFaces_reported_old", "num_incong_errorFaces_reported_new",
@@ -43,7 +45,8 @@ mainDat <- setNames(data.frame(matrix(ncol = 39, nrow = 0)), c("id", "congAcc", 
                                                                "num_post_incong_errorFaces_reported_old", "num_post_incong_errorFaces_reported_new", "num_post_incong_correctFaces_reported_old", "num_post_incong_correctFaces_reported_new",
                                                                "num_pre_incong_errorFaces_reported_old", "num_pre_incong_errorFaces_reported_new", "num_pre_incong_correctFaces_reported_old", "num_pre_incong_correctFaces_reported_new",
                                                                "num_post_incong_errorFaces_reported_friendly", "num_post_incong_errorFaces_reported_unfriendly", "num_post_incong_correctFaces_reported_friendly", "num_post_incong_correctFaces_reported_unfriendly",
-                                                               "num_pre_incong_errorFaces_reported_friendly", "num_pre_incong_errorFaces_reported_unfriendly", "num_pre_incong_correctFaces_reported_friendly", "num_pre_incong_correctFaces_reported_unfriendly"))
+                                                               "num_pre_incong_errorFaces_reported_friendly", "num_pre_incong_errorFaces_reported_unfriendly", "num_pre_incong_correctFaces_reported_friendly", "num_pre_incong_correctFaces_reported_unfriendly",
+                                                               "errorFaces_hit", "correctFaces_hit", "falseAlarm_for_both", "d_prime_error", "d_prime_correct"))
 
 
 # will loop over all participant datafiles. 
@@ -335,7 +338,7 @@ for(i in 1:length(datafiles_list)){
       num_post_incong_correctFaces_reported_friendly <- num_post_incong_correctFaces_reported_friendly + 1 # The number of post_correct faces that they report as friendly  1111111111111111111
     }
   }
-  num_post_incong_correctFaces_reported_unfriendly <- nrow(post_error_faces) - num_post_incong_correctFaces_reported_friendly
+  num_post_incong_correctFaces_reported_unfriendly <- nrow(post_correct_faces) - num_post_incong_correctFaces_reported_friendly
   # What about pre-error faces?
   num_pre_incong_errorFaces_reported_friendly <- 0
   for (realMadrid in 1:nrow(pre_error_faces)){
@@ -358,8 +361,20 @@ for(i in 1:length(datafiles_list)){
     }
   }
   num_pre_incong_correctFaces_reported_unfriendly <- nrow(pre_correct_faces) - num_pre_incong_correctFaces_reported_friendly
+  ########################## SIGNAL DETECTION THEORY ########################################
+  # We make use of SDT in the surprise memory task.
+  # OLD is our target.
+  # OLD faces are going to be divided into old_errorFaces and old_correctFaces
+  # We first compute hit and false alarm for each individual.
+  errorFaces_hit <- num_incong_errorFaces_reported_old/nrow(incong_errorDat) #this is the hit (true positives) for old_errorFaces (only incongruent)
+  correctFaces_hit <- num_incong_corrFaces_reported_old/nrow(incong_corrDat) # hit for old_correctFaces
+  falseAlarm_for_both <- num_foilFaces_reported_old/(num_foilFaces_reported_new + num_foilFaces_reported_old) # False alarm rate for old_correctFaces and old_errorFaces
+  # To compute z-score associated with a probability, we use "qnorm" function.
+  # https://brain.mcmaster.ca/SDT/dprime.html # To compute d-prime, take a look at this! d_prime = Z_hit - Z_falseAlarm
+  d_prime_error <- qnorm(errorFaces_hit) - qnorm(falseAlarm_for_both)
+  d_prime_correct <- qnorm(correctFaces_hit) - qnorm(falseAlarm_for_both)
   ########## 
-  mainDat[nrow(mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_incong_errorFaces_reported_old, num_incong_errorFaces_reported_new,num_incong_corrFaces_reported_old, num_incong_corrFaces_reported_new, num_foilFaces_reported_new, num_foilFaces_reported_old, num_incong_errorFaces_reported_friendly, num_incong_errorFaces_reported_unfriendly, num_incong_corrFaces_reported_friendly, num_incong_corrFaces_reported_unfriendly, num_post_incong_errorFaces_reported_old, num_post_incong_errorFaces_reported_new, num_post_incong_correctFaces_reported_old, num_post_incong_correctFaces_reported_new, num_pre_incong_errorFaces_reported_old, num_pre_incong_errorFaces_reported_new, num_pre_incong_correctFaces_reported_old, num_pre_incong_correctFaces_reported_new, num_post_incong_errorFaces_reported_friendly, num_post_incong_errorFaces_reported_unfriendly, num_post_incong_correctFaces_reported_friendly, num_post_incong_correctFaces_reported_unfriendly, num_pre_incong_errorFaces_reported_friendly, num_pre_incong_errorFaces_reported_unfriendly, num_pre_incong_correctFaces_reported_friendly, num_pre_incong_correctFaces_reported_unfriendly)
+  mainDat[nrow(mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_incong_errorFaces_reported_old, num_incong_errorFaces_reported_new,num_incong_corrFaces_reported_old, num_incong_corrFaces_reported_new, num_foilFaces_reported_new, num_foilFaces_reported_old, num_incong_errorFaces_reported_friendly, num_incong_errorFaces_reported_unfriendly, num_incong_corrFaces_reported_friendly, num_incong_corrFaces_reported_unfriendly, num_post_incong_errorFaces_reported_old, num_post_incong_errorFaces_reported_new, num_post_incong_correctFaces_reported_old, num_post_incong_correctFaces_reported_new, num_pre_incong_errorFaces_reported_old, num_pre_incong_errorFaces_reported_new, num_pre_incong_correctFaces_reported_old, num_pre_incong_correctFaces_reported_new, num_post_incong_errorFaces_reported_friendly, num_post_incong_errorFaces_reported_unfriendly, num_post_incong_correctFaces_reported_friendly, num_post_incong_correctFaces_reported_unfriendly, num_pre_incong_errorFaces_reported_friendly, num_pre_incong_errorFaces_reported_unfriendly, num_pre_incong_correctFaces_reported_friendly, num_pre_incong_correctFaces_reported_unfriendly, errorFaces_hit, correctFaces_hit, falseAlarm_for_both, d_prime_error, d_prime_correct)
   
 }
 #write the extracted summary scores to disk
@@ -367,7 +382,107 @@ write.csv(mainDat,paste(output_path,proc_fileName, sep = "/", collapse = NULL), 
 
 
 
+#### Plotting
+
+# pre-error friendly
+# error friendly
+# Post_error friendly
+
+# pre-correct friendly
+# correct friendly
+# Post_correct friendly
+
+# pre-error unfriendly
+# error unfriendly
+# Post_error unfriendly
+
+# pre-correct unfriendly
+# correct unfriendly
+# Post_correct unfriendly
+
+# The same thing as above for old/new (error and correct)
+
+## Let's do some Bar plotting!
+sample_size <- length(datafiles_list) # total number of participants. This will be needed to compute standard error.
+# Convert mainDat with specified columns to long format. So, I can use ggplot, etc. easily.
+longDat_friendly <- gather(mainDat, column_name, value, num_pre_incong_errorFaces_reported_friendly, num_incong_errorFaces_reported_friendly, num_post_incong_errorFaces_reported_friendly,
+                  num_pre_incong_correctFaces_reported_friendly, num_incong_corrFaces_reported_friendly,
+                  num_post_incong_correctFaces_reported_friendly)
+
+longDat_unfriendly <- gather(mainDat, column_name, value,  num_pre_incong_errorFaces_reported_unfriendly,
+                             num_incong_errorFaces_reported_unfriendly, num_post_incong_errorFaces_reported_unfriendly,
+                             num_pre_incong_correctFaces_reported_unfriendly, num_incong_corrFaces_reported_unfriendly,
+                             num_post_incong_correctFaces_reported_unfriendly)
+
+longDat_old <- gather(mainDat, column_name, value, num_pre_incong_errorFaces_reported_old,
+                      num_incong_errorFaces_reported_old, num_post_incong_errorFaces_reported_old,
+                      num_pre_incong_correctFaces_reported_old, num_incong_corrFaces_reported_old,
+                      num_post_incong_correctFaces_reported_old)
+
+longDat_new <- gather(mainDat, column_name, value, num_pre_incong_errorFaces_reported_new,
+                      num_incong_errorFaces_reported_new, num_post_incong_errorFaces_reported_new,
+                      num_pre_incong_correctFaces_reported_new, num_incong_corrFaces_reported_new,
+                      num_post_incong_correctFaces_reported_new)
+
+# friendly
+for_plot_friendly <- longDat_friendly %>%
+  group_by(column_name) %>%
+  summarise(
+    n=n(),
+    mean=mean(as.numeric(value)),
+    sd=sd(as.numeric(value))
+  ) %>%
+  mutate( se=sd/sqrt(n))
+ggplot(for_plot_friendly) +
+  geom_bar( aes(x= column_name, y=mean), stat="identity", fill="forestgreen", alpha=0.5) +
+  geom_errorbar( aes(x=column_name, ymin=mean-se, ymax=mean+se), width=0.4, colour="orange", alpha=0.9, size=1.5) +
+  theme(axis.text.x = element_text(angle=90, vjust=.5, hjust=1)) +
+  ggtitle("Friendly")
+
+# Unfriendly
+for_plot_unfriendly <- longDat_unfriendly %>%
+  group_by(column_name) %>%
+  summarise(
+    n=n(),
+    mean=mean(as.numeric(value)),
+    sd=sd(as.numeric(value))
+  ) %>%
+  mutate( se=sd/sqrt(n))
+ggplot(for_plot_unfriendly) +
+  geom_bar( aes(x= column_name, y=mean), stat="identity", fill="forestgreen", alpha=0.5) +
+  geom_errorbar( aes(x=column_name, ymin=mean-se, ymax=mean+se), width=0.4, colour="orange", alpha=0.9, size=1.5) +
+  theme(axis.text.x = element_text(angle=90, vjust=.5, hjust=1)) +
+  ggtitle("Unfriendly")
 
 
+# Old
+for_plot_old <- longDat_old %>%
+  group_by(column_name) %>%
+  summarise(
+    n=n(),
+    mean=mean(as.numeric(value)),
+    sd=sd(as.numeric(value))
+  ) %>%
+  mutate( se=sd/sqrt(n))
+ggplot(for_plot_old) +
+  geom_bar( aes(x= column_name, y=mean), stat="identity", fill="forestgreen", alpha=0.5) +
+  geom_errorbar( aes(x=column_name, ymin=mean-se, ymax=mean+se), width=0.4, colour="orange", alpha=0.9, size=1.5) +
+  theme(axis.text.x = element_text(angle=90, vjust=.5, hjust=1)) +
+  ggtitle("Old")
+
+# New
+for_plot_new <- longDat_new %>%
+  group_by(column_name) %>%
+  summarise(
+    n=n(),
+    mean=mean(as.numeric(value)),
+    sd=sd(as.numeric(value))
+  ) %>%
+  mutate( se=sd/sqrt(n))
+ggplot(for_plot_new) +
+  geom_bar( aes(x= column_name, y=mean), stat="identity", fill="forestgreen", alpha=0.5) +
+  geom_errorbar( aes(x=column_name, ymin=mean-se, ymax=mean+se), width=0.4, colour="orange", alpha=0.9, size=1.5) +
+  theme(axis.text.x = element_text(angle=90, vjust=.5, hjust=1)) +
+  ggtitle("New")
 
 
