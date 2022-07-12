@@ -1,7 +1,8 @@
 # This script allows to run statistical analysis on Psychopy output of the memory for error project.
 # Author: Kianoosh Hosseini at NDCLab @FIU (May 2022; https://Kianoosh.info; https://NDClab.com)
-# Some parts are from scripts by George Buzzell, Jessica M. Alexander, and Arina Polyanskaya.  
-# Last Update: 2022-06-09 (YYYY-MM-DD)
+# Some parts are from scripts by George Buzzell, Jessica M. Alexander, and Arina Polyanskaya.
+# This script is the second branch of this script as it only includes correct trials for pre-error and post-errors.
+# Last Update: 2022-07-11 (YYYY-MM-DD)
 
 
 library(tidyverse)
@@ -10,7 +11,7 @@ library(stringr)
 library(ggplot2)
 
 
-#Working directory should be the Psychopy experiment directory. 
+#Working directory should be the Psychopy experiment directory.
 proje_wd <- "~/Documents/GitHub/memory-for-error-dataset/materials/experiments/larger_arrows_triggers"
 setwd(proje_wd)
 
@@ -22,8 +23,8 @@ input_path <- paste(proje_wd, "data", sep ="/", collapse = NULL) # input data di
 output_path <- paste(proje_wd, "stat_output", sep ="/", collapse = NULL) # output directory
 proc_fileName <- paste(today, "_mfeProj.csv", sep ="", collapse = NULL) # output filename
 
-#identify data files 
-datafiles_list <- c() # an empty list that will be filled in the next for loop! 
+#identify data files
+datafiles_list <- c() # an empty list that will be filled in the next for loop!
 csvSelect = list.files(input_path, pattern = ".csv") # listing only csv files
 for (lisar1 in 1:length(csvSelect)){
   temp_for_file <- ifelse (str_detect(csvSelect[lisar1], "face_flanker_v1", negate = FALSE), 1, 0)
@@ -36,7 +37,7 @@ for (lisar1 in 1:length(csvSelect)){
 # Creating the main empty dataframe that will be filled with the data from the loop below:
 mainDat <- setNames(data.frame(matrix(ncol = 46, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
                                                                "flankEff_meanACC", "flankEff_meanRT", "flankEff_logMeanRT",
-                                                               "reported_errors", "committed_errors", "memoryBias_score", 
+                                                               "reported_errors", "committed_errors", "memoryBias_score",
                                                                "num_incong_errorFaces_reported_old", "num_incong_errorFaces_reported_new",
                                                                "num_incong_corrFaces_reported_old", "num_incong_corrFaces_reported_new",
                                                                "num_foilFaces_reported_new", "num_foilFaces_reported_old",
@@ -50,30 +51,30 @@ mainDat <- setNames(data.frame(matrix(ncol = 46, nrow = 0)), c("id", "congAcc", 
                                                                "criterion_error", "criterion_correct"))
 
 percent_mainDat <- setNames(data.frame(matrix(ncol = 60, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
-                                                               "flankEff_meanACC", "flankEff_meanRT", "flankEff_logMeanRT",
-                                                               "reported_errors", "committed_errors", "memoryBias_score",
-                                                               "percent_incong_errorFaces_reported_old", "percent_incong_errorFaces_reported_new",
-                                                               "percent_incong_corrFaces_reported_old", "percent_incong_corrFaces_reported_new",
-                                                               "percent_foilFaces_reported_new", "percent_foilFaces_reported_old",
-                                                               "percent_incong_errorFaces_reported_friendly", "percent_incong_errorFaces_reported_unfriendly",
-                                                               "percent_incong_corrFaces_reported_friendly", "percent_incong_corrFaces_reported_unfriendly",
-                                                               "percent_post_incong_errorFaces_reported_old", "percent_post_incong_errorFaces_reported_new", "percent_post_incong_correctFaces_reported_old", "percent_post_incong_correctFaces_reported_new",
-                                                               "percent_pre_incong_errorFaces_reported_old", "percent_pre_incong_errorFaces_reported_new", "percent_pre_incong_correctFaces_reported_old", "percent_pre_incong_correctFaces_reported_new",
-                                                               "percent_post_incong_errorFaces_reported_friendly", "percent_post_incong_errorFaces_reported_unfriendly", "percent_post_incong_correctFaces_reported_friendly", "percent_post_incong_correctFaces_reported_unfriendly",
-                                                               "percent_pre_incong_errorFaces_reported_friendly", "percent_pre_incong_errorFaces_reported_unfriendly", "percent_pre_incong_correctFaces_reported_friendly", "percent_pre_incong_correctFaces_reported_unfriendly",
-                                                               "errorFaces_hit", "pre_errorFaces_hit", "post_errorFaces_hit", "correctFaces_hit", "pre_correctFaces_hit", "post_correctFaces_hit", "falseAlarm_for_both", "d_prime_error", "pre_d_prime_error", "post_d_prime_error", "d_prime_correct", "pre_d_prime_correct", "post_d_prime_correct",
-                                                               "criterion_error", "pre_criterion_error", "post_criterion_error", "criterion_correct", "pre_criterion_correct", "post_criterion_correct", "gen_hit", "num_incong_errors"))
+                                                                       "flankEff_meanACC", "flankEff_meanRT", "flankEff_logMeanRT",
+                                                                       "reported_errors", "committed_errors", "memoryBias_score",
+                                                                       "percent_incong_errorFaces_reported_old", "percent_incong_errorFaces_reported_new",
+                                                                       "percent_incong_corrFaces_reported_old", "percent_incong_corrFaces_reported_new",
+                                                                       "percent_foilFaces_reported_new", "percent_foilFaces_reported_old",
+                                                                       "percent_incong_errorFaces_reported_friendly", "percent_incong_errorFaces_reported_unfriendly",
+                                                                       "percent_incong_corrFaces_reported_friendly", "percent_incong_corrFaces_reported_unfriendly",
+                                                                       "percent_post_incong_errorFaces_reported_old", "percent_post_incong_errorFaces_reported_new", "percent_post_incong_correctFaces_reported_old", "percent_post_incong_correctFaces_reported_new",
+                                                                       "percent_pre_incong_errorFaces_reported_old", "percent_pre_incong_errorFaces_reported_new", "percent_pre_incong_correctFaces_reported_old", "percent_pre_incong_correctFaces_reported_new",
+                                                                       "percent_post_incong_errorFaces_reported_friendly", "percent_post_incong_errorFaces_reported_unfriendly", "percent_post_incong_correctFaces_reported_friendly", "percent_post_incong_correctFaces_reported_unfriendly",
+                                                                       "percent_pre_incong_errorFaces_reported_friendly", "percent_pre_incong_errorFaces_reported_unfriendly", "percent_pre_incong_correctFaces_reported_friendly", "percent_pre_incong_correctFaces_reported_unfriendly",
+                                                                       "errorFaces_hit", "pre_errorFaces_hit", "post_errorFaces_hit", "correctFaces_hit", "pre_correctFaces_hit", "post_correctFaces_hit", "falseAlarm_for_both", "d_prime_error", "pre_d_prime_error", "post_d_prime_error", "d_prime_correct", "pre_d_prime_correct", "post_d_prime_correct",
+                                                                       "criterion_error", "pre_criterion_error", "post_criterion_error", "criterion_correct", "pre_criterion_correct", "post_criterion_correct", "gen_hit", "num_incong_errors"))
 
 outlier_mainDat <- setNames(data.frame(matrix(ncol = 14, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
                                                                        "flankEff_meanACC", "flankEff_meanRT", "flankEff_logMeanRT",
                                                                        "reported_errors", "committed_errors", "memoryBias_score", "num_incong_errors"))
 
-# will loop over all participant datafiles. 
+# will loop over all participant datafiles.
 for(i in 1:length(datafiles_list)){
   #for this participant, find the csv file
   psychopy_file <- paste(input_path,datafiles_list[i], sep = "/", collapse = NULL)
-    
-    #read in the data for this participant, establish id, and remove extraneous variables
+
+  #read in the data for this participant, establish id, and remove extraneous variables
   psychopyDat <- read.csv(file = psychopy_file, stringsAsFactors = FALSE, na.strings=c("", "NA"))
   id <- psychopyDat$id[1]
   psychopyDatTrim <- psychopyDat[c("id",
@@ -83,7 +84,7 @@ for(i in 1:length(datafiles_list)){
                                    "congruent",
                                    "stimNum",
                                    "accuracy",
-                                   "task1_stim_keyResp.keys", 
+                                   "task1_stim_keyResp.keys",
                                    "textbox_2.text", # stores the number of reported errors by subjects
                                    "surprise_key_resp.keys",
                                    "friendly_key_resp.keys",
@@ -91,8 +92,8 @@ for(i in 1:length(datafiles_list)){
                                    "surpriseFaces",
                                    "straightFace",
                                    "task1_stim_keyResp.rt", #  this stores reaction time for each trial
-                                   "task_trial_loop.thisTrialN")] # This stores the number of trial in a block; For this study it starts from 0 to 31 
-  #                                                                 as we have 32 trials in each block. 
+                                   "task_trial_loop.thisTrialN")] # This stores the number of trial in a block; For this study it starts from 0 to 31
+  #                                                                 as we have 32 trials in each block.
   ###################################
   #### SECTION 1:
   #remove practice trials and any rows that do not reflect experiment data
@@ -102,44 +103,44 @@ for(i in 1:length(datafiles_list)){
   accuracy <- mean(remove_prac_trials$accuracy, na.rm = TRUE)
   # Calculate the average accuracy in congruent trials
   congDat <- filter(remove_prac_trials, congruent ==1) # subset the data for congruent trials.
-  congAcc <- mean(congDat$accuracy, na.rm = TRUE) # mean accuracy for congruent trials              
+  congAcc <- mean(congDat$accuracy, na.rm = TRUE) # mean accuracy for congruent trials
   # Calculate the average accuracy in incongruent trials
   incongDat <- filter(remove_prac_trials, congruent ==0) # subset the data for incongruent trials.
-  incongAcc <- mean(incongDat$accuracy, na.rm = TRUE) # mean accuracy for incongruent trials          
-  
-  
+  incongAcc <- mean(incongDat$accuracy, na.rm = TRUE) # mean accuracy for incongruent trials
+
+
   keep_rows_with_acc_vals <- subset(remove_prac_trials, complete.cases(remove_prac_trials$accuracy))
   errorDat <- filter(keep_rows_with_acc_vals, accuracy ==0) # subset error trials
   errorDat$task1_stim_keyResp.rt <- gsub("[", "", errorDat$task1_stim_keyResp.rt, fixed = TRUE) #removing brackets and converting to numeric
   errorDat$task1_stim_keyResp.rt <- gsub("]", "", errorDat$task1_stim_keyResp.rt, fixed = TRUE)
   errorDat$task1_stim_keyResp.rt <- gsub(",.*","",errorDat$task1_stim_keyResp.rt) # removing the RT for the second response within the same trial.
-  errorDat$task1_stim_keyResp.rt <- as.numeric(errorDat$task1_stim_keyResp.rt) # 
+  errorDat$task1_stim_keyResp.rt <- as.numeric(errorDat$task1_stim_keyResp.rt) #
   errorDat <- subset(errorDat, complete.cases(errorDat$task1_stim_keyResp.rt))
   incong_errorDat <- filter(errorDat, congruent ==0) # subset incongruent error trials
   corrDat <- filter(keep_rows_with_acc_vals, accuracy ==1) # subset correct trials
   corrDat$task1_stim_keyResp.rt <- gsub("[", "", corrDat$task1_stim_keyResp.rt, fixed = TRUE)
   corrDat$task1_stim_keyResp.rt <- gsub("]", "", corrDat$task1_stim_keyResp.rt, fixed = TRUE)
   corrDat$task1_stim_keyResp.rt <-  gsub(",.*","",corrDat$task1_stim_keyResp.rt)
-  corrDat$task1_stim_keyResp.rt <- as.numeric(corrDat$task1_stim_keyResp.rt) # 
+  corrDat$task1_stim_keyResp.rt <- as.numeric(corrDat$task1_stim_keyResp.rt) #
   corrDat <- subset(corrDat, complete.cases(corrDat$task1_stim_keyResp.rt))
-  
-  
+
+
 
   # subset the data for correct trials only, separately for congruent and incongruent trials, creating new data frames for each
   cong_corrDat <- corrDat[corrDat$congruent == 1,]
-  incong_corrDat <- corrDat[corrDat$congruent == 0,]  
+  incong_corrDat <- corrDat[corrDat$congruent == 0,]
   #for correct trials, compute mean RT (raw and log-corrected)
   congCorr_meanRT <- mean(cong_corrDat$task1_stim_keyResp.rt)
   incongCorr_meanRT <- mean(incong_corrDat$task1_stim_keyResp.rt)
-  
+
   congCorr_logMeanRT <- mean(log((1+cong_corrDat$task1_stim_keyResp.rt)))
   incongCorr_logMeanRT <- mean(log((1+incong_corrDat$task1_stim_keyResp.rt)))
-  
+
   # compute flanker-effect scores for accuracy, RT, log-RT
   flankEff_meanACC <- incongAcc - congAcc
   flankEff_meanRT <- incongCorr_meanRT - congCorr_meanRT
   flankEff_logMeanRT <- incongCorr_logMeanRT - congCorr_logMeanRT
-  
+
   # number of errors made in the main task
   committed_errors <- 0
   for (khata in 1:nrow(keep_rows_with_acc_vals)){
@@ -155,13 +156,13 @@ for(i in 1:length(datafiles_list)){
   } else {
     memoryBias_score <- (committed_errors - reported_errors)/ abs(committed_errors) # percent bias score calculation
   }
-  surpDat <- subset(remove_prac_trials, !complete.cases(remove_prac_trials$FriendlyKey)) 
-  surpDat <- subset(surpDat, complete.cases(surpDat$newKey)) 
+  surpDat <- subset(remove_prac_trials, !complete.cases(remove_prac_trials$FriendlyKey))
+  surpDat <- subset(surpDat, complete.cases(surpDat$newKey))
   surpDat <- subset(surpDat, complete.cases(surpDat$new)) #contains all the data we need from the surprise task
   surpDat$newKey <- replace(surpDat$newKey, surpDat$newKey =='right', 8) # replace 8 values with right for the next loop.
   surpDat$newKey <- replace(surpDat$newKey, surpDat$newKey =='left', 1)
   num_incong_errors <- nrow(incong_errorDat)
-  if (nrow(incong_errorDat) != 0){
+  if (nrow(incong_errorDat) != 0){ #for when the participant has incongruent errors
     #######################################
     ######## SECTION 2: Surprise Task
     # Let's keep only the surprise trials that have faces from error trials in the main task. Then, we will be able to easily use that smaller dataframe to calculate the number of OLD faces among error trials.
@@ -284,9 +285,11 @@ for(i in 1:length(datafiles_list)){
         if (keep_rows_with_acc_vals$congruent[zaman] == 0){
           if (keep_rows_with_acc_vals$task_trial_loop.thisTrialN[zaman] == 31){ # Trial #31 is the last trial in a block and
             # the face after that is the first trial of the next block. So, that face cannot be among post_error_faces.
-            post_error_faces <- post_error_faces
-          } else {
-            post_error_faces <- rbind(post_error_faces, keep_rows_with_acc_vals[next_idx,])
+              post_error_faces <- post_error_faces
+            } else {
+                if (keep_rows_with_acc_vals$accuracy[next_idx] ==1){ # to have only correct trials in the post_error
+                  post_error_faces <- rbind(post_error_faces, keep_rows_with_acc_vals[next_idx,])
+            }
           }
         }
       }
@@ -323,9 +326,11 @@ for(i in 1:length(datafiles_list)){
       if (keep_rows_with_acc_vals$accuracy[zaman] ==1){
         if (keep_rows_with_acc_vals$congruent[zaman] == 0){
           if (keep_rows_with_acc_vals$task_trial_loop.thisTrialN[zaman] == 31){ #Checks if this is the last trial of the block.
-            post_correct_faces <- post_correct_faces
-          } else {
-            post_correct_faces <- rbind(post_correct_faces, keep_rows_with_acc_vals[next_idx,])
+              post_correct_faces <- post_correct_faces
+            } else {
+                if (keep_rows_with_acc_vals$accuracy[next_idx] ==1){ # to have only correct trials in the post_correct
+                  post_correct_faces <- rbind(post_correct_faces, keep_rows_with_acc_vals[next_idx,])
+            }
           }
         }
       }
@@ -357,9 +362,11 @@ for(i in 1:length(datafiles_list)){
       if (keep_rows_with_acc_vals$accuracy[zaman] ==0){
         if (keep_rows_with_acc_vals$congruent[zaman] ==0){
           if (keep_rows_with_acc_vals$task_trial_loop.thisTrialN[zaman] == 0){ #Checks if this is the first trial of the block.
-            pre_error_faces <- pre_error_faces
-          } else {
-            pre_error_faces <- rbind(pre_error_faces, keep_rows_with_acc_vals[prior_idx,])
+              pre_error_faces <- pre_error_faces
+            } else {
+                if (keep_rows_with_acc_vals$accuracy[prior_idx] ==1){ # to have only correct trials in the pre_error
+                  pre_error_faces <- rbind(pre_error_faces, keep_rows_with_acc_vals[prior_idx,])
+            }
           }
         }
       }
@@ -395,9 +402,11 @@ for(i in 1:length(datafiles_list)){
       if (keep_rows_with_acc_vals$accuracy[zaman] ==1){
         if (keep_rows_with_acc_vals$congruent[zaman] ==0){
           if (keep_rows_with_acc_vals$task_trial_loop.thisTrialN[zaman] == 0){ #Checks if this is the first trial of the block.
-            pre_correct_faces <- pre_correct_faces
-          } else {
-            pre_correct_faces <- rbind(pre_correct_faces, keep_rows_with_acc_vals[prior_idx,])
+              pre_correct_faces <- pre_correct_faces
+            } else {
+                if (keep_rows_with_acc_vals$accuracy[prior_idx] ==1){ # to have only correct trials in the pre_correct
+                  pre_correct_faces <- rbind(pre_correct_faces, keep_rows_with_acc_vals[prior_idx,])
+            }
           }
         }
       }
@@ -569,7 +578,7 @@ for(i in 1:length(datafiles_list)){
 
   } else if (nrow(incong_errorDat) == 0){
     outlier_mainDat[nrow(outlier_mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_incong_errors)
-}
+  }
 }
 #write the extracted summary scores to disk
 write.csv(percent_mainDat,paste(output_path,proc_fileName, sep = "/", collapse = NULL), row.names=FALSE)
@@ -601,8 +610,8 @@ write.csv(outlier_mainDat,paste(output_path,"outlier_data.csv", sep = "/", colla
 sample_size <- length(datafiles_list) # total number of participants. This will be needed to compute standard error.
 # Convert mainDat with specified columns to long format. So, I can use ggplot, etc. easily.
 longDat_friendly <- gather(mainDat, column_name, value, num_pre_incong_errorFaces_reported_friendly, num_incong_errorFaces_reported_friendly, num_post_incong_errorFaces_reported_friendly,
-                  num_pre_incong_correctFaces_reported_friendly, num_incong_corrFaces_reported_friendly,
-                  num_post_incong_correctFaces_reported_friendly)
+                           num_pre_incong_correctFaces_reported_friendly, num_incong_corrFaces_reported_friendly,
+                           num_post_incong_correctFaces_reported_friendly)
 
 longDat_unfriendly <- gather(mainDat, column_name, value,  num_pre_incong_errorFaces_reported_unfriendly,
                              num_incong_errorFaces_reported_unfriendly, num_post_incong_errorFaces_reported_unfriendly,
@@ -619,9 +628,9 @@ longDat_new <- gather(mainDat, column_name, value, num_pre_incong_errorFaces_rep
                       num_pre_incong_correctFaces_reported_new, num_incong_corrFaces_reported_new,
                       num_post_incong_correctFaces_reported_new)
 longDat_sdt_error <- gather(percent_mainDat, column_name, value, errorFaces_hit, pre_errorFaces_hit, post_errorFaces_hit, falseAlarm_for_both,
-                      d_prime_error, pre_d_prime_error, post_d_prime_error, criterion_error, pre_criterion_error, post_criterion_error)
+                            d_prime_error, pre_d_prime_error, post_d_prime_error, criterion_error, pre_criterion_error, post_criterion_error)
 longDat_sdt_correct <- gather(percent_mainDat, column_name, value, correctFaces_hit, pre_correctFaces_hit, post_correctFaces_hit, falseAlarm_for_both,
-                            d_prime_correct, pre_d_prime_correct, post_d_prime_correct, criterion_correct, pre_criterion_correct, post_criterion_correct)
+                              d_prime_correct, pre_d_prime_correct, post_d_prime_correct, criterion_correct, pre_criterion_correct, post_criterion_correct)
 longDat_post <- gather(percent_mainDat, column_name, value, pre_d_prime_error, d_prime_error, post_d_prime_error, pre_d_prime_correct, d_prime_correct, post_d_prime_correct)
 
 # for percent longDat

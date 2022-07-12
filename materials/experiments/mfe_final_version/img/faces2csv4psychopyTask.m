@@ -11,7 +11,7 @@ clc % clear matlab command window
 
 %% Loading all the neutral Chicago faces. 
 %main_dir = '/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/img';
-main_dir = '/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/larger_arrows_triggers/img';
+main_dir = '/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/mfe_final_version/img';
 faceData_location = [main_dir filesep 'neutralC']; %Location of stored faces (i.e., renders folder)
 cd(faceData_location)
 data_file_lists = dir; 
@@ -26,16 +26,16 @@ for lisar1=1:length(allFaces)
     allFaces(lisar1) = append('img/neutralC/',allFaces(lisar1)); 
 end
 
-%% After creating a list of all faces, randomly sample 160 faces. 160 is the number of trials. We also select additional 20 faces as practice trials.
-% So, we load 180 faces in total.
-faces = randsample(allFaces, 180);
+%% After creating a list of all faces, randomly sample (32*10) 320 faces. 384 is the number of trials. We also select additional 20 faces as practice trials.
+% So, we load 340 faces in total.
+faces = randsample(allFaces, 340);
 trialFaces_for_surprise = faces; % This stores the list of faces that are going to be shown in practicae and main trials. 
 surpriseFaces = ~contains(allFaces, faces, 'IgnoreCase',true);
 surpriseFaces = allFaces(surpriseFaces); % these are the faces in the neutralC folder that are not selected to be shown during practice and main trials. We need 
 % these as foil faces in the surprise memory task.
 % As we will show 50% foils, we will need to randomly select 192/2 faces
 % from this surpriseFaces.
-surpriseFaces = randsample(surpriseFaces, 160/2);
+surpriseFaces = randsample(surpriseFaces, 320/2);
 foilFaces = surpriseFaces;
 for abrak1=1:length(foilFaces) % adding a second column that mentions if this is a new face (i.e., foil). For new faces, we have "1" as true.
     foilFaces(abrak1,2) = '1'; % new?
@@ -50,8 +50,8 @@ second_rightFlanker_location = '[-0.0385,0]';
 
 rightArrow = 'img/rightArrow.png';
 leftArrow = 'img/leftArrow.png';
-for jaguar=1:6 % 5 of these files will be for the main blocks. The last one with 20 trials will be the practice block.
-    if jaguar==6
+for jaguar=1:11 % 10 of these files will be for the main blocks. The last one with 20 trials will be the practice block.
+    if jaguar==11
         firstDat = randsample(faces, 20); % this practice block will have 20 trials.
         pracFaces_intact = firstDat; % we need this for the 2nd csv file.
         % we need to randomly select half of the faces to be right directed and the
@@ -149,7 +149,7 @@ for jaguar=1:6 % 5 of these files will be for the main blocks. The last one with
         facesTemp = ~contains(faces, pracFaces_intact, 'IgnoreCase',true);
         faces = faces(facesTemp);
     else
-        % The first 5 csv files will be used for the arrow flanker task in the alternative task.
+        % The first 10 csv files will be used for the arrow flanker task in the alternative task.
         % We need to change the location of center and distractor arrows.
         % We need to rename faces to have those arrows.
         firstDat = randsample(faces, 32); % each block will have 32 trials.

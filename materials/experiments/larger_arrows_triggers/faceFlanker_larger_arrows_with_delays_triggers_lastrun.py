@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2022.1.4),
-    on Thu Jun  9 09:43:38 2022
+    on Mon Jul 11 20:00:32 2022
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -506,7 +506,7 @@ fix = visual.TextStim(win=win, name='fix',
 # Initialize components for Routine "errorNumbers_2"
 errorNumbers_2Clock = core.Clock()
 errorNumbers_text_2 = visual.TextStim(win=win, name='errorNumbers_text_2',
-    text='How many errors do you think you made in this game?\n\nTo answer the question: \nJust type the number of errors.\n\nAfter responding to the question, press the "space" key to proceed.',
+    text='How many errors do you think you made in this game?\n\nTo answer the question: \nPlease call the experimenter. \n\n',
     font='Open Sans',
     pos=(0, 0.12), height=0.03, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
@@ -533,7 +533,7 @@ errorN_key_resp_2 = keyboard.Keyboard()
 # Initialize components for Routine "botherRate"
 botherRateClock = core.Clock()
 botherRate_text = visual.TextStim(win=win, name='botherRate_text',
-    text='How much did it bother you when you made an error during the arrow game? \n\nTo answer this question: \nType your answer on a scale from 0 (not at all) to 10 (very much). \n\nAfter responding to the question, press the "space" key to proceed.',
+    text='How much did it bother you when you made an error during the arrow game? \n\nTo answer this question: \nPlease call the experimenter and let them know your answer on a scale from 0 (not at all) to 10 (very much). \n\n\n\n',
     font='Open Sans',
     pos=(0, 0.12), height=0.03, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
@@ -559,14 +559,6 @@ botherRate_key_resp = keyboard.Keyboard()
 
 # Initialize components for Routine "askExperimenter"
 askExperimenterClock = core.Clock()
-instruct_surprise1_4 = visual.TextStim(win=win, name='instruct_surprise1_4',
-    text='Congradulations! \nYou completed the arrow game and answered the questions!\n\nPlease do not proceed and let the experimenter you completed the game.\n\n\n',
-    font='Open Sans',
-    pos=(0, 0), height=0.04, wrapWidth=None, ori=0.0, 
-    color='white', colorSpace='rgb', opacity=None, 
-    languageStyle='LTR',
-    depth=0.0);
-instruct_surp1_key_resp_4 = keyboard.Keyboard()
 
 # Initialize components for Routine "surpriseInstruct"
 surpriseInstructClock = core.Clock()
@@ -1314,7 +1306,7 @@ for thisComponent in instructInconLeftComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-prac_block_loop = data.TrialHandler(nReps=0, method='random', 
+prac_block_loop = data.TrialHandler(nReps=999, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('blockSelect_practice.csv'),
     seed=None, name='prac_block_loop')
@@ -1936,11 +1928,11 @@ for thisPrac_block_loop in prac_block_loop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0 repeats of 'prac_block_loop'
+# completed 999 repeats of 'prac_block_loop'
 
 
 # set up handler to look after randomisation of conditions etc
-task_block_loop = data.TrialHandler(nReps=0.0, method='random', 
+task_block_loop = data.TrialHandler(nReps=1.0, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('blockSelect.csv'),
     seed=None, name='task_block_loop')
@@ -1964,17 +1956,16 @@ for thisTask_block_loop in task_block_loop:
     blockCounter = blockCounter +1
     
     if blockCounter == 1:
-        blockNumText = 'Block 1 of 6'
+        blockNumText = 'Block 1 of 5'
     elif blockCounter == 2:
-        blockNumText = 'Block 2 of 6'
+        blockNumText = 'Block 2 of 5'
     elif blockCounter == 3:
-        blockNumText = 'Block 3 of 6'
+        blockNumText = 'Block 3 of 5'
     elif blockCounter == 4:
-        blockNumText = 'Block 4 of 6'
+        blockNumText = 'Block 4 of 5'
     elif blockCounter == 5:
-        blockNumText = 'Block 5 of 6'
-    elif blockCounter == 6:
-        blockNumText = 'Block 6 of 6'
+        blockNumText = 'Block 5 of 5'
+    
     
     task_blockText.setText(blockNumText)
     task_blockReminders_keyResp.keys = []
@@ -2201,9 +2192,17 @@ for thisTask_block_loop in task_block_loop:
         task_leftImg2.setSize(imageSize)
         task_leftImg2.setImage(leftStim)
         task_fixImg.setImage('img/transp_fixation.png')
+        #set stimTriggerSent to false at the start of the trial. this way
+        #when the stimulus is shown, we can change it to True. This variable
+        #is used to ensure we only throw the stimulus EEG trigger once.
+        stimTriggerSent = False
         task1_stim_keyResp.keys = []
         task1_stim_keyResp.rt = []
         _task1_stim_keyResp_allKeys = []
+        #clear out the keys_counbted variable at the start of the trial
+        #this variable will hold the keys that have had eeg triggers thrown
+        #already within a given trial.
+        keys_counted = []
         # keep track of which components have finished
         task_stimRoutineComponents = [bigFace_2, cover_background, task_centerImg, task_rightImg1, task_rightImg2, task_leftImg1, task_leftImg2, task_fixImg, task1_stim_keyResp]
         for thisComponent in task_stimRoutineComponents:
@@ -2363,6 +2362,31 @@ for thisTask_block_loop in task_block_loop:
                     task_fixImg.frameNStop = frameN  # exact frame index
                     win.timeOnFlip(task_fixImg, 'tStopRefresh')  # time at next scr refresh
                     task_fixImg.setAutoDraw(False)
+            #the first if statement below ensures that the subsequent if statements (and throwing of triggers)
+            #only occurs once per trial. That is, only when the stimulus is presented (.status = STARTED) and
+            #stimTriggerSent is still False. Once a trigger is sent, we change stimTriggerSent to True so that 
+            #the stimulus eeg trigger will not be sent again for this trial
+            if task_centerImg.status == STARTED and not stimTriggerSent:
+                if stimNum == 5: #code denoting which stimulus array was sent (from excel file)
+                    stimTriggerSent = True #switch stimTriggerSent to True so that the stimulus eeg trigger will not be sent again this trial
+                    port.write([0x05]) #hexcode = 1; eeg trigger sent
+                    time.sleep(PulseWidth) #how long to wait before clearing trigger port
+                    port.write([0x00]) #clear trigger port by sending hexcode = 0
+                elif stimNum == 6:
+                    stimTriggerSent = True
+                    port.write([0x06])
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
+                elif stimNum == 7:
+                    stimTriggerSent = True
+                    port.write([0x07])
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
+                elif stimNum == 8:
+                    stimTriggerSent = True
+                    port.write([0x08])
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
             
             # *task1_stim_keyResp* updates
             waitOnFlip = False
@@ -2391,6 +2415,46 @@ for thisTask_block_loop in task_block_loop:
                 if len(_task1_stim_keyResp_allKeys):
                     task1_stim_keyResp.keys = [key.name for key in _task1_stim_keyResp_allKeys]  # storing all keys
                     task1_stim_keyResp.rt = [key.rt for key in _task1_stim_keyResp_allKeys]
+            if task1_stim_keyResp.keys and len(task1_stim_keyResp.keys) > len(keys_counted):# A key response has been made but we haven't yet "counted" it
+                keys_counted.append(task1_stim_keyResp.keys[-1]) #add this response to list of keys pressed this trial
+                if len(task1_stim_keyResp.keys) < 2: #if this is  the first response
+                    if task1_stim_keyResp.keys[-1] == '1':
+                        if target == 'left': #correct response
+                            port.write([0x0B]) # 11
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                        elif target == 'right': #error response
+                            port.write([0x0C])# 12
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                    elif task1_stim_keyResp.keys[-1] == '8':
+                        if target == 'right': #correct response
+                            port.write([0x0B]) # 11
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                        elif target == 'left': #error response
+                            port.write([0x0C])# 12
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                elif len(task1_stim_keyResp.keys) >= 2: #if this is NOT the first response
+                    if task1_stim_keyResp.keys[-1] == '1':
+                        if target == 'left': #technically correct response, but not the first response made
+                            port.write([0x15]) # 21
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                        elif target == 'right': #technically error response, but not the first response made
+                            port.write([0x16])# 22
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                    elif task1_stim_keyResp.keys[-1] == '8':
+                        if target == 'right': #technically correct response, but not the first response made
+                            port.write([0x15]) # 21
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                        elif target == 'left': #technically error response, but not the first response made
+                            port.write([0x16])# 22
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
             
             # check for quit (typically the Esc key)
             if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -2429,6 +2493,16 @@ for thisTask_block_loop in task_block_loop:
             task_trial_loop.addData('task1_stim_keyResp.rt', task1_stim_keyResp.rt)
         task_trial_loop.addData('task1_stim_keyResp.started', task1_stim_keyResp.tStartRefresh)
         task_trial_loop.addData('task1_stim_keyResp.stopped', task1_stim_keyResp.tStopRefresh)
+        
+        #instead of including here, should instead include something
+        #in each frame section that computes t at stim onset and then
+        #when thisISI - t <= .05 (50 ms) and then at that point we throw
+        #the no-resp marker...
+        
+        #if not prac_stim_keyResp.keys or len(prac_stim_keyResp.keys) == 0:
+        #            port.write([0x63]) # 99
+        #            time.sleep(PulseWidth)
+        #            port.write([0x00])
         trialNum = trialNum + 1 #iterate trial number for this block
         
         if task1_stim_keyResp.keys: #if at least one response was made this trial
@@ -2583,7 +2657,7 @@ for thisTask_block_loop in task_block_loop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0.0 repeats of 'task_block_loop'
+# completed 1.0 repeats of 'task_block_loop'
 
 
 # ------Prepare to start Routine "fixation1"-------
@@ -2879,11 +2953,8 @@ routineTimer.reset()
 # ------Prepare to start Routine "askExperimenter"-------
 continueRoutine = True
 # update component parameters for each repeat
-instruct_surp1_key_resp_4.keys = []
-instruct_surp1_key_resp_4.rt = []
-_instruct_surp1_key_resp_4_allKeys = []
 # keep track of which components have finished
-askExperimenterComponents = [instruct_surprise1_4, instruct_surp1_key_resp_4]
+askExperimenterComponents = []
 for thisComponent in askExperimenterComponents:
     thisComponent.tStart = None
     thisComponent.tStop = None
@@ -2906,37 +2977,6 @@ while continueRoutine:
     frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
     # update/draw components on each frame
     
-    # *instruct_surprise1_4* updates
-    if instruct_surprise1_4.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-        # keep track of start time/frame for later
-        instruct_surprise1_4.frameNStart = frameN  # exact frame index
-        instruct_surprise1_4.tStart = t  # local t and not account for scr refresh
-        instruct_surprise1_4.tStartRefresh = tThisFlipGlobal  # on global time
-        win.timeOnFlip(instruct_surprise1_4, 'tStartRefresh')  # time at next scr refresh
-        instruct_surprise1_4.setAutoDraw(True)
-    
-    # *instruct_surp1_key_resp_4* updates
-    waitOnFlip = False
-    if instruct_surp1_key_resp_4.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-        # keep track of start time/frame for later
-        instruct_surp1_key_resp_4.frameNStart = frameN  # exact frame index
-        instruct_surp1_key_resp_4.tStart = t  # local t and not account for scr refresh
-        instruct_surp1_key_resp_4.tStartRefresh = tThisFlipGlobal  # on global time
-        win.timeOnFlip(instruct_surp1_key_resp_4, 'tStartRefresh')  # time at next scr refresh
-        instruct_surp1_key_resp_4.status = STARTED
-        # keyboard checking is just starting
-        waitOnFlip = True
-        win.callOnFlip(instruct_surp1_key_resp_4.clock.reset)  # t=0 on next screen flip
-        win.callOnFlip(instruct_surp1_key_resp_4.clearEvents, eventType='keyboard')  # clear events on next screen flip
-    if instruct_surp1_key_resp_4.status == STARTED and not waitOnFlip:
-        theseKeys = instruct_surp1_key_resp_4.getKeys(keyList=['8'], waitRelease=False)
-        _instruct_surp1_key_resp_4_allKeys.extend(theseKeys)
-        if len(_instruct_surp1_key_resp_4_allKeys):
-            instruct_surp1_key_resp_4.keys = _instruct_surp1_key_resp_4_allKeys[-1].name  # just the last key pressed
-            instruct_surp1_key_resp_4.rt = _instruct_surp1_key_resp_4_allKeys[-1].rt
-            # a response ends the routine
-            continueRoutine = False
-    
     # check for quit (typically the Esc key)
     if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
         core.quit()
@@ -2958,15 +2998,6 @@ while continueRoutine:
 for thisComponent in askExperimenterComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
-thisExp.addData('instruct_surprise1_4.started', instruct_surprise1_4.tStartRefresh)
-thisExp.addData('instruct_surprise1_4.stopped', instruct_surprise1_4.tStopRefresh)
-# check responses
-if instruct_surp1_key_resp_4.keys in ['', [], None]:  # No response was made
-    instruct_surp1_key_resp_4.keys = None
-thisExp.addData('instruct_surp1_key_resp_4.keys',instruct_surp1_key_resp_4.keys)
-if instruct_surp1_key_resp_4.keys != None:  # we had a response
-    thisExp.addData('instruct_surp1_key_resp_4.rt', instruct_surp1_key_resp_4.rt)
-thisExp.nextEntry()
 # the Routine "askExperimenter" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
 
@@ -3065,7 +3096,7 @@ thisExp.nextEntry()
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-surprise_block_loop = data.TrialHandler(nReps=0.0, method='sequential', 
+surprise_block_loop = data.TrialHandler(nReps=1.0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions("surpriseBlock_select_"+expInfo['cb']+".xlsx"),
     seed=None, name='surprise_block_loop')
@@ -3205,9 +3236,17 @@ for thisSurprise_block_loop in surprise_block_loop:
         instructsurpA1_right.setPos((0.6, -0.03))
         instructsurpA1_right.setText(instructsurpA1)
         instructsurpA2_left.setText(instructsurpA2)
+        #set stimTriggerSent to false at the start of the trial. this way
+        #when the stimulus is shown, we can change it to True. This variable
+        #is used to ensure we only throw the stimulus EEG trigger once.
+        stimulusTriggerSent = False
         surprise_key_resp.keys = []
         surprise_key_resp.rt = []
         _surprise_key_resp_allKeys = []
+        #clear out the keys_counbted variable at the start of the trial
+        #this variable will hold the keys that have had eeg triggers thrown
+        #already within a given trial.
+        keys_counted = []
         # keep track of which components have finished
         surpriseTaskComponents = [stimulus, instructsurpA1_right, instructsurpA2_left, surprise_key_resp]
         for thisComponent in surpriseTaskComponents:
@@ -3259,6 +3298,13 @@ for thisSurprise_block_loop in surprise_block_loop:
                 win.timeOnFlip(instructsurpA2_left, 'tStartRefresh')  # time at next scr refresh
                 instructsurpA2_left.setAutoDraw(True)
             
+            if stimulus.status == STARTED and not stimulusTriggerSent:
+                stimulusTriggerSent = True #switch stimTriggerSent to True so that the stimulus eeg trigger will not be sent again this trial
+                port.write([0x1F]) #hexcode = 31; eeg trigger sent
+                time.sleep(PulseWidth) #how long to wait before clearing trigger port
+                port.write([0x00]) #clear trigger port by sending hexcode = 0
+            
+            
             # *surprise_key_resp* updates
             waitOnFlip = False
             if surprise_key_resp.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
@@ -3280,6 +3326,27 @@ for thisSurprise_block_loop in surprise_block_loop:
                     surprise_key_resp.rt = _surprise_key_resp_allKeys[-1].rt
                     # a response ends the routine
                     continueRoutine = False
+            if surprise_key_resp.keys and len(surprise_key_resp.keys) > len(keys_counted):# A key response has been made but we haven't yet "counted" it
+                keys_counted.append(surprise_key_resp.keys[-1]) #add this response to list of keys pressed this trial
+                if len(surprise_key_resp.keys) < 2: #if this is  the first response
+                    if surprise_key_resp.keys[-1] == '1':
+                        port.write([0x29]) # 41
+                        time.sleep(PulseWidth)
+                        port.write([0x00])
+                    elif surprise_key_resp.keys[-1] == '8': 
+                        port.write([0x2A])# 42
+                        time.sleep(PulseWidth)
+                        port.write([0x00])
+                elif len(surprise_key_resp.keys) >= 2: #if this is NOT the first response
+                    if surprise_key_resp.keys[-1] == '1':
+                        port.write([0x33]) # 51
+                        time.sleep(PulseWidth)
+                        port.write([0x00])
+                    elif surprise_key_resp.keys[-1] == '8': 
+                        port.write([0x34])# 52
+                        time.sleep(PulseWidth)
+                        port.write([0x00])
+            
             
             # check for quit (typically the Esc key)
             if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -3316,6 +3383,16 @@ for thisSurprise_block_loop in surprise_block_loop:
             trials.addData('surprise_key_resp.rt', surprise_key_resp.rt)
         trials.addData('surprise_key_resp.started', surprise_key_resp.tStartRefresh)
         trials.addData('surprise_key_resp.stopped', surprise_key_resp.tStopRefresh)
+        
+        #instead of including here, should instead include something
+        #in each frame section that computes t at stim onset and then
+        #when thisISI - t <= .05 (50 ms) and then at that point we throw
+        #the no-resp marker...
+        
+        #if not prac_stim_keyResp.keys or len(prac_stim_keyResp.keys) == 0:
+        #            port.write([0x63]) # 99
+        #            time.sleep(PulseWidth)
+        #            port.write([0x00])
         # the Routine "surpriseTask" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         thisExp.nextEntry()
@@ -3324,7 +3401,7 @@ for thisSurprise_block_loop in surprise_block_loop:
     
     thisExp.nextEntry()
     
-# completed 0.0 repeats of 'surprise_block_loop'
+# completed 1.0 repeats of 'surprise_block_loop'
 
 
 # ------Prepare to start Routine "friendlyInstruct1"-------
@@ -3562,9 +3639,17 @@ for thisFriendly_block_loop in friendly_block_loop:
         instructsurpA1_right_2.setPos((0.6, -0.03))
         instructsurpA1_right_2.setText(instructsurpA1)
         instructsurpA2_left_2.setText(instructsurpA2)
+        #set stimTriggerSent to false at the start of the trial. this way
+        #when the stimulus is shown, we can change it to True. This variable
+        #is used to ensure we only throw the stimulus EEG trigger once.
+        stimulus12TriggerSent = False
         friendly_key_resp.keys = []
         friendly_key_resp.rt = []
         _friendly_key_resp_allKeys = []
+        #clear out the keys_counbted variable at the start of the trial
+        #this variable will hold the keys that have had eeg triggers thrown
+        #already within a given trial.
+        keys_counted = []
         # keep track of which components have finished
         friendlyTaskComponents = [stimulus12, instructsurpA1_right_2, instructsurpA2_left_2, friendly_key_resp]
         for thisComponent in friendlyTaskComponents:
@@ -3616,6 +3701,13 @@ for thisFriendly_block_loop in friendly_block_loop:
                 win.timeOnFlip(instructsurpA2_left_2, 'tStartRefresh')  # time at next scr refresh
                 instructsurpA2_left_2.setAutoDraw(True)
             
+            if stimulus12.status == STARTED and not stimulus12TriggerSent:
+                stimulus12TriggerSent = True #switch stimTriggerSent to True so that the stimulus eeg trigger will not be sent again this trial
+                port.write([0x1F]) #hexcode = 31; eeg trigger sent
+                time.sleep(PulseWidth) #how long to wait before clearing trigger port
+                port.write([0x00]) #clear trigger port by sending hexcode = 0
+            
+            
             # *friendly_key_resp* updates
             waitOnFlip = False
             if friendly_key_resp.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
@@ -3637,6 +3729,27 @@ for thisFriendly_block_loop in friendly_block_loop:
                     friendly_key_resp.rt = _friendly_key_resp_allKeys[-1].rt
                     # a response ends the routine
                     continueRoutine = False
+            if friendly_key_resp.keys and len(friendly_key_resp.keys) > len(keys_counted):# A key response has been made but we haven't yet "counted" it
+                keys_counted.append(friendly_key_resp.keys[-1]) #add this response to list of keys pressed this trial
+                if len(friendly_key_resp.keys) < 2: #if this is  the first response
+                    if friendly_key_resp.keys[-1] == '1':
+                        port.write([0x29]) # 41
+                        time.sleep(PulseWidth)
+                        port.write([0x00])
+                    elif friendly_key_resp.keys[-1] == '8': 
+                        port.write([0x2A])# 42
+                        time.sleep(PulseWidth)
+                        port.write([0x00])
+                elif len(friendly_key_resp.keys) >= 2: #if this is NOT the first response
+                    if friendly_key_resp.keys[-1] == '1':
+                        port.write([0x33]) # 51
+                        time.sleep(PulseWidth)
+                        port.write([0x00])
+                    elif friendly_key_resp.keys[-1] == '8': 
+                        port.write([0x34])# 52
+                        time.sleep(PulseWidth)
+                        port.write([0x00])
+            
             
             # check for quit (typically the Esc key)
             if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -3673,6 +3786,16 @@ for thisFriendly_block_loop in friendly_block_loop:
             trials_2.addData('friendly_key_resp.rt', friendly_key_resp.rt)
         trials_2.addData('friendly_key_resp.started', friendly_key_resp.tStartRefresh)
         trials_2.addData('friendly_key_resp.stopped', friendly_key_resp.tStopRefresh)
+        
+        #instead of including here, should instead include something
+        #in each frame section that computes t at stim onset and then
+        #when thisISI - t <= .05 (50 ms) and then at that point we throw
+        #the no-resp marker...
+        
+        #if not prac_stim_keyResp.keys or len(prac_stim_keyResp.keys) == 0:
+        #            port.write([0x63]) # 99
+        #            time.sleep(PulseWidth)
+        #            port.write([0x00])
         # the Routine "friendlyTask" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         thisExp.nextEntry()
