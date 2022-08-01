@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" ?>
-<PsychoPy2experiment encoding="utf-8" version="2022.1.4">
+<PsychoPy2experiment encoding="utf-8" version="2022.2.2">
   <Settings>
     <Param val="use prefs" valType="str" updates="None" name="Audio latency priority"/>
     <Param val="use prefs" valType="str" updates="None" name="Audio lib"/>
@@ -402,7 +402,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="task_stimTrigger_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <KeyboardComponent name="task1_stim_keyResp">
@@ -437,7 +437,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="&amp;#10;#instead of including here, should instead include something&amp;#10;#in each frame section that computes t at stim onset and then&amp;#10;#when thisISI - t &lt;= .05 (50 ms) and then at that point we throw&amp;#10;#the no-resp marker...&amp;#10;&amp;#10;#if not prac_stim_keyResp.keys or len(prac_stim_keyResp.keys) == 0:&amp;#10;#            port.write([0x63]) # 99&amp;#10;#            time.sleep(PulseWidth)&amp;#10;#            port.write([0x00])" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="task_respTrigger_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <CodeComponent name="task_accuracy_code">
@@ -706,7 +706,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="prac_stimTrigger_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <KeyboardComponent name="prac_stim_keyResp">
@@ -741,7 +741,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="&amp;#10;#instead of including here, should instead include something&amp;#10;#in each frame section that computes t at stim onset and then&amp;#10;#when thisISI - t &lt;= .05 (50 ms) and then at that point we throw&amp;#10;#the no-resp marker...&amp;#10;&amp;#10;#if not prac_stim_keyResp.keys or len(prac_stim_keyResp.keys) == 0:&amp;#10;#            port.write([0x63]) # 99&amp;#10;#            time.sleep(PulseWidth)&amp;#10;#            port.write([0x00])" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="prac_respTrigger_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <CodeComponent name="prac_accuracy_code">
@@ -855,8 +855,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="#initialize the following variables at the start of experiment&amp;#10;blockCounter = 0&amp;#10;&amp;#10;#note that we do not need to initialize the accuracy and numCorr vars here&amp;#10;#because they were already initialilzed in the code snippet of the practice loop" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="blockCounter = 0;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="blockCounter = (blockCounter + 1);&amp;#10;if ((blockCounter === 1)) {&amp;#10;    blockNumText = &quot;Block 1 of 10&quot;;&amp;#10;} else {&amp;#10;    if ((blockCounter === 2)) {&amp;#10;        blockNumText = &quot;Block 2 of 10&quot;;&amp;#10;    } else {&amp;#10;        if ((blockCounter === 3)) {&amp;#10;            blockNumText = &quot;Block 3 of 10&quot;;&amp;#10;        } else {&amp;#10;            if ((blockCounter === 4)) {&amp;#10;                blockNumText = &quot;Block 4 of 10&quot;;&amp;#10;            } else {&amp;#10;                if ((blockCounter === 5)) {&amp;#10;                    blockNumText = &quot;Block 5 of 10&quot;;&amp;#10;                } else {&amp;#10;                    if ((blockCounter === 6)) {&amp;#10;                        blockNumText = &quot;Block 6 of 10&quot;;&amp;#10;                    } else {&amp;#10;                        if ((blockCounter === 7)) {&amp;#10;                            blockNumText = &quot;Block 7 of 10&quot;;&amp;#10;                        } else {&amp;#10;                            if ((blockCounter === 8)) {&amp;#10;                                blockNumText = &quot;Block 8 of 10&quot;;&amp;#10;                            } else {&amp;#10;                                if ((blockCounter === 9)) {&amp;#10;                                    blockNumText = &quot;Block 9 of 10&quot;;&amp;#10;                                } else {&amp;#10;                                    if ((blockCounter === 10)) {&amp;#10;                                        blockNumText = &quot;Block 10 of 10&quot;;&amp;#10;                                    }&amp;#10;                                }&amp;#10;                            }&amp;#10;                        }&amp;#10;                    }&amp;#10;                }&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="blockCounter = blockCounter +1&amp;#10;&amp;#10;if blockCounter == 1:&amp;#10;    blockNumText = 'Block 1 of 10'&amp;#10;elif blockCounter == 2:&amp;#10;    blockNumText = 'Block 2 of 10'&amp;#10;elif blockCounter == 3:&amp;#10;    blockNumText = 'Block 3 of 10'&amp;#10;elif blockCounter == 4:&amp;#10;    blockNumText = 'Block 4 of 10'&amp;#10;elif blockCounter == 5:&amp;#10;    blockNumText = 'Block 5 of 10'&amp;#10;elif blockCounter == 6:&amp;#10;    blockNumText = 'Block 6 of 10'&amp;#10;elif blockCounter == 7:&amp;#10;    blockNumText = 'Block 7 of 10'&amp;#10;elif blockCounter == 8:&amp;#10;    blockNumText = 'Block 8 of 10'&amp;#10;elif blockCounter == 9:&amp;#10;    blockNumText = 'Block 9 of 10'&amp;#10;elif blockCounter == 10:&amp;#10;    blockNumText = 'Block 10 of 10'&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="blockCounter = (blockCounter + 1);&amp;#10;if ((blockCounter === 1)) {&amp;#10;    blockNumText = &quot;Block 1 of 5&quot;;&amp;#10;} else {&amp;#10;    if ((blockCounter === 2)) {&amp;#10;        blockNumText = &quot;Block 2 of 5&quot;;&amp;#10;    } else {&amp;#10;        if ((blockCounter === 3)) {&amp;#10;            blockNumText = &quot;Block 3 of 5&quot;;&amp;#10;        } else {&amp;#10;            if ((blockCounter === 4)) {&amp;#10;                blockNumText = &quot;Block 4 of 5&quot;;&amp;#10;            } else {&amp;#10;                if ((blockCounter === 5)) {&amp;#10;                    blockNumText = &quot;Block 5 of 5&quot;;&amp;#10;                }&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="blockCounter = blockCounter +1&amp;#10;&amp;#10;if blockCounter == 1:&amp;#10;    blockNumText = 'Block 1 of 5'&amp;#10;elif blockCounter == 2:&amp;#10;    blockNumText = 'Block 2 of 5'&amp;#10;elif blockCounter == 3:&amp;#10;    blockNumText = 'Block 3 of 5'&amp;#10;elif blockCounter == 4:&amp;#10;    blockNumText = 'Block 4 of 5'&amp;#10;elif blockCounter == 5:&amp;#10;    blockNumText = 'Block 5 of 5'&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -1658,7 +1658,7 @@
         <Param val="psychoJS.window.mouseVisible = true;&amp;#10;port.write([255]);&amp;#10;time.sleep(PulseWidth);&amp;#10;port.close();&amp;#10;" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="setup_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
     </Routine>
@@ -1907,7 +1907,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="stimulus_trig_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <KeyboardComponent name="surprise_key_resp">
@@ -1942,7 +1942,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="&amp;#10;#instead of including here, should instead include something&amp;#10;#in each frame section that computes t at stim onset and then&amp;#10;#when thisISI - t &lt;= .05 (50 ms) and then at that point we throw&amp;#10;#the no-resp marker...&amp;#10;&amp;#10;#if not prac_stim_keyResp.keys or len(prac_stim_keyResp.keys) == 0:&amp;#10;#            port.write([0x63]) # 99&amp;#10;#            time.sleep(PulseWidth)&amp;#10;#            port.write([0x00])" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="response_trigger_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
     </Routine>
@@ -2043,7 +2043,7 @@
         <Param val="$[1,1,1]" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="False" valType="bool" updates="constant" name="flipHoriz"/>
         <Param val="False" valType="bool" updates="constant" name="flipVert"/>
@@ -2129,7 +2129,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="stimulus_trig_code_2" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <KeyboardComponent name="friendly_key_resp">
@@ -2164,7 +2164,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="&amp;#10;#instead of including here, should instead include something&amp;#10;#in each frame section that computes t at stim onset and then&amp;#10;#when thisISI - t &lt;= .05 (50 ms) and then at that point we throw&amp;#10;#the no-resp marker...&amp;#10;&amp;#10;#if not prac_stim_keyResp.keys or len(prac_stim_keyResp.keys) == 0:&amp;#10;#            port.write([0x63]) # 99&amp;#10;#            time.sleep(PulseWidth)&amp;#10;#            port.write([0x00])" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="response_trigger_code_2" valType="code" updates="None" name="name"/>
       </CodeComponent>
     </Routine>
@@ -2814,33 +2814,6 @@
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
     </Routine>
-    <Routine name="fixation2">
-      <TextComponent name="fix_rand">
-        <Param val="white" valType="color" updates="constant" name="color"/>
-        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
-        <Param val="1" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="None" valType="str" updates="constant" name="flip"/>
-        <Param val="Open Sans" valType="str" updates="constant" name="font"/>
-        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
-        <Param val="0.1" valType="num" updates="constant" name="letterHeight"/>
-        <Param val="fix_rand" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
-        <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0.0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="random()+1" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="+" valType="str" updates="constant" name="text"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
-      </TextComponent>
-    </Routine>
   </Routines>
   <Flow>
     <Routine name="JS_code"/>
@@ -2857,7 +2830,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="999" valType="code"/>
+      <Param name="nReps" updates="None" val="0" valType="code"/>
       <Param name="name" updates="None" val="prac_block_loop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -2885,7 +2858,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="nReps" updates="None" val="0" valType="num"/>
       <Param name="name" updates="None" val="task_block_loop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -2918,7 +2891,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="sequential" valType="str"/>
-      <Param name="nReps" updates="None" val="0" valType="num"/>
+      <Param name="nReps" updates="None" val="1" valType="num"/>
       <Param name="name" updates="None" val="surprise_block_loop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -2934,8 +2907,20 @@
       <Param name="name" updates="None" val="trials" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
+    <LoopInitiator loopType="TrialHandler" name="trials_3">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="$surp_csv_name" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="name" updates="None" val="trials_3" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
     <Routine name="surpriseTask"/>
-    <Routine name="fixation2"/>
+    <Routine name="friendlyTask"/>
+    <LoopTerminator name="trials_3"/>
     <LoopTerminator name="trials"/>
     <LoopTerminator name="surprise_block_loop"/>
     <Routine name="friendlyInstruct1"/>
@@ -2946,7 +2931,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="sequential" valType="str"/>
-      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="nReps" updates="None" val="0" valType="num"/>
       <Param name="name" updates="None" val="friendly_block_loop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -2963,7 +2948,6 @@
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
     <Routine name="friendlyTask"/>
-    <Routine name="fixation2"/>
     <LoopTerminator name="trials_2"/>
     <LoopTerminator name="friendly_block_loop"/>
     <Routine name="finishMessage"/>

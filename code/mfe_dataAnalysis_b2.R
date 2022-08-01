@@ -1,7 +1,7 @@
 # This script allows to run statistical analysis on Psychopy output of the memory for error project.
 # Author: Kianoosh Hosseini at NDCLab @FIU (May 2022; https://Kianoosh.info; https://NDClab.com)
 # Some parts are from scripts by George Buzzell, Jessica M. Alexander, and Arina Polyanskaya.
-# This script is the second branch of this script as it only includes correct trials for pre-error and post-errors.
+### This script is the second branch of this script as it only includes correct trials for pre-error and post-errors.
 # Last Update: 2022-07-11 (YYYY-MM-DD)
 
 
@@ -162,7 +162,8 @@ for(i in 1:length(datafiles_list)){
   surpDat$newKey <- replace(surpDat$newKey, surpDat$newKey =='right', 8) # replace 8 values with right for the next loop.
   surpDat$newKey <- replace(surpDat$newKey, surpDat$newKey =='left', 1)
   num_incong_errors <- nrow(incong_errorDat)
-  if (nrow(incong_errorDat) != 0){ #for when the participant has incongruent errors
+  # Participants with less than 4 incong errors are considered outliers. This may be updated according to the data mean and SD.
+  if (nrow(incong_errorDat) >= 4){ #for when the participant has 4 or more than 4 incongruent errors
     #######################################
     ######## SECTION 2: Surprise Task
     # Let's keep only the surprise trials that have faces from error trials in the main task. Then, we will be able to easily use that smaller dataframe to calculate the number of OLD faces among error trials.
@@ -762,3 +763,4 @@ t.test((as.numeric(percent_mainDat$pre_d_prime_error)), (as.numeric(percent_main
 t.test((as.numeric(percent_mainDat$d_prime_error)), (as.numeric(percent_mainDat$post_d_prime_error)), paired = TRUE, alternative = "less")
 t.test((as.numeric(percent_mainDat$gen_hit)), (as.numeric(percent_mainDat$falseAlarm_for_both)), paired = TRUE) # to test if incidental memory is above chance!
 t.test((as.numeric(percent_mainDat$post_d_prime_correct)), (as.numeric(percent_mainDat$post_d_prime_error)), paired = TRUE, alternative = "less")
+t.test((as.numeric(percent_mainDat$post_d_prime_correct)), (as.numeric(percent_mainDat$post_d_prime_error)), paired = TRUE)
