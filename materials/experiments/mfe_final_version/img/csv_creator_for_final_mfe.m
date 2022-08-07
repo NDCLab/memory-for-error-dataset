@@ -270,6 +270,8 @@ surpriseTable = table2array(surpriseTable);
 surpriseTable = surpriseTable(randperm(size(surpriseTable, 1)), : ); % Shuffle the data randomly by rows.
 surpriseTable = array2table(surpriseTable);
 surpriseTable.Properties.VariableNames = {'surpriseFaces', 'new'};
+writetable(surpriseTable(1:height(surpriseTable)/2,:), "surpriseTable1.csv")
+writetable(surpriseTable((height(surpriseTable)/2)+1:end,:), "surpriseTable2.csv")
 % We need to have a seperate csv file for each row of the surpriseTable.
 % So, I have the following 'for loop'.
 cd(surprise_csv_dir)
