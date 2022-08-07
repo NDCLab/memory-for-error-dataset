@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2022.1.4),
-    on June 06, 2022, at 12:52
+    on June 06, 2022, at 18:06
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -1590,7 +1590,7 @@ for thisPrac_block_loop in prac_block_loop:
                     cover_background_2.setAutoDraw(False)
             
             # *prac_centerImg* updates
-            if prac_centerImg.status == NOT_STARTED and tThisFlip >= 0.15-frameTolerance:
+            if prac_centerImg.status == NOT_STARTED and tThisFlip >= 0-frameTolerance:
                 # keep track of start time/frame for later
                 prac_centerImg.frameNStart = frameN  # exact frame index
                 prac_centerImg.tStart = t  # local t and not account for scr refresh
@@ -1599,7 +1599,7 @@ for thisPrac_block_loop in prac_block_loop:
                 prac_centerImg.setAutoDraw(True)
             if prac_centerImg.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > prac_centerImg.tStartRefresh + .1-frameTolerance:
+                if tThisFlipGlobal > prac_centerImg.tStartRefresh + .2-frameTolerance:
                     # keep track of stop time/frame for later
                     prac_centerImg.tStop = t  # not accounting for scr refresh
                     prac_centerImg.frameNStop = frameN  # exact frame index
@@ -1616,7 +1616,7 @@ for thisPrac_block_loop in prac_block_loop:
                 prac_rightImg1.setAutoDraw(True)
             if prac_rightImg1.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > prac_rightImg1.tStartRefresh + .25-frameTolerance:
+                if tThisFlipGlobal > prac_rightImg1.tStartRefresh + .2-frameTolerance:
                     # keep track of stop time/frame for later
                     prac_rightImg1.tStop = t  # not accounting for scr refresh
                     prac_rightImg1.frameNStop = frameN  # exact frame index
@@ -1633,7 +1633,7 @@ for thisPrac_block_loop in prac_block_loop:
                 prac_leftImg1.setAutoDraw(True)
             if prac_leftImg1.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > prac_leftImg1.tStartRefresh + .25-frameTolerance:
+                if tThisFlipGlobal > prac_leftImg1.tStartRefresh + .2-frameTolerance:
                     # keep track of stop time/frame for later
                     prac_leftImg1.tStop = t  # not accounting for scr refresh
                     prac_leftImg1.frameNStop = frameN  # exact frame index

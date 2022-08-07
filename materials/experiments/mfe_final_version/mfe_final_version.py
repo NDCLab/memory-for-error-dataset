@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2022.1.4),
-    on August 05, 2022, at 01:48
+    on August 05, 2022, at 01:37
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -37,7 +37,6 @@ psychopyVersion = '2022.1.4'
 expName = 'face_flanker_v1'  # from the Builder filename that created this script
 expInfo = {
     'id': '',
-    'cb': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
 }
 dlg = gui.DlgFromDict(dictionary=expInfo, sortKeys=False, title=expName)
 if dlg.OK == False:
@@ -52,7 +51,7 @@ filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['id'], expName, expIn
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='C:\\Users\\kihossei\\Documents\\GitHub\\memory-for-error-dataset\\materials\\experiments\\mfe_final_version\\mfe_final_version_lastrun.py',
+    originPath='C:\\Users\\kihossei\\Documents\\GitHub\\memory-for-error-dataset\\materials\\experiments\\mfe_final_version\\mfe_final_version.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 # save a log file for detail verbose info
@@ -114,6 +113,19 @@ cb_slider = visual.Slider(win=win, name='cb_slider',
     labelColor=[-1.0000, -1.0000, -1.0000], markerColor='Red', lineColor='White', colorSpace='rgb',
     font='Open Sans', labelHeight=0.05,
     flip=False, ori=0.0, depth=-1, readOnly=False)
+# To prevent error, we define the empty lists below and will update them next.
+first_labelsO = []
+sec_labelsO = []  
+first_ticksO = []
+second_ticksO = []
+
+
+    
+
+
+
+
+
 
 # Initialize components for Routine "welcome"
 welcomeClock = core.Clock()
@@ -617,7 +629,7 @@ firstQ = visual.TextStim(win=win, name='firstQ',
     depth=-1.0);
 first_slider = visual.Slider(win=win, name='first_slider',
     startValue=None, size=(0.8, 0.03), pos=[0,0], units=None,
-    labels=["Definitely new", "Probably new", "Maybe new", "Maybe old", "Probably old", "Definitely old"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
+    labels=first_labelsO, ticks=first_ticksO, granularity=1.0,
     style='rating', styleTweaks=(), opacity=None,
     labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
     font='Open Sans', labelHeight=0.02,
@@ -640,6 +652,13 @@ firstQ_2 = visual.TextStim(win=win, name='firstQ_2',
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-1.0);
+first_slider_2 = visual.Slider(win=win, name='first_slider_2',
+    startValue=None, size=(0.8, 0.03), pos=[0,0], units=None,
+    labels=first_labelsO, ticks=first_ticksO, granularity=1.0,
+    style='rating', styleTweaks=(), opacity=None,
+    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+    font='Open Sans', labelHeight=0.02,
+    flip=False, ori=0.0, depth=-2, readOnly=False)
 
 # Initialize components for Routine "friendlyTask"
 friendlyTaskClock = core.Clock()
@@ -866,6 +885,14 @@ while continueRoutine:
     # Check cb_slider for response to end routine
     if cb_slider.getRating() is not None and cb_slider.status == STARTED:
         continueRoutine = False
+    # This code will determine the counterbalance 
+    # entered by the experimenter and will update
+    # the variables needed in the surprise block loop.
+    if cb_slider.response == "1":
+        first_labelsO = ["Definitely new", "Probably new", "Maybe new", "Maybe old", "Probably old", "Definitely old"]  
+        sec_labelsO = ["Definitely yes", "Probably yes", "Maybe yes", "Maybe no", "Probably no", "Definitely no"]  
+        first_ticksO = [1, 2, 3, 4, 5, 6]
+        second_ticksO = [6, 5, 4, 3, 2, 1]
     
     # check for quit (typically the Esc key)
     if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -3297,8 +3324,6 @@ for thisSurprise_block_loop in surprise_block_loop:
             firstQ.setPos(first_posQ)
             firstQ.setText(firstQ)
             first_slider.reset()
-            if cb_slider.response != 1:
-                continueRoutine = False
             # keep track of which components have finished
             surpriseTaskComponents = [stimulus, firstQ, first_slider]
             for thisComponent in surpriseTaskComponents:
@@ -3392,8 +3417,9 @@ for thisSurprise_block_loop in surprise_block_loop:
             stimulus_2.setImage(surpriseFaces)
             firstQ_2.setPos(first_posQ)
             firstQ_2.setText(firstQ)
+            first_slider_2.reset()
             # keep track of which components have finished
-            surpriseTask_2Components = [stimulus_2, firstQ_2]
+            surpriseTask_2Components = [stimulus_2, firstQ_2, first_slider_2]
             for thisComponent in surpriseTask_2Components:
                 thisComponent.tStart = None
                 thisComponent.tStop = None
@@ -3434,6 +3460,19 @@ for thisSurprise_block_loop in surprise_block_loop:
                     win.timeOnFlip(firstQ_2, 'tStartRefresh')  # time at next scr refresh
                     firstQ_2.setAutoDraw(True)
                 
+                # *first_slider_2* updates
+                if first_slider_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    first_slider_2.frameNStart = frameN  # exact frame index
+                    first_slider_2.tStart = t  # local t and not account for scr refresh
+                    first_slider_2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_slider_2, 'tStartRefresh')  # time at next scr refresh
+                    first_slider_2.setAutoDraw(True)
+                
+                # Check first_slider_2 for response to end routine
+                if first_slider_2.getRating() is not None and first_slider_2.status == STARTED:
+                    continueRoutine = False
+                
                 # check for quit (typically the Esc key)
                 if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
                     core.quit()
@@ -3459,6 +3498,10 @@ for thisSurprise_block_loop in surprise_block_loop:
             trials_3.addData('stimulus_2.stopped', stimulus_2.tStopRefresh)
             trials_3.addData('firstQ_2.started', firstQ_2.tStartRefresh)
             trials_3.addData('firstQ_2.stopped', firstQ_2.tStopRefresh)
+            trials_3.addData('first_slider_2.response', first_slider_2.getRating())
+            trials_3.addData('first_slider_2.rt', first_slider_2.getRT())
+            trials_3.addData('first_slider_2.started', first_slider_2.tStartRefresh)
+            trials_3.addData('first_slider_2.stopped', first_slider_2.tStopRefresh)
             # the Routine "surpriseTask_2" was not non-slip safe, so reset the non-slip timer
             routineTimer.reset()
             
