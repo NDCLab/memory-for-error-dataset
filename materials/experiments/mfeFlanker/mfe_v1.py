@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2022.1.4),
-    on August 11, 2022, at 16:04
+    on August 11, 2022, at 11:49
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -37,7 +37,7 @@ psychopyVersion = '2022.1.4'
 expName = 'mfe_flanker_v1'  # from the Builder filename that created this script
 expInfo = {
     'id': '',
-    'cb': ['A', 'B', 'C', 'D'],
+    'cb': ['A', 'B'],
 }
 dlg = gui.DlgFromDict(dictionary=expInfo, sortKeys=False, title=expName)
 if dlg.OK == False:
@@ -52,7 +52,7 @@ filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['id'], expName, expIn
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='C:\\Users\\kihossei\\Documents\\GitHub\\memory-for-error-dataset\\materials\\experiments\\mfeFlanker\\mfe_v1_lastrun.py',
+    originPath='C:\\Users\\kihossei\\Documents\\GitHub\\memory-for-error-dataset\\materials\\experiments\\mfeFlanker\\mfe_v1.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 # save a log file for detail verbose info
@@ -66,7 +66,7 @@ frameTolerance = 0.001  # how close to onset before 'same' frame
 
 # Setup the Window
 win = visual.Window(
-    size=[1536, 864], fullscr=True, screen=0, 
+    size=[1440, 900], fullscr=True, screen=0, 
     winType='pyglet', allowGUI=False, allowStencil=False,
     monitor='testMonitor', color='0.5000, 0.5000, 0.5000', colorSpace='rgb',
     blendMode='avg', useFBO=True, 
@@ -581,30 +581,30 @@ instructMainTask_text = visual.TextStim(win=win, name='instructMainTask_text',
     depth=0.0);
 instructMainTask_keyResp = keyboard.Keyboard()
 
-# Initialize components for Routine "firstStim_A"
-firstStim_AClock = core.Clock()
-first_surpStimuli_2 = visual.ImageStim(
+# Initialize components for Routine "firstStim_B"
+firstStim_BClock = core.Clock()
+first_surpStimuli = visual.ImageStim(
     win=win,
-    name='first_surpStimuli_2', units='height', 
+    name='first_surpStimuli', units='height', 
     image='sin', mask=None, anchor='center',
     ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=0.0)
-topQ_2 = visual.TextStim(win=win, name='topQ_2',
+topQ = visual.TextStim(win=win, name='topQ',
     text='',
     font='Open Sans',
-    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
+    pos=[0,0], height=0.025, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-1.0);
-surprise_key_resp_2 = keyboard.Keyboard()
-first_slider_2 = visual.Slider(win=win, name='first_slider_2',
-    startValue=None, size=(1.3, 0.022), pos=(0, 0.3), units=None,
+surprise_key_resp = keyboard.Keyboard()
+first_slider = visual.Slider(win=win, name='first_slider',
+    startValue=None, size=(1.0, 0.1), pos=(0, -0.4), units=None,
     labels=["Definitely new", "Probably new", "Maybe new", "Maybe old", "Probably old", "Definitely old"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
     style='rating', styleTweaks=(), opacity=None,
     labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
-    font='Open Sans', labelHeight=0.022,
+    font='Open Sans', labelHeight=0.05,
     flip=False, ori=0.0, depth=-3, readOnly=False)
 
 # Initialize components for Routine "firstStim_B"
@@ -620,69 +620,17 @@ first_surpStimuli = visual.ImageStim(
 topQ = visual.TextStim(win=win, name='topQ',
     text='',
     font='Open Sans',
-    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
+    pos=[0,0], height=0.025, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-1.0);
 surprise_key_resp = keyboard.Keyboard()
 first_slider = visual.Slider(win=win, name='first_slider',
-    startValue=None, size=(1.3, 0.022), pos=(0, 0.3), units=None,
-    labels=["Definitely old", "Probably old", "Maybe old", "Maybe new", "Probably new", "Definitely new"], ticks=[6, 5, 4, 3, 2, 1], granularity=1.0,
+    startValue=None, size=(1.0, 0.1), pos=(0, -0.4), units=None,
+    labels=["Definitely new", "Probably new", "Maybe new", "Maybe old", "Probably old", "Definitely old"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
     style='rating', styleTweaks=(), opacity=None,
     labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
-    font='Open Sans', labelHeight=0.022,
-    flip=False, ori=0.0, depth=-3, readOnly=False)
-
-# Initialize components for Routine "firstStim_C"
-firstStim_CClock = core.Clock()
-first_surpStimuli_3 = visual.ImageStim(
-    win=win,
-    name='first_surpStimuli_3', units='height', 
-    image='sin', mask=None, anchor='center',
-    ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
-    color=[1,1,1], colorSpace='rgb', opacity=None,
-    flipHoriz=False, flipVert=False,
-    texRes=128.0, interpolate=True, depth=0.0)
-topQ_3 = visual.TextStim(win=win, name='topQ_3',
-    text='',
-    font='Open Sans',
-    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
-    color='white', colorSpace='rgb', opacity=None, 
-    languageStyle='LTR',
-    depth=-1.0);
-surprise_key_resp_3 = keyboard.Keyboard()
-first_slider_3 = visual.Slider(win=win, name='first_slider_3',
-    startValue=None, size=(1.3, 0.022), pos=(0, 0.3), units=None,
-    labels=["Definitely approving", "Probably approving", "Maybe approving", "Maybe disapproving", "Probably disapproving", "Definitely disapproving"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
-    style='rating', styleTweaks=(), opacity=None,
-    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
-    font='Open Sans', labelHeight=0.022,
-    flip=False, ori=0.0, depth=-3, readOnly=False)
-
-# Initialize components for Routine "firstStim_D"
-firstStim_DClock = core.Clock()
-first_surpStimuli_4 = visual.ImageStim(
-    win=win,
-    name='first_surpStimuli_4', units='height', 
-    image='sin', mask=None, anchor='center',
-    ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
-    color=[1,1,1], colorSpace='rgb', opacity=None,
-    flipHoriz=False, flipVert=False,
-    texRes=128.0, interpolate=True, depth=0.0)
-topQ_4 = visual.TextStim(win=win, name='topQ_4',
-    text='',
-    font='Open Sans',
-    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
-    color='white', colorSpace='rgb', opacity=None, 
-    languageStyle='LTR',
-    depth=-1.0);
-surprise_key_resp_4 = keyboard.Keyboard()
-first_slider_4 = visual.Slider(win=win, name='first_slider_4',
-    startValue=None, size=(1.3, 0.022), pos=(0, 0.3), units=None,
-    labels=["Definitely disapproving", "Probably disapproving", "Maybe disapproving", "Maybe approving", "Probably approving", "Definitely approving"], ticks=[6, 5, 4, 3, 2, 1], granularity=1.0,
-    style='rating', styleTweaks=(), opacity=None,
-    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
-    font='Open Sans', labelHeight=0.022,
+    font='Open Sans', labelHeight=0.05,
     flip=False, ori=0.0, depth=-3, readOnly=False)
 
 # Initialize components for Routine "finishMessage"
@@ -3360,153 +3308,18 @@ for thisSurprise_block_loop in surprise_block_loop:
                 for paramName in thisTrial_2:
                     exec('{} = thisTrial_2[paramName]'.format(paramName))
             
-            # ------Prepare to start Routine "firstStim_A"-------
-            continueRoutine = True
-            # update component parameters for each repeat
-            first_surpStimuli_2.setImage(surpriseFaces)
-            topQ_2.setPos((0, 0.4))
-            topQ_2.setText(topQ_1)
-            topQ_2.setHeight(0.045)
-            surprise_key_resp_2.keys = []
-            surprise_key_resp_2.rt = []
-            _surprise_key_resp_2_allKeys = []
-            first_slider_2.reset()
-            if expInfo['cb'] == 'A':
-                continueRoutine = True
-            else:
-                continueRoutine = False
-            # keep track of which components have finished
-            firstStim_AComponents = [first_surpStimuli_2, topQ_2, surprise_key_resp_2, first_slider_2]
-            for thisComponent in firstStim_AComponents:
-                thisComponent.tStart = None
-                thisComponent.tStop = None
-                thisComponent.tStartRefresh = None
-                thisComponent.tStopRefresh = None
-                if hasattr(thisComponent, 'status'):
-                    thisComponent.status = NOT_STARTED
-            # reset timers
-            t = 0
-            _timeToFirstFrame = win.getFutureFlipTime(clock="now")
-            firstStim_AClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
-            frameN = -1
-            
-            # -------Run Routine "firstStim_A"-------
-            while continueRoutine:
-                # get current time
-                t = firstStim_AClock.getTime()
-                tThisFlip = win.getFutureFlipTime(clock=firstStim_AClock)
-                tThisFlipGlobal = win.getFutureFlipTime(clock=None)
-                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-                # update/draw components on each frame
-                
-                # *first_surpStimuli_2* updates
-                if first_surpStimuli_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    first_surpStimuli_2.frameNStart = frameN  # exact frame index
-                    first_surpStimuli_2.tStart = t  # local t and not account for scr refresh
-                    first_surpStimuli_2.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(first_surpStimuli_2, 'tStartRefresh')  # time at next scr refresh
-                    first_surpStimuli_2.setAutoDraw(True)
-                
-                # *topQ_2* updates
-                if topQ_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    topQ_2.frameNStart = frameN  # exact frame index
-                    topQ_2.tStart = t  # local t and not account for scr refresh
-                    topQ_2.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(topQ_2, 'tStartRefresh')  # time at next scr refresh
-                    topQ_2.setAutoDraw(True)
-                
-                # *surprise_key_resp_2* updates
-                waitOnFlip = False
-                if surprise_key_resp_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    surprise_key_resp_2.frameNStart = frameN  # exact frame index
-                    surprise_key_resp_2.tStart = t  # local t and not account for scr refresh
-                    surprise_key_resp_2.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(surprise_key_resp_2, 'tStartRefresh')  # time at next scr refresh
-                    surprise_key_resp_2.status = STARTED
-                    # keyboard checking is just starting
-                    waitOnFlip = True
-                    win.callOnFlip(surprise_key_resp_2.clock.reset)  # t=0 on next screen flip
-                    win.callOnFlip(surprise_key_resp_2.clearEvents, eventType='keyboard')  # clear events on next screen flip
-                if surprise_key_resp_2.status == STARTED and not waitOnFlip:
-                    theseKeys = surprise_key_resp_2.getKeys(keyList=['1','8'], waitRelease=False)
-                    _surprise_key_resp_2_allKeys.extend(theseKeys)
-                    if len(_surprise_key_resp_2_allKeys):
-                        surprise_key_resp_2.keys = _surprise_key_resp_2_allKeys[-1].name  # just the last key pressed
-                        surprise_key_resp_2.rt = _surprise_key_resp_2_allKeys[-1].rt
-                        # a response ends the routine
-                        continueRoutine = False
-                
-                # *first_slider_2* updates
-                if first_slider_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    first_slider_2.frameNStart = frameN  # exact frame index
-                    first_slider_2.tStart = t  # local t and not account for scr refresh
-                    first_slider_2.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(first_slider_2, 'tStartRefresh')  # time at next scr refresh
-                    first_slider_2.setAutoDraw(True)
-                
-                # Check first_slider_2 for response to end routine
-                if first_slider_2.getRating() is not None and first_slider_2.status == STARTED:
-                    continueRoutine = False
-                
-                # check for quit (typically the Esc key)
-                if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
-                    core.quit()
-                
-                # check if all components have finished
-                if not continueRoutine:  # a component has requested a forced-end of Routine
-                    break
-                continueRoutine = False  # will revert to True if at least one component still running
-                for thisComponent in firstStim_AComponents:
-                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                        continueRoutine = True
-                        break  # at least one component has not yet finished
-                
-                # refresh the screen
-                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-                    win.flip()
-            
-            # -------Ending Routine "firstStim_A"-------
-            for thisComponent in firstStim_AComponents:
-                if hasattr(thisComponent, "setAutoDraw"):
-                    thisComponent.setAutoDraw(False)
-            trials_2.addData('first_surpStimuli_2.started', first_surpStimuli_2.tStartRefresh)
-            trials_2.addData('first_surpStimuli_2.stopped', first_surpStimuli_2.tStopRefresh)
-            trials_2.addData('topQ_2.started', topQ_2.tStartRefresh)
-            trials_2.addData('topQ_2.stopped', topQ_2.tStopRefresh)
-            # check responses
-            if surprise_key_resp_2.keys in ['', [], None]:  # No response was made
-                surprise_key_resp_2.keys = None
-            trials_2.addData('surprise_key_resp_2.keys',surprise_key_resp_2.keys)
-            if surprise_key_resp_2.keys != None:  # we had a response
-                trials_2.addData('surprise_key_resp_2.rt', surprise_key_resp_2.rt)
-            trials_2.addData('surprise_key_resp_2.started', surprise_key_resp_2.tStartRefresh)
-            trials_2.addData('surprise_key_resp_2.stopped', surprise_key_resp_2.tStopRefresh)
-            trials_2.addData('first_slider_2.response', first_slider_2.getRating())
-            trials_2.addData('first_slider_2.rt', first_slider_2.getRT())
-            trials_2.addData('first_slider_2.started', first_slider_2.tStartRefresh)
-            trials_2.addData('first_slider_2.stopped', first_slider_2.tStopRefresh)
-            # the Routine "firstStim_A" was not non-slip safe, so reset the non-slip timer
-            routineTimer.reset()
-            
             # ------Prepare to start Routine "firstStim_B"-------
             continueRoutine = True
             # update component parameters for each repeat
             first_surpStimuli.setImage(surpriseFaces)
-            topQ.setPos((0, 0.4))
+            topQ.setPos((0, 0.7))
             topQ.setText(topQ_1)
-            topQ.setHeight(0.025)
             surprise_key_resp.keys = []
             surprise_key_resp.rt = []
             _surprise_key_resp_allKeys = []
             first_slider.reset()
-            if expInfo['cb'] == 'A':
-                continueRoutine = True
-            else:
-                continueRoutine = False
+            if cb == 'A':
+                continue
             # keep track of which components have finished
             firstStim_BComponents = [first_surpStimuli, topQ, surprise_key_resp, first_slider]
             for thisComponent in firstStim_BComponents:
@@ -3624,24 +3437,21 @@ for thisSurprise_block_loop in surprise_block_loop:
             # the Routine "firstStim_B" was not non-slip safe, so reset the non-slip timer
             routineTimer.reset()
             
-            # ------Prepare to start Routine "firstStim_C"-------
+            # ------Prepare to start Routine "firstStim_B"-------
             continueRoutine = True
             # update component parameters for each repeat
-            first_surpStimuli_3.setImage(surpriseFaces)
-            topQ_3.setPos((0, 0.4))
-            topQ_3.setText(topQ_1)
-            topQ_3.setHeight(0.025)
-            surprise_key_resp_3.keys = []
-            surprise_key_resp_3.rt = []
-            _surprise_key_resp_3_allKeys = []
-            first_slider_3.reset()
-            if expInfo['cb'] == 'C':
-                continueRoutine = True
-            else:
-                continueRoutine = False
+            first_surpStimuli.setImage(surpriseFaces)
+            topQ.setPos((0, 0.7))
+            topQ.setText(topQ_1)
+            surprise_key_resp.keys = []
+            surprise_key_resp.rt = []
+            _surprise_key_resp_allKeys = []
+            first_slider.reset()
+            if cb == 'A':
+                continue
             # keep track of which components have finished
-            firstStim_CComponents = [first_surpStimuli_3, topQ_3, surprise_key_resp_3, first_slider_3]
-            for thisComponent in firstStim_CComponents:
+            firstStim_BComponents = [first_surpStimuli, topQ, surprise_key_resp, first_slider]
+            for thisComponent in firstStim_BComponents:
                 thisComponent.tStart = None
                 thisComponent.tStop = None
                 thisComponent.tStartRefresh = None
@@ -3651,69 +3461,69 @@ for thisSurprise_block_loop in surprise_block_loop:
             # reset timers
             t = 0
             _timeToFirstFrame = win.getFutureFlipTime(clock="now")
-            firstStim_CClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
+            firstStim_BClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
             frameN = -1
             
-            # -------Run Routine "firstStim_C"-------
+            # -------Run Routine "firstStim_B"-------
             while continueRoutine:
                 # get current time
-                t = firstStim_CClock.getTime()
-                tThisFlip = win.getFutureFlipTime(clock=firstStim_CClock)
+                t = firstStim_BClock.getTime()
+                tThisFlip = win.getFutureFlipTime(clock=firstStim_BClock)
                 tThisFlipGlobal = win.getFutureFlipTime(clock=None)
                 frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
                 # update/draw components on each frame
                 
-                # *first_surpStimuli_3* updates
-                if first_surpStimuli_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *first_surpStimuli* updates
+                if first_surpStimuli.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    first_surpStimuli_3.frameNStart = frameN  # exact frame index
-                    first_surpStimuli_3.tStart = t  # local t and not account for scr refresh
-                    first_surpStimuli_3.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(first_surpStimuli_3, 'tStartRefresh')  # time at next scr refresh
-                    first_surpStimuli_3.setAutoDraw(True)
+                    first_surpStimuli.frameNStart = frameN  # exact frame index
+                    first_surpStimuli.tStart = t  # local t and not account for scr refresh
+                    first_surpStimuli.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_surpStimuli, 'tStartRefresh')  # time at next scr refresh
+                    first_surpStimuli.setAutoDraw(True)
                 
-                # *topQ_3* updates
-                if topQ_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *topQ* updates
+                if topQ.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    topQ_3.frameNStart = frameN  # exact frame index
-                    topQ_3.tStart = t  # local t and not account for scr refresh
-                    topQ_3.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(topQ_3, 'tStartRefresh')  # time at next scr refresh
-                    topQ_3.setAutoDraw(True)
+                    topQ.frameNStart = frameN  # exact frame index
+                    topQ.tStart = t  # local t and not account for scr refresh
+                    topQ.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(topQ, 'tStartRefresh')  # time at next scr refresh
+                    topQ.setAutoDraw(True)
                 
-                # *surprise_key_resp_3* updates
+                # *surprise_key_resp* updates
                 waitOnFlip = False
-                if surprise_key_resp_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                if surprise_key_resp.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    surprise_key_resp_3.frameNStart = frameN  # exact frame index
-                    surprise_key_resp_3.tStart = t  # local t and not account for scr refresh
-                    surprise_key_resp_3.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(surprise_key_resp_3, 'tStartRefresh')  # time at next scr refresh
-                    surprise_key_resp_3.status = STARTED
+                    surprise_key_resp.frameNStart = frameN  # exact frame index
+                    surprise_key_resp.tStart = t  # local t and not account for scr refresh
+                    surprise_key_resp.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(surprise_key_resp, 'tStartRefresh')  # time at next scr refresh
+                    surprise_key_resp.status = STARTED
                     # keyboard checking is just starting
                     waitOnFlip = True
-                    win.callOnFlip(surprise_key_resp_3.clock.reset)  # t=0 on next screen flip
-                    win.callOnFlip(surprise_key_resp_3.clearEvents, eventType='keyboard')  # clear events on next screen flip
-                if surprise_key_resp_3.status == STARTED and not waitOnFlip:
-                    theseKeys = surprise_key_resp_3.getKeys(keyList=['1','8'], waitRelease=False)
-                    _surprise_key_resp_3_allKeys.extend(theseKeys)
-                    if len(_surprise_key_resp_3_allKeys):
-                        surprise_key_resp_3.keys = _surprise_key_resp_3_allKeys[-1].name  # just the last key pressed
-                        surprise_key_resp_3.rt = _surprise_key_resp_3_allKeys[-1].rt
+                    win.callOnFlip(surprise_key_resp.clock.reset)  # t=0 on next screen flip
+                    win.callOnFlip(surprise_key_resp.clearEvents, eventType='keyboard')  # clear events on next screen flip
+                if surprise_key_resp.status == STARTED and not waitOnFlip:
+                    theseKeys = surprise_key_resp.getKeys(keyList=['1','8'], waitRelease=False)
+                    _surprise_key_resp_allKeys.extend(theseKeys)
+                    if len(_surprise_key_resp_allKeys):
+                        surprise_key_resp.keys = _surprise_key_resp_allKeys[-1].name  # just the last key pressed
+                        surprise_key_resp.rt = _surprise_key_resp_allKeys[-1].rt
                         # a response ends the routine
                         continueRoutine = False
                 
-                # *first_slider_3* updates
-                if first_slider_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *first_slider* updates
+                if first_slider.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    first_slider_3.frameNStart = frameN  # exact frame index
-                    first_slider_3.tStart = t  # local t and not account for scr refresh
-                    first_slider_3.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(first_slider_3, 'tStartRefresh')  # time at next scr refresh
-                    first_slider_3.setAutoDraw(True)
+                    first_slider.frameNStart = frameN  # exact frame index
+                    first_slider.tStart = t  # local t and not account for scr refresh
+                    first_slider.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_slider, 'tStartRefresh')  # time at next scr refresh
+                    first_slider.setAutoDraw(True)
                 
-                # Check first_slider_3 for response to end routine
-                if first_slider_3.getRating() is not None and first_slider_3.status == STARTED:
+                # Check first_slider for response to end routine
+                if first_slider.getRating() is not None and first_slider.status == STARTED:
                     continueRoutine = False
                 
                 # check for quit (typically the Esc key)
@@ -3724,7 +3534,7 @@ for thisSurprise_block_loop in surprise_block_loop:
                 if not continueRoutine:  # a component has requested a forced-end of Routine
                     break
                 continueRoutine = False  # will revert to True if at least one component still running
-                for thisComponent in firstStim_CComponents:
+                for thisComponent in firstStim_BComponents:
                     if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                         continueRoutine = True
                         break  # at least one component has not yet finished
@@ -3733,159 +3543,27 @@ for thisSurprise_block_loop in surprise_block_loop:
                 if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
                     win.flip()
             
-            # -------Ending Routine "firstStim_C"-------
-            for thisComponent in firstStim_CComponents:
+            # -------Ending Routine "firstStim_B"-------
+            for thisComponent in firstStim_BComponents:
                 if hasattr(thisComponent, "setAutoDraw"):
                     thisComponent.setAutoDraw(False)
-            trials_2.addData('first_surpStimuli_3.started', first_surpStimuli_3.tStartRefresh)
-            trials_2.addData('first_surpStimuli_3.stopped', first_surpStimuli_3.tStopRefresh)
-            trials_2.addData('topQ_3.started', topQ_3.tStartRefresh)
-            trials_2.addData('topQ_3.stopped', topQ_3.tStopRefresh)
+            trials_2.addData('first_surpStimuli.started', first_surpStimuli.tStartRefresh)
+            trials_2.addData('first_surpStimuli.stopped', first_surpStimuli.tStopRefresh)
+            trials_2.addData('topQ.started', topQ.tStartRefresh)
+            trials_2.addData('topQ.stopped', topQ.tStopRefresh)
             # check responses
-            if surprise_key_resp_3.keys in ['', [], None]:  # No response was made
-                surprise_key_resp_3.keys = None
-            trials_2.addData('surprise_key_resp_3.keys',surprise_key_resp_3.keys)
-            if surprise_key_resp_3.keys != None:  # we had a response
-                trials_2.addData('surprise_key_resp_3.rt', surprise_key_resp_3.rt)
-            trials_2.addData('surprise_key_resp_3.started', surprise_key_resp_3.tStartRefresh)
-            trials_2.addData('surprise_key_resp_3.stopped', surprise_key_resp_3.tStopRefresh)
-            trials_2.addData('first_slider_3.response', first_slider_3.getRating())
-            trials_2.addData('first_slider_3.rt', first_slider_3.getRT())
-            trials_2.addData('first_slider_3.started', first_slider_3.tStartRefresh)
-            trials_2.addData('first_slider_3.stopped', first_slider_3.tStopRefresh)
-            # the Routine "firstStim_C" was not non-slip safe, so reset the non-slip timer
-            routineTimer.reset()
-            
-            # ------Prepare to start Routine "firstStim_D"-------
-            continueRoutine = True
-            # update component parameters for each repeat
-            first_surpStimuli_4.setImage(surpriseFaces)
-            topQ_4.setPos((0, 0.4))
-            topQ_4.setText(topQ_1)
-            topQ_4.setHeight(0.025)
-            surprise_key_resp_4.keys = []
-            surprise_key_resp_4.rt = []
-            _surprise_key_resp_4_allKeys = []
-            first_slider_4.reset()
-            if expInfo['cb'] == 'D':
-                continueRoutine = True
-            else:
-                continueRoutine = False
-            # keep track of which components have finished
-            firstStim_DComponents = [first_surpStimuli_4, topQ_4, surprise_key_resp_4, first_slider_4]
-            for thisComponent in firstStim_DComponents:
-                thisComponent.tStart = None
-                thisComponent.tStop = None
-                thisComponent.tStartRefresh = None
-                thisComponent.tStopRefresh = None
-                if hasattr(thisComponent, 'status'):
-                    thisComponent.status = NOT_STARTED
-            # reset timers
-            t = 0
-            _timeToFirstFrame = win.getFutureFlipTime(clock="now")
-            firstStim_DClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
-            frameN = -1
-            
-            # -------Run Routine "firstStim_D"-------
-            while continueRoutine:
-                # get current time
-                t = firstStim_DClock.getTime()
-                tThisFlip = win.getFutureFlipTime(clock=firstStim_DClock)
-                tThisFlipGlobal = win.getFutureFlipTime(clock=None)
-                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-                # update/draw components on each frame
-                
-                # *first_surpStimuli_4* updates
-                if first_surpStimuli_4.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    first_surpStimuli_4.frameNStart = frameN  # exact frame index
-                    first_surpStimuli_4.tStart = t  # local t and not account for scr refresh
-                    first_surpStimuli_4.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(first_surpStimuli_4, 'tStartRefresh')  # time at next scr refresh
-                    first_surpStimuli_4.setAutoDraw(True)
-                
-                # *topQ_4* updates
-                if topQ_4.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    topQ_4.frameNStart = frameN  # exact frame index
-                    topQ_4.tStart = t  # local t and not account for scr refresh
-                    topQ_4.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(topQ_4, 'tStartRefresh')  # time at next scr refresh
-                    topQ_4.setAutoDraw(True)
-                
-                # *surprise_key_resp_4* updates
-                waitOnFlip = False
-                if surprise_key_resp_4.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    surprise_key_resp_4.frameNStart = frameN  # exact frame index
-                    surprise_key_resp_4.tStart = t  # local t and not account for scr refresh
-                    surprise_key_resp_4.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(surprise_key_resp_4, 'tStartRefresh')  # time at next scr refresh
-                    surprise_key_resp_4.status = STARTED
-                    # keyboard checking is just starting
-                    waitOnFlip = True
-                    win.callOnFlip(surprise_key_resp_4.clock.reset)  # t=0 on next screen flip
-                    win.callOnFlip(surprise_key_resp_4.clearEvents, eventType='keyboard')  # clear events on next screen flip
-                if surprise_key_resp_4.status == STARTED and not waitOnFlip:
-                    theseKeys = surprise_key_resp_4.getKeys(keyList=['1','8'], waitRelease=False)
-                    _surprise_key_resp_4_allKeys.extend(theseKeys)
-                    if len(_surprise_key_resp_4_allKeys):
-                        surprise_key_resp_4.keys = _surprise_key_resp_4_allKeys[-1].name  # just the last key pressed
-                        surprise_key_resp_4.rt = _surprise_key_resp_4_allKeys[-1].rt
-                        # a response ends the routine
-                        continueRoutine = False
-                
-                # *first_slider_4* updates
-                if first_slider_4.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    first_slider_4.frameNStart = frameN  # exact frame index
-                    first_slider_4.tStart = t  # local t and not account for scr refresh
-                    first_slider_4.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(first_slider_4, 'tStartRefresh')  # time at next scr refresh
-                    first_slider_4.setAutoDraw(True)
-                
-                # Check first_slider_4 for response to end routine
-                if first_slider_4.getRating() is not None and first_slider_4.status == STARTED:
-                    continueRoutine = False
-                
-                # check for quit (typically the Esc key)
-                if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
-                    core.quit()
-                
-                # check if all components have finished
-                if not continueRoutine:  # a component has requested a forced-end of Routine
-                    break
-                continueRoutine = False  # will revert to True if at least one component still running
-                for thisComponent in firstStim_DComponents:
-                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                        continueRoutine = True
-                        break  # at least one component has not yet finished
-                
-                # refresh the screen
-                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-                    win.flip()
-            
-            # -------Ending Routine "firstStim_D"-------
-            for thisComponent in firstStim_DComponents:
-                if hasattr(thisComponent, "setAutoDraw"):
-                    thisComponent.setAutoDraw(False)
-            trials_2.addData('first_surpStimuli_4.started', first_surpStimuli_4.tStartRefresh)
-            trials_2.addData('first_surpStimuli_4.stopped', first_surpStimuli_4.tStopRefresh)
-            trials_2.addData('topQ_4.started', topQ_4.tStartRefresh)
-            trials_2.addData('topQ_4.stopped', topQ_4.tStopRefresh)
-            # check responses
-            if surprise_key_resp_4.keys in ['', [], None]:  # No response was made
-                surprise_key_resp_4.keys = None
-            trials_2.addData('surprise_key_resp_4.keys',surprise_key_resp_4.keys)
-            if surprise_key_resp_4.keys != None:  # we had a response
-                trials_2.addData('surprise_key_resp_4.rt', surprise_key_resp_4.rt)
-            trials_2.addData('surprise_key_resp_4.started', surprise_key_resp_4.tStartRefresh)
-            trials_2.addData('surprise_key_resp_4.stopped', surprise_key_resp_4.tStopRefresh)
-            trials_2.addData('first_slider_4.response', first_slider_4.getRating())
-            trials_2.addData('first_slider_4.rt', first_slider_4.getRT())
-            trials_2.addData('first_slider_4.started', first_slider_4.tStartRefresh)
-            trials_2.addData('first_slider_4.stopped', first_slider_4.tStopRefresh)
-            # the Routine "firstStim_D" was not non-slip safe, so reset the non-slip timer
+            if surprise_key_resp.keys in ['', [], None]:  # No response was made
+                surprise_key_resp.keys = None
+            trials_2.addData('surprise_key_resp.keys',surprise_key_resp.keys)
+            if surprise_key_resp.keys != None:  # we had a response
+                trials_2.addData('surprise_key_resp.rt', surprise_key_resp.rt)
+            trials_2.addData('surprise_key_resp.started', surprise_key_resp.tStartRefresh)
+            trials_2.addData('surprise_key_resp.stopped', surprise_key_resp.tStopRefresh)
+            trials_2.addData('first_slider.response', first_slider.getRating())
+            trials_2.addData('first_slider.rt', first_slider.getRT())
+            trials_2.addData('first_slider.started', first_slider.tStartRefresh)
+            trials_2.addData('first_slider.stopped', first_slider.tStopRefresh)
+            # the Routine "firstStim_B" was not non-slip safe, so reset the non-slip timer
             routineTimer.reset()
             thisExp.nextEntry()
             
