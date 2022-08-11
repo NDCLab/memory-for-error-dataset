@@ -11,9 +11,9 @@ clc % clear matlab command window
 
 %% Loading all the neutral Chicago faces. 
 %main_dir = '/Users/khoss005/Documents/memory-for-error-dataset/materials/experiments/arrowFlanker_with_chicago_background_half/img';
-main_dir = '/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/mfe_final_version/img';
-output_directory = '/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/mfe_final_version/csv_files';
-surprise_csv_dir = '/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/mfe_final_version/csv_files/surprise_csv_files';
+main_dir = '/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/mfeFlanker/img';
+output_directory = '/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/mfeFlanker/csv_files';
+surprise_csv_dir = '/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/mfeFlanker/csv_files/surprise_csv_files';
 faceData_location = [main_dir filesep 'neutralC']; %Location of stored faces (i.e., renders folder)
 cd(faceData_location)
 data_file_lists = dir; 
@@ -297,7 +297,7 @@ surp_list_Table = array2table(surp_list_Table);
 surp_list_Table.Properties.VariableNames = {'surp_csv_name'};
 %
 % Let's save the table as a csv file in the following dir!
-cd('/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/mfe_final_version')
+cd('/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/mfeFlanker')
 %writetable(surp_list_Table, "surprise_list_table.csv")
 %%%%%%
 % Let's create 2 csv files that each has half of the data stored in the
