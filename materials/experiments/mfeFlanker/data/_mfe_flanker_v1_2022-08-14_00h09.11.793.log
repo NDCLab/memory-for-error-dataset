@@ -1,0 +1,1250 @@
+2.4962 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+11.9365 	INFO 	Loaded monitor calibration from ['2022_06_03 06:43']
+11.9380 	ERROR 	'0.5000, 0.5000, 0.5000' is not a valid rgb color
+12.8059 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x7f969a99b9a0>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x7f966db3a250>, multiSample=False, name='window1', numSamples=2, pos=[360.0, 225.0], screen=0, size=array([2880, 1800]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+12.8061 	EXP 	window1: mouseVisible = True
+12.8070 	EXP 	window1: mouseVisible = False
+12.8070 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+12.8071 	EXP 	window1: recordFrameIntervals = False
+12.9716 	EXP 	window1: recordFrameIntervals = True
+13.0425 	WARNING 	t of last frame was 20.54ms (=1/48)
+13.2220 	EXP 	Screen (0) actual frame rate measured at 59.79Hz
+13.2220 	EXP 	window1: recordFrameIntervals = False
+17.6040 	INFO 	keyboard.Keyboard is using iohub backend.
+17.7210 	EXP 	Created welcome_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='welcome_text', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1.3)
+17.7210 	INFO 	keyboard.Keyboard is using iohub backend.
+17.7304 	EXP 	Created instructRight_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instructRight_text', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1.3)
+17.8196 	EXP 	Created instructRight_centerImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='img/rightArrow.png', interpolate=True, mask=None, maskParams=None, name='instructRight_centerImg', opacity=1.0, ori=0.0, pos=array([ 0. , -0.3]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+17.8699 	EXP 	Created instructRight_rightImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='img/rightArrow.png', interpolate=True, mask=None, maskParams=None, name='instructRight_rightImg1', opacity=1.0, ori=0.0, pos=array([ 0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+17.9197 	EXP 	Created instructRight_leftImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='img/rightArrow.png', interpolate=True, mask=None, maskParams=None, name='instructRight_leftImg1', opacity=1.0, ori=0.0, pos=array([-0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+17.9197 	INFO 	keyboard.Keyboard is using iohub backend.
+17.9274 	EXP 	Created instructLeft_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instructLeft_text', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1.3)
+17.9851 	EXP 	Created instructLeft_centerImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='img/leftArrow.png', interpolate=True, mask=None, maskParams=None, name='instructLeft_centerImg', opacity=1.0, ori=0.0, pos=array([ 0. , -0.3]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+18.0383 	EXP 	Created instructLeft_rightImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='img/leftArrow.png', interpolate=True, mask=None, maskParams=None, name='instructLeft_rightImg1', opacity=1.0, ori=0.0, pos=array([ 0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+18.0974 	EXP 	Created instructLeft_leftImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='img/leftArrow.png', interpolate=True, mask=None, maskParams=None, name='instructLeft_leftImg1', opacity=1.0, ori=0.0, pos=array([-0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+18.0975 	INFO 	keyboard.Keyboard is using iohub backend.
+18.1249 	EXP 	Created instructInconRight_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instructInconRight_text', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1.3)
+18.1832 	EXP 	Created instructIncon_centerImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='img/rightArrow.png', interpolate=True, mask=None, maskParams=None, name='instructIncon_centerImg', opacity=1.0, ori=0.0, pos=array([ 0. , -0.3]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+18.2387 	EXP 	Created instructIncon_rightImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='img/leftArrow.png', interpolate=True, mask=None, maskParams=None, name='instructIncon_rightImg1', opacity=1.0, ori=0.0, pos=array([ 0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+18.2912 	EXP 	Created instructIncon_leftImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='img/leftArrow.png', interpolate=True, mask=None, maskParams=None, name='instructIncon_leftImg1', opacity=1.0, ori=0.0, pos=array([-0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+18.2913 	INFO 	keyboard.Keyboard is using iohub backend.
+18.3003 	EXP 	Created instructInconLeft_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instructInconLeft_text', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1.3)
+18.3533 	EXP 	Created instructInconLeft_centerImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='img/leftArrow.png', interpolate=True, mask=None, maskParams=None, name='instructInconLeft_centerImg', opacity=1.0, ori=0.0, pos=array([ 0. , -0.3]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+18.4067 	EXP 	Created instructInconLeft_rightImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='img/rightArrow.png', interpolate=True, mask=None, maskParams=None, name='instructInconLeft_rightImg1', opacity=1.0, ori=0.0, pos=array([ 0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+18.4593 	EXP 	Created instructInconLeft_leftImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='img/rightArrow.png', interpolate=True, mask=None, maskParams=None, name='instructInconLeft_leftImg1', opacity=1.0, ori=0.0, pos=array([-0.03, -0.3 ]), size=array([0.02, 0.02]), texRes=512, units='height', win=Window(...))
+18.4594 	INFO 	keyboard.Keyboard is using iohub backend.
+18.4684 	EXP 	Created prac_blockText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='prac_blockText', opacity=1.0, ori=0.0, pos=array([0. , 0.3]), rgb=UNKNOWN, text='Practice', units='height', win=Window(...), wrapWidth=1.3)
+18.4840 	EXP 	Created prac_reminder_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='prac_reminder_text', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1.3)
+18.4841 	INFO 	keyboard.Keyboard is using iohub backend.
+18.4891 	EXP 	Created initFixation_img = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='initFixation_img', opacity=1.0, ori=0.0, pos=array([ 0.   , -0.015]), size=array([0.26, 0.22]), texRes=512, units='height', win=Window(...))
+18.4933 	EXP 	Created bigFace = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='bigFace', opacity=0.85, ori=0.0, pos=array([0., 0.]), size=array([0.4267, 0.3   ]), texRes=128.0, units='height', win=Window(...))
+18.4984 	EXP 	Created cover_background_2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='cover_background_2', opacity=1.0, ori=0.0, pos=array([ 0.   , -0.015]), size=array([0.26, 0.22]), texRes=128.0, units='height', win=Window(...))
+18.5043 	EXP 	Created prac_centerImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='prac_centerImg', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+18.5101 	EXP 	Created prac_rightImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='prac_rightImg1', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+18.5154 	EXP 	Created prac_rightImg2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='prac_rightImg2', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+18.5199 	EXP 	Created prac_leftImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='prac_leftImg1', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+18.5253 	EXP 	Created prac_leftImg2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-7.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='prac_leftImg2', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+18.5314 	EXP 	Created prac_fixImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-8.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='prac_fixImg', opacity=1.0, ori=0.0, pos=array([ 0.   , -0.015]), size=array([0.26, 0.22]), texRes=512, units='height', win=Window(...))
+18.5315 	INFO 	keyboard.Keyboard is using iohub backend.
+18.5329 	EXP 	Created prac_blockFeed_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='prac_blockFeed_text', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1.3)
+18.5382 	EXP 	Created prac_pressContinue = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='prac_pressContinue', opacity=1.0, ori=0.0, pos=array([ 0. , -0.3]), rgb=UNKNOWN, text='Press the right key', units='height', win=Window(...), wrapWidth=1.3)
+18.5383 	INFO 	keyboard.Keyboard is using iohub backend.
+18.5396 	EXP 	Created task_blockText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.06, italic=False, languageStyle='LTR', name='task_blockText', opacity=1.0, ori=0.0, pos=array([0. , 0.3]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1.3)
+18.5499 	EXP 	Created task_blockReminders_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='task_blockReminders_text', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1.3)
+18.5500 	INFO 	keyboard.Keyboard is using iohub backend.
+18.5548 	EXP 	Created initFixation_img = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='initFixation_img', opacity=1.0, ori=0.0, pos=array([ 0.   , -0.015]), size=array([0.26, 0.22]), texRes=512, units='height', win=Window(...))
+18.5596 	EXP 	Created bigFace_2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='bigFace_2', opacity=0.85, ori=0.0, pos=array([0., 0.]), size=array([0.4267, 0.3   ]), texRes=128.0, units='height', win=Window(...))
+18.6305 	EXP 	Created cover_background = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='img/cover_background.png', interpolate=True, mask=None, maskParams=None, name='cover_background', opacity=1.0, ori=0.0, pos=array([ 0.   , -0.015]), size=array([0.26, 0.22]), texRes=128.0, units='height', win=Window(...))
+18.6361 	EXP 	Created task_centerImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='task_centerImg', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+18.6434 	EXP 	Created task_rightImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='task_rightImg1', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+18.6487 	EXP 	Created task_rightImg2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='task_rightImg2', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+18.6535 	EXP 	Created task_leftImg1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-6.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='task_leftImg1', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+18.6589 	EXP 	Created task_leftImg2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-7.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='task_leftImg2', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=512, units='height', win=Window(...))
+18.6644 	EXP 	Created task_fixImg = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-8.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='task_fixImg', opacity=1.0, ori=0.0, pos=array([ 0.   , -0.015]), size=array([0.26, 0.22]), texRes=512, units='height', win=Window(...))
+18.6645 	INFO 	keyboard.Keyboard is using iohub backend.
+18.6662 	EXP 	Created task_blockFeed_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.12, italic=False, languageStyle='LTR', name='task_blockFeed_text', opacity=1.0, ori=0, pos=array([0. , 0.1]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1.8)
+18.6687 	EXP 	Created task_blockFeed_text2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='task_blockFeed_text2', opacity=1.0, ori=0, pos=array([ 0. , -0.3]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1.3)
+18.6688 	INFO 	keyboard.Keyboard is using iohub backend.
+18.6818 	EXP 	Created fix = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fix', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+18.7144 	EXP 	Created errorNumbers_text_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='errorNumbers_text_2', opacity=1.0, ori=0.0, pos=array([0.  , 0.12]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+18.7224 	INFO 	keyboard.Keyboard is using iohub backend.
+18.7371 	EXP 	Created botherRate_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='botherRate_text', opacity=1.0, ori=0.0, pos=array([0.  , 0.12]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+18.7422 	INFO 	keyboard.Keyboard is using iohub backend.
+18.7841 	EXP 	Created instruct_surprise1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instruct_surprise1', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+18.7841 	INFO 	keyboard.Keyboard is using iohub backend.
+18.7860 	EXP 	Created instructMainTask_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='instructMainTask_text', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1.3)
+18.7860 	INFO 	keyboard.Keyboard is using iohub backend.
+18.7926 	EXP 	Created first_surpStimuliA1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='first_surpStimuliA1', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+18.7946 	EXP 	Created fStimA1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='fStimA1', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+18.8191 	EXP 	window1: mouseVisible = True
+18.8368 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8383 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8399 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8413 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8426 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8436 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8445 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8456 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8463 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8472 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8487 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8492 	DEBUG 	Uploading Texture Font fontname to graphics card
+18.8531 	DEBUG 	Upload of Texture Font fontname complete
+18.8606 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8621 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8636 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8653 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8668 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8676 	DEBUG 	Uploading Texture Font fontname to graphics card
+18.8685 	DEBUG 	Upload of Texture Font fontname complete
+18.8783 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8790 	DEBUG 	Uploading Texture Font fontname to graphics card
+18.8797 	DEBUG 	Upload of Texture Font fontname complete
+18.8905 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.8908 	DEBUG 	Uploading Texture Font fontname to graphics card
+18.8916 	DEBUG 	Upload of Texture Font fontname complete
+18.9584 	EXP 	Created firstStim_sliderA1 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='firstStim_sliderA1', opacity=None, ori=0.0, pos=array([0. , 0.3]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+18.9585 	EXP 	window1: mouseVisible = True
+18.9645 	EXP 	Created second_surpStimuliA1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='second_surpStimuliA1', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+18.9660 	EXP 	Created sStimA1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='sStimA1', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+18.9726 	EXP 	window1: mouseVisible = True
+18.9823 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.9836 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.9850 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+18.9853 	DEBUG 	Uploading Texture Font fontname to graphics card
+18.9861 	DEBUG 	Upload of Texture Font fontname complete
+19.0063 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+19.0067 	DEBUG 	Uploading Texture Font fontname to graphics card
+19.0074 	DEBUG 	Upload of Texture Font fontname complete
+19.0740 	EXP 	Created secondStim_sliderA1 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='secondStim_sliderA1', opacity=None, ori=0.0, pos=array([ 0.  , -0.35]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+19.0741 	EXP 	window1: mouseVisible = True
+19.0787 	EXP 	Created first_surpStimuliA2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='first_surpStimuliA2', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+19.0801 	EXP 	Created fStimA2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='fStimA2', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+19.0861 	EXP 	window1: mouseVisible = True
+19.1867 	EXP 	Created firstStim_sliderA2 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='firstStim_sliderA2', opacity=None, ori=0.0, pos=array([0. , 0.3]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+19.1869 	EXP 	window1: mouseVisible = True
+19.1913 	EXP 	Created second_surpStimuliA2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='second_surpStimuliA2', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+19.1925 	EXP 	Created sStimA2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='sStimA2', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+19.1988 	EXP 	window1: mouseVisible = True
+19.2801 	EXP 	Created secondStim_sliderA2 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='secondStim_sliderA2', opacity=None, ori=0.0, pos=array([ 0.  , -0.35]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+19.2803 	EXP 	window1: mouseVisible = True
+19.2847 	EXP 	Created first_surpStimuliB1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='first_surpStimuliB1', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+19.2860 	EXP 	Created fStimB1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='fStimB1', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+19.2941 	EXP 	window1: mouseVisible = True
+19.3803 	EXP 	Created firstStim_sliderB1 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='firstStim_sliderB1', opacity=None, ori=0.0, pos=array([0. , 0.3]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+19.3805 	EXP 	window1: mouseVisible = True
+19.3862 	EXP 	Created second_surpStimuliB1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='second_surpStimuliB1', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+19.3874 	EXP 	Created sStimB1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='sStimB1', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+19.3930 	EXP 	window1: mouseVisible = True
+19.4776 	EXP 	Created secondStim_sliderB1 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='secondStim_sliderB1', opacity=None, ori=0.0, pos=array([ 0.  , -0.35]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+19.4778 	EXP 	window1: mouseVisible = True
+19.4830 	EXP 	Created first_surpStimuliB2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='first_surpStimuliB2', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+19.4844 	EXP 	Created fStimB2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='fStimB2', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+19.4915 	EXP 	window1: mouseVisible = True
+19.5724 	EXP 	Created firstStim_sliderB2 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='firstStim_sliderB2', opacity=None, ori=0.0, pos=array([0. , 0.3]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+19.5725 	EXP 	window1: mouseVisible = True
+19.5798 	EXP 	Created second_surpStimuliB2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='second_surpStimuliB2', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+19.5819 	EXP 	Created sStimB2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='sStimB2', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+19.5900 	EXP 	window1: mouseVisible = True
+19.6735 	EXP 	Created secondStim_sliderB2 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='secondStim_sliderB2', opacity=None, ori=0.0, pos=array([ 0.  , -0.35]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+19.6736 	EXP 	window1: mouseVisible = True
+19.6793 	EXP 	Created first_surpStimuliC1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='first_surpStimuliC1', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+19.6812 	EXP 	Created fStimC1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='fStimC1', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+19.6897 	EXP 	window1: mouseVisible = True
+19.7771 	EXP 	Created firstStim_sliderC1 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='firstStim_sliderC1', opacity=None, ori=0.0, pos=array([0. , 0.3]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+19.7773 	EXP 	window1: mouseVisible = True
+19.7824 	EXP 	Created second_surpStimuliC1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='second_surpStimuliC1', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+19.7835 	EXP 	Created sStimC1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='sStimC1', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+19.7893 	EXP 	window1: mouseVisible = True
+19.8685 	EXP 	Created secondStim_sliderC1 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='secondStim_sliderC1', opacity=None, ori=0.0, pos=array([ 0.  , -0.35]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+19.8686 	EXP 	window1: mouseVisible = True
+19.8730 	EXP 	Created first_surpStimuliC2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='first_surpStimuliC2', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+19.8742 	EXP 	Created fStimC2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='fStimC2', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+19.8800 	EXP 	window1: mouseVisible = True
+19.9550 	EXP 	Created firstStim_sliderC2 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='firstStim_sliderC2', opacity=None, ori=0.0, pos=array([0. , 0.3]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+19.9551 	EXP 	window1: mouseVisible = True
+19.9606 	EXP 	Created second_surpStimuliC2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='second_surpStimuliC2', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+19.9621 	EXP 	Created sStimC2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='sStimC2', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+19.9686 	EXP 	window1: mouseVisible = True
+20.0531 	EXP 	Created secondStim_sliderC2 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='secondStim_sliderC2', opacity=None, ori=0.0, pos=array([ 0.  , -0.35]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+20.0534 	EXP 	window1: mouseVisible = True
+20.0584 	EXP 	Created first_surpStimuliD1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='first_surpStimuliD1', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+20.0598 	EXP 	Created fStim_D1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='fStim_D1', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+20.0660 	EXP 	window1: mouseVisible = True
+20.1414 	EXP 	Created firstStim_sliderD1 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='firstStim_sliderD1', opacity=None, ori=0.0, pos=array([0. , 0.3]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+20.1415 	EXP 	window1: mouseVisible = True
+20.1460 	EXP 	Created second_surpStimuliD1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='second_surpStimuliD1', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+20.1471 	EXP 	Created sStimD1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='sStimD1', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+20.1536 	EXP 	window1: mouseVisible = True
+20.2243 	EXP 	Created secondStim_sliderD1 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='secondStim_sliderD1', opacity=None, ori=0.0, pos=array([ 0.  , -0.35]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+20.2244 	EXP 	window1: mouseVisible = True
+20.2287 	EXP 	Created first_surpStimuliD2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='first_surpStimuliD2', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+20.2300 	EXP 	Created fStimD2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='fStimD2', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+20.2359 	EXP 	window1: mouseVisible = True
+20.3096 	EXP 	Created firstStim_sliderD2 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='firstStim_sliderD2', opacity=None, ori=0.0, pos=array([0. , 0.3]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+20.3097 	EXP 	window1: mouseVisible = True
+20.3143 	EXP 	Created second_surpStimuliD2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='second_surpStimuliD2', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.45514667, 0.32      ]), texRes=128.0, units='height', win=Window(...))
+20.3157 	EXP 	Created sStimD2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=1.0, italic=False, languageStyle='LTR', name='sStimD2', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+20.3220 	EXP 	window1: mouseVisible = True
+20.3965 	EXP 	Created secondStim_sliderD2 = Slider(__class__=<class 'psychopy.visual.slider.Slider'>, autoDraw=False, autoLog=True, borderColor=None, color=None, colorSpace='rgb', depth=-2, fillColor=None, flip=False, font='Open Sans', granularity=1.0, labelColor=None, labelHeight=0.021999999999999995, labelWrapWidth=None, labels=list(...), lineColor=None, markerColor=None, name='secondStim_sliderD2', opacity=None, ori=0.0, pos=array([ 0.  , -0.35]), readOnly=False, self=UNKNOWN, size=array([1.3  , 0.022]), startValue=None, style='rating', styleTweaks=[], ticks=array([1, 2, 3, 4, 5, 6]), units='height', win=Window(...))
+20.3967 	EXP 	window1: mouseVisible = True
+20.4012 	EXP 	Created fix_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fix_2', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+20.4122 	EXP 	Created finishMessage_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.04, italic=False, languageStyle='LTR', name='finishMessage_text', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='Thank you for your participation!', units='height', win=Window(...), wrapWidth=1.3)
+20.4289 	EXP 	textbox_2: autoLog = True
+20.4289 	EXP 	textbox_3: autoLog = True
+20.4289 	EXP 	firstStim_sliderA1: autoLog = True
+20.4289 	EXP 	firstStim_sliderA1: markerPos = None
+20.4289 	EXP 	firstStim_sliderA1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderA1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderA1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderA1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderA1: contrast = 1.0
+20.4289 	EXP 	firstStim_sliderA1: autoLog = True
+20.4289 	EXP 	secondStim_sliderA1: autoLog = True
+20.4289 	EXP 	secondStim_sliderA1: markerPos = None
+20.4289 	EXP 	secondStim_sliderA1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderA1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderA1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderA1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderA1: contrast = 1.0
+20.4289 	EXP 	secondStim_sliderA1: autoLog = True
+20.4289 	EXP 	firstStim_sliderA2: autoLog = True
+20.4289 	EXP 	firstStim_sliderA2: markerPos = None
+20.4289 	EXP 	firstStim_sliderA2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderA2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderA2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderA2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderA2: contrast = 1.0
+20.4289 	EXP 	firstStim_sliderA2: autoLog = True
+20.4289 	EXP 	secondStim_sliderA2: autoLog = True
+20.4289 	EXP 	secondStim_sliderA2: markerPos = None
+20.4289 	EXP 	secondStim_sliderA2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderA2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderA2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderA2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderA2: contrast = 1.0
+20.4289 	EXP 	secondStim_sliderA2: autoLog = True
+20.4289 	EXP 	firstStim_sliderB1: autoLog = True
+20.4289 	EXP 	firstStim_sliderB1: markerPos = None
+20.4289 	EXP 	firstStim_sliderB1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderB1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderB1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderB1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderB1: contrast = 1.0
+20.4289 	EXP 	firstStim_sliderB1: autoLog = True
+20.4289 	EXP 	secondStim_sliderB1: autoLog = True
+20.4289 	EXP 	secondStim_sliderB1: markerPos = None
+20.4289 	EXP 	secondStim_sliderB1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderB1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderB1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderB1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderB1: contrast = 1.0
+20.4289 	EXP 	secondStim_sliderB1: autoLog = True
+20.4289 	EXP 	firstStim_sliderB2: autoLog = True
+20.4289 	EXP 	firstStim_sliderB2: markerPos = None
+20.4289 	EXP 	firstStim_sliderB2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderB2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderB2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderB2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderB2: contrast = 1.0
+20.4289 	EXP 	firstStim_sliderB2: autoLog = True
+20.4289 	EXP 	secondStim_sliderB2: autoLog = True
+20.4289 	EXP 	secondStim_sliderB2: markerPos = None
+20.4289 	EXP 	secondStim_sliderB2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderB2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderB2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderB2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderB2: contrast = 1.0
+20.4289 	EXP 	secondStim_sliderB2: autoLog = True
+20.4289 	EXP 	firstStim_sliderC1: autoLog = True
+20.4289 	EXP 	firstStim_sliderC1: markerPos = None
+20.4289 	EXP 	firstStim_sliderC1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderC1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderC1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderC1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderC1: contrast = 1.0
+20.4289 	EXP 	firstStim_sliderC1: autoLog = True
+20.4289 	EXP 	secondStim_sliderC1: autoLog = True
+20.4289 	EXP 	secondStim_sliderC1: markerPos = None
+20.4289 	EXP 	secondStim_sliderC1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderC1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderC1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderC1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderC1: contrast = 1.0
+20.4289 	EXP 	secondStim_sliderC1: autoLog = True
+20.4289 	EXP 	firstStim_sliderC2: autoLog = True
+20.4289 	EXP 	firstStim_sliderC2: markerPos = None
+20.4289 	EXP 	firstStim_sliderC2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderC2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderC2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderC2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderC2: contrast = 1.0
+20.4289 	EXP 	firstStim_sliderC2: autoLog = True
+20.4289 	EXP 	secondStim_sliderC2: autoLog = True
+20.4289 	EXP 	secondStim_sliderC2: markerPos = None
+20.4289 	EXP 	secondStim_sliderC2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderC2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderC2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderC2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderC2: contrast = 1.0
+20.4289 	EXP 	secondStim_sliderC2: autoLog = True
+20.4289 	EXP 	firstStim_sliderD1: autoLog = True
+20.4289 	EXP 	firstStim_sliderD1: markerPos = None
+20.4289 	EXP 	firstStim_sliderD1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderD1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderD1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderD1: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderD1: contrast = 1.0
+20.4289 	EXP 	firstStim_sliderD1: autoLog = True
+20.4289 	EXP 	secondStim_sliderD1: autoLog = True
+20.4289 	EXP 	secondStim_sliderD1: markerPos = None
+20.4289 	EXP 	secondStim_sliderD1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderD1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderD1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderD1: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderD1: contrast = 1.0
+20.4289 	EXP 	secondStim_sliderD1: autoLog = True
+20.4289 	EXP 	firstStim_sliderD2: autoLog = True
+20.4289 	EXP 	firstStim_sliderD2: markerPos = None
+20.4289 	EXP 	firstStim_sliderD2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderD2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderD2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderD2: styleTweaks = []
+20.4289 	EXP 	firstStim_sliderD2: contrast = 1.0
+20.4289 	EXP 	firstStim_sliderD2: autoLog = True
+20.4289 	EXP 	secondStim_sliderD2: autoLog = True
+20.4289 	EXP 	secondStim_sliderD2: markerPos = None
+20.4289 	EXP 	secondStim_sliderD2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderD2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderD2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderD2: styleTweaks = []
+20.4289 	EXP 	secondStim_sliderD2: contrast = 1.0
+20.4289 	EXP 	secondStim_sliderD2: autoLog = True
+20.4289 	EXP 	welcome_text: autoDraw = True
+22.5614 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+22.5618 	DEBUG 	Uploading Texture Font fontname to graphics card
+22.5658 	DEBUG 	Upload of Texture Font fontname complete
+22.5663 	DATA 	Keypress: 8
+22.5742 	EXP 	welcome_text: autoDraw = False
+22.5742 	EXP 	instructRight_text: autoDraw = True
+22.5742 	EXP 	instructRight_centerImg: autoDraw = True
+22.5742 	EXP 	instructRight_rightImg1: autoDraw = True
+22.5742 	EXP 	instructRight_leftImg1: autoDraw = True
+23.3631 	DATA 	Keypress: 8
+23.3705 	EXP 	instructRight_text: autoDraw = False
+23.3705 	EXP 	instructRight_centerImg: autoDraw = False
+23.3705 	EXP 	instructRight_rightImg1: autoDraw = False
+23.3705 	EXP 	instructRight_leftImg1: autoDraw = False
+23.3705 	EXP 	instructLeft_text: autoDraw = True
+23.3705 	EXP 	instructLeft_centerImg: autoDraw = True
+23.3705 	EXP 	instructLeft_rightImg1: autoDraw = True
+23.3705 	EXP 	instructLeft_leftImg1: autoDraw = True
+23.4991 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+23.4995 	DEBUG 	Uploading Texture Font fontname to graphics card
+23.5014 	DEBUG 	Upload of Texture Font fontname complete
+23.5019 	DATA 	Keypress: 1
+23.5096 	EXP 	instructLeft_text: autoDraw = False
+23.5096 	EXP 	instructLeft_centerImg: autoDraw = False
+23.5096 	EXP 	instructLeft_rightImg1: autoDraw = False
+23.5096 	EXP 	instructLeft_leftImg1: autoDraw = False
+23.5096 	EXP 	instructInconRight_text: autoDraw = True
+23.5096 	EXP 	instructIncon_centerImg: autoDraw = True
+23.5096 	EXP 	instructIncon_rightImg1: autoDraw = True
+23.5096 	EXP 	instructIncon_leftImg1: autoDraw = True
+23.7788 	DATA 	Keypress: 8
+23.7885 	EXP 	instructInconRight_text: autoDraw = False
+23.7885 	EXP 	instructIncon_centerImg: autoDraw = False
+23.7885 	EXP 	instructIncon_rightImg1: autoDraw = False
+23.7885 	EXP 	instructIncon_leftImg1: autoDraw = False
+23.7885 	EXP 	instructInconLeft_text: autoDraw = True
+23.7885 	EXP 	instructInconLeft_centerImg: autoDraw = True
+23.7885 	EXP 	instructInconLeft_rightImg1: autoDraw = True
+23.7885 	EXP 	instructInconLeft_leftImg1: autoDraw = True
+23.8779 	DEBUG 	Read csv file with pandas: blockSelect_practice.csv
+23.8793 	DEBUG 	Clearing unnamed columns from blockSelect_practice.csv
+23.8797 	EXP 	Imported blockSelect_practice.csv as conditions, 1 conditions, 1 params
+23.8801 	EXP 	Created sequence: random, trialTypes=1, nReps=0, seed=None
+23.8833 	DEBUG 	Read csv file with pandas: blockSelect.csv
+23.8852 	DEBUG 	Clearing unnamed columns from blockSelect.csv
+23.8855 	EXP 	Imported blockSelect.csv as conditions, 10 conditions, 1 params
+23.8859 	EXP 	Created sequence: random, trialTypes=10, nReps=0, seed=None
+23.8894 	DATA 	Keypress: 1
+23.8982 	EXP 	instructInconLeft_text: autoDraw = False
+23.8982 	EXP 	instructInconLeft_centerImg: autoDraw = False
+23.8982 	EXP 	instructInconLeft_rightImg1: autoDraw = False
+23.8982 	EXP 	instructInconLeft_leftImg1: autoDraw = False
+23.8982 	EXP 	fix: autoDraw = True
+24.4086 	EXP 	fix: autoDraw = False
+24.4086 	EXP 	errorNumbers_text_2: autoDraw = True
+24.4086 	EXP 	textbox_2: autoDraw = True
+24.9828 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+24.9843 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+24.9848 	DEBUG 	Uploading Texture Font fontname to graphics card
+24.9854 	DEBUG 	Upload of Texture Font fontname complete
+24.9856 	DATA 	Keypress: space
+24.9916 	EXP 	errorNumbers_text_2: autoDraw = False
+24.9916 	EXP 	textbox_2: autoDraw = False
+24.9916 	EXP 	botherRate_text: autoDraw = True
+24.9916 	EXP 	textbox_3: autoDraw = True
+25.3790 	DATA 	Keypress: space
+25.3883 	EXP 	botherRate_text: autoDraw = False
+25.3883 	EXP 	textbox_3: autoDraw = False
+25.3883 	EXP 	instruct_surprise1: autoDraw = True
+25.7293 	DEBUG 	Read excel file with openpyxl: surpriseBlock_select_D.xlsx
+25.7296 	EXP 	Imported surpriseBlock_select_D.xlsx as conditions, 2 conditions, 2 params
+25.7300 	EXP 	Created sequence: sequential, trialTypes=2, nReps=1, seed=None
+25.7302 	EXP 	New trial (rep=0, index=0): {'whichSurpriseBlock': 'half_surp_table2.csv', 'taskTextSource': 'In this round, press Left key when the face is OLD and the Right key when it is new.\n\nTo get ready, rest your right and left index fingers on the right and left buttons, then press the right button when you are ready to begin.'}
+25.7575 	DATA 	Keypress: 8
+25.7641 	EXP 	instruct_surprise1: autoDraw = False
+25.7641 	EXP 	instructMainTask_text: height = 0.04
+25.7641 	EXP 	instructMainTask_text: height = 0.04
+25.7641 	EXP 	instructMainTask_text: height = 0.04
+25.7641 	EXP 	instructMainTask_text: text = 'In this round, press Left key when the face is OLD and the Right key when it is new.\n\nTo get ready, rest your right and left index fingers on the right and left buttons, then press the right button when you are ready to begin.'
+25.7641 	EXP 	instructMainTask_text: autoDraw = True
+25.9285 	DATA 	Keypress: 1
+28.3948 	DEBUG 	Read csv file with pandas: half_surp_table2.csv
+28.3955 	DEBUG 	Clearing unnamed columns from half_surp_table2.csv
+28.3975 	EXP 	Imported half_surp_table2.csv as conditions, 240 conditions, 1 params
+28.3993 	EXP 	Created sequence: random, trialTypes=240, nReps=1, seed=None
+28.3996 	EXP 	New trial (rep=0, index=0): OrderedDict([('surp_csv_name', 'csv_files/surprise_csv_files/surpriseTable_row190.csv')])
+28.4063 	DEBUG 	Read csv file with pandas: csv_files/surprise_csv_files/surpriseTable_row190.csv
+28.4071 	DEBUG 	Clearing unnamed columns from csv_files/surprise_csv_files/surpriseTable_row190.csv
+28.4074 	EXP 	Imported csv_files/surprise_csv_files/surpriseTable_row190.csv as conditions, 1 conditions, 2 params
+28.4077 	EXP 	Created sequence: random, trialTypes=1, nReps=1, seed=None
+28.4079 	EXP 	New trial (rep=0, index=0): OrderedDict([('surpriseFaces', 'img/neutralC/CFD-BF-048-002-N.jpg'), ('new', 0)])
+30.0959 	DATA 	Keypress: 8
+30.2388 	EXP 	instructMainTask_text: autoDraw = False
+30.2388 	EXP 	first_surpStimuliA1: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+30.2388 	EXP 	fStimA1: height = 1.0
+30.2388 	EXP 	fStimA1: height = 1.0
+30.2388 	EXP 	fStimA1: height = 1.0
+30.2388 	EXP 	fStimA1: text = 'New or Old?'
+30.2388 	EXP 	fStimA1: height = 0.045
+30.2388 	EXP 	firstStim_sliderA1: markerPos = None
+30.2388 	EXP 	firstStim_sliderA1: markerPos = None
+30.2388 	EXP 	first_surpStimuliA1: autoDraw = False
+30.2388 	EXP 	fStimA1: autoDraw = False
+30.2388 	EXP 	firstStim_sliderA1: autoDraw = False
+30.2388 	EXP 	second_surpStimuliA1: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+30.2388 	EXP 	sStimA1: height = 1.0
+30.2388 	EXP 	sStimA1: height = 1.0
+30.2388 	EXP 	sStimA1: height = 1.0
+30.2388 	EXP 	sStimA1: text = 'Approving or Disapproving?'
+30.2388 	EXP 	sStimA1: height = 0.045
+30.2388 	EXP 	secondStim_sliderA1: markerPos = None
+30.2388 	EXP 	secondStim_sliderA1: markerPos = None
+30.2388 	EXP 	second_surpStimuliA1: autoDraw = False
+30.2388 	EXP 	sStimA1: autoDraw = False
+30.2388 	EXP 	secondStim_sliderA1: autoDraw = False
+30.2388 	EXP 	first_surpStimuliA2: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+30.2388 	EXP 	fStimA2: height = 1.0
+30.2388 	EXP 	fStimA2: height = 1.0
+30.2388 	EXP 	fStimA2: height = 1.0
+30.2388 	EXP 	fStimA2: text = 'Old or New?'
+30.2388 	EXP 	fStimA2: height = 0.045
+30.2388 	EXP 	firstStim_sliderA2: markerPos = None
+30.2388 	EXP 	firstStim_sliderA2: markerPos = None
+30.2388 	EXP 	first_surpStimuliA2: autoDraw = False
+30.2388 	EXP 	fStimA2: autoDraw = False
+30.2388 	EXP 	firstStim_sliderA2: autoDraw = False
+30.2388 	EXP 	second_surpStimuliA2: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+30.2388 	EXP 	sStimA2: height = 1.0
+30.2388 	EXP 	sStimA2: height = 1.0
+30.2388 	EXP 	sStimA2: height = 1.0
+30.2388 	EXP 	sStimA2: text = 'Approving or Disapproving?'
+30.2388 	EXP 	sStimA2: height = 0.045
+30.2388 	EXP 	secondStim_sliderA2: markerPos = None
+30.2388 	EXP 	secondStim_sliderA2: markerPos = None
+30.2388 	EXP 	second_surpStimuliA2: autoDraw = False
+30.2388 	EXP 	sStimA2: autoDraw = False
+30.2388 	EXP 	secondStim_sliderA2: autoDraw = False
+30.2388 	EXP 	first_surpStimuliB1: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+30.2388 	EXP 	fStimB1: height = 1.0
+30.2388 	EXP 	fStimB1: height = 1.0
+30.2388 	EXP 	fStimB1: height = 1.0
+30.2388 	EXP 	fStimB1: text = 'Old or New?'
+30.2388 	EXP 	fStimB1: height = 0.045
+30.2388 	EXP 	firstStim_sliderB1: markerPos = None
+30.2388 	EXP 	firstStim_sliderB1: markerPos = None
+30.2388 	EXP 	first_surpStimuliB1: autoDraw = False
+30.2388 	EXP 	fStimB1: autoDraw = False
+30.2388 	EXP 	firstStim_sliderB1: autoDraw = False
+30.2388 	EXP 	second_surpStimuliB1: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+30.2388 	EXP 	sStimB1: height = 1.0
+30.2388 	EXP 	sStimB1: height = 1.0
+30.2388 	EXP 	sStimB1: height = 1.0
+30.2388 	EXP 	sStimB1: text = 'Disapproving or Approving?'
+30.2388 	EXP 	sStimB1: height = 0.045
+30.2388 	EXP 	secondStim_sliderB1: markerPos = None
+30.2388 	EXP 	secondStim_sliderB1: markerPos = None
+30.2388 	EXP 	second_surpStimuliB1: autoDraw = False
+30.2388 	EXP 	sStimB1: autoDraw = False
+30.2388 	EXP 	secondStim_sliderB1: autoDraw = False
+30.2388 	EXP 	first_surpStimuliB2: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+30.2388 	EXP 	fStimB2: height = 1.0
+30.2388 	EXP 	fStimB2: height = 1.0
+30.2388 	EXP 	fStimB2: height = 1.0
+30.2388 	EXP 	fStimB2: text = 'New or Old?'
+30.2388 	EXP 	fStimB2: height = 0.045
+30.2388 	EXP 	firstStim_sliderB2: markerPos = None
+30.2388 	EXP 	firstStim_sliderB2: markerPos = None
+30.2388 	EXP 	first_surpStimuliB2: autoDraw = False
+30.2388 	EXP 	fStimB2: autoDraw = False
+30.2388 	EXP 	firstStim_sliderB2: autoDraw = False
+30.2388 	EXP 	second_surpStimuliB2: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+30.2388 	EXP 	sStimB2: height = 1.0
+30.2388 	EXP 	sStimB2: height = 1.0
+30.2388 	EXP 	sStimB2: height = 1.0
+30.2388 	EXP 	sStimB2: text = 'Disapproving or Approving?'
+30.2388 	EXP 	sStimB2: height = 0.045
+30.2388 	EXP 	secondStim_sliderB2: markerPos = None
+30.2388 	EXP 	secondStim_sliderB2: markerPos = None
+30.2388 	EXP 	second_surpStimuliB2: autoDraw = False
+30.2388 	EXP 	sStimB2: autoDraw = False
+30.2388 	EXP 	secondStim_sliderB2: autoDraw = False
+30.2388 	EXP 	first_surpStimuliC1: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+30.2388 	EXP 	fStimC1: height = 1.0
+30.2388 	EXP 	fStimC1: height = 1.0
+30.2388 	EXP 	fStimC1: height = 1.0
+30.2388 	EXP 	fStimC1: text = 'Disapproving or Approving?'
+30.2388 	EXP 	fStimC1: height = 0.045
+30.2388 	EXP 	firstStim_sliderC1: markerPos = None
+30.2388 	EXP 	firstStim_sliderC1: markerPos = None
+30.2388 	EXP 	first_surpStimuliC1: autoDraw = False
+30.2388 	EXP 	fStimC1: autoDraw = False
+30.2388 	EXP 	firstStim_sliderC1: autoDraw = False
+30.2388 	EXP 	second_surpStimuliC1: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+30.2388 	EXP 	sStimC1: height = 1.0
+30.2388 	EXP 	sStimC1: height = 1.0
+30.2388 	EXP 	sStimC1: height = 1.0
+30.2388 	EXP 	sStimC1: text = 'New or Old?'
+30.2388 	EXP 	sStimC1: height = 0.045
+30.2388 	EXP 	secondStim_sliderC1: markerPos = None
+30.2388 	EXP 	secondStim_sliderC1: markerPos = None
+30.2388 	EXP 	second_surpStimuliC1: autoDraw = False
+30.2388 	EXP 	sStimC1: autoDraw = False
+30.2388 	EXP 	secondStim_sliderC1: autoDraw = False
+30.2388 	EXP 	first_surpStimuliC2: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+30.2388 	EXP 	fStimC2: height = 1.0
+30.2388 	EXP 	fStimC2: height = 1.0
+30.2388 	EXP 	fStimC2: height = 1.0
+30.2388 	EXP 	fStimC2: text = 'Approving or Disapproving?'
+30.2388 	EXP 	fStimC2: height = 0.045
+30.2388 	EXP 	firstStim_sliderC2: markerPos = None
+30.2388 	EXP 	firstStim_sliderC2: markerPos = None
+30.2388 	EXP 	first_surpStimuliC2: autoDraw = False
+30.2388 	EXP 	fStimC2: autoDraw = False
+30.2388 	EXP 	firstStim_sliderC2: autoDraw = False
+30.2388 	EXP 	second_surpStimuliC2: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+30.2388 	EXP 	sStimC2: height = 1.0
+30.2388 	EXP 	sStimC2: height = 1.0
+30.2388 	EXP 	sStimC2: height = 1.0
+30.2388 	EXP 	sStimC2: text = 'New or Old?'
+30.2388 	EXP 	sStimC2: height = 0.045
+30.2388 	EXP 	secondStim_sliderC2: markerPos = None
+30.2388 	EXP 	secondStim_sliderC2: markerPos = None
+30.2388 	EXP 	second_surpStimuliC2: autoDraw = False
+30.2388 	EXP 	sStimC2: autoDraw = False
+30.2388 	EXP 	secondStim_sliderC2: autoDraw = False
+30.2388 	EXP 	first_surpStimuliD1: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+30.2388 	EXP 	fStim_D1: height = 1.0
+30.2388 	EXP 	fStim_D1: height = 1.0
+30.2388 	EXP 	fStim_D1: height = 1.0
+30.2388 	EXP 	fStim_D1: text = 'Approving or Disapproving?'
+30.2388 	EXP 	fStim_D1: height = 0.045
+30.2388 	EXP 	firstStim_sliderD1: markerPos = None
+30.2388 	EXP 	firstStim_sliderD1: markerPos = None
+30.2388 	EXP 	first_surpStimuliD1: autoDraw = True
+30.2388 	EXP 	fStim_D1: autoDraw = True
+30.2388 	EXP 	firstStim_sliderD1: autoDraw = True
+30.2388 	EXP 	fStim_D1: height = 0.045
+30.2388 	EXP 	fStim_D1: height = 0.045
+30.2388 	EXP 	fStim_D1: height = 0.045
+30.2388 	EXP 	fStim_D1: text = 'Approving or Disapproving?'
+33.1263 	DATA 	Mouse: Left button down, pos=(605,713)
+33.1591 	EXP 	firstStim_sliderD1: markerPos = 3.0085470085470085
+33.1818 	EXP 	firstStim_sliderD1: markerPos = 3.0085470085470085
+33.2042 	EXP 	firstStim_sliderD1: markerPos = 3.0085470085470085
+33.2256 	EXP 	firstStim_sliderD1: markerPos = 3.0085470085470085
+33.2501 	EXP 	firstStim_sliderD1: markerPos = 3.0085470085470085
+33.2678 	DATA 	Mouse:  Left button up, pos=(605,713)
+33.2764 	EXP 	firstStim_sliderD1: markerPos = 3.0085470085470085
+33.2981 	EXP 	firstStim_sliderD1: markerPos = 3.0
+33.4991 	EXP 	first_surpStimuliD1: autoDraw = False
+33.4991 	EXP 	fStim_D1: autoDraw = False
+33.4991 	EXP 	firstStim_sliderD1: autoDraw = False
+33.4991 	EXP 	second_surpStimuliD1: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+33.4991 	EXP 	sStimD1: height = 1.0
+33.4991 	EXP 	sStimD1: height = 1.0
+33.4991 	EXP 	sStimD1: height = 1.0
+33.4991 	EXP 	sStimD1: text = 'Old or New?'
+33.4991 	EXP 	sStimD1: height = 0.045
+33.4991 	EXP 	secondStim_sliderD1: markerPos = None
+33.4991 	EXP 	secondStim_sliderD1: markerPos = None
+33.4991 	EXP 	second_surpStimuliD1: autoDraw = True
+33.4991 	EXP 	sStimD1: autoDraw = True
+33.4991 	EXP 	secondStim_sliderD1: autoDraw = True
+33.4991 	EXP 	sStimD1: height = 0.045
+33.4991 	EXP 	sStimD1: height = 0.045
+33.4991 	EXP 	sStimD1: height = 0.045
+33.4991 	EXP 	sStimD1: text = 'Old or New?'
+35.5489 	DATA 	Mouse: Left button down, pos=(601,137)
+35.5752 	EXP 	secondStim_sliderD1: markerPos = 2.9914529914529915
+35.5977 	EXP 	secondStim_sliderD1: markerPos = 2.9914529914529915
+35.6193 	EXP 	secondStim_sliderD1: markerPos = 2.9914529914529915
+35.6421 	EXP 	secondStim_sliderD1: markerPos = 2.9914529914529915
+35.6645 	EXP 	secondStim_sliderD1: markerPos = 2.9914529914529915
+35.6801 	DATA 	Mouse:  Left button up, pos=(601,137)
+35.6872 	EXP 	secondStim_sliderD1: markerPos = 2.9914529914529915
+35.7082 	EXP 	secondStim_sliderD1: markerPos = 3.0
+35.9710 	EXP 	second_surpStimuliD1: autoDraw = False
+35.9710 	EXP 	sStimD1: autoDraw = False
+35.9710 	EXP 	secondStim_sliderD1: autoDraw = False
+35.9710 	EXP 	first_surpStimuliD2: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+35.9710 	EXP 	fStimD2: height = 1.0
+35.9710 	EXP 	fStimD2: height = 1.0
+35.9710 	EXP 	fStimD2: height = 1.0
+35.9710 	EXP 	fStimD2: text = 'Disapproving or Approving?'
+35.9710 	EXP 	fStimD2: height = 0.045
+35.9710 	EXP 	firstStim_sliderD2: markerPos = None
+35.9710 	EXP 	firstStim_sliderD2: markerPos = None
+35.9710 	EXP 	first_surpStimuliD2: autoDraw = False
+35.9710 	EXP 	fStimD2: autoDraw = False
+35.9710 	EXP 	firstStim_sliderD2: autoDraw = False
+35.9710 	EXP 	second_surpStimuliD2: image = 'img/neutralC/CFD-BF-048-002-N.jpg'
+35.9710 	EXP 	sStimD2: height = 1.0
+35.9710 	EXP 	sStimD2: height = 1.0
+35.9710 	EXP 	sStimD2: height = 1.0
+35.9710 	EXP 	sStimD2: text = 'Old or New?'
+35.9710 	EXP 	sStimD2: height = 0.045
+35.9710 	EXP 	secondStim_sliderD2: markerPos = None
+35.9710 	EXP 	secondStim_sliderD2: markerPos = None
+35.9710 	EXP 	second_surpStimuliD2: autoDraw = False
+35.9710 	EXP 	sStimD2: autoDraw = False
+35.9710 	EXP 	secondStim_sliderD2: autoDraw = False
+35.9710 	EXP 	fix_2: autoDraw = True
+36.9546 	EXP 	New trial (rep=0, index=1): OrderedDict([('surp_csv_name', 'csv_files/surprise_csv_files/surpriseTable_row284.csv')])
+36.9682 	DEBUG 	Read csv file with pandas: csv_files/surprise_csv_files/surpriseTable_row284.csv
+36.9694 	DEBUG 	Clearing unnamed columns from csv_files/surprise_csv_files/surpriseTable_row284.csv
+36.9698 	EXP 	Imported csv_files/surprise_csv_files/surpriseTable_row284.csv as conditions, 1 conditions, 2 params
+36.9702 	EXP 	Created sequence: random, trialTypes=1, nReps=1, seed=None
+36.9705 	EXP 	New trial (rep=0, index=0): OrderedDict([('surpriseFaces', 'img/neutralC/CFD-IF-601-519-N.jpg'), ('new', 1)])
+38.3626 	EXP 	fix_2: autoDraw = False
+38.3626 	EXP 	first_surpStimuliA1: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+38.3626 	EXP 	fStimA1: text = 'New or Old?'
+38.3626 	EXP 	fStimA1: height = 0.045
+38.3626 	EXP 	firstStim_sliderA1: markerPos = None
+38.3626 	EXP 	firstStim_sliderA1: markerPos = None
+38.3626 	EXP 	first_surpStimuliA1: autoDraw = False
+38.3626 	EXP 	fStimA1: autoDraw = False
+38.3626 	EXP 	firstStim_sliderA1: autoDraw = False
+38.3626 	EXP 	second_surpStimuliA1: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+38.3626 	EXP 	sStimA1: text = 'Approving or Disapproving?'
+38.3626 	EXP 	sStimA1: height = 0.045
+38.3626 	EXP 	secondStim_sliderA1: markerPos = None
+38.3626 	EXP 	secondStim_sliderA1: markerPos = None
+38.3626 	EXP 	second_surpStimuliA1: autoDraw = False
+38.3626 	EXP 	sStimA1: autoDraw = False
+38.3626 	EXP 	secondStim_sliderA1: autoDraw = False
+38.3626 	EXP 	first_surpStimuliA2: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+38.3626 	EXP 	fStimA2: text = 'Old or New?'
+38.3626 	EXP 	fStimA2: height = 0.045
+38.3626 	EXP 	firstStim_sliderA2: markerPos = None
+38.3626 	EXP 	firstStim_sliderA2: markerPos = None
+38.3626 	EXP 	first_surpStimuliA2: autoDraw = False
+38.3626 	EXP 	fStimA2: autoDraw = False
+38.3626 	EXP 	firstStim_sliderA2: autoDraw = False
+38.3626 	EXP 	second_surpStimuliA2: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+38.3626 	EXP 	sStimA2: text = 'Approving or Disapproving?'
+38.3626 	EXP 	sStimA2: height = 0.045
+38.3626 	EXP 	secondStim_sliderA2: markerPos = None
+38.3626 	EXP 	secondStim_sliderA2: markerPos = None
+38.3626 	EXP 	second_surpStimuliA2: autoDraw = False
+38.3626 	EXP 	sStimA2: autoDraw = False
+38.3626 	EXP 	secondStim_sliderA2: autoDraw = False
+38.3626 	EXP 	first_surpStimuliB1: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+38.3626 	EXP 	fStimB1: text = 'Old or New?'
+38.3626 	EXP 	fStimB1: height = 0.045
+38.3626 	EXP 	firstStim_sliderB1: markerPos = None
+38.3626 	EXP 	firstStim_sliderB1: markerPos = None
+38.3626 	EXP 	first_surpStimuliB1: autoDraw = False
+38.3626 	EXP 	fStimB1: autoDraw = False
+38.3626 	EXP 	firstStim_sliderB1: autoDraw = False
+38.3626 	EXP 	second_surpStimuliB1: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+38.3626 	EXP 	sStimB1: text = 'Disapproving or Approving?'
+38.3626 	EXP 	sStimB1: height = 0.045
+38.3626 	EXP 	secondStim_sliderB1: markerPos = None
+38.3626 	EXP 	secondStim_sliderB1: markerPos = None
+38.3626 	EXP 	second_surpStimuliB1: autoDraw = False
+38.3626 	EXP 	sStimB1: autoDraw = False
+38.3626 	EXP 	secondStim_sliderB1: autoDraw = False
+38.3626 	EXP 	first_surpStimuliB2: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+38.3626 	EXP 	fStimB2: text = 'New or Old?'
+38.3626 	EXP 	fStimB2: height = 0.045
+38.3626 	EXP 	firstStim_sliderB2: markerPos = None
+38.3626 	EXP 	firstStim_sliderB2: markerPos = None
+38.3626 	EXP 	first_surpStimuliB2: autoDraw = False
+38.3626 	EXP 	fStimB2: autoDraw = False
+38.3626 	EXP 	firstStim_sliderB2: autoDraw = False
+38.3626 	EXP 	second_surpStimuliB2: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+38.3626 	EXP 	sStimB2: text = 'Disapproving or Approving?'
+38.3626 	EXP 	sStimB2: height = 0.045
+38.3626 	EXP 	secondStim_sliderB2: markerPos = None
+38.3626 	EXP 	secondStim_sliderB2: markerPos = None
+38.3626 	EXP 	second_surpStimuliB2: autoDraw = False
+38.3626 	EXP 	sStimB2: autoDraw = False
+38.3626 	EXP 	secondStim_sliderB2: autoDraw = False
+38.3626 	EXP 	first_surpStimuliC1: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+38.3626 	EXP 	fStimC1: text = 'Disapproving or Approving?'
+38.3626 	EXP 	fStimC1: height = 0.045
+38.3626 	EXP 	firstStim_sliderC1: markerPos = None
+38.3626 	EXP 	firstStim_sliderC1: markerPos = None
+38.3626 	EXP 	first_surpStimuliC1: autoDraw = False
+38.3626 	EXP 	fStimC1: autoDraw = False
+38.3626 	EXP 	firstStim_sliderC1: autoDraw = False
+38.3626 	EXP 	second_surpStimuliC1: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+38.3626 	EXP 	sStimC1: text = 'New or Old?'
+38.3626 	EXP 	sStimC1: height = 0.045
+38.3626 	EXP 	secondStim_sliderC1: markerPos = None
+38.3626 	EXP 	secondStim_sliderC1: markerPos = None
+38.3626 	EXP 	second_surpStimuliC1: autoDraw = False
+38.3626 	EXP 	sStimC1: autoDraw = False
+38.3626 	EXP 	secondStim_sliderC1: autoDraw = False
+38.3626 	EXP 	first_surpStimuliC2: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+38.3626 	EXP 	fStimC2: text = 'Approving or Disapproving?'
+38.3626 	EXP 	fStimC2: height = 0.045
+38.3626 	EXP 	firstStim_sliderC2: markerPos = None
+38.3626 	EXP 	firstStim_sliderC2: markerPos = None
+38.3626 	EXP 	first_surpStimuliC2: autoDraw = False
+38.3626 	EXP 	fStimC2: autoDraw = False
+38.3626 	EXP 	firstStim_sliderC2: autoDraw = False
+38.3626 	EXP 	second_surpStimuliC2: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+38.3626 	EXP 	sStimC2: text = 'New or Old?'
+38.3626 	EXP 	sStimC2: height = 0.045
+38.3626 	EXP 	secondStim_sliderC2: markerPos = None
+38.3626 	EXP 	secondStim_sliderC2: markerPos = None
+38.3626 	EXP 	second_surpStimuliC2: autoDraw = False
+38.3626 	EXP 	sStimC2: autoDraw = False
+38.3626 	EXP 	secondStim_sliderC2: autoDraw = False
+38.3626 	EXP 	first_surpStimuliD1: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+38.3626 	EXP 	fStim_D1: text = 'Approving or Disapproving?'
+38.3626 	EXP 	fStim_D1: height = 0.045
+38.3626 	EXP 	firstStim_sliderD1: markerPos = None
+38.3626 	EXP 	firstStim_sliderD1: markerPos = None
+38.3626 	EXP 	first_surpStimuliD1: autoDraw = True
+38.3626 	EXP 	fStim_D1: autoDraw = True
+38.3626 	EXP 	firstStim_sliderD1: autoDraw = True
+38.3626 	EXP 	fStim_D1: height = 0.045
+38.3626 	EXP 	fStim_D1: height = 0.045
+38.3626 	EXP 	fStim_D1: height = 0.045
+38.3626 	EXP 	fStim_D1: text = 'Approving or Disapproving?'
+40.4089 	DATA 	Mouse: Left button down, pos=(1068,724)
+40.4323 	EXP 	firstStim_sliderD1: markerPos = 4.987179487179487
+40.4542 	EXP 	firstStim_sliderD1: markerPos = 4.987179487179487
+40.4763 	EXP 	firstStim_sliderD1: markerPos = 4.987179487179487
+40.4998 	EXP 	firstStim_sliderD1: markerPos = 4.987179487179487
+40.5212 	EXP 	firstStim_sliderD1: markerPos = 4.987179487179487
+40.5381 	DATA 	Mouse:  Left button up, pos=(1068,724)
+40.5450 	EXP 	firstStim_sliderD1: markerPos = 4.987179487179487
+40.5666 	EXP 	firstStim_sliderD1: markerPos = 5.0
+40.6956 	EXP 	first_surpStimuliD1: autoDraw = False
+40.6956 	EXP 	fStim_D1: autoDraw = False
+40.6956 	EXP 	firstStim_sliderD1: autoDraw = False
+40.6956 	EXP 	second_surpStimuliD1: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+40.6956 	EXP 	sStimD1: text = 'Old or New?'
+40.6956 	EXP 	sStimD1: height = 0.045
+40.6956 	EXP 	secondStim_sliderD1: markerPos = None
+40.6956 	EXP 	secondStim_sliderD1: markerPos = None
+40.6956 	EXP 	second_surpStimuliD1: autoDraw = True
+40.6956 	EXP 	sStimD1: autoDraw = True
+40.6956 	EXP 	secondStim_sliderD1: autoDraw = True
+40.6956 	EXP 	sStimD1: height = 0.045
+40.6956 	EXP 	sStimD1: height = 0.045
+40.6956 	EXP 	sStimD1: height = 0.045
+40.6956 	EXP 	sStimD1: text = 'Old or New?'
+43.1888 	DATA 	Mouse: Left button down, pos=(371,130)
+43.2113 	EXP 	secondStim_sliderD1: markerPos = 2.0085470085470085
+43.2357 	EXP 	secondStim_sliderD1: markerPos = 2.0085470085470085
+43.2552 	EXP 	secondStim_sliderD1: markerPos = 2.0085470085470085
+43.2770 	EXP 	secondStim_sliderD1: markerPos = 2.0085470085470085
+43.3004 	EXP 	secondStim_sliderD1: markerPos = 2.0085470085470085
+43.3224 	EXP 	secondStim_sliderD1: markerPos = 2.0085470085470085
+43.3242 	DATA 	Mouse:  Left button up, pos=(371,130)
+43.3476 	EXP 	secondStim_sliderD1: markerPos = 2.0
+43.5688 	EXP 	second_surpStimuliD1: autoDraw = False
+43.5688 	EXP 	sStimD1: autoDraw = False
+43.5688 	EXP 	secondStim_sliderD1: autoDraw = False
+43.5688 	EXP 	first_surpStimuliD2: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+43.5688 	EXP 	fStimD2: text = 'Disapproving or Approving?'
+43.5688 	EXP 	fStimD2: height = 0.045
+43.5688 	EXP 	firstStim_sliderD2: markerPos = None
+43.5688 	EXP 	firstStim_sliderD2: markerPos = None
+43.5688 	EXP 	first_surpStimuliD2: autoDraw = False
+43.5688 	EXP 	fStimD2: autoDraw = False
+43.5688 	EXP 	firstStim_sliderD2: autoDraw = False
+43.5688 	EXP 	second_surpStimuliD2: image = 'img/neutralC/CFD-IF-601-519-N.jpg'
+43.5688 	EXP 	sStimD2: text = 'Old or New?'
+43.5688 	EXP 	sStimD2: height = 0.045
+43.5688 	EXP 	secondStim_sliderD2: markerPos = None
+43.5688 	EXP 	secondStim_sliderD2: markerPos = None
+43.5688 	EXP 	second_surpStimuliD2: autoDraw = False
+43.5688 	EXP 	sStimD2: autoDraw = False
+43.5688 	EXP 	secondStim_sliderD2: autoDraw = False
+43.5688 	EXP 	fix_2: autoDraw = True
+44.5556 	EXP 	New trial (rep=0, index=2): OrderedDict([('surp_csv_name', 'csv_files/surprise_csv_files/surpriseTable_row81.csv')])
+44.5605 	DEBUG 	Read csv file with pandas: csv_files/surprise_csv_files/surpriseTable_row81.csv
+44.5613 	DEBUG 	Clearing unnamed columns from csv_files/surprise_csv_files/surpriseTable_row81.csv
+44.5616 	EXP 	Imported csv_files/surprise_csv_files/surpriseTable_row81.csv as conditions, 1 conditions, 2 params
+44.5619 	EXP 	Created sequence: random, trialTypes=1, nReps=1, seed=None
+44.5622 	EXP 	New trial (rep=0, index=0): OrderedDict([('surpriseFaces', 'img/neutralC/CFD-WF-252-159-N.jpg'), ('new', 0)])
+45.9553 	EXP 	fix_2: autoDraw = False
+45.9553 	EXP 	fix_2: autoDraw = False
+45.9553 	EXP 	first_surpStimuliA1: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+45.9553 	EXP 	fStimA1: text = 'New or Old?'
+45.9553 	EXP 	fStimA1: height = 0.045
+45.9553 	EXP 	firstStim_sliderA1: markerPos = None
+45.9553 	EXP 	firstStim_sliderA1: markerPos = None
+45.9553 	EXP 	first_surpStimuliA1: autoDraw = False
+45.9553 	EXP 	fStimA1: autoDraw = False
+45.9553 	EXP 	firstStim_sliderA1: autoDraw = False
+45.9553 	EXP 	second_surpStimuliA1: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+45.9553 	EXP 	sStimA1: text = 'Approving or Disapproving?'
+45.9553 	EXP 	sStimA1: height = 0.045
+45.9553 	EXP 	secondStim_sliderA1: markerPos = None
+45.9553 	EXP 	secondStim_sliderA1: markerPos = None
+45.9553 	EXP 	second_surpStimuliA1: autoDraw = False
+45.9553 	EXP 	sStimA1: autoDraw = False
+45.9553 	EXP 	secondStim_sliderA1: autoDraw = False
+45.9553 	EXP 	first_surpStimuliA2: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+45.9553 	EXP 	fStimA2: text = 'Old or New?'
+45.9553 	EXP 	fStimA2: height = 0.045
+45.9553 	EXP 	firstStim_sliderA2: markerPos = None
+45.9553 	EXP 	firstStim_sliderA2: markerPos = None
+45.9553 	EXP 	first_surpStimuliA2: autoDraw = False
+45.9553 	EXP 	fStimA2: autoDraw = False
+45.9553 	EXP 	firstStim_sliderA2: autoDraw = False
+45.9553 	EXP 	second_surpStimuliA2: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+45.9553 	EXP 	sStimA2: text = 'Approving or Disapproving?'
+45.9553 	EXP 	sStimA2: height = 0.045
+45.9553 	EXP 	secondStim_sliderA2: markerPos = None
+45.9553 	EXP 	secondStim_sliderA2: markerPos = None
+45.9553 	EXP 	second_surpStimuliA2: autoDraw = False
+45.9553 	EXP 	sStimA2: autoDraw = False
+45.9553 	EXP 	secondStim_sliderA2: autoDraw = False
+45.9553 	EXP 	first_surpStimuliB1: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+45.9553 	EXP 	fStimB1: text = 'Old or New?'
+45.9553 	EXP 	fStimB1: height = 0.045
+45.9553 	EXP 	firstStim_sliderB1: markerPos = None
+45.9553 	EXP 	firstStim_sliderB1: markerPos = None
+45.9553 	EXP 	first_surpStimuliB1: autoDraw = False
+45.9553 	EXP 	fStimB1: autoDraw = False
+45.9553 	EXP 	firstStim_sliderB1: autoDraw = False
+45.9553 	EXP 	second_surpStimuliB1: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+45.9553 	EXP 	sStimB1: text = 'Disapproving or Approving?'
+45.9553 	EXP 	sStimB1: height = 0.045
+45.9553 	EXP 	secondStim_sliderB1: markerPos = None
+45.9553 	EXP 	secondStim_sliderB1: markerPos = None
+45.9553 	EXP 	second_surpStimuliB1: autoDraw = False
+45.9553 	EXP 	sStimB1: autoDraw = False
+45.9553 	EXP 	secondStim_sliderB1: autoDraw = False
+45.9553 	EXP 	first_surpStimuliB2: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+45.9553 	EXP 	fStimB2: text = 'New or Old?'
+45.9553 	EXP 	fStimB2: height = 0.045
+45.9553 	EXP 	firstStim_sliderB2: markerPos = None
+45.9553 	EXP 	firstStim_sliderB2: markerPos = None
+45.9553 	EXP 	first_surpStimuliB2: autoDraw = False
+45.9553 	EXP 	fStimB2: autoDraw = False
+45.9553 	EXP 	firstStim_sliderB2: autoDraw = False
+45.9553 	EXP 	second_surpStimuliB2: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+45.9553 	EXP 	sStimB2: text = 'Disapproving or Approving?'
+45.9553 	EXP 	sStimB2: height = 0.045
+45.9553 	EXP 	secondStim_sliderB2: markerPos = None
+45.9553 	EXP 	secondStim_sliderB2: markerPos = None
+45.9553 	EXP 	second_surpStimuliB2: autoDraw = False
+45.9553 	EXP 	sStimB2: autoDraw = False
+45.9553 	EXP 	secondStim_sliderB2: autoDraw = False
+45.9553 	EXP 	first_surpStimuliC1: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+45.9553 	EXP 	fStimC1: text = 'Disapproving or Approving?'
+45.9553 	EXP 	fStimC1: height = 0.045
+45.9553 	EXP 	firstStim_sliderC1: markerPos = None
+45.9553 	EXP 	firstStim_sliderC1: markerPos = None
+45.9553 	EXP 	first_surpStimuliC1: autoDraw = False
+45.9553 	EXP 	fStimC1: autoDraw = False
+45.9553 	EXP 	firstStim_sliderC1: autoDraw = False
+45.9553 	EXP 	second_surpStimuliC1: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+45.9553 	EXP 	sStimC1: text = 'New or Old?'
+45.9553 	EXP 	sStimC1: height = 0.045
+45.9553 	EXP 	secondStim_sliderC1: markerPos = None
+45.9553 	EXP 	secondStim_sliderC1: markerPos = None
+45.9553 	EXP 	second_surpStimuliC1: autoDraw = False
+45.9553 	EXP 	sStimC1: autoDraw = False
+45.9553 	EXP 	secondStim_sliderC1: autoDraw = False
+45.9553 	EXP 	first_surpStimuliC2: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+45.9553 	EXP 	fStimC2: text = 'Approving or Disapproving?'
+45.9553 	EXP 	fStimC2: height = 0.045
+45.9553 	EXP 	firstStim_sliderC2: markerPos = None
+45.9553 	EXP 	firstStim_sliderC2: markerPos = None
+45.9553 	EXP 	first_surpStimuliC2: autoDraw = False
+45.9553 	EXP 	fStimC2: autoDraw = False
+45.9553 	EXP 	firstStim_sliderC2: autoDraw = False
+45.9553 	EXP 	second_surpStimuliC2: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+45.9553 	EXP 	sStimC2: text = 'New or Old?'
+45.9553 	EXP 	sStimC2: height = 0.045
+45.9553 	EXP 	secondStim_sliderC2: markerPos = None
+45.9553 	EXP 	secondStim_sliderC2: markerPos = None
+45.9553 	EXP 	second_surpStimuliC2: autoDraw = False
+45.9553 	EXP 	sStimC2: autoDraw = False
+45.9553 	EXP 	secondStim_sliderC2: autoDraw = False
+45.9553 	EXP 	first_surpStimuliD1: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+45.9553 	EXP 	fStim_D1: text = 'Approving or Disapproving?'
+45.9553 	EXP 	fStim_D1: height = 0.045
+45.9553 	EXP 	firstStim_sliderD1: markerPos = None
+45.9553 	EXP 	firstStim_sliderD1: markerPos = None
+45.9553 	EXP 	first_surpStimuliD1: autoDraw = True
+45.9553 	EXP 	fStim_D1: autoDraw = True
+45.9553 	EXP 	firstStim_sliderD1: autoDraw = True
+45.9553 	EXP 	fStim_D1: height = 0.045
+45.9553 	EXP 	fStim_D1: height = 0.045
+45.9553 	EXP 	fStim_D1: height = 0.045
+45.9553 	EXP 	fStim_D1: text = 'Approving or Disapproving?'
+47.8897 	DATA 	Mouse: Left button down, pos=(139,714)
+47.9268 	EXP 	firstStim_sliderD1: markerPos = 1.017094017094017
+47.9513 	EXP 	firstStim_sliderD1: markerPos = 1.017094017094017
+47.9745 	EXP 	firstStim_sliderD1: markerPos = 1.017094017094017
+47.9985 	EXP 	firstStim_sliderD1: markerPos = 1.017094017094017
+48.0150 	DATA 	Mouse:  Left button up, pos=(139,714)
+48.0234 	EXP 	firstStim_sliderD1: markerPos = 1.017094017094017
+48.0449 	EXP 	firstStim_sliderD1: markerPos = 1.0
+48.1709 	EXP 	first_surpStimuliD1: autoDraw = False
+48.1709 	EXP 	fStim_D1: autoDraw = False
+48.1709 	EXP 	firstStim_sliderD1: autoDraw = False
+48.1709 	EXP 	second_surpStimuliD1: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+48.1709 	EXP 	sStimD1: text = 'Old or New?'
+48.1709 	EXP 	sStimD1: height = 0.045
+48.1709 	EXP 	secondStim_sliderD1: markerPos = None
+48.1709 	EXP 	secondStim_sliderD1: markerPos = None
+48.1709 	EXP 	second_surpStimuliD1: autoDraw = True
+48.1709 	EXP 	sStimD1: autoDraw = True
+48.1709 	EXP 	secondStim_sliderD1: autoDraw = True
+48.1709 	EXP 	sStimD1: height = 0.045
+48.1709 	EXP 	sStimD1: height = 0.045
+48.1709 	EXP 	sStimD1: height = 0.045
+48.1709 	EXP 	sStimD1: text = 'Old or New?'
+50.3300 	DATA 	Mouse: Left button down, pos=(1066,134)
+50.3592 	EXP 	secondStim_sliderD1: markerPos = 4.978632478632479
+50.3803 	EXP 	secondStim_sliderD1: markerPos = 4.978632478632479
+50.4019 	EXP 	secondStim_sliderD1: markerPos = 4.978632478632479
+50.4245 	EXP 	secondStim_sliderD1: markerPos = 4.978632478632479
+50.4468 	EXP 	secondStim_sliderD1: markerPos = 4.978632478632479
+50.4619 	DATA 	Mouse:  Left button up, pos=(1066,134)
+50.4696 	EXP 	secondStim_sliderD1: markerPos = 4.978632478632479
+50.4913 	EXP 	secondStim_sliderD1: markerPos = 5.0
+50.7155 	EXP 	second_surpStimuliD1: autoDraw = False
+50.7155 	EXP 	sStimD1: autoDraw = False
+50.7155 	EXP 	secondStim_sliderD1: autoDraw = False
+50.7155 	EXP 	first_surpStimuliD2: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+50.7155 	EXP 	fStimD2: text = 'Disapproving or Approving?'
+50.7155 	EXP 	fStimD2: height = 0.045
+50.7155 	EXP 	firstStim_sliderD2: markerPos = None
+50.7155 	EXP 	firstStim_sliderD2: markerPos = None
+50.7155 	EXP 	first_surpStimuliD2: autoDraw = False
+50.7155 	EXP 	fStimD2: autoDraw = False
+50.7155 	EXP 	firstStim_sliderD2: autoDraw = False
+50.7155 	EXP 	second_surpStimuliD2: image = 'img/neutralC/CFD-WF-252-159-N.jpg'
+50.7155 	EXP 	sStimD2: text = 'Old or New?'
+50.7155 	EXP 	sStimD2: height = 0.045
+50.7155 	EXP 	secondStim_sliderD2: markerPos = None
+50.7155 	EXP 	secondStim_sliderD2: markerPos = None
+50.7155 	EXP 	second_surpStimuliD2: autoDraw = False
+50.7155 	EXP 	sStimD2: autoDraw = False
+50.7155 	EXP 	secondStim_sliderD2: autoDraw = False
+50.7155 	EXP 	fix_2: autoDraw = True
+51.7072 	EXP 	New trial (rep=0, index=3): OrderedDict([('surp_csv_name', 'csv_files/surprise_csv_files/surpriseTable_row70.csv')])
+51.7132 	DEBUG 	Read csv file with pandas: csv_files/surprise_csv_files/surpriseTable_row70.csv
+51.7148 	DEBUG 	Clearing unnamed columns from csv_files/surprise_csv_files/surpriseTable_row70.csv
+51.7156 	EXP 	Imported csv_files/surprise_csv_files/surpriseTable_row70.csv as conditions, 1 conditions, 2 params
+51.7162 	EXP 	Created sequence: random, trialTypes=1, nReps=1, seed=None
+51.7166 	EXP 	New trial (rep=0, index=0): OrderedDict([('surpriseFaces', 'img/neutralC/CFD-IM-740-273-N.jpg'), ('new', 0)])
+53.2725 	EXP 	fix_2: autoDraw = False
+53.2725 	EXP 	fix_2: autoDraw = False
+53.2725 	EXP 	first_surpStimuliA1: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+53.2725 	EXP 	fStimA1: text = 'New or Old?'
+53.2725 	EXP 	fStimA1: height = 0.045
+53.2725 	EXP 	firstStim_sliderA1: markerPos = None
+53.2725 	EXP 	firstStim_sliderA1: markerPos = None
+53.2725 	EXP 	first_surpStimuliA1: autoDraw = False
+53.2725 	EXP 	fStimA1: autoDraw = False
+53.2725 	EXP 	firstStim_sliderA1: autoDraw = False
+53.2725 	EXP 	second_surpStimuliA1: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+53.2725 	EXP 	sStimA1: text = 'Approving or Disapproving?'
+53.2725 	EXP 	sStimA1: height = 0.045
+53.2725 	EXP 	secondStim_sliderA1: markerPos = None
+53.2725 	EXP 	secondStim_sliderA1: markerPos = None
+53.2725 	EXP 	second_surpStimuliA1: autoDraw = False
+53.2725 	EXP 	sStimA1: autoDraw = False
+53.2725 	EXP 	secondStim_sliderA1: autoDraw = False
+53.2725 	EXP 	first_surpStimuliA2: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+53.2725 	EXP 	fStimA2: text = 'Old or New?'
+53.2725 	EXP 	fStimA2: height = 0.045
+53.2725 	EXP 	firstStim_sliderA2: markerPos = None
+53.2725 	EXP 	firstStim_sliderA2: markerPos = None
+53.2725 	EXP 	first_surpStimuliA2: autoDraw = False
+53.2725 	EXP 	fStimA2: autoDraw = False
+53.2725 	EXP 	firstStim_sliderA2: autoDraw = False
+53.2725 	EXP 	second_surpStimuliA2: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+53.2725 	EXP 	sStimA2: text = 'Approving or Disapproving?'
+53.2725 	EXP 	sStimA2: height = 0.045
+53.2725 	EXP 	secondStim_sliderA2: markerPos = None
+53.2725 	EXP 	secondStim_sliderA2: markerPos = None
+53.2725 	EXP 	second_surpStimuliA2: autoDraw = False
+53.2725 	EXP 	sStimA2: autoDraw = False
+53.2725 	EXP 	secondStim_sliderA2: autoDraw = False
+53.2725 	EXP 	first_surpStimuliB1: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+53.2725 	EXP 	fStimB1: text = 'Old or New?'
+53.2725 	EXP 	fStimB1: height = 0.045
+53.2725 	EXP 	firstStim_sliderB1: markerPos = None
+53.2725 	EXP 	firstStim_sliderB1: markerPos = None
+53.2725 	EXP 	first_surpStimuliB1: autoDraw = False
+53.2725 	EXP 	fStimB1: autoDraw = False
+53.2725 	EXP 	firstStim_sliderB1: autoDraw = False
+53.2725 	EXP 	second_surpStimuliB1: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+53.2725 	EXP 	sStimB1: text = 'Disapproving or Approving?'
+53.2725 	EXP 	sStimB1: height = 0.045
+53.2725 	EXP 	secondStim_sliderB1: markerPos = None
+53.2725 	EXP 	secondStim_sliderB1: markerPos = None
+53.2725 	EXP 	second_surpStimuliB1: autoDraw = False
+53.2725 	EXP 	sStimB1: autoDraw = False
+53.2725 	EXP 	secondStim_sliderB1: autoDraw = False
+53.2725 	EXP 	first_surpStimuliB2: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+53.2725 	EXP 	fStimB2: text = 'New or Old?'
+53.2725 	EXP 	fStimB2: height = 0.045
+53.2725 	EXP 	firstStim_sliderB2: markerPos = None
+53.2725 	EXP 	firstStim_sliderB2: markerPos = None
+53.2725 	EXP 	first_surpStimuliB2: autoDraw = False
+53.2725 	EXP 	fStimB2: autoDraw = False
+53.2725 	EXP 	firstStim_sliderB2: autoDraw = False
+53.2725 	EXP 	second_surpStimuliB2: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+53.2725 	EXP 	sStimB2: text = 'Disapproving or Approving?'
+53.2725 	EXP 	sStimB2: height = 0.045
+53.2725 	EXP 	secondStim_sliderB2: markerPos = None
+53.2725 	EXP 	secondStim_sliderB2: markerPos = None
+53.2725 	EXP 	second_surpStimuliB2: autoDraw = False
+53.2725 	EXP 	sStimB2: autoDraw = False
+53.2725 	EXP 	secondStim_sliderB2: autoDraw = False
+53.2725 	EXP 	first_surpStimuliC1: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+53.2725 	EXP 	fStimC1: text = 'Disapproving or Approving?'
+53.2725 	EXP 	fStimC1: height = 0.045
+53.2725 	EXP 	firstStim_sliderC1: markerPos = None
+53.2725 	EXP 	firstStim_sliderC1: markerPos = None
+53.2725 	EXP 	first_surpStimuliC1: autoDraw = False
+53.2725 	EXP 	fStimC1: autoDraw = False
+53.2725 	EXP 	firstStim_sliderC1: autoDraw = False
+53.2725 	EXP 	second_surpStimuliC1: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+53.2725 	EXP 	sStimC1: text = 'New or Old?'
+53.2725 	EXP 	sStimC1: height = 0.045
+53.2725 	EXP 	secondStim_sliderC1: markerPos = None
+53.2725 	EXP 	secondStim_sliderC1: markerPos = None
+53.2725 	EXP 	second_surpStimuliC1: autoDraw = False
+53.2725 	EXP 	sStimC1: autoDraw = False
+53.2725 	EXP 	secondStim_sliderC1: autoDraw = False
+53.2725 	EXP 	first_surpStimuliC2: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+53.2725 	EXP 	fStimC2: text = 'Approving or Disapproving?'
+53.2725 	EXP 	fStimC2: height = 0.045
+53.2725 	EXP 	firstStim_sliderC2: markerPos = None
+53.2725 	EXP 	firstStim_sliderC2: markerPos = None
+53.2725 	EXP 	first_surpStimuliC2: autoDraw = False
+53.2725 	EXP 	fStimC2: autoDraw = False
+53.2725 	EXP 	firstStim_sliderC2: autoDraw = False
+53.2725 	EXP 	second_surpStimuliC2: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+53.2725 	EXP 	sStimC2: text = 'New or Old?'
+53.2725 	EXP 	sStimC2: height = 0.045
+53.2725 	EXP 	secondStim_sliderC2: markerPos = None
+53.2725 	EXP 	secondStim_sliderC2: markerPos = None
+53.2725 	EXP 	second_surpStimuliC2: autoDraw = False
+53.2725 	EXP 	sStimC2: autoDraw = False
+53.2725 	EXP 	secondStim_sliderC2: autoDraw = False
+53.2725 	EXP 	first_surpStimuliD1: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+53.2725 	EXP 	fStim_D1: text = 'Approving or Disapproving?'
+53.2725 	EXP 	fStim_D1: height = 0.045
+53.2725 	EXP 	firstStim_sliderD1: markerPos = None
+53.2725 	EXP 	firstStim_sliderD1: markerPos = None
+53.2725 	EXP 	first_surpStimuliD1: autoDraw = True
+53.2725 	EXP 	fStim_D1: autoDraw = True
+53.2725 	EXP 	firstStim_sliderD1: autoDraw = True
+53.2725 	EXP 	fStim_D1: height = 0.045
+53.2725 	EXP 	fStim_D1: height = 0.045
+53.2725 	EXP 	fStim_D1: height = 0.045
+53.2725 	EXP 	fStim_D1: text = 'Approving or Disapproving?'
+55.7235 	DATA 	Mouse: Left button down, pos=(1306,718)
+55.7543 	EXP 	firstStim_sliderD1: markerPos = 6.004273504273504
+55.7772 	EXP 	firstStim_sliderD1: markerPos = 6.004273504273504
+55.8009 	EXP 	firstStim_sliderD1: markerPos = 6.004273504273504
+55.8244 	EXP 	firstStim_sliderD1: markerPos = 6.004273504273504
+55.8423 	DATA 	Mouse:  Left button up, pos=(1306,718)
+55.8493 	EXP 	firstStim_sliderD1: markerPos = 6.004273504273504
+55.8722 	EXP 	firstStim_sliderD1: markerPos = 6.0
+56.0140 	EXP 	first_surpStimuliD1: autoDraw = False
+56.0140 	EXP 	fStim_D1: autoDraw = False
+56.0140 	EXP 	firstStim_sliderD1: autoDraw = False
+56.0140 	EXP 	second_surpStimuliD1: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+56.0140 	EXP 	sStimD1: text = 'Old or New?'
+56.0140 	EXP 	sStimD1: height = 0.045
+56.0140 	EXP 	secondStim_sliderD1: markerPos = None
+56.0140 	EXP 	secondStim_sliderD1: markerPos = None
+56.0140 	EXP 	second_surpStimuliD1: autoDraw = True
+56.0140 	EXP 	sStimD1: autoDraw = True
+56.0140 	EXP 	secondStim_sliderD1: autoDraw = True
+56.0140 	EXP 	sStimD1: height = 0.045
+56.0140 	EXP 	sStimD1: height = 0.045
+56.0140 	EXP 	sStimD1: height = 0.045
+56.0140 	EXP 	sStimD1: text = 'Old or New?'
+57.9062 	DATA 	Mouse: Left button down, pos=(364,130)
+57.9275 	EXP 	secondStim_sliderD1: markerPos = 1.9786324786324787
+57.9509 	EXP 	secondStim_sliderD1: markerPos = 1.9786324786324787
+57.9783 	EXP 	secondStim_sliderD1: markerPos = 1.9786324786324787
+58.0036 	EXP 	secondStim_sliderD1: markerPos = 1.9786324786324787
+58.0264 	EXP 	secondStim_sliderD1: markerPos = 1.9786324786324787
+58.0521 	EXP 	secondStim_sliderD1: markerPos = 1.9786324786324787
+58.0529 	DATA 	Mouse:  Left button up, pos=(364,130)
+58.0737 	EXP 	secondStim_sliderD1: markerPos = 2.0
+58.3228 	EXP 	second_surpStimuliD1: autoDraw = False
+58.3228 	EXP 	sStimD1: autoDraw = False
+58.3228 	EXP 	secondStim_sliderD1: autoDraw = False
+58.3228 	EXP 	first_surpStimuliD2: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+58.3228 	EXP 	fStimD2: text = 'Disapproving or Approving?'
+58.3228 	EXP 	fStimD2: height = 0.045
+58.3228 	EXP 	firstStim_sliderD2: markerPos = None
+58.3228 	EXP 	firstStim_sliderD2: markerPos = None
+58.3228 	EXP 	first_surpStimuliD2: autoDraw = False
+58.3228 	EXP 	fStimD2: autoDraw = False
+58.3228 	EXP 	firstStim_sliderD2: autoDraw = False
+58.3228 	EXP 	second_surpStimuliD2: image = 'img/neutralC/CFD-IM-740-273-N.jpg'
+58.3228 	EXP 	sStimD2: text = 'Old or New?'
+58.3228 	EXP 	sStimD2: height = 0.045
+58.3228 	EXP 	secondStim_sliderD2: markerPos = None
+58.3228 	EXP 	secondStim_sliderD2: markerPos = None
+58.3228 	EXP 	second_surpStimuliD2: autoDraw = False
+58.3228 	EXP 	sStimD2: autoDraw = False
+58.3228 	EXP 	secondStim_sliderD2: autoDraw = False
+58.3228 	EXP 	fix_2: autoDraw = True
+59.3075 	EXP 	New trial (rep=0, index=4): OrderedDict([('surp_csv_name', 'csv_files/surprise_csv_files/surpriseTable_row224.csv')])
+59.3492 	DEBUG 	Read csv file with pandas: csv_files/surprise_csv_files/surpriseTable_row224.csv
+59.3502 	DEBUG 	Clearing unnamed columns from csv_files/surprise_csv_files/surpriseTable_row224.csv
+59.3506 	EXP 	Imported csv_files/surprise_csv_files/surpriseTable_row224.csv as conditions, 1 conditions, 2 params
+59.3510 	EXP 	Created sequence: random, trialTypes=1, nReps=1, seed=None
+59.3514 	EXP 	New trial (rep=0, index=0): OrderedDict([('surpriseFaces', 'img/neutralC/CFD-IM-743-006-N.jpg'), ('new', 1)])
+60.8429 	EXP 	fix_2: autoDraw = False
+60.8429 	EXP 	fix_2: autoDraw = False
+60.8429 	EXP 	first_surpStimuliA1: image = 'img/neutralC/CFD-IM-743-006-N.jpg'
+60.8429 	EXP 	fStimA1: text = 'New or Old?'
+60.8429 	EXP 	fStimA1: height = 0.045
+60.8429 	EXP 	firstStim_sliderA1: markerPos = None
+60.8429 	EXP 	firstStim_sliderA1: markerPos = None
+60.8429 	EXP 	first_surpStimuliA1: autoDraw = False
+60.8429 	EXP 	fStimA1: autoDraw = False
+60.8429 	EXP 	firstStim_sliderA1: autoDraw = False
+60.8429 	EXP 	second_surpStimuliA1: image = 'img/neutralC/CFD-IM-743-006-N.jpg'
+60.8429 	EXP 	sStimA1: text = 'Approving or Disapproving?'
+60.8429 	EXP 	sStimA1: height = 0.045
+60.8429 	EXP 	secondStim_sliderA1: markerPos = None
+60.8429 	EXP 	secondStim_sliderA1: markerPos = None
+60.8429 	EXP 	second_surpStimuliA1: autoDraw = False
+60.8429 	EXP 	sStimA1: autoDraw = False
+60.8429 	EXP 	secondStim_sliderA1: autoDraw = False
+60.8429 	EXP 	first_surpStimuliA2: image = 'img/neutralC/CFD-IM-743-006-N.jpg'
+60.8429 	EXP 	fStimA2: text = 'Old or New?'
+60.8429 	EXP 	fStimA2: height = 0.045
+60.8429 	EXP 	firstStim_sliderA2: markerPos = None
+60.8429 	EXP 	firstStim_sliderA2: markerPos = None
+60.8429 	EXP 	first_surpStimuliA2: autoDraw = False
+60.8429 	EXP 	fStimA2: autoDraw = False
+60.8429 	EXP 	firstStim_sliderA2: autoDraw = False
+60.8429 	EXP 	second_surpStimuliA2: image = 'img/neutralC/CFD-IM-743-006-N.jpg'
+60.8429 	EXP 	sStimA2: text = 'Approving or Disapproving?'
+60.8429 	EXP 	sStimA2: height = 0.045
+60.8429 	EXP 	secondStim_sliderA2: markerPos = None
+60.8429 	EXP 	secondStim_sliderA2: markerPos = None
+60.8429 	EXP 	second_surpStimuliA2: autoDraw = False
+60.8429 	EXP 	sStimA2: autoDraw = False
+60.8429 	EXP 	secondStim_sliderA2: autoDraw = False
+60.8429 	EXP 	first_surpStimuliB1: image = 'img/neutralC/CFD-IM-743-006-N.jpg'
+60.8429 	EXP 	fStimB1: text = 'Old or New?'
+60.8429 	EXP 	fStimB1: height = 0.045
+60.8429 	EXP 	firstStim_sliderB1: markerPos = None
+60.8429 	EXP 	firstStim_sliderB1: markerPos = None
+60.8429 	EXP 	first_surpStimuliB1: autoDraw = False
+60.8429 	EXP 	fStimB1: autoDraw = False
+60.8429 	EXP 	firstStim_sliderB1: autoDraw = False
+60.8429 	EXP 	second_surpStimuliB1: image = 'img/neutralC/CFD-IM-743-006-N.jpg'
+60.8429 	EXP 	sStimB1: text = 'Disapproving or Approving?'
+60.8429 	EXP 	sStimB1: height = 0.045
+60.8429 	EXP 	secondStim_sliderB1: markerPos = None
+60.8429 	EXP 	secondStim_sliderB1: markerPos = None
+60.8429 	EXP 	second_surpStimuliB1: autoDraw = False
+60.8429 	EXP 	sStimB1: autoDraw = False
+60.8429 	EXP 	secondStim_sliderB1: autoDraw = False
+60.8429 	EXP 	first_surpStimuliB2: image = 'img/neutralC/CFD-IM-743-006-N.jpg'
+60.8429 	EXP 	fStimB2: text = 'New or Old?'
+60.8429 	EXP 	fStimB2: height = 0.045
+60.8429 	EXP 	firstStim_sliderB2: markerPos = None
+60.8429 	EXP 	firstStim_sliderB2: markerPos = None
+60.8429 	EXP 	first_surpStimuliB2: autoDraw = False
+60.8429 	EXP 	fStimB2: autoDraw = False
+60.8429 	EXP 	firstStim_sliderB2: autoDraw = False
+60.8429 	EXP 	second_surpStimuliB2: image = 'img/neutralC/CFD-IM-743-006-N.jpg'
+60.8429 	EXP 	sStimB2: text = 'Disapproving or Approving?'
+60.8429 	EXP 	sStimB2: height = 0.045
+60.8429 	EXP 	secondStim_sliderB2: markerPos = None
+60.8429 	EXP 	secondStim_sliderB2: markerPos = None
+60.8429 	EXP 	second_surpStimuliB2: autoDraw = False
+60.8429 	EXP 	sStimB2: autoDraw = False
+60.8429 	EXP 	secondStim_sliderB2: autoDraw = False
+60.8429 	EXP 	first_surpStimuliC1: image = 'img/neutralC/CFD-IM-743-006-N.jpg'
+60.8429 	EXP 	fStimC1: text = 'Disapproving or Approving?'
+60.8429 	EXP 	fStimC1: height = 0.045
+60.8429 	EXP 	firstStim_sliderC1: markerPos = None
+60.8429 	EXP 	firstStim_sliderC1: markerPos = None
+60.8429 	EXP 	first_surpStimuliC1: autoDraw = False
+60.8429 	EXP 	fStimC1: autoDraw = False
+60.8429 	EXP 	firstStim_sliderC1: autoDraw = False
+60.8429 	EXP 	second_surpStimuliC1: image = 'img/neutralC/CFD-IM-743-006-N.jpg'
+60.8429 	EXP 	sStimC1: text = 'New or Old?'
+60.8429 	EXP 	sStimC1: height = 0.045
+60.8429 	EXP 	secondStim_sliderC1: markerPos = None
+60.8429 	EXP 	secondStim_sliderC1: markerPos = None
+60.8429 	EXP 	second_surpStimuliC1: autoDraw = False
+60.8429 	EXP 	sStimC1: autoDraw = False
+60.8429 	EXP 	secondStim_sliderC1: autoDraw = False
+60.8429 	EXP 	first_surpStimuliC2: image = 'img/neutralC/CFD-IM-743-006-N.jpg'
+60.8429 	EXP 	fStimC2: text = 'Approving or Disapproving?'
+60.8429 	EXP 	fStimC2: height = 0.045
+60.8429 	EXP 	firstStim_sliderC2: markerPos = None
+60.8429 	EXP 	firstStim_sliderC2: markerPos = None
+60.8429 	EXP 	first_surpStimuliC2: autoDraw = False
+60.8429 	EXP 	fStimC2: autoDraw = False
+60.8429 	EXP 	firstStim_sliderC2: autoDraw = False
+60.8429 	EXP 	second_surpStimuliC2: image = 'img/neutralC/CFD-IM-743-006-N.jpg'
+60.8429 	EXP 	sStimC2: text = 'New or Old?'
+60.8429 	EXP 	sStimC2: height = 0.045
+60.8429 	EXP 	secondStim_sliderC2: markerPos = None
+60.8429 	EXP 	secondStim_sliderC2: markerPos = None
+60.8429 	EXP 	second_surpStimuliC2: autoDraw = False
+60.8429 	EXP 	sStimC2: autoDraw = False
+60.8429 	EXP 	secondStim_sliderC2: autoDraw = False
+60.8429 	EXP 	first_surpStimuliD1: image = 'img/neutralC/CFD-IM-743-006-N.jpg'
+60.8429 	EXP 	fStim_D1: text = 'Approving or Disapproving?'
+60.8429 	EXP 	fStim_D1: height = 0.045
+60.8429 	EXP 	firstStim_sliderD1: markerPos = None
+60.8429 	EXP 	firstStim_sliderD1: markerPos = None
+60.8429 	EXP 	first_surpStimuliD1: autoDraw = True
+60.8429 	EXP 	fStim_D1: autoDraw = True
+60.8429 	EXP 	firstStim_sliderD1: autoDraw = True
+60.8429 	EXP 	fStim_D1: height = 0.045
+60.8429 	EXP 	fStim_D1: height = 0.045
+60.8429 	EXP 	fStim_D1: height = 0.045
+60.8429 	EXP 	fStim_D1: text = 'Approving or Disapproving?'
+67.7235 	DATA 	Keypress: escape
+69.0825 	EXP 	window1: mouseVisible = True
+69.0826 	DEBUG 	Saving data for mfe_flanker_v1 ExperimentHandler
+69.0907 	INFO 	saved data to /Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/mfeFlanker/data/_mfe_flanker_v1_2022-08-14_00h09.11.793.psydat
+69.0966 	INFO 	saved data to '/Users/kihossei/Documents/GitHub/memory-for-error-dataset/materials/experiments/mfeFlanker/data/_mfe_flanker_v1_2022-08-14_00h09.11.793.csv'

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2022.2.2),
-    on Thu Aug 11 23:10:23 2022
+    on Sun Aug 14 00:08:52 2022
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -68,7 +68,7 @@ frameTolerance = 0.001  # how close to onset before 'same' frame
 
 # --- Setup the Window ---
 win = visual.Window(
-    size=[1536, 864], fullscr=True, screen=0, 
+    size=[1440, 900], fullscr=True, screen=0, 
     winType='pyglet', allowStencil=False,
     monitor='testMonitor', color='0.5000, 0.5000, 0.5000', colorSpace='rgb',
     blendMode='avg', useFBO=True, 
@@ -545,8 +545,6 @@ textbox_3 = visual.TextBox2(
 )
 botherRate_key_resp = keyboard.Keyboard()
 
-# --- Initialize components for Routine "askExperimenter" ---
-
 # --- Initialize components for Routine "surpriseInstruct" ---
 instruct_surprise1 = visual.TextStim(win=win, name='instruct_surprise1',
     text='You will now begin a game in which you will be asked if the displayed face on the screen looks OLD or NEW to you.  \n\n\nFor example, if you think that you have seen a displayed face in the previous game, please select OLD as your response.\n\nPress right key to proceed.',
@@ -568,154 +566,445 @@ instructMainTask_text = visual.TextStim(win=win, name='instructMainTask_text',
 instructMainTask_keyResp = keyboard.Keyboard()
 
 # --- Initialize components for Routine "firstStim_A1" ---
-first_surpStimuli_2 = visual.ImageStim(
+first_surpStimuliA1 = visual.ImageStim(
     win=win,
-    name='first_surpStimuli_2', units='height', 
+    name='first_surpStimuliA1', units='height', 
     image='sin', mask=None, anchor='center',
     ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=0.0)
-topQ_2 = visual.TextStim(win=win, name='topQ_2',
+fStimA1 = visual.TextStim(win=win, name='fStimA1',
     text='',
     font='Open Sans',
     pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-1.0);
-surprise_key_resp_2 = keyboard.Keyboard()
-firstStim_sliderA = visual.Slider(win=win, name='firstStim_sliderA',
+firstStim_sliderA1 = visual.Slider(win=win, name='firstStim_sliderA1',
     startValue=None, size=(1.3, 0.022), pos=(0, 0.3), units=None,
     labels=["Definitely new", "Probably new", "Maybe new", "Maybe old", "Probably old", "Definitely old"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
     style='rating', styleTweaks=(), opacity=None,
     labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
     font='Open Sans', labelHeight=0.022,
-    flip=False, ori=0.0, depth=-3, readOnly=False)
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+first_mouseA1 = event.Mouse(win=win)
+x, y = [None, None]
+first_mouseA1.mouseClock = core.Clock()
 
 # --- Initialize components for Routine "secondStim_A1" ---
-first_surpStimuli_6 = visual.ImageStim(
+second_surpStimuliA1 = visual.ImageStim(
     win=win,
-    name='first_surpStimuli_6', units='height', 
+    name='second_surpStimuliA1', units='height', 
     image='sin', mask=None, anchor='center',
     ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=0.0)
-bottomQ = visual.TextStim(win=win, name='bottomQ',
+sStimA1 = visual.TextStim(win=win, name='sStimA1',
     text='',
     font='Open Sans',
     pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-1.0);
-surprise_key_resp_6 = keyboard.Keyboard()
-firstStim_sliderA_3 = visual.Slider(win=win, name='firstStim_sliderA_3',
+secondStim_sliderA1 = visual.Slider(win=win, name='secondStim_sliderA1',
     startValue=None, size=(1.3, 0.022), pos=(0, -0.35), units=None,
     labels=["Definitely approving", "Probably approving", "Maybe approving", "Maybe disapproving", "Probably disapproving", "Definitely disapproving"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
     style='rating', styleTweaks=(), opacity=None,
     labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
     font='Open Sans', labelHeight=0.022,
-    flip=False, ori=0.0, depth=-3, readOnly=False)
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+sec_mouseA1 = event.Mouse(win=win)
+x, y = [None, None]
+sec_mouseA1.mouseClock = core.Clock()
 
 # --- Initialize components for Routine "firstStim_A2" ---
-first_surpStimuli_5 = visual.ImageStim(
+first_surpStimuliA2 = visual.ImageStim(
     win=win,
-    name='first_surpStimuli_5', units='height', 
+    name='first_surpStimuliA2', units='height', 
     image='sin', mask=None, anchor='center',
     ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=0.0)
-topQ_5 = visual.TextStim(win=win, name='topQ_5',
+fStimA2 = visual.TextStim(win=win, name='fStimA2',
     text='',
     font='Open Sans',
     pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-1.0);
-surprise_key_resp_5 = keyboard.Keyboard()
-firstStim_sliderA_2 = visual.Slider(win=win, name='firstStim_sliderA_2',
+firstStim_sliderA2 = visual.Slider(win=win, name='firstStim_sliderA2',
     startValue=None, size=(1.3, 0.022), pos=(0, 0.3), units=None,
     labels=["Definitely old", "Probably old", "Maybe old", "Maybe new", "Probably new", "Definitely new"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
     style='rating', styleTweaks=(), opacity=None,
     labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
     font='Open Sans', labelHeight=0.022,
-    flip=False, ori=0.0, depth=-3, readOnly=False)
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+first_mouseA2 = event.Mouse(win=win)
+x, y = [None, None]
+first_mouseA2.mouseClock = core.Clock()
 
-# --- Initialize components for Routine "firstStim_B" ---
-first_surpStimuli = visual.ImageStim(
+# --- Initialize components for Routine "secondStim_A2" ---
+second_surpStimuliA2 = visual.ImageStim(
     win=win,
-    name='first_surpStimuli', units='height', 
+    name='second_surpStimuliA2', units='height', 
     image='sin', mask=None, anchor='center',
     ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=0.0)
-topQ = visual.TextStim(win=win, name='topQ',
+sStimA2 = visual.TextStim(win=win, name='sStimA2',
     text='',
     font='Open Sans',
     pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-1.0);
-surprise_key_resp = keyboard.Keyboard()
-firstStim_sliderB = visual.Slider(win=win, name='firstStim_sliderB',
-    startValue=None, size=(1.3, 0.022), pos=(0, 0.3), units=None,
-    labels=["Definitely old", "Probably old", "Maybe old", "Maybe new", "Probably new", "Definitely new"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
-    style='rating', styleTweaks=(), opacity=None,
-    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
-    font='Open Sans', labelHeight=0.022,
-    flip=False, ori=0.0, depth=-3, readOnly=False)
-
-# --- Initialize components for Routine "firstStim_C" ---
-first_surpStimuli_3 = visual.ImageStim(
-    win=win,
-    name='first_surpStimuli_3', units='height', 
-    image='sin', mask=None, anchor='center',
-    ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
-    color=[1,1,1], colorSpace='rgb', opacity=None,
-    flipHoriz=False, flipVert=False,
-    texRes=128.0, interpolate=True, depth=0.0)
-topQ_3 = visual.TextStim(win=win, name='topQ_3',
-    text='',
-    font='Open Sans',
-    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
-    color='white', colorSpace='rgb', opacity=None, 
-    languageStyle='LTR',
-    depth=-1.0);
-surprise_key_resp_3 = keyboard.Keyboard()
-firstStim_sliderC = visual.Slider(win=win, name='firstStim_sliderC',
-    startValue=None, size=(1.3, 0.022), pos=(0, 0.3), units=None,
+secondStim_sliderA2 = visual.Slider(win=win, name='secondStim_sliderA2',
+    startValue=None, size=(1.3, 0.022), pos=(0, -0.35), units=None,
     labels=["Definitely approving", "Probably approving", "Maybe approving", "Maybe disapproving", "Probably disapproving", "Definitely disapproving"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
     style='rating', styleTweaks=(), opacity=None,
     labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
     font='Open Sans', labelHeight=0.022,
-    flip=False, ori=0.0, depth=-3, readOnly=False)
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+sec_mouseA2 = event.Mouse(win=win)
+x, y = [None, None]
+sec_mouseA2.mouseClock = core.Clock()
 
-# --- Initialize components for Routine "firstStim_D" ---
-first_surpStimuli_4 = visual.ImageStim(
+# --- Initialize components for Routine "firstStim_B1" ---
+first_surpStimuliB1 = visual.ImageStim(
     win=win,
-    name='first_surpStimuli_4', units='height', 
+    name='first_surpStimuliB1', units='height', 
     image='sin', mask=None, anchor='center',
     ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=0.0)
-topQ_4 = visual.TextStim(win=win, name='topQ_4',
+fStimB1 = visual.TextStim(win=win, name='fStimB1',
     text='',
     font='Open Sans',
     pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-1.0);
-surprise_key_resp_4 = keyboard.Keyboard()
-firstStim_sliderD = visual.Slider(win=win, name='firstStim_sliderD',
+firstStim_sliderB1 = visual.Slider(win=win, name='firstStim_sliderB1',
+    startValue=None, size=(1.3, 0.022), pos=(0, 0.3), units=None,
+    labels=["Definitely old", "Probably old", "Maybe old", "Maybe new", "Probably new", "Definitely new"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
+    style='rating', styleTweaks=(), opacity=None,
+    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+    font='Open Sans', labelHeight=0.022,
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+first_mouseB1 = event.Mouse(win=win)
+x, y = [None, None]
+first_mouseB1.mouseClock = core.Clock()
+
+# --- Initialize components for Routine "secondStim_B1" ---
+second_surpStimuliB1 = visual.ImageStim(
+    win=win,
+    name='second_surpStimuliB1', units='height', 
+    image='sin', mask=None, anchor='center',
+    ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
+    color=[1,1,1], colorSpace='rgb', opacity=None,
+    flipHoriz=False, flipVert=False,
+    texRes=128.0, interpolate=True, depth=0.0)
+sStimB1 = visual.TextStim(win=win, name='sStimB1',
+    text='',
+    font='Open Sans',
+    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-1.0);
+secondStim_sliderB1 = visual.Slider(win=win, name='secondStim_sliderB1',
+    startValue=None, size=(1.3, 0.022), pos=(0, -0.35), units=None,
+    labels=["Definitely disapproving", "Probably disapproving", "Maybe disapproving", "Maybe approving", "Probably approving", "Definitely approving"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
+    style='rating', styleTweaks=(), opacity=None,
+    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+    font='Open Sans', labelHeight=0.022,
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+sec_mouseB1 = event.Mouse(win=win)
+x, y = [None, None]
+sec_mouseB1.mouseClock = core.Clock()
+
+# --- Initialize components for Routine "firstStim_B2" ---
+first_surpStimuliB2 = visual.ImageStim(
+    win=win,
+    name='first_surpStimuliB2', units='height', 
+    image='sin', mask=None, anchor='center',
+    ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
+    color=[1,1,1], colorSpace='rgb', opacity=None,
+    flipHoriz=False, flipVert=False,
+    texRes=128.0, interpolate=True, depth=0.0)
+fStimB2 = visual.TextStim(win=win, name='fStimB2',
+    text='',
+    font='Open Sans',
+    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-1.0);
+firstStim_sliderB2 = visual.Slider(win=win, name='firstStim_sliderB2',
+    startValue=None, size=(1.3, 0.022), pos=(0, 0.3), units=None,
+    labels=["Definitely new", "Probably new", "Maybe new", "Maybe old", "Probably old", "Definitely old"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
+    style='rating', styleTweaks=(), opacity=None,
+    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+    font='Open Sans', labelHeight=0.022,
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+first_mouseB2 = event.Mouse(win=win)
+x, y = [None, None]
+first_mouseB2.mouseClock = core.Clock()
+
+# --- Initialize components for Routine "secondStimB2" ---
+second_surpStimuliB2 = visual.ImageStim(
+    win=win,
+    name='second_surpStimuliB2', units='height', 
+    image='sin', mask=None, anchor='center',
+    ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
+    color=[1,1,1], colorSpace='rgb', opacity=None,
+    flipHoriz=False, flipVert=False,
+    texRes=128.0, interpolate=True, depth=0.0)
+sStimB2 = visual.TextStim(win=win, name='sStimB2',
+    text='',
+    font='Open Sans',
+    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-1.0);
+secondStim_sliderB2 = visual.Slider(win=win, name='secondStim_sliderB2',
+    startValue=None, size=(1.3, 0.022), pos=(0, -0.35), units=None,
+    labels=["Definitely disapproving", "Probably disapproving", "Maybe disapproving", "Maybe approving", "Probably approving", "Definitely approving"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
+    style='rating', styleTweaks=(), opacity=None,
+    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+    font='Open Sans', labelHeight=0.022,
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+sec_mouseB2 = event.Mouse(win=win)
+x, y = [None, None]
+sec_mouseB2.mouseClock = core.Clock()
+
+# --- Initialize components for Routine "firstStim_C1" ---
+first_surpStimuliC1 = visual.ImageStim(
+    win=win,
+    name='first_surpStimuliC1', units='height', 
+    image='sin', mask=None, anchor='center',
+    ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
+    color=[1,1,1], colorSpace='rgb', opacity=None,
+    flipHoriz=False, flipVert=False,
+    texRes=128.0, interpolate=True, depth=0.0)
+fStimC1 = visual.TextStim(win=win, name='fStimC1',
+    text='',
+    font='Open Sans',
+    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-1.0);
+firstStim_sliderC1 = visual.Slider(win=win, name='firstStim_sliderC1',
     startValue=None, size=(1.3, 0.022), pos=(0, 0.3), units=None,
     labels=["Definitely disapproving", "Probably disapproving", "Maybe disapproving", "Maybe approving", "Probably approving", "Definitely approving"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
     style='rating', styleTweaks=(), opacity=None,
     labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
     font='Open Sans', labelHeight=0.022,
-    flip=False, ori=0.0, depth=-3, readOnly=False)
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+first_mouseC1 = event.Mouse(win=win)
+x, y = [None, None]
+first_mouseC1.mouseClock = core.Clock()
+
+# --- Initialize components for Routine "secondStim_C1" ---
+second_surpStimuliC1 = visual.ImageStim(
+    win=win,
+    name='second_surpStimuliC1', units='height', 
+    image='sin', mask=None, anchor='center',
+    ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
+    color=[1,1,1], colorSpace='rgb', opacity=None,
+    flipHoriz=False, flipVert=False,
+    texRes=128.0, interpolate=True, depth=0.0)
+sStimC1 = visual.TextStim(win=win, name='sStimC1',
+    text='',
+    font='Open Sans',
+    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-1.0);
+secondStim_sliderC1 = visual.Slider(win=win, name='secondStim_sliderC1',
+    startValue=None, size=(1.3, 0.022), pos=(0, -0.35), units=None,
+    labels=["Definitely new", "Probably new", "Maybe new", "Maybe old", "Probably old", "Definitely old"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
+    style='rating', styleTweaks=(), opacity=None,
+    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+    font='Open Sans', labelHeight=0.022,
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+sec_mouseC1 = event.Mouse(win=win)
+x, y = [None, None]
+sec_mouseC1.mouseClock = core.Clock()
+
+# --- Initialize components for Routine "firstStim_C2" ---
+first_surpStimuliC2 = visual.ImageStim(
+    win=win,
+    name='first_surpStimuliC2', units='height', 
+    image='sin', mask=None, anchor='center',
+    ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
+    color=[1,1,1], colorSpace='rgb', opacity=None,
+    flipHoriz=False, flipVert=False,
+    texRes=128.0, interpolate=True, depth=0.0)
+fStimC2 = visual.TextStim(win=win, name='fStimC2',
+    text='',
+    font='Open Sans',
+    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-1.0);
+firstStim_sliderC2 = visual.Slider(win=win, name='firstStim_sliderC2',
+    startValue=None, size=(1.3, 0.022), pos=(0, 0.3), units=None,
+    labels=["Definitely approving", "Probably approving", "Maybe approving", "Maybe disapproving", "Probably disapproving", "Definitely disapproving"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
+    style='rating', styleTweaks=(), opacity=None,
+    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+    font='Open Sans', labelHeight=0.022,
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+first_mouseC2 = event.Mouse(win=win)
+x, y = [None, None]
+first_mouseC2.mouseClock = core.Clock()
+
+# --- Initialize components for Routine "secondStim_C2" ---
+second_surpStimuliC2 = visual.ImageStim(
+    win=win,
+    name='second_surpStimuliC2', units='height', 
+    image='sin', mask=None, anchor='center',
+    ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
+    color=[1,1,1], colorSpace='rgb', opacity=None,
+    flipHoriz=False, flipVert=False,
+    texRes=128.0, interpolate=True, depth=0.0)
+sStimC2 = visual.TextStim(win=win, name='sStimC2',
+    text='',
+    font='Open Sans',
+    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-1.0);
+secondStim_sliderC2 = visual.Slider(win=win, name='secondStim_sliderC2',
+    startValue=None, size=(1.3, 0.022), pos=(0, -0.35), units=None,
+    labels=["Definitely new", "Probably new", "Maybe new", "Maybe old", "Probably old", "Definitely old"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
+    style='rating', styleTweaks=(), opacity=None,
+    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+    font='Open Sans', labelHeight=0.022,
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+sec_mouseC2 = event.Mouse(win=win)
+x, y = [None, None]
+sec_mouseC2.mouseClock = core.Clock()
+
+# --- Initialize components for Routine "firstStim_D1" ---
+first_surpStimuliD1 = visual.ImageStim(
+    win=win,
+    name='first_surpStimuliD1', units='height', 
+    image='sin', mask=None, anchor='center',
+    ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
+    color=[1,1,1], colorSpace='rgb', opacity=None,
+    flipHoriz=False, flipVert=False,
+    texRes=128.0, interpolate=True, depth=0.0)
+fStim_D1 = visual.TextStim(win=win, name='fStim_D1',
+    text='',
+    font='Open Sans',
+    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-1.0);
+firstStim_sliderD1 = visual.Slider(win=win, name='firstStim_sliderD1',
+    startValue=None, size=(1.3, 0.022), pos=(0, 0.3), units=None,
+    labels=["Definitely approving", "Probably approving", "Maybe approving", "Maybe disapproving", "Probably disapproving", "Definitely disapproving"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
+    style='rating', styleTweaks=(), opacity=None,
+    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+    font='Open Sans', labelHeight=0.022,
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+first_mouseD1 = event.Mouse(win=win)
+x, y = [None, None]
+first_mouseD1.mouseClock = core.Clock()
+
+# --- Initialize components for Routine "secondStim_D1" ---
+second_surpStimuliD1 = visual.ImageStim(
+    win=win,
+    name='second_surpStimuliD1', units='height', 
+    image='sin', mask=None, anchor='center',
+    ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
+    color=[1,1,1], colorSpace='rgb', opacity=None,
+    flipHoriz=False, flipVert=False,
+    texRes=128.0, interpolate=True, depth=0.0)
+sStimD1 = visual.TextStim(win=win, name='sStimD1',
+    text='',
+    font='Open Sans',
+    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-1.0);
+secondStim_sliderD1 = visual.Slider(win=win, name='secondStim_sliderD1',
+    startValue=None, size=(1.3, 0.022), pos=(0, -0.35), units=None,
+    labels=["Definitely old", "Probably old", "Maybe old", "Maybe new", "Probably new", "Definitely new"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
+    style='rating', styleTweaks=(), opacity=None,
+    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+    font='Open Sans', labelHeight=0.022,
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+sec_mouseD1 = event.Mouse(win=win)
+x, y = [None, None]
+sec_mouseD1.mouseClock = core.Clock()
+
+# --- Initialize components for Routine "firstStim_D2" ---
+first_surpStimuliD2 = visual.ImageStim(
+    win=win,
+    name='first_surpStimuliD2', units='height', 
+    image='sin', mask=None, anchor='center',
+    ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
+    color=[1,1,1], colorSpace='rgb', opacity=None,
+    flipHoriz=False, flipVert=False,
+    texRes=128.0, interpolate=True, depth=0.0)
+fStimD2 = visual.TextStim(win=win, name='fStimD2',
+    text='',
+    font='Open Sans',
+    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-1.0);
+firstStim_sliderD2 = visual.Slider(win=win, name='firstStim_sliderD2',
+    startValue=None, size=(1.3, 0.022), pos=(0, 0.3), units=None,
+    labels=["Definitely disapproving", "Probably disapproving", "Maybe disapproving", "Maybe approving", "Probably approving", "Definitely approving"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
+    style='rating', styleTweaks=(), opacity=None,
+    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+    font='Open Sans', labelHeight=0.022,
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+first_mouseD2 = event.Mouse(win=win)
+x, y = [None, None]
+first_mouseD2.mouseClock = core.Clock()
+
+# --- Initialize components for Routine "secondStim_D2" ---
+second_surpStimuliD2 = visual.ImageStim(
+    win=win,
+    name='second_surpStimuliD2', units='height', 
+    image='sin', mask=None, anchor='center',
+    ori=0.0, pos=(0, 0), size=(0.4551466688, 0.32),
+    color=[1,1,1], colorSpace='rgb', opacity=None,
+    flipHoriz=False, flipVert=False,
+    texRes=128.0, interpolate=True, depth=0.0)
+sStimD2 = visual.TextStim(win=win, name='sStimD2',
+    text='',
+    font='Open Sans',
+    pos=[0,0], height=1.0, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-1.0);
+secondStim_sliderD2 = visual.Slider(win=win, name='secondStim_sliderD2',
+    startValue=None, size=(1.3, 0.022), pos=(0, -0.35), units=None,
+    labels=["Definitely old", "Probably old", "Maybe old", "Maybe new", "Probably new", "Definitely new"], ticks=[1, 2, 3, 4, 5, 6], granularity=1.0,
+    style='rating', styleTweaks=(), opacity=None,
+    labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+    font='Open Sans', labelHeight=0.022,
+    flip=False, ori=0.0, depth=-2, readOnly=False)
+sec_mouseD2 = event.Mouse(win=win)
+x, y = [None, None]
+sec_mouseD2.mouseClock = core.Clock()
+
+# --- Initialize components for Routine "fixation2" ---
+fix_2 = visual.TextStim(win=win, name='fix_2',
+    text='+',
+    font='Open Sans',
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=0.0);
 
 # --- Initialize components for Routine "finishMessage" ---
 finishMessage_text = visual.TextStim(win=win, name='finishMessage_text',
@@ -3146,58 +3435,6 @@ thisExp.nextEntry()
 # the Routine "botherRate" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
 
-# --- Prepare to start Routine "askExperimenter" ---
-continueRoutine = True
-routineForceEnded = False
-# update component parameters for each repeat
-# keep track of which components have finished
-askExperimenterComponents = []
-for thisComponent in askExperimenterComponents:
-    thisComponent.tStart = None
-    thisComponent.tStop = None
-    thisComponent.tStartRefresh = None
-    thisComponent.tStopRefresh = None
-    if hasattr(thisComponent, 'status'):
-        thisComponent.status = NOT_STARTED
-# reset timers
-t = 0
-_timeToFirstFrame = win.getFutureFlipTime(clock="now")
-frameN = -1
-
-# --- Run Routine "askExperimenter" ---
-while continueRoutine:
-    # get current time
-    t = routineTimer.getTime()
-    tThisFlip = win.getFutureFlipTime(clock=routineTimer)
-    tThisFlipGlobal = win.getFutureFlipTime(clock=None)
-    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-    # update/draw components on each frame
-    
-    # check for quit (typically the Esc key)
-    if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
-        core.quit()
-    
-    # check if all components have finished
-    if not continueRoutine:  # a component has requested a forced-end of Routine
-        routineForceEnded = True
-        break
-    continueRoutine = False  # will revert to True if at least one component still running
-    for thisComponent in askExperimenterComponents:
-        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-            continueRoutine = True
-            break  # at least one component has not yet finished
-    
-    # refresh the screen
-    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-        win.flip()
-
-# --- Ending Routine "askExperimenter" ---
-for thisComponent in askExperimenterComponents:
-    if hasattr(thisComponent, "setAutoDraw"):
-        thisComponent.setAutoDraw(False)
-# the Routine "askExperimenter" was not non-slip safe, so reset the non-slip timer
-routineTimer.reset()
-
 # --- Prepare to start Routine "surpriseInstruct" ---
 continueRoutine = True
 routineForceEnded = False
@@ -3451,14 +3688,19 @@ for thisSurprise_block_loop in surprise_block_loop:
             continueRoutine = True
             routineForceEnded = False
             # update component parameters for each repeat
-            first_surpStimuli_2.setImage(surpriseFaces)
-            topQ_2.setPos((0, 0.4))
-            topQ_2.setText('New or Old?')
-            topQ_2.setHeight(0.045)
-            surprise_key_resp_2.keys = []
-            surprise_key_resp_2.rt = []
-            _surprise_key_resp_2_allKeys = []
-            firstStim_sliderA.reset()
+            first_surpStimuliA1.setImage(surpriseFaces)
+            fStimA1.setPos((0, 0.4))
+            fStimA1.setText('New or Old?')
+            fStimA1.setHeight(0.045)
+            firstStim_sliderA1.reset()
+            # setup some python lists for storing info about the first_mouseA1
+            first_mouseA1.x = []
+            first_mouseA1.y = []
+            first_mouseA1.leftButton = []
+            first_mouseA1.midButton = []
+            first_mouseA1.rightButton = []
+            first_mouseA1.time = []
+            gotValidClick = False  # until a click is received
             # Run 'Begin Routine' code from code_5
             if expInfo['cb'] == 'A':
                 if surprise_block_loop.thisN == 0 :
@@ -3468,9 +3710,9 @@ for thisSurprise_block_loop in surprise_block_loop:
             elif expInfo['cb'] != 'A':
                 continueRoutine = False
             
-            
+            first_mouseA1.setPos([0,0])
             # keep track of which components have finished
-            firstStim_A1Components = [first_surpStimuli_2, topQ_2, surprise_key_resp_2, firstStim_sliderA]
+            firstStim_A1Components = [first_surpStimuliA1, fStimA1, firstStim_sliderA1, first_mouseA1]
             for thisComponent in firstStim_A1Components:
                 thisComponent.tStart = None
                 thisComponent.tStop = None
@@ -3492,66 +3734,67 @@ for thisSurprise_block_loop in surprise_block_loop:
                 frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
                 # update/draw components on each frame
                 
-                # *first_surpStimuli_2* updates
-                if first_surpStimuli_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *first_surpStimuliA1* updates
+                if first_surpStimuliA1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    first_surpStimuli_2.frameNStart = frameN  # exact frame index
-                    first_surpStimuli_2.tStart = t  # local t and not account for scr refresh
-                    first_surpStimuli_2.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(first_surpStimuli_2, 'tStartRefresh')  # time at next scr refresh
+                    first_surpStimuliA1.frameNStart = frameN  # exact frame index
+                    first_surpStimuliA1.tStart = t  # local t and not account for scr refresh
+                    first_surpStimuliA1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_surpStimuliA1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'first_surpStimuli_2.started')
-                    first_surpStimuli_2.setAutoDraw(True)
+                    thisExp.timestampOnFlip(win, 'first_surpStimuliA1.started')
+                    first_surpStimuliA1.setAutoDraw(True)
                 
-                # *topQ_2* updates
-                if topQ_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *fStimA1* updates
+                if fStimA1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    topQ_2.frameNStart = frameN  # exact frame index
-                    topQ_2.tStart = t  # local t and not account for scr refresh
-                    topQ_2.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(topQ_2, 'tStartRefresh')  # time at next scr refresh
+                    fStimA1.frameNStart = frameN  # exact frame index
+                    fStimA1.tStart = t  # local t and not account for scr refresh
+                    fStimA1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(fStimA1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'topQ_2.started')
-                    topQ_2.setAutoDraw(True)
+                    thisExp.timestampOnFlip(win, 'fStimA1.started')
+                    fStimA1.setAutoDraw(True)
                 
-                # *surprise_key_resp_2* updates
-                waitOnFlip = False
-                if surprise_key_resp_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *firstStim_sliderA1* updates
+                if firstStim_sliderA1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    surprise_key_resp_2.frameNStart = frameN  # exact frame index
-                    surprise_key_resp_2.tStart = t  # local t and not account for scr refresh
-                    surprise_key_resp_2.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(surprise_key_resp_2, 'tStartRefresh')  # time at next scr refresh
+                    firstStim_sliderA1.frameNStart = frameN  # exact frame index
+                    firstStim_sliderA1.tStart = t  # local t and not account for scr refresh
+                    firstStim_sliderA1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(firstStim_sliderA1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'surprise_key_resp_2.started')
-                    surprise_key_resp_2.status = STARTED
-                    # keyboard checking is just starting
-                    waitOnFlip = True
-                    win.callOnFlip(surprise_key_resp_2.clock.reset)  # t=0 on next screen flip
-                    win.callOnFlip(surprise_key_resp_2.clearEvents, eventType='keyboard')  # clear events on next screen flip
-                if surprise_key_resp_2.status == STARTED and not waitOnFlip:
-                    theseKeys = surprise_key_resp_2.getKeys(keyList=['1','8'], waitRelease=False)
-                    _surprise_key_resp_2_allKeys.extend(theseKeys)
-                    if len(_surprise_key_resp_2_allKeys):
-                        surprise_key_resp_2.keys = _surprise_key_resp_2_allKeys[-1].name  # just the last key pressed
-                        surprise_key_resp_2.rt = _surprise_key_resp_2_allKeys[-1].rt
-                        # a response ends the routine
-                        continueRoutine = False
+                    thisExp.timestampOnFlip(win, 'firstStim_sliderA1.started')
+                    firstStim_sliderA1.setAutoDraw(True)
                 
-                # *firstStim_sliderA* updates
-                if firstStim_sliderA.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    firstStim_sliderA.frameNStart = frameN  # exact frame index
-                    firstStim_sliderA.tStart = t  # local t and not account for scr refresh
-                    firstStim_sliderA.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(firstStim_sliderA, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'firstStim_sliderA.started')
-                    firstStim_sliderA.setAutoDraw(True)
-                
-                # Check firstStim_sliderA for response to end routine
-                if firstStim_sliderA.getRating() is not None and firstStim_sliderA.status == STARTED:
+                # Check firstStim_sliderA1 for response to end routine
+                if firstStim_sliderA1.getRating() is not None and firstStim_sliderA1.status == STARTED:
                     continueRoutine = False
+                # *first_mouseA1* updates
+                if first_mouseA1.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    first_mouseA1.frameNStart = frameN  # exact frame index
+                    first_mouseA1.tStart = t  # local t and not account for scr refresh
+                    first_mouseA1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_mouseA1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('first_mouseA1.started', t)
+                    first_mouseA1.status = STARTED
+                    first_mouseA1.mouseClock.reset()
+                    prevButtonState = first_mouseA1.getPressed()  # if button is down already this ISN'T a new click
+                if first_mouseA1.status == STARTED:  # only update if started and not finished!
+                    buttons = first_mouseA1.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = first_mouseA1.getPos()
+                            first_mouseA1.x.append(x)
+                            first_mouseA1.y.append(y)
+                            buttons = first_mouseA1.getPressed()
+                            first_mouseA1.leftButton.append(buttons[0])
+                            first_mouseA1.midButton.append(buttons[1])
+                            first_mouseA1.rightButton.append(buttons[2])
+                            first_mouseA1.time.append(first_mouseA1.mouseClock.getTime())
                 
                 # check for quit (typically the Esc key)
                 if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -3575,14 +3818,15 @@ for thisSurprise_block_loop in surprise_block_loop:
             for thisComponent in firstStim_A1Components:
                 if hasattr(thisComponent, "setAutoDraw"):
                     thisComponent.setAutoDraw(False)
-            # check responses
-            if surprise_key_resp_2.keys in ['', [], None]:  # No response was made
-                surprise_key_resp_2.keys = None
-            trials_2.addData('surprise_key_resp_2.keys',surprise_key_resp_2.keys)
-            if surprise_key_resp_2.keys != None:  # we had a response
-                trials_2.addData('surprise_key_resp_2.rt', surprise_key_resp_2.rt)
-            trials_2.addData('firstStim_sliderA.response', firstStim_sliderA.getRating())
-            trials_2.addData('firstStim_sliderA.rt', firstStim_sliderA.getRT())
+            trials_2.addData('firstStim_sliderA1.response', firstStim_sliderA1.getRating())
+            trials_2.addData('firstStim_sliderA1.rt', firstStim_sliderA1.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('first_mouseA1.x', first_mouseA1.x)
+            trials_2.addData('first_mouseA1.y', first_mouseA1.y)
+            trials_2.addData('first_mouseA1.leftButton', first_mouseA1.leftButton)
+            trials_2.addData('first_mouseA1.midButton', first_mouseA1.midButton)
+            trials_2.addData('first_mouseA1.rightButton', first_mouseA1.rightButton)
+            trials_2.addData('first_mouseA1.time', first_mouseA1.time)
             # the Routine "firstStim_A1" was not non-slip safe, so reset the non-slip timer
             routineTimer.reset()
             
@@ -3590,14 +3834,19 @@ for thisSurprise_block_loop in surprise_block_loop:
             continueRoutine = True
             routineForceEnded = False
             # update component parameters for each repeat
-            first_surpStimuli_6.setImage(surpriseFaces)
-            bottomQ.setPos((0, -0.26))
-            bottomQ.setText('Approving or Disapproving?')
-            bottomQ.setHeight(0.045)
-            surprise_key_resp_6.keys = []
-            surprise_key_resp_6.rt = []
-            _surprise_key_resp_6_allKeys = []
-            firstStim_sliderA_3.reset()
+            second_surpStimuliA1.setImage(surpriseFaces)
+            sStimA1.setPos((0, -0.26))
+            sStimA1.setText('Approving or Disapproving?')
+            sStimA1.setHeight(0.045)
+            secondStim_sliderA1.reset()
+            # setup some python lists for storing info about the sec_mouseA1
+            sec_mouseA1.x = []
+            sec_mouseA1.y = []
+            sec_mouseA1.leftButton = []
+            sec_mouseA1.midButton = []
+            sec_mouseA1.rightButton = []
+            sec_mouseA1.time = []
+            gotValidClick = False  # until a click is received
             # Run 'Begin Routine' code from code_10
             if expInfo['cb'] == 'A':
                 if surprise_block_loop.thisN == 0 :
@@ -3607,9 +3856,9 @@ for thisSurprise_block_loop in surprise_block_loop:
             elif expInfo['cb'] != 'A':
                 continueRoutine = False
             
-            
+            sec_mouseA1.setPos([0,0])
             # keep track of which components have finished
-            secondStim_A1Components = [first_surpStimuli_6, bottomQ, surprise_key_resp_6, firstStim_sliderA_3]
+            secondStim_A1Components = [second_surpStimuliA1, sStimA1, secondStim_sliderA1, sec_mouseA1]
             for thisComponent in secondStim_A1Components:
                 thisComponent.tStart = None
                 thisComponent.tStop = None
@@ -3631,66 +3880,67 @@ for thisSurprise_block_loop in surprise_block_loop:
                 frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
                 # update/draw components on each frame
                 
-                # *first_surpStimuli_6* updates
-                if first_surpStimuli_6.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *second_surpStimuliA1* updates
+                if second_surpStimuliA1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    first_surpStimuli_6.frameNStart = frameN  # exact frame index
-                    first_surpStimuli_6.tStart = t  # local t and not account for scr refresh
-                    first_surpStimuli_6.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(first_surpStimuli_6, 'tStartRefresh')  # time at next scr refresh
+                    second_surpStimuliA1.frameNStart = frameN  # exact frame index
+                    second_surpStimuliA1.tStart = t  # local t and not account for scr refresh
+                    second_surpStimuliA1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(second_surpStimuliA1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'first_surpStimuli_6.started')
-                    first_surpStimuli_6.setAutoDraw(True)
+                    thisExp.timestampOnFlip(win, 'second_surpStimuliA1.started')
+                    second_surpStimuliA1.setAutoDraw(True)
                 
-                # *bottomQ* updates
-                if bottomQ.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *sStimA1* updates
+                if sStimA1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    bottomQ.frameNStart = frameN  # exact frame index
-                    bottomQ.tStart = t  # local t and not account for scr refresh
-                    bottomQ.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(bottomQ, 'tStartRefresh')  # time at next scr refresh
+                    sStimA1.frameNStart = frameN  # exact frame index
+                    sStimA1.tStart = t  # local t and not account for scr refresh
+                    sStimA1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sStimA1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'bottomQ.started')
-                    bottomQ.setAutoDraw(True)
+                    thisExp.timestampOnFlip(win, 'sStimA1.started')
+                    sStimA1.setAutoDraw(True)
                 
-                # *surprise_key_resp_6* updates
-                waitOnFlip = False
-                if surprise_key_resp_6.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *secondStim_sliderA1* updates
+                if secondStim_sliderA1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    surprise_key_resp_6.frameNStart = frameN  # exact frame index
-                    surprise_key_resp_6.tStart = t  # local t and not account for scr refresh
-                    surprise_key_resp_6.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(surprise_key_resp_6, 'tStartRefresh')  # time at next scr refresh
+                    secondStim_sliderA1.frameNStart = frameN  # exact frame index
+                    secondStim_sliderA1.tStart = t  # local t and not account for scr refresh
+                    secondStim_sliderA1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(secondStim_sliderA1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'surprise_key_resp_6.started')
-                    surprise_key_resp_6.status = STARTED
-                    # keyboard checking is just starting
-                    waitOnFlip = True
-                    win.callOnFlip(surprise_key_resp_6.clock.reset)  # t=0 on next screen flip
-                    win.callOnFlip(surprise_key_resp_6.clearEvents, eventType='keyboard')  # clear events on next screen flip
-                if surprise_key_resp_6.status == STARTED and not waitOnFlip:
-                    theseKeys = surprise_key_resp_6.getKeys(keyList=['1','8'], waitRelease=False)
-                    _surprise_key_resp_6_allKeys.extend(theseKeys)
-                    if len(_surprise_key_resp_6_allKeys):
-                        surprise_key_resp_6.keys = _surprise_key_resp_6_allKeys[-1].name  # just the last key pressed
-                        surprise_key_resp_6.rt = _surprise_key_resp_6_allKeys[-1].rt
-                        # a response ends the routine
-                        continueRoutine = False
+                    thisExp.timestampOnFlip(win, 'secondStim_sliderA1.started')
+                    secondStim_sliderA1.setAutoDraw(True)
                 
-                # *firstStim_sliderA_3* updates
-                if firstStim_sliderA_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    firstStim_sliderA_3.frameNStart = frameN  # exact frame index
-                    firstStim_sliderA_3.tStart = t  # local t and not account for scr refresh
-                    firstStim_sliderA_3.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(firstStim_sliderA_3, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'firstStim_sliderA_3.started')
-                    firstStim_sliderA_3.setAutoDraw(True)
-                
-                # Check firstStim_sliderA_3 for response to end routine
-                if firstStim_sliderA_3.getRating() is not None and firstStim_sliderA_3.status == STARTED:
+                # Check secondStim_sliderA1 for response to end routine
+                if secondStim_sliderA1.getRating() is not None and secondStim_sliderA1.status == STARTED:
                     continueRoutine = False
+                # *sec_mouseA1* updates
+                if sec_mouseA1.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sec_mouseA1.frameNStart = frameN  # exact frame index
+                    sec_mouseA1.tStart = t  # local t and not account for scr refresh
+                    sec_mouseA1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sec_mouseA1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('sec_mouseA1.started', t)
+                    sec_mouseA1.status = STARTED
+                    sec_mouseA1.mouseClock.reset()
+                    prevButtonState = sec_mouseA1.getPressed()  # if button is down already this ISN'T a new click
+                if sec_mouseA1.status == STARTED:  # only update if started and not finished!
+                    buttons = sec_mouseA1.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = sec_mouseA1.getPos()
+                            sec_mouseA1.x.append(x)
+                            sec_mouseA1.y.append(y)
+                            buttons = sec_mouseA1.getPressed()
+                            sec_mouseA1.leftButton.append(buttons[0])
+                            sec_mouseA1.midButton.append(buttons[1])
+                            sec_mouseA1.rightButton.append(buttons[2])
+                            sec_mouseA1.time.append(sec_mouseA1.mouseClock.getTime())
                 
                 # check for quit (typically the Esc key)
                 if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -3714,14 +3964,15 @@ for thisSurprise_block_loop in surprise_block_loop:
             for thisComponent in secondStim_A1Components:
                 if hasattr(thisComponent, "setAutoDraw"):
                     thisComponent.setAutoDraw(False)
-            # check responses
-            if surprise_key_resp_6.keys in ['', [], None]:  # No response was made
-                surprise_key_resp_6.keys = None
-            trials_2.addData('surprise_key_resp_6.keys',surprise_key_resp_6.keys)
-            if surprise_key_resp_6.keys != None:  # we had a response
-                trials_2.addData('surprise_key_resp_6.rt', surprise_key_resp_6.rt)
-            trials_2.addData('firstStim_sliderA_3.response', firstStim_sliderA_3.getRating())
-            trials_2.addData('firstStim_sliderA_3.rt', firstStim_sliderA_3.getRT())
+            trials_2.addData('secondStim_sliderA1.response', secondStim_sliderA1.getRating())
+            trials_2.addData('secondStim_sliderA1.rt', secondStim_sliderA1.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('sec_mouseA1.x', sec_mouseA1.x)
+            trials_2.addData('sec_mouseA1.y', sec_mouseA1.y)
+            trials_2.addData('sec_mouseA1.leftButton', sec_mouseA1.leftButton)
+            trials_2.addData('sec_mouseA1.midButton', sec_mouseA1.midButton)
+            trials_2.addData('sec_mouseA1.rightButton', sec_mouseA1.rightButton)
+            trials_2.addData('sec_mouseA1.time', sec_mouseA1.time)
             # the Routine "secondStim_A1" was not non-slip safe, so reset the non-slip timer
             routineTimer.reset()
             
@@ -3729,14 +3980,19 @@ for thisSurprise_block_loop in surprise_block_loop:
             continueRoutine = True
             routineForceEnded = False
             # update component parameters for each repeat
-            first_surpStimuli_5.setImage(surpriseFaces)
-            topQ_5.setPos((0, 0.4))
-            topQ_5.setText('Old or New?')
-            topQ_5.setHeight(0.045)
-            surprise_key_resp_5.keys = []
-            surprise_key_resp_5.rt = []
-            _surprise_key_resp_5_allKeys = []
-            firstStim_sliderA_2.reset()
+            first_surpStimuliA2.setImage(surpriseFaces)
+            fStimA2.setPos((0, 0.4))
+            fStimA2.setText('Old or New?')
+            fStimA2.setHeight(0.045)
+            firstStim_sliderA2.reset()
+            # setup some python lists for storing info about the first_mouseA2
+            first_mouseA2.x = []
+            first_mouseA2.y = []
+            first_mouseA2.leftButton = []
+            first_mouseA2.midButton = []
+            first_mouseA2.rightButton = []
+            first_mouseA2.time = []
+            gotValidClick = False  # until a click is received
             # Run 'Begin Routine' code from code_9
             if expInfo['cb'] == 'A':
                 if surprise_block_loop.thisN == 0 :
@@ -3746,9 +4002,9 @@ for thisSurprise_block_loop in surprise_block_loop:
             elif expInfo['cb'] != 'A':
                 continueRoutine = False
             
-            
+            first_mouseA2.setPos([0,0])
             # keep track of which components have finished
-            firstStim_A2Components = [first_surpStimuli_5, topQ_5, surprise_key_resp_5, firstStim_sliderA_2]
+            firstStim_A2Components = [first_surpStimuliA2, fStimA2, firstStim_sliderA2, first_mouseA2]
             for thisComponent in firstStim_A2Components:
                 thisComponent.tStart = None
                 thisComponent.tStop = None
@@ -3770,66 +4026,67 @@ for thisSurprise_block_loop in surprise_block_loop:
                 frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
                 # update/draw components on each frame
                 
-                # *first_surpStimuli_5* updates
-                if first_surpStimuli_5.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *first_surpStimuliA2* updates
+                if first_surpStimuliA2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    first_surpStimuli_5.frameNStart = frameN  # exact frame index
-                    first_surpStimuli_5.tStart = t  # local t and not account for scr refresh
-                    first_surpStimuli_5.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(first_surpStimuli_5, 'tStartRefresh')  # time at next scr refresh
+                    first_surpStimuliA2.frameNStart = frameN  # exact frame index
+                    first_surpStimuliA2.tStart = t  # local t and not account for scr refresh
+                    first_surpStimuliA2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_surpStimuliA2, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'first_surpStimuli_5.started')
-                    first_surpStimuli_5.setAutoDraw(True)
+                    thisExp.timestampOnFlip(win, 'first_surpStimuliA2.started')
+                    first_surpStimuliA2.setAutoDraw(True)
                 
-                # *topQ_5* updates
-                if topQ_5.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *fStimA2* updates
+                if fStimA2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    topQ_5.frameNStart = frameN  # exact frame index
-                    topQ_5.tStart = t  # local t and not account for scr refresh
-                    topQ_5.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(topQ_5, 'tStartRefresh')  # time at next scr refresh
+                    fStimA2.frameNStart = frameN  # exact frame index
+                    fStimA2.tStart = t  # local t and not account for scr refresh
+                    fStimA2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(fStimA2, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'topQ_5.started')
-                    topQ_5.setAutoDraw(True)
+                    thisExp.timestampOnFlip(win, 'fStimA2.started')
+                    fStimA2.setAutoDraw(True)
                 
-                # *surprise_key_resp_5* updates
-                waitOnFlip = False
-                if surprise_key_resp_5.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *firstStim_sliderA2* updates
+                if firstStim_sliderA2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    surprise_key_resp_5.frameNStart = frameN  # exact frame index
-                    surprise_key_resp_5.tStart = t  # local t and not account for scr refresh
-                    surprise_key_resp_5.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(surprise_key_resp_5, 'tStartRefresh')  # time at next scr refresh
+                    firstStim_sliderA2.frameNStart = frameN  # exact frame index
+                    firstStim_sliderA2.tStart = t  # local t and not account for scr refresh
+                    firstStim_sliderA2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(firstStim_sliderA2, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'surprise_key_resp_5.started')
-                    surprise_key_resp_5.status = STARTED
-                    # keyboard checking is just starting
-                    waitOnFlip = True
-                    win.callOnFlip(surprise_key_resp_5.clock.reset)  # t=0 on next screen flip
-                    win.callOnFlip(surprise_key_resp_5.clearEvents, eventType='keyboard')  # clear events on next screen flip
-                if surprise_key_resp_5.status == STARTED and not waitOnFlip:
-                    theseKeys = surprise_key_resp_5.getKeys(keyList=['1','8'], waitRelease=False)
-                    _surprise_key_resp_5_allKeys.extend(theseKeys)
-                    if len(_surprise_key_resp_5_allKeys):
-                        surprise_key_resp_5.keys = _surprise_key_resp_5_allKeys[-1].name  # just the last key pressed
-                        surprise_key_resp_5.rt = _surprise_key_resp_5_allKeys[-1].rt
-                        # a response ends the routine
-                        continueRoutine = False
+                    thisExp.timestampOnFlip(win, 'firstStim_sliderA2.started')
+                    firstStim_sliderA2.setAutoDraw(True)
                 
-                # *firstStim_sliderA_2* updates
-                if firstStim_sliderA_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    firstStim_sliderA_2.frameNStart = frameN  # exact frame index
-                    firstStim_sliderA_2.tStart = t  # local t and not account for scr refresh
-                    firstStim_sliderA_2.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(firstStim_sliderA_2, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'firstStim_sliderA_2.started')
-                    firstStim_sliderA_2.setAutoDraw(True)
-                
-                # Check firstStim_sliderA_2 for response to end routine
-                if firstStim_sliderA_2.getRating() is not None and firstStim_sliderA_2.status == STARTED:
+                # Check firstStim_sliderA2 for response to end routine
+                if firstStim_sliderA2.getRating() is not None and firstStim_sliderA2.status == STARTED:
                     continueRoutine = False
+                # *first_mouseA2* updates
+                if first_mouseA2.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    first_mouseA2.frameNStart = frameN  # exact frame index
+                    first_mouseA2.tStart = t  # local t and not account for scr refresh
+                    first_mouseA2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_mouseA2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('first_mouseA2.started', t)
+                    first_mouseA2.status = STARTED
+                    first_mouseA2.mouseClock.reset()
+                    prevButtonState = first_mouseA2.getPressed()  # if button is down already this ISN'T a new click
+                if first_mouseA2.status == STARTED:  # only update if started and not finished!
+                    buttons = first_mouseA2.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = first_mouseA2.getPos()
+                            first_mouseA2.x.append(x)
+                            first_mouseA2.y.append(y)
+                            buttons = first_mouseA2.getPressed()
+                            first_mouseA2.leftButton.append(buttons[0])
+                            first_mouseA2.midButton.append(buttons[1])
+                            first_mouseA2.rightButton.append(buttons[2])
+                            first_mouseA2.time.append(first_mouseA2.mouseClock.getTime())
                 
                 # check for quit (typically the Esc key)
                 if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -3853,29 +4110,181 @@ for thisSurprise_block_loop in surprise_block_loop:
             for thisComponent in firstStim_A2Components:
                 if hasattr(thisComponent, "setAutoDraw"):
                     thisComponent.setAutoDraw(False)
-            # check responses
-            if surprise_key_resp_5.keys in ['', [], None]:  # No response was made
-                surprise_key_resp_5.keys = None
-            trials_2.addData('surprise_key_resp_5.keys',surprise_key_resp_5.keys)
-            if surprise_key_resp_5.keys != None:  # we had a response
-                trials_2.addData('surprise_key_resp_5.rt', surprise_key_resp_5.rt)
-            trials_2.addData('firstStim_sliderA_2.response', firstStim_sliderA_2.getRating())
-            trials_2.addData('firstStim_sliderA_2.rt', firstStim_sliderA_2.getRT())
+            trials_2.addData('firstStim_sliderA2.response', firstStim_sliderA2.getRating())
+            trials_2.addData('firstStim_sliderA2.rt', firstStim_sliderA2.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('first_mouseA2.x', first_mouseA2.x)
+            trials_2.addData('first_mouseA2.y', first_mouseA2.y)
+            trials_2.addData('first_mouseA2.leftButton', first_mouseA2.leftButton)
+            trials_2.addData('first_mouseA2.midButton', first_mouseA2.midButton)
+            trials_2.addData('first_mouseA2.rightButton', first_mouseA2.rightButton)
+            trials_2.addData('first_mouseA2.time', first_mouseA2.time)
             # the Routine "firstStim_A2" was not non-slip safe, so reset the non-slip timer
             routineTimer.reset()
             
-            # --- Prepare to start Routine "firstStim_B" ---
+            # --- Prepare to start Routine "secondStim_A2" ---
             continueRoutine = True
             routineForceEnded = False
             # update component parameters for each repeat
-            first_surpStimuli.setImage(surpriseFaces)
-            topQ.setPos((0, 0.4))
-            topQ.setText(topQ_1)
-            topQ.setHeight(0.045)
-            surprise_key_resp.keys = []
-            surprise_key_resp.rt = []
-            _surprise_key_resp_allKeys = []
-            firstStim_sliderB.reset()
+            second_surpStimuliA2.setImage(surpriseFaces)
+            sStimA2.setPos((0, -0.26))
+            sStimA2.setText('Approving or Disapproving?')
+            sStimA2.setHeight(0.045)
+            secondStim_sliderA2.reset()
+            # setup some python lists for storing info about the sec_mouseA2
+            sec_mouseA2.x = []
+            sec_mouseA2.y = []
+            sec_mouseA2.leftButton = []
+            sec_mouseA2.midButton = []
+            sec_mouseA2.rightButton = []
+            sec_mouseA2.time = []
+            gotValidClick = False  # until a click is received
+            # Run 'Begin Routine' code from code_11
+            if expInfo['cb'] == 'A':
+                if surprise_block_loop.thisN == 0 :
+                    continueRoutine = False
+                elif surprise_block_loop.thisN == 1:
+                    continueRoutine = True
+            elif expInfo['cb'] != 'A':
+                continueRoutine = False
+            
+            sec_mouseA2.setPos([0,0])
+            # keep track of which components have finished
+            secondStim_A2Components = [second_surpStimuliA2, sStimA2, secondStim_sliderA2, sec_mouseA2]
+            for thisComponent in secondStim_A2Components:
+                thisComponent.tStart = None
+                thisComponent.tStop = None
+                thisComponent.tStartRefresh = None
+                thisComponent.tStopRefresh = None
+                if hasattr(thisComponent, 'status'):
+                    thisComponent.status = NOT_STARTED
+            # reset timers
+            t = 0
+            _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+            frameN = -1
+            
+            # --- Run Routine "secondStim_A2" ---
+            while continueRoutine:
+                # get current time
+                t = routineTimer.getTime()
+                tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+                tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+                # update/draw components on each frame
+                
+                # *second_surpStimuliA2* updates
+                if second_surpStimuliA2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    second_surpStimuliA2.frameNStart = frameN  # exact frame index
+                    second_surpStimuliA2.tStart = t  # local t and not account for scr refresh
+                    second_surpStimuliA2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(second_surpStimuliA2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'second_surpStimuliA2.started')
+                    second_surpStimuliA2.setAutoDraw(True)
+                
+                # *sStimA2* updates
+                if sStimA2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sStimA2.frameNStart = frameN  # exact frame index
+                    sStimA2.tStart = t  # local t and not account for scr refresh
+                    sStimA2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sStimA2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'sStimA2.started')
+                    sStimA2.setAutoDraw(True)
+                
+                # *secondStim_sliderA2* updates
+                if secondStim_sliderA2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    secondStim_sliderA2.frameNStart = frameN  # exact frame index
+                    secondStim_sliderA2.tStart = t  # local t and not account for scr refresh
+                    secondStim_sliderA2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(secondStim_sliderA2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'secondStim_sliderA2.started')
+                    secondStim_sliderA2.setAutoDraw(True)
+                
+                # Check secondStim_sliderA2 for response to end routine
+                if secondStim_sliderA2.getRating() is not None and secondStim_sliderA2.status == STARTED:
+                    continueRoutine = False
+                # *sec_mouseA2* updates
+                if sec_mouseA2.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sec_mouseA2.frameNStart = frameN  # exact frame index
+                    sec_mouseA2.tStart = t  # local t and not account for scr refresh
+                    sec_mouseA2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sec_mouseA2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('sec_mouseA2.started', t)
+                    sec_mouseA2.status = STARTED
+                    sec_mouseA2.mouseClock.reset()
+                    prevButtonState = sec_mouseA2.getPressed()  # if button is down already this ISN'T a new click
+                if sec_mouseA2.status == STARTED:  # only update if started and not finished!
+                    buttons = sec_mouseA2.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = sec_mouseA2.getPos()
+                            sec_mouseA2.x.append(x)
+                            sec_mouseA2.y.append(y)
+                            buttons = sec_mouseA2.getPressed()
+                            sec_mouseA2.leftButton.append(buttons[0])
+                            sec_mouseA2.midButton.append(buttons[1])
+                            sec_mouseA2.rightButton.append(buttons[2])
+                            sec_mouseA2.time.append(sec_mouseA2.mouseClock.getTime())
+                
+                # check for quit (typically the Esc key)
+                if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+                    core.quit()
+                
+                # check if all components have finished
+                if not continueRoutine:  # a component has requested a forced-end of Routine
+                    routineForceEnded = True
+                    break
+                continueRoutine = False  # will revert to True if at least one component still running
+                for thisComponent in secondStim_A2Components:
+                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                        continueRoutine = True
+                        break  # at least one component has not yet finished
+                
+                # refresh the screen
+                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                    win.flip()
+            
+            # --- Ending Routine "secondStim_A2" ---
+            for thisComponent in secondStim_A2Components:
+                if hasattr(thisComponent, "setAutoDraw"):
+                    thisComponent.setAutoDraw(False)
+            trials_2.addData('secondStim_sliderA2.response', secondStim_sliderA2.getRating())
+            trials_2.addData('secondStim_sliderA2.rt', secondStim_sliderA2.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('sec_mouseA2.x', sec_mouseA2.x)
+            trials_2.addData('sec_mouseA2.y', sec_mouseA2.y)
+            trials_2.addData('sec_mouseA2.leftButton', sec_mouseA2.leftButton)
+            trials_2.addData('sec_mouseA2.midButton', sec_mouseA2.midButton)
+            trials_2.addData('sec_mouseA2.rightButton', sec_mouseA2.rightButton)
+            trials_2.addData('sec_mouseA2.time', sec_mouseA2.time)
+            # the Routine "secondStim_A2" was not non-slip safe, so reset the non-slip timer
+            routineTimer.reset()
+            
+            # --- Prepare to start Routine "firstStim_B1" ---
+            continueRoutine = True
+            routineForceEnded = False
+            # update component parameters for each repeat
+            first_surpStimuliB1.setImage(surpriseFaces)
+            fStimB1.setPos((0, 0.4))
+            fStimB1.setText('Old or New?')
+            fStimB1.setHeight(0.045)
+            firstStim_sliderB1.reset()
+            # setup some python lists for storing info about the first_mouseB1
+            first_mouseB1.x = []
+            first_mouseB1.y = []
+            first_mouseB1.leftButton = []
+            first_mouseB1.midButton = []
+            first_mouseB1.rightButton = []
+            first_mouseB1.time = []
+            gotValidClick = False  # until a click is received
             # Run 'Begin Routine' code from code_6
             if expInfo['cb'] == 'B':
                 if surprise_block_loop.thisN == 0 :
@@ -3884,9 +4293,11 @@ for thisSurprise_block_loop in surprise_block_loop:
                     continueRoutine = False
             elif expInfo['cb'] != 'B':
                 continueRoutine = False
+                
+            first_mouseB1.setPos([0,0])
             # keep track of which components have finished
-            firstStim_BComponents = [first_surpStimuli, topQ, surprise_key_resp, firstStim_sliderB]
-            for thisComponent in firstStim_BComponents:
+            firstStim_B1Components = [first_surpStimuliB1, fStimB1, firstStim_sliderB1, first_mouseB1]
+            for thisComponent in firstStim_B1Components:
                 thisComponent.tStart = None
                 thisComponent.tStop = None
                 thisComponent.tStartRefresh = None
@@ -3898,7 +4309,7 @@ for thisSurprise_block_loop in surprise_block_loop:
             _timeToFirstFrame = win.getFutureFlipTime(clock="now")
             frameN = -1
             
-            # --- Run Routine "firstStim_B" ---
+            # --- Run Routine "firstStim_B1" ---
             while continueRoutine:
                 # get current time
                 t = routineTimer.getTime()
@@ -3907,66 +4318,67 @@ for thisSurprise_block_loop in surprise_block_loop:
                 frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
                 # update/draw components on each frame
                 
-                # *first_surpStimuli* updates
-                if first_surpStimuli.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *first_surpStimuliB1* updates
+                if first_surpStimuliB1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    first_surpStimuli.frameNStart = frameN  # exact frame index
-                    first_surpStimuli.tStart = t  # local t and not account for scr refresh
-                    first_surpStimuli.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(first_surpStimuli, 'tStartRefresh')  # time at next scr refresh
+                    first_surpStimuliB1.frameNStart = frameN  # exact frame index
+                    first_surpStimuliB1.tStart = t  # local t and not account for scr refresh
+                    first_surpStimuliB1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_surpStimuliB1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'first_surpStimuli.started')
-                    first_surpStimuli.setAutoDraw(True)
+                    thisExp.timestampOnFlip(win, 'first_surpStimuliB1.started')
+                    first_surpStimuliB1.setAutoDraw(True)
                 
-                # *topQ* updates
-                if topQ.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *fStimB1* updates
+                if fStimB1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    topQ.frameNStart = frameN  # exact frame index
-                    topQ.tStart = t  # local t and not account for scr refresh
-                    topQ.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(topQ, 'tStartRefresh')  # time at next scr refresh
+                    fStimB1.frameNStart = frameN  # exact frame index
+                    fStimB1.tStart = t  # local t and not account for scr refresh
+                    fStimB1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(fStimB1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'topQ.started')
-                    topQ.setAutoDraw(True)
+                    thisExp.timestampOnFlip(win, 'fStimB1.started')
+                    fStimB1.setAutoDraw(True)
                 
-                # *surprise_key_resp* updates
-                waitOnFlip = False
-                if surprise_key_resp.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *firstStim_sliderB1* updates
+                if firstStim_sliderB1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    surprise_key_resp.frameNStart = frameN  # exact frame index
-                    surprise_key_resp.tStart = t  # local t and not account for scr refresh
-                    surprise_key_resp.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(surprise_key_resp, 'tStartRefresh')  # time at next scr refresh
+                    firstStim_sliderB1.frameNStart = frameN  # exact frame index
+                    firstStim_sliderB1.tStart = t  # local t and not account for scr refresh
+                    firstStim_sliderB1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(firstStim_sliderB1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'surprise_key_resp.started')
-                    surprise_key_resp.status = STARTED
-                    # keyboard checking is just starting
-                    waitOnFlip = True
-                    win.callOnFlip(surprise_key_resp.clock.reset)  # t=0 on next screen flip
-                    win.callOnFlip(surprise_key_resp.clearEvents, eventType='keyboard')  # clear events on next screen flip
-                if surprise_key_resp.status == STARTED and not waitOnFlip:
-                    theseKeys = surprise_key_resp.getKeys(keyList=['1','8'], waitRelease=False)
-                    _surprise_key_resp_allKeys.extend(theseKeys)
-                    if len(_surprise_key_resp_allKeys):
-                        surprise_key_resp.keys = _surprise_key_resp_allKeys[-1].name  # just the last key pressed
-                        surprise_key_resp.rt = _surprise_key_resp_allKeys[-1].rt
-                        # a response ends the routine
-                        continueRoutine = False
+                    thisExp.timestampOnFlip(win, 'firstStim_sliderB1.started')
+                    firstStim_sliderB1.setAutoDraw(True)
                 
-                # *firstStim_sliderB* updates
-                if firstStim_sliderB.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    firstStim_sliderB.frameNStart = frameN  # exact frame index
-                    firstStim_sliderB.tStart = t  # local t and not account for scr refresh
-                    firstStim_sliderB.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(firstStim_sliderB, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'firstStim_sliderB.started')
-                    firstStim_sliderB.setAutoDraw(True)
-                
-                # Check firstStim_sliderB for response to end routine
-                if firstStim_sliderB.getRating() is not None and firstStim_sliderB.status == STARTED:
+                # Check firstStim_sliderB1 for response to end routine
+                if firstStim_sliderB1.getRating() is not None and firstStim_sliderB1.status == STARTED:
                     continueRoutine = False
+                # *first_mouseB1* updates
+                if first_mouseB1.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    first_mouseB1.frameNStart = frameN  # exact frame index
+                    first_mouseB1.tStart = t  # local t and not account for scr refresh
+                    first_mouseB1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_mouseB1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('first_mouseB1.started', t)
+                    first_mouseB1.status = STARTED
+                    first_mouseB1.mouseClock.reset()
+                    prevButtonState = first_mouseB1.getPressed()  # if button is down already this ISN'T a new click
+                if first_mouseB1.status == STARTED:  # only update if started and not finished!
+                    buttons = first_mouseB1.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = first_mouseB1.getPos()
+                            first_mouseB1.x.append(x)
+                            first_mouseB1.y.append(y)
+                            buttons = first_mouseB1.getPressed()
+                            first_mouseB1.leftButton.append(buttons[0])
+                            first_mouseB1.midButton.append(buttons[1])
+                            first_mouseB1.rightButton.append(buttons[2])
+                            first_mouseB1.time.append(first_mouseB1.mouseClock.getTime())
                 
                 # check for quit (typically the Esc key)
                 if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -3977,7 +4389,7 @@ for thisSurprise_block_loop in surprise_block_loop:
                     routineForceEnded = True
                     break
                 continueRoutine = False  # will revert to True if at least one component still running
-                for thisComponent in firstStim_BComponents:
+                for thisComponent in firstStim_B1Components:
                     if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                         continueRoutine = True
                         break  # at least one component has not yet finished
@@ -3986,33 +4398,477 @@ for thisSurprise_block_loop in surprise_block_loop:
                 if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
                     win.flip()
             
-            # --- Ending Routine "firstStim_B" ---
-            for thisComponent in firstStim_BComponents:
+            # --- Ending Routine "firstStim_B1" ---
+            for thisComponent in firstStim_B1Components:
                 if hasattr(thisComponent, "setAutoDraw"):
                     thisComponent.setAutoDraw(False)
-            # check responses
-            if surprise_key_resp.keys in ['', [], None]:  # No response was made
-                surprise_key_resp.keys = None
-            trials_2.addData('surprise_key_resp.keys',surprise_key_resp.keys)
-            if surprise_key_resp.keys != None:  # we had a response
-                trials_2.addData('surprise_key_resp.rt', surprise_key_resp.rt)
-            trials_2.addData('firstStim_sliderB.response', firstStim_sliderB.getRating())
-            trials_2.addData('firstStim_sliderB.rt', firstStim_sliderB.getRT())
-            # the Routine "firstStim_B" was not non-slip safe, so reset the non-slip timer
+            trials_2.addData('firstStim_sliderB1.response', firstStim_sliderB1.getRating())
+            trials_2.addData('firstStim_sliderB1.rt', firstStim_sliderB1.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('first_mouseB1.x', first_mouseB1.x)
+            trials_2.addData('first_mouseB1.y', first_mouseB1.y)
+            trials_2.addData('first_mouseB1.leftButton', first_mouseB1.leftButton)
+            trials_2.addData('first_mouseB1.midButton', first_mouseB1.midButton)
+            trials_2.addData('first_mouseB1.rightButton', first_mouseB1.rightButton)
+            trials_2.addData('first_mouseB1.time', first_mouseB1.time)
+            # the Routine "firstStim_B1" was not non-slip safe, so reset the non-slip timer
             routineTimer.reset()
             
-            # --- Prepare to start Routine "firstStim_C" ---
+            # --- Prepare to start Routine "secondStim_B1" ---
             continueRoutine = True
             routineForceEnded = False
             # update component parameters for each repeat
-            first_surpStimuli_3.setImage(surpriseFaces)
-            topQ_3.setPos((0, 0.4))
-            topQ_3.setText(topQ_1)
-            topQ_3.setHeight(0.045)
-            surprise_key_resp_3.keys = []
-            surprise_key_resp_3.rt = []
-            _surprise_key_resp_3_allKeys = []
-            firstStim_sliderC.reset()
+            second_surpStimuliB1.setImage(surpriseFaces)
+            sStimB1.setPos((0, -0.26))
+            sStimB1.setText('Disapproving or Approving?')
+            sStimB1.setHeight(0.045)
+            secondStim_sliderB1.reset()
+            # setup some python lists for storing info about the sec_mouseB1
+            sec_mouseB1.x = []
+            sec_mouseB1.y = []
+            sec_mouseB1.leftButton = []
+            sec_mouseB1.midButton = []
+            sec_mouseB1.rightButton = []
+            sec_mouseB1.time = []
+            gotValidClick = False  # until a click is received
+            # Run 'Begin Routine' code from code_13
+            if expInfo['cb'] == 'B':
+                if surprise_block_loop.thisN == 0 :
+                    continueRoutine = True
+                elif surprise_block_loop.thisN == 1:
+                    continueRoutine = False
+            elif expInfo['cb'] != 'B':
+                continueRoutine = False
+            
+            sec_mouseB1.setPos([0,0])
+            # keep track of which components have finished
+            secondStim_B1Components = [second_surpStimuliB1, sStimB1, secondStim_sliderB1, sec_mouseB1]
+            for thisComponent in secondStim_B1Components:
+                thisComponent.tStart = None
+                thisComponent.tStop = None
+                thisComponent.tStartRefresh = None
+                thisComponent.tStopRefresh = None
+                if hasattr(thisComponent, 'status'):
+                    thisComponent.status = NOT_STARTED
+            # reset timers
+            t = 0
+            _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+            frameN = -1
+            
+            # --- Run Routine "secondStim_B1" ---
+            while continueRoutine:
+                # get current time
+                t = routineTimer.getTime()
+                tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+                tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+                # update/draw components on each frame
+                
+                # *second_surpStimuliB1* updates
+                if second_surpStimuliB1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    second_surpStimuliB1.frameNStart = frameN  # exact frame index
+                    second_surpStimuliB1.tStart = t  # local t and not account for scr refresh
+                    second_surpStimuliB1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(second_surpStimuliB1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'second_surpStimuliB1.started')
+                    second_surpStimuliB1.setAutoDraw(True)
+                
+                # *sStimB1* updates
+                if sStimB1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sStimB1.frameNStart = frameN  # exact frame index
+                    sStimB1.tStart = t  # local t and not account for scr refresh
+                    sStimB1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sStimB1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'sStimB1.started')
+                    sStimB1.setAutoDraw(True)
+                
+                # *secondStim_sliderB1* updates
+                if secondStim_sliderB1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    secondStim_sliderB1.frameNStart = frameN  # exact frame index
+                    secondStim_sliderB1.tStart = t  # local t and not account for scr refresh
+                    secondStim_sliderB1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(secondStim_sliderB1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'secondStim_sliderB1.started')
+                    secondStim_sliderB1.setAutoDraw(True)
+                
+                # Check secondStim_sliderB1 for response to end routine
+                if secondStim_sliderB1.getRating() is not None and secondStim_sliderB1.status == STARTED:
+                    continueRoutine = False
+                # *sec_mouseB1* updates
+                if sec_mouseB1.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sec_mouseB1.frameNStart = frameN  # exact frame index
+                    sec_mouseB1.tStart = t  # local t and not account for scr refresh
+                    sec_mouseB1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sec_mouseB1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('sec_mouseB1.started', t)
+                    sec_mouseB1.status = STARTED
+                    sec_mouseB1.mouseClock.reset()
+                    prevButtonState = sec_mouseB1.getPressed()  # if button is down already this ISN'T a new click
+                if sec_mouseB1.status == STARTED:  # only update if started and not finished!
+                    buttons = sec_mouseB1.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = sec_mouseB1.getPos()
+                            sec_mouseB1.x.append(x)
+                            sec_mouseB1.y.append(y)
+                            buttons = sec_mouseB1.getPressed()
+                            sec_mouseB1.leftButton.append(buttons[0])
+                            sec_mouseB1.midButton.append(buttons[1])
+                            sec_mouseB1.rightButton.append(buttons[2])
+                            sec_mouseB1.time.append(sec_mouseB1.mouseClock.getTime())
+                
+                # check for quit (typically the Esc key)
+                if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+                    core.quit()
+                
+                # check if all components have finished
+                if not continueRoutine:  # a component has requested a forced-end of Routine
+                    routineForceEnded = True
+                    break
+                continueRoutine = False  # will revert to True if at least one component still running
+                for thisComponent in secondStim_B1Components:
+                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                        continueRoutine = True
+                        break  # at least one component has not yet finished
+                
+                # refresh the screen
+                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                    win.flip()
+            
+            # --- Ending Routine "secondStim_B1" ---
+            for thisComponent in secondStim_B1Components:
+                if hasattr(thisComponent, "setAutoDraw"):
+                    thisComponent.setAutoDraw(False)
+            trials_2.addData('secondStim_sliderB1.response', secondStim_sliderB1.getRating())
+            trials_2.addData('secondStim_sliderB1.rt', secondStim_sliderB1.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('sec_mouseB1.x', sec_mouseB1.x)
+            trials_2.addData('sec_mouseB1.y', sec_mouseB1.y)
+            trials_2.addData('sec_mouseB1.leftButton', sec_mouseB1.leftButton)
+            trials_2.addData('sec_mouseB1.midButton', sec_mouseB1.midButton)
+            trials_2.addData('sec_mouseB1.rightButton', sec_mouseB1.rightButton)
+            trials_2.addData('sec_mouseB1.time', sec_mouseB1.time)
+            # the Routine "secondStim_B1" was not non-slip safe, so reset the non-slip timer
+            routineTimer.reset()
+            
+            # --- Prepare to start Routine "firstStim_B2" ---
+            continueRoutine = True
+            routineForceEnded = False
+            # update component parameters for each repeat
+            first_surpStimuliB2.setImage(surpriseFaces)
+            fStimB2.setPos((0, 0.4))
+            fStimB2.setText('New or Old?')
+            fStimB2.setHeight(0.045)
+            firstStim_sliderB2.reset()
+            # setup some python lists for storing info about the first_mouseB2
+            first_mouseB2.x = []
+            first_mouseB2.y = []
+            first_mouseB2.leftButton = []
+            first_mouseB2.midButton = []
+            first_mouseB2.rightButton = []
+            first_mouseB2.time = []
+            gotValidClick = False  # until a click is received
+            # Run 'Begin Routine' code from code_12
+            if expInfo['cb'] == 'B':
+                if surprise_block_loop.thisN == 0 :
+                    continueRoutine = False
+                elif surprise_block_loop.thisN == 1:
+                    continueRoutine = True
+            elif expInfo['cb'] != 'B':
+                continueRoutine = False
+            
+            first_mouseB2.setPos([0,0])
+            # keep track of which components have finished
+            firstStim_B2Components = [first_surpStimuliB2, fStimB2, firstStim_sliderB2, first_mouseB2]
+            for thisComponent in firstStim_B2Components:
+                thisComponent.tStart = None
+                thisComponent.tStop = None
+                thisComponent.tStartRefresh = None
+                thisComponent.tStopRefresh = None
+                if hasattr(thisComponent, 'status'):
+                    thisComponent.status = NOT_STARTED
+            # reset timers
+            t = 0
+            _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+            frameN = -1
+            
+            # --- Run Routine "firstStim_B2" ---
+            while continueRoutine:
+                # get current time
+                t = routineTimer.getTime()
+                tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+                tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+                # update/draw components on each frame
+                
+                # *first_surpStimuliB2* updates
+                if first_surpStimuliB2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    first_surpStimuliB2.frameNStart = frameN  # exact frame index
+                    first_surpStimuliB2.tStart = t  # local t and not account for scr refresh
+                    first_surpStimuliB2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_surpStimuliB2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'first_surpStimuliB2.started')
+                    first_surpStimuliB2.setAutoDraw(True)
+                
+                # *fStimB2* updates
+                if fStimB2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    fStimB2.frameNStart = frameN  # exact frame index
+                    fStimB2.tStart = t  # local t and not account for scr refresh
+                    fStimB2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(fStimB2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'fStimB2.started')
+                    fStimB2.setAutoDraw(True)
+                
+                # *firstStim_sliderB2* updates
+                if firstStim_sliderB2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    firstStim_sliderB2.frameNStart = frameN  # exact frame index
+                    firstStim_sliderB2.tStart = t  # local t and not account for scr refresh
+                    firstStim_sliderB2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(firstStim_sliderB2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'firstStim_sliderB2.started')
+                    firstStim_sliderB2.setAutoDraw(True)
+                
+                # Check firstStim_sliderB2 for response to end routine
+                if firstStim_sliderB2.getRating() is not None and firstStim_sliderB2.status == STARTED:
+                    continueRoutine = False
+                # *first_mouseB2* updates
+                if first_mouseB2.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    first_mouseB2.frameNStart = frameN  # exact frame index
+                    first_mouseB2.tStart = t  # local t and not account for scr refresh
+                    first_mouseB2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_mouseB2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('first_mouseB2.started', t)
+                    first_mouseB2.status = STARTED
+                    first_mouseB2.mouseClock.reset()
+                    prevButtonState = first_mouseB2.getPressed()  # if button is down already this ISN'T a new click
+                if first_mouseB2.status == STARTED:  # only update if started and not finished!
+                    buttons = first_mouseB2.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = first_mouseB2.getPos()
+                            first_mouseB2.x.append(x)
+                            first_mouseB2.y.append(y)
+                            buttons = first_mouseB2.getPressed()
+                            first_mouseB2.leftButton.append(buttons[0])
+                            first_mouseB2.midButton.append(buttons[1])
+                            first_mouseB2.rightButton.append(buttons[2])
+                            first_mouseB2.time.append(first_mouseB2.mouseClock.getTime())
+                
+                # check for quit (typically the Esc key)
+                if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+                    core.quit()
+                
+                # check if all components have finished
+                if not continueRoutine:  # a component has requested a forced-end of Routine
+                    routineForceEnded = True
+                    break
+                continueRoutine = False  # will revert to True if at least one component still running
+                for thisComponent in firstStim_B2Components:
+                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                        continueRoutine = True
+                        break  # at least one component has not yet finished
+                
+                # refresh the screen
+                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                    win.flip()
+            
+            # --- Ending Routine "firstStim_B2" ---
+            for thisComponent in firstStim_B2Components:
+                if hasattr(thisComponent, "setAutoDraw"):
+                    thisComponent.setAutoDraw(False)
+            trials_2.addData('firstStim_sliderB2.response', firstStim_sliderB2.getRating())
+            trials_2.addData('firstStim_sliderB2.rt', firstStim_sliderB2.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('first_mouseB2.x', first_mouseB2.x)
+            trials_2.addData('first_mouseB2.y', first_mouseB2.y)
+            trials_2.addData('first_mouseB2.leftButton', first_mouseB2.leftButton)
+            trials_2.addData('first_mouseB2.midButton', first_mouseB2.midButton)
+            trials_2.addData('first_mouseB2.rightButton', first_mouseB2.rightButton)
+            trials_2.addData('first_mouseB2.time', first_mouseB2.time)
+            # the Routine "firstStim_B2" was not non-slip safe, so reset the non-slip timer
+            routineTimer.reset()
+            
+            # --- Prepare to start Routine "secondStimB2" ---
+            continueRoutine = True
+            routineForceEnded = False
+            # update component parameters for each repeat
+            second_surpStimuliB2.setImage(surpriseFaces)
+            sStimB2.setPos((0, -0.26))
+            sStimB2.setText('Disapproving or Approving?')
+            sStimB2.setHeight(0.045)
+            secondStim_sliderB2.reset()
+            # setup some python lists for storing info about the sec_mouseB2
+            sec_mouseB2.x = []
+            sec_mouseB2.y = []
+            sec_mouseB2.leftButton = []
+            sec_mouseB2.midButton = []
+            sec_mouseB2.rightButton = []
+            sec_mouseB2.time = []
+            gotValidClick = False  # until a click is received
+            # Run 'Begin Routine' code from code_14
+            if expInfo['cb'] == 'B':
+                if surprise_block_loop.thisN == 0 :
+                    continueRoutine = False
+                elif surprise_block_loop.thisN == 1:
+                    continueRoutine = True
+            elif expInfo['cb'] != 'B':
+                continueRoutine = False
+            
+            sec_mouseB2.setPos([0,0])
+            # keep track of which components have finished
+            secondStimB2Components = [second_surpStimuliB2, sStimB2, secondStim_sliderB2, sec_mouseB2]
+            for thisComponent in secondStimB2Components:
+                thisComponent.tStart = None
+                thisComponent.tStop = None
+                thisComponent.tStartRefresh = None
+                thisComponent.tStopRefresh = None
+                if hasattr(thisComponent, 'status'):
+                    thisComponent.status = NOT_STARTED
+            # reset timers
+            t = 0
+            _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+            frameN = -1
+            
+            # --- Run Routine "secondStimB2" ---
+            while continueRoutine:
+                # get current time
+                t = routineTimer.getTime()
+                tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+                tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+                # update/draw components on each frame
+                
+                # *second_surpStimuliB2* updates
+                if second_surpStimuliB2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    second_surpStimuliB2.frameNStart = frameN  # exact frame index
+                    second_surpStimuliB2.tStart = t  # local t and not account for scr refresh
+                    second_surpStimuliB2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(second_surpStimuliB2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'second_surpStimuliB2.started')
+                    second_surpStimuliB2.setAutoDraw(True)
+                
+                # *sStimB2* updates
+                if sStimB2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sStimB2.frameNStart = frameN  # exact frame index
+                    sStimB2.tStart = t  # local t and not account for scr refresh
+                    sStimB2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sStimB2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'sStimB2.started')
+                    sStimB2.setAutoDraw(True)
+                
+                # *secondStim_sliderB2* updates
+                if secondStim_sliderB2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    secondStim_sliderB2.frameNStart = frameN  # exact frame index
+                    secondStim_sliderB2.tStart = t  # local t and not account for scr refresh
+                    secondStim_sliderB2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(secondStim_sliderB2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'secondStim_sliderB2.started')
+                    secondStim_sliderB2.setAutoDraw(True)
+                
+                # Check secondStim_sliderB2 for response to end routine
+                if secondStim_sliderB2.getRating() is not None and secondStim_sliderB2.status == STARTED:
+                    continueRoutine = False
+                # *sec_mouseB2* updates
+                if sec_mouseB2.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sec_mouseB2.frameNStart = frameN  # exact frame index
+                    sec_mouseB2.tStart = t  # local t and not account for scr refresh
+                    sec_mouseB2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sec_mouseB2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('sec_mouseB2.started', t)
+                    sec_mouseB2.status = STARTED
+                    sec_mouseB2.mouseClock.reset()
+                    prevButtonState = sec_mouseB2.getPressed()  # if button is down already this ISN'T a new click
+                if sec_mouseB2.status == STARTED:  # only update if started and not finished!
+                    buttons = sec_mouseB2.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = sec_mouseB2.getPos()
+                            sec_mouseB2.x.append(x)
+                            sec_mouseB2.y.append(y)
+                            buttons = sec_mouseB2.getPressed()
+                            sec_mouseB2.leftButton.append(buttons[0])
+                            sec_mouseB2.midButton.append(buttons[1])
+                            sec_mouseB2.rightButton.append(buttons[2])
+                            sec_mouseB2.time.append(sec_mouseB2.mouseClock.getTime())
+                
+                # check for quit (typically the Esc key)
+                if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+                    core.quit()
+                
+                # check if all components have finished
+                if not continueRoutine:  # a component has requested a forced-end of Routine
+                    routineForceEnded = True
+                    break
+                continueRoutine = False  # will revert to True if at least one component still running
+                for thisComponent in secondStimB2Components:
+                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                        continueRoutine = True
+                        break  # at least one component has not yet finished
+                
+                # refresh the screen
+                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                    win.flip()
+            
+            # --- Ending Routine "secondStimB2" ---
+            for thisComponent in secondStimB2Components:
+                if hasattr(thisComponent, "setAutoDraw"):
+                    thisComponent.setAutoDraw(False)
+            trials_2.addData('secondStim_sliderB2.response', secondStim_sliderB2.getRating())
+            trials_2.addData('secondStim_sliderB2.rt', secondStim_sliderB2.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('sec_mouseB2.x', sec_mouseB2.x)
+            trials_2.addData('sec_mouseB2.y', sec_mouseB2.y)
+            trials_2.addData('sec_mouseB2.leftButton', sec_mouseB2.leftButton)
+            trials_2.addData('sec_mouseB2.midButton', sec_mouseB2.midButton)
+            trials_2.addData('sec_mouseB2.rightButton', sec_mouseB2.rightButton)
+            trials_2.addData('sec_mouseB2.time', sec_mouseB2.time)
+            # the Routine "secondStimB2" was not non-slip safe, so reset the non-slip timer
+            routineTimer.reset()
+            
+            # --- Prepare to start Routine "firstStim_C1" ---
+            continueRoutine = True
+            routineForceEnded = False
+            # update component parameters for each repeat
+            first_surpStimuliC1.setImage(surpriseFaces)
+            fStimC1.setPos((0, 0.4))
+            fStimC1.setText('Disapproving or Approving?')
+            fStimC1.setHeight(0.045)
+            firstStim_sliderC1.reset()
+            # setup some python lists for storing info about the first_mouseC1
+            first_mouseC1.x = []
+            first_mouseC1.y = []
+            first_mouseC1.leftButton = []
+            first_mouseC1.midButton = []
+            first_mouseC1.rightButton = []
+            first_mouseC1.time = []
+            gotValidClick = False  # until a click is received
             # Run 'Begin Routine' code from code_7
             if expInfo['cb'] == 'C':
                 if surprise_block_loop.thisN == 0 :
@@ -4021,9 +4877,11 @@ for thisSurprise_block_loop in surprise_block_loop:
                     continueRoutine = False
             elif expInfo['cb'] != 'C':
                 continueRoutine = False
+            
+            first_mouseC1.setPos([0,0])
             # keep track of which components have finished
-            firstStim_CComponents = [first_surpStimuli_3, topQ_3, surprise_key_resp_3, firstStim_sliderC]
-            for thisComponent in firstStim_CComponents:
+            firstStim_C1Components = [first_surpStimuliC1, fStimC1, firstStim_sliderC1, first_mouseC1]
+            for thisComponent in firstStim_C1Components:
                 thisComponent.tStart = None
                 thisComponent.tStop = None
                 thisComponent.tStartRefresh = None
@@ -4035,7 +4893,7 @@ for thisSurprise_block_loop in surprise_block_loop:
             _timeToFirstFrame = win.getFutureFlipTime(clock="now")
             frameN = -1
             
-            # --- Run Routine "firstStim_C" ---
+            # --- Run Routine "firstStim_C1" ---
             while continueRoutine:
                 # get current time
                 t = routineTimer.getTime()
@@ -4044,66 +4902,67 @@ for thisSurprise_block_loop in surprise_block_loop:
                 frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
                 # update/draw components on each frame
                 
-                # *first_surpStimuli_3* updates
-                if first_surpStimuli_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *first_surpStimuliC1* updates
+                if first_surpStimuliC1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    first_surpStimuli_3.frameNStart = frameN  # exact frame index
-                    first_surpStimuli_3.tStart = t  # local t and not account for scr refresh
-                    first_surpStimuli_3.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(first_surpStimuli_3, 'tStartRefresh')  # time at next scr refresh
+                    first_surpStimuliC1.frameNStart = frameN  # exact frame index
+                    first_surpStimuliC1.tStart = t  # local t and not account for scr refresh
+                    first_surpStimuliC1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_surpStimuliC1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'first_surpStimuli_3.started')
-                    first_surpStimuli_3.setAutoDraw(True)
+                    thisExp.timestampOnFlip(win, 'first_surpStimuliC1.started')
+                    first_surpStimuliC1.setAutoDraw(True)
                 
-                # *topQ_3* updates
-                if topQ_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *fStimC1* updates
+                if fStimC1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    topQ_3.frameNStart = frameN  # exact frame index
-                    topQ_3.tStart = t  # local t and not account for scr refresh
-                    topQ_3.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(topQ_3, 'tStartRefresh')  # time at next scr refresh
+                    fStimC1.frameNStart = frameN  # exact frame index
+                    fStimC1.tStart = t  # local t and not account for scr refresh
+                    fStimC1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(fStimC1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'topQ_3.started')
-                    topQ_3.setAutoDraw(True)
+                    thisExp.timestampOnFlip(win, 'fStimC1.started')
+                    fStimC1.setAutoDraw(True)
                 
-                # *surprise_key_resp_3* updates
-                waitOnFlip = False
-                if surprise_key_resp_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *firstStim_sliderC1* updates
+                if firstStim_sliderC1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    surprise_key_resp_3.frameNStart = frameN  # exact frame index
-                    surprise_key_resp_3.tStart = t  # local t and not account for scr refresh
-                    surprise_key_resp_3.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(surprise_key_resp_3, 'tStartRefresh')  # time at next scr refresh
+                    firstStim_sliderC1.frameNStart = frameN  # exact frame index
+                    firstStim_sliderC1.tStart = t  # local t and not account for scr refresh
+                    firstStim_sliderC1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(firstStim_sliderC1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'surprise_key_resp_3.started')
-                    surprise_key_resp_3.status = STARTED
-                    # keyboard checking is just starting
-                    waitOnFlip = True
-                    win.callOnFlip(surprise_key_resp_3.clock.reset)  # t=0 on next screen flip
-                    win.callOnFlip(surprise_key_resp_3.clearEvents, eventType='keyboard')  # clear events on next screen flip
-                if surprise_key_resp_3.status == STARTED and not waitOnFlip:
-                    theseKeys = surprise_key_resp_3.getKeys(keyList=['1','8'], waitRelease=False)
-                    _surprise_key_resp_3_allKeys.extend(theseKeys)
-                    if len(_surprise_key_resp_3_allKeys):
-                        surprise_key_resp_3.keys = _surprise_key_resp_3_allKeys[-1].name  # just the last key pressed
-                        surprise_key_resp_3.rt = _surprise_key_resp_3_allKeys[-1].rt
-                        # a response ends the routine
-                        continueRoutine = False
+                    thisExp.timestampOnFlip(win, 'firstStim_sliderC1.started')
+                    firstStim_sliderC1.setAutoDraw(True)
                 
-                # *firstStim_sliderC* updates
-                if firstStim_sliderC.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    firstStim_sliderC.frameNStart = frameN  # exact frame index
-                    firstStim_sliderC.tStart = t  # local t and not account for scr refresh
-                    firstStim_sliderC.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(firstStim_sliderC, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'firstStim_sliderC.started')
-                    firstStim_sliderC.setAutoDraw(True)
-                
-                # Check firstStim_sliderC for response to end routine
-                if firstStim_sliderC.getRating() is not None and firstStim_sliderC.status == STARTED:
+                # Check firstStim_sliderC1 for response to end routine
+                if firstStim_sliderC1.getRating() is not None and firstStim_sliderC1.status == STARTED:
                     continueRoutine = False
+                # *first_mouseC1* updates
+                if first_mouseC1.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    first_mouseC1.frameNStart = frameN  # exact frame index
+                    first_mouseC1.tStart = t  # local t and not account for scr refresh
+                    first_mouseC1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_mouseC1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('first_mouseC1.started', t)
+                    first_mouseC1.status = STARTED
+                    first_mouseC1.mouseClock.reset()
+                    prevButtonState = first_mouseC1.getPressed()  # if button is down already this ISN'T a new click
+                if first_mouseC1.status == STARTED:  # only update if started and not finished!
+                    buttons = first_mouseC1.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = first_mouseC1.getPos()
+                            first_mouseC1.x.append(x)
+                            first_mouseC1.y.append(y)
+                            buttons = first_mouseC1.getPressed()
+                            first_mouseC1.leftButton.append(buttons[0])
+                            first_mouseC1.midButton.append(buttons[1])
+                            first_mouseC1.rightButton.append(buttons[2])
+                            first_mouseC1.time.append(first_mouseC1.mouseClock.getTime())
                 
                 # check for quit (typically the Esc key)
                 if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -4114,7 +4973,7 @@ for thisSurprise_block_loop in surprise_block_loop:
                     routineForceEnded = True
                     break
                 continueRoutine = False  # will revert to True if at least one component still running
-                for thisComponent in firstStim_CComponents:
+                for thisComponent in firstStim_C1Components:
                     if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                         continueRoutine = True
                         break  # at least one component has not yet finished
@@ -4123,33 +4982,477 @@ for thisSurprise_block_loop in surprise_block_loop:
                 if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
                     win.flip()
             
-            # --- Ending Routine "firstStim_C" ---
-            for thisComponent in firstStim_CComponents:
+            # --- Ending Routine "firstStim_C1" ---
+            for thisComponent in firstStim_C1Components:
                 if hasattr(thisComponent, "setAutoDraw"):
                     thisComponent.setAutoDraw(False)
-            # check responses
-            if surprise_key_resp_3.keys in ['', [], None]:  # No response was made
-                surprise_key_resp_3.keys = None
-            trials_2.addData('surprise_key_resp_3.keys',surprise_key_resp_3.keys)
-            if surprise_key_resp_3.keys != None:  # we had a response
-                trials_2.addData('surprise_key_resp_3.rt', surprise_key_resp_3.rt)
-            trials_2.addData('firstStim_sliderC.response', firstStim_sliderC.getRating())
-            trials_2.addData('firstStim_sliderC.rt', firstStim_sliderC.getRT())
-            # the Routine "firstStim_C" was not non-slip safe, so reset the non-slip timer
+            trials_2.addData('firstStim_sliderC1.response', firstStim_sliderC1.getRating())
+            trials_2.addData('firstStim_sliderC1.rt', firstStim_sliderC1.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('first_mouseC1.x', first_mouseC1.x)
+            trials_2.addData('first_mouseC1.y', first_mouseC1.y)
+            trials_2.addData('first_mouseC1.leftButton', first_mouseC1.leftButton)
+            trials_2.addData('first_mouseC1.midButton', first_mouseC1.midButton)
+            trials_2.addData('first_mouseC1.rightButton', first_mouseC1.rightButton)
+            trials_2.addData('first_mouseC1.time', first_mouseC1.time)
+            # the Routine "firstStim_C1" was not non-slip safe, so reset the non-slip timer
             routineTimer.reset()
             
-            # --- Prepare to start Routine "firstStim_D" ---
+            # --- Prepare to start Routine "secondStim_C1" ---
             continueRoutine = True
             routineForceEnded = False
             # update component parameters for each repeat
-            first_surpStimuli_4.setImage(surpriseFaces)
-            topQ_4.setPos((0, 0.4))
-            topQ_4.setText(topQ_1)
-            topQ_4.setHeight(0.045)
-            surprise_key_resp_4.keys = []
-            surprise_key_resp_4.rt = []
-            _surprise_key_resp_4_allKeys = []
-            firstStim_sliderD.reset()
+            second_surpStimuliC1.setImage(surpriseFaces)
+            sStimC1.setPos((0, -0.26))
+            sStimC1.setText('New or Old?')
+            sStimC1.setHeight(0.045)
+            secondStim_sliderC1.reset()
+            # setup some python lists for storing info about the sec_mouseC1
+            sec_mouseC1.x = []
+            sec_mouseC1.y = []
+            sec_mouseC1.leftButton = []
+            sec_mouseC1.midButton = []
+            sec_mouseC1.rightButton = []
+            sec_mouseC1.time = []
+            gotValidClick = False  # until a click is received
+            # Run 'Begin Routine' code from code_15
+            if expInfo['cb'] == 'C':
+                if surprise_block_loop.thisN == 0 :
+                    continueRoutine = True
+                elif surprise_block_loop.thisN == 1:
+                    continueRoutine = False
+            elif expInfo['cb'] != 'C':
+                continueRoutine = False
+            
+            sec_mouseC1.setPos([0,0])
+            # keep track of which components have finished
+            secondStim_C1Components = [second_surpStimuliC1, sStimC1, secondStim_sliderC1, sec_mouseC1]
+            for thisComponent in secondStim_C1Components:
+                thisComponent.tStart = None
+                thisComponent.tStop = None
+                thisComponent.tStartRefresh = None
+                thisComponent.tStopRefresh = None
+                if hasattr(thisComponent, 'status'):
+                    thisComponent.status = NOT_STARTED
+            # reset timers
+            t = 0
+            _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+            frameN = -1
+            
+            # --- Run Routine "secondStim_C1" ---
+            while continueRoutine:
+                # get current time
+                t = routineTimer.getTime()
+                tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+                tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+                # update/draw components on each frame
+                
+                # *second_surpStimuliC1* updates
+                if second_surpStimuliC1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    second_surpStimuliC1.frameNStart = frameN  # exact frame index
+                    second_surpStimuliC1.tStart = t  # local t and not account for scr refresh
+                    second_surpStimuliC1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(second_surpStimuliC1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'second_surpStimuliC1.started')
+                    second_surpStimuliC1.setAutoDraw(True)
+                
+                # *sStimC1* updates
+                if sStimC1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sStimC1.frameNStart = frameN  # exact frame index
+                    sStimC1.tStart = t  # local t and not account for scr refresh
+                    sStimC1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sStimC1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'sStimC1.started')
+                    sStimC1.setAutoDraw(True)
+                
+                # *secondStim_sliderC1* updates
+                if secondStim_sliderC1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    secondStim_sliderC1.frameNStart = frameN  # exact frame index
+                    secondStim_sliderC1.tStart = t  # local t and not account for scr refresh
+                    secondStim_sliderC1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(secondStim_sliderC1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'secondStim_sliderC1.started')
+                    secondStim_sliderC1.setAutoDraw(True)
+                
+                # Check secondStim_sliderC1 for response to end routine
+                if secondStim_sliderC1.getRating() is not None and secondStim_sliderC1.status == STARTED:
+                    continueRoutine = False
+                # *sec_mouseC1* updates
+                if sec_mouseC1.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sec_mouseC1.frameNStart = frameN  # exact frame index
+                    sec_mouseC1.tStart = t  # local t and not account for scr refresh
+                    sec_mouseC1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sec_mouseC1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('sec_mouseC1.started', t)
+                    sec_mouseC1.status = STARTED
+                    sec_mouseC1.mouseClock.reset()
+                    prevButtonState = sec_mouseC1.getPressed()  # if button is down already this ISN'T a new click
+                if sec_mouseC1.status == STARTED:  # only update if started and not finished!
+                    buttons = sec_mouseC1.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = sec_mouseC1.getPos()
+                            sec_mouseC1.x.append(x)
+                            sec_mouseC1.y.append(y)
+                            buttons = sec_mouseC1.getPressed()
+                            sec_mouseC1.leftButton.append(buttons[0])
+                            sec_mouseC1.midButton.append(buttons[1])
+                            sec_mouseC1.rightButton.append(buttons[2])
+                            sec_mouseC1.time.append(sec_mouseC1.mouseClock.getTime())
+                
+                # check for quit (typically the Esc key)
+                if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+                    core.quit()
+                
+                # check if all components have finished
+                if not continueRoutine:  # a component has requested a forced-end of Routine
+                    routineForceEnded = True
+                    break
+                continueRoutine = False  # will revert to True if at least one component still running
+                for thisComponent in secondStim_C1Components:
+                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                        continueRoutine = True
+                        break  # at least one component has not yet finished
+                
+                # refresh the screen
+                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                    win.flip()
+            
+            # --- Ending Routine "secondStim_C1" ---
+            for thisComponent in secondStim_C1Components:
+                if hasattr(thisComponent, "setAutoDraw"):
+                    thisComponent.setAutoDraw(False)
+            trials_2.addData('secondStim_sliderC1.response', secondStim_sliderC1.getRating())
+            trials_2.addData('secondStim_sliderC1.rt', secondStim_sliderC1.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('sec_mouseC1.x', sec_mouseC1.x)
+            trials_2.addData('sec_mouseC1.y', sec_mouseC1.y)
+            trials_2.addData('sec_mouseC1.leftButton', sec_mouseC1.leftButton)
+            trials_2.addData('sec_mouseC1.midButton', sec_mouseC1.midButton)
+            trials_2.addData('sec_mouseC1.rightButton', sec_mouseC1.rightButton)
+            trials_2.addData('sec_mouseC1.time', sec_mouseC1.time)
+            # the Routine "secondStim_C1" was not non-slip safe, so reset the non-slip timer
+            routineTimer.reset()
+            
+            # --- Prepare to start Routine "firstStim_C2" ---
+            continueRoutine = True
+            routineForceEnded = False
+            # update component parameters for each repeat
+            first_surpStimuliC2.setImage(surpriseFaces)
+            fStimC2.setPos((0, 0.4))
+            fStimC2.setText('Approving or Disapproving?')
+            fStimC2.setHeight(0.045)
+            firstStim_sliderC2.reset()
+            # setup some python lists for storing info about the first_mouseC2
+            first_mouseC2.x = []
+            first_mouseC2.y = []
+            first_mouseC2.leftButton = []
+            first_mouseC2.midButton = []
+            first_mouseC2.rightButton = []
+            first_mouseC2.time = []
+            gotValidClick = False  # until a click is received
+            # Run 'Begin Routine' code from code_16
+            if expInfo['cb'] == 'C':
+                if surprise_block_loop.thisN == 0 :
+                    continueRoutine = False
+                elif surprise_block_loop.thisN == 1:
+                    continueRoutine = True
+            elif expInfo['cb'] != 'C':
+                continueRoutine = False
+            
+            first_mouseC2.setPos([0,0])
+            # keep track of which components have finished
+            firstStim_C2Components = [first_surpStimuliC2, fStimC2, firstStim_sliderC2, first_mouseC2]
+            for thisComponent in firstStim_C2Components:
+                thisComponent.tStart = None
+                thisComponent.tStop = None
+                thisComponent.tStartRefresh = None
+                thisComponent.tStopRefresh = None
+                if hasattr(thisComponent, 'status'):
+                    thisComponent.status = NOT_STARTED
+            # reset timers
+            t = 0
+            _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+            frameN = -1
+            
+            # --- Run Routine "firstStim_C2" ---
+            while continueRoutine:
+                # get current time
+                t = routineTimer.getTime()
+                tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+                tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+                # update/draw components on each frame
+                
+                # *first_surpStimuliC2* updates
+                if first_surpStimuliC2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    first_surpStimuliC2.frameNStart = frameN  # exact frame index
+                    first_surpStimuliC2.tStart = t  # local t and not account for scr refresh
+                    first_surpStimuliC2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_surpStimuliC2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'first_surpStimuliC2.started')
+                    first_surpStimuliC2.setAutoDraw(True)
+                
+                # *fStimC2* updates
+                if fStimC2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    fStimC2.frameNStart = frameN  # exact frame index
+                    fStimC2.tStart = t  # local t and not account for scr refresh
+                    fStimC2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(fStimC2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'fStimC2.started')
+                    fStimC2.setAutoDraw(True)
+                
+                # *firstStim_sliderC2* updates
+                if firstStim_sliderC2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    firstStim_sliderC2.frameNStart = frameN  # exact frame index
+                    firstStim_sliderC2.tStart = t  # local t and not account for scr refresh
+                    firstStim_sliderC2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(firstStim_sliderC2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'firstStim_sliderC2.started')
+                    firstStim_sliderC2.setAutoDraw(True)
+                
+                # Check firstStim_sliderC2 for response to end routine
+                if firstStim_sliderC2.getRating() is not None and firstStim_sliderC2.status == STARTED:
+                    continueRoutine = False
+                # *first_mouseC2* updates
+                if first_mouseC2.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    first_mouseC2.frameNStart = frameN  # exact frame index
+                    first_mouseC2.tStart = t  # local t and not account for scr refresh
+                    first_mouseC2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_mouseC2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('first_mouseC2.started', t)
+                    first_mouseC2.status = STARTED
+                    first_mouseC2.mouseClock.reset()
+                    prevButtonState = first_mouseC2.getPressed()  # if button is down already this ISN'T a new click
+                if first_mouseC2.status == STARTED:  # only update if started and not finished!
+                    buttons = first_mouseC2.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = first_mouseC2.getPos()
+                            first_mouseC2.x.append(x)
+                            first_mouseC2.y.append(y)
+                            buttons = first_mouseC2.getPressed()
+                            first_mouseC2.leftButton.append(buttons[0])
+                            first_mouseC2.midButton.append(buttons[1])
+                            first_mouseC2.rightButton.append(buttons[2])
+                            first_mouseC2.time.append(first_mouseC2.mouseClock.getTime())
+                
+                # check for quit (typically the Esc key)
+                if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+                    core.quit()
+                
+                # check if all components have finished
+                if not continueRoutine:  # a component has requested a forced-end of Routine
+                    routineForceEnded = True
+                    break
+                continueRoutine = False  # will revert to True if at least one component still running
+                for thisComponent in firstStim_C2Components:
+                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                        continueRoutine = True
+                        break  # at least one component has not yet finished
+                
+                # refresh the screen
+                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                    win.flip()
+            
+            # --- Ending Routine "firstStim_C2" ---
+            for thisComponent in firstStim_C2Components:
+                if hasattr(thisComponent, "setAutoDraw"):
+                    thisComponent.setAutoDraw(False)
+            trials_2.addData('firstStim_sliderC2.response', firstStim_sliderC2.getRating())
+            trials_2.addData('firstStim_sliderC2.rt', firstStim_sliderC2.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('first_mouseC2.x', first_mouseC2.x)
+            trials_2.addData('first_mouseC2.y', first_mouseC2.y)
+            trials_2.addData('first_mouseC2.leftButton', first_mouseC2.leftButton)
+            trials_2.addData('first_mouseC2.midButton', first_mouseC2.midButton)
+            trials_2.addData('first_mouseC2.rightButton', first_mouseC2.rightButton)
+            trials_2.addData('first_mouseC2.time', first_mouseC2.time)
+            # the Routine "firstStim_C2" was not non-slip safe, so reset the non-slip timer
+            routineTimer.reset()
+            
+            # --- Prepare to start Routine "secondStim_C2" ---
+            continueRoutine = True
+            routineForceEnded = False
+            # update component parameters for each repeat
+            second_surpStimuliC2.setImage(surpriseFaces)
+            sStimC2.setPos((0, -0.26))
+            sStimC2.setText('New or Old?')
+            sStimC2.setHeight(0.045)
+            secondStim_sliderC2.reset()
+            # setup some python lists for storing info about the sec_mouseC2
+            sec_mouseC2.x = []
+            sec_mouseC2.y = []
+            sec_mouseC2.leftButton = []
+            sec_mouseC2.midButton = []
+            sec_mouseC2.rightButton = []
+            sec_mouseC2.time = []
+            gotValidClick = False  # until a click is received
+            # Run 'Begin Routine' code from code_17
+            if expInfo['cb'] == 'C':
+                if surprise_block_loop.thisN == 0 :
+                    continueRoutine = False
+                elif surprise_block_loop.thisN == 1:
+                    continueRoutine = True
+            elif expInfo['cb'] != 'C':
+                continueRoutine = False
+            
+            sec_mouseC2.setPos([0,0])
+            # keep track of which components have finished
+            secondStim_C2Components = [second_surpStimuliC2, sStimC2, secondStim_sliderC2, sec_mouseC2]
+            for thisComponent in secondStim_C2Components:
+                thisComponent.tStart = None
+                thisComponent.tStop = None
+                thisComponent.tStartRefresh = None
+                thisComponent.tStopRefresh = None
+                if hasattr(thisComponent, 'status'):
+                    thisComponent.status = NOT_STARTED
+            # reset timers
+            t = 0
+            _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+            frameN = -1
+            
+            # --- Run Routine "secondStim_C2" ---
+            while continueRoutine:
+                # get current time
+                t = routineTimer.getTime()
+                tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+                tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+                # update/draw components on each frame
+                
+                # *second_surpStimuliC2* updates
+                if second_surpStimuliC2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    second_surpStimuliC2.frameNStart = frameN  # exact frame index
+                    second_surpStimuliC2.tStart = t  # local t and not account for scr refresh
+                    second_surpStimuliC2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(second_surpStimuliC2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'second_surpStimuliC2.started')
+                    second_surpStimuliC2.setAutoDraw(True)
+                
+                # *sStimC2* updates
+                if sStimC2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sStimC2.frameNStart = frameN  # exact frame index
+                    sStimC2.tStart = t  # local t and not account for scr refresh
+                    sStimC2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sStimC2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'sStimC2.started')
+                    sStimC2.setAutoDraw(True)
+                
+                # *secondStim_sliderC2* updates
+                if secondStim_sliderC2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    secondStim_sliderC2.frameNStart = frameN  # exact frame index
+                    secondStim_sliderC2.tStart = t  # local t and not account for scr refresh
+                    secondStim_sliderC2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(secondStim_sliderC2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'secondStim_sliderC2.started')
+                    secondStim_sliderC2.setAutoDraw(True)
+                
+                # Check secondStim_sliderC2 for response to end routine
+                if secondStim_sliderC2.getRating() is not None and secondStim_sliderC2.status == STARTED:
+                    continueRoutine = False
+                # *sec_mouseC2* updates
+                if sec_mouseC2.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sec_mouseC2.frameNStart = frameN  # exact frame index
+                    sec_mouseC2.tStart = t  # local t and not account for scr refresh
+                    sec_mouseC2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sec_mouseC2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('sec_mouseC2.started', t)
+                    sec_mouseC2.status = STARTED
+                    sec_mouseC2.mouseClock.reset()
+                    prevButtonState = sec_mouseC2.getPressed()  # if button is down already this ISN'T a new click
+                if sec_mouseC2.status == STARTED:  # only update if started and not finished!
+                    buttons = sec_mouseC2.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = sec_mouseC2.getPos()
+                            sec_mouseC2.x.append(x)
+                            sec_mouseC2.y.append(y)
+                            buttons = sec_mouseC2.getPressed()
+                            sec_mouseC2.leftButton.append(buttons[0])
+                            sec_mouseC2.midButton.append(buttons[1])
+                            sec_mouseC2.rightButton.append(buttons[2])
+                            sec_mouseC2.time.append(sec_mouseC2.mouseClock.getTime())
+                
+                # check for quit (typically the Esc key)
+                if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+                    core.quit()
+                
+                # check if all components have finished
+                if not continueRoutine:  # a component has requested a forced-end of Routine
+                    routineForceEnded = True
+                    break
+                continueRoutine = False  # will revert to True if at least one component still running
+                for thisComponent in secondStim_C2Components:
+                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                        continueRoutine = True
+                        break  # at least one component has not yet finished
+                
+                # refresh the screen
+                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                    win.flip()
+            
+            # --- Ending Routine "secondStim_C2" ---
+            for thisComponent in secondStim_C2Components:
+                if hasattr(thisComponent, "setAutoDraw"):
+                    thisComponent.setAutoDraw(False)
+            trials_2.addData('secondStim_sliderC2.response', secondStim_sliderC2.getRating())
+            trials_2.addData('secondStim_sliderC2.rt', secondStim_sliderC2.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('sec_mouseC2.x', sec_mouseC2.x)
+            trials_2.addData('sec_mouseC2.y', sec_mouseC2.y)
+            trials_2.addData('sec_mouseC2.leftButton', sec_mouseC2.leftButton)
+            trials_2.addData('sec_mouseC2.midButton', sec_mouseC2.midButton)
+            trials_2.addData('sec_mouseC2.rightButton', sec_mouseC2.rightButton)
+            trials_2.addData('sec_mouseC2.time', sec_mouseC2.time)
+            # the Routine "secondStim_C2" was not non-slip safe, so reset the non-slip timer
+            routineTimer.reset()
+            
+            # --- Prepare to start Routine "firstStim_D1" ---
+            continueRoutine = True
+            routineForceEnded = False
+            # update component parameters for each repeat
+            first_surpStimuliD1.setImage(surpriseFaces)
+            fStim_D1.setPos((0, 0.4))
+            fStim_D1.setText('Approving or Disapproving?')
+            fStim_D1.setHeight(0.045)
+            firstStim_sliderD1.reset()
+            # setup some python lists for storing info about the first_mouseD1
+            first_mouseD1.x = []
+            first_mouseD1.y = []
+            first_mouseD1.leftButton = []
+            first_mouseD1.midButton = []
+            first_mouseD1.rightButton = []
+            first_mouseD1.time = []
+            gotValidClick = False  # until a click is received
             # Run 'Begin Routine' code from code_8
             if expInfo['cb'] == 'D':
                 if surprise_block_loop.thisN == 0 :
@@ -4158,9 +5461,11 @@ for thisSurprise_block_loop in surprise_block_loop:
                     continueRoutine = False
             elif expInfo['cb'] != 'D':
                 continueRoutine = False
+                
+            first_mouseD1.setPos([0,0])
             # keep track of which components have finished
-            firstStim_DComponents = [first_surpStimuli_4, topQ_4, surprise_key_resp_4, firstStim_sliderD]
-            for thisComponent in firstStim_DComponents:
+            firstStim_D1Components = [first_surpStimuliD1, fStim_D1, firstStim_sliderD1, first_mouseD1]
+            for thisComponent in firstStim_D1Components:
                 thisComponent.tStart = None
                 thisComponent.tStop = None
                 thisComponent.tStartRefresh = None
@@ -4172,7 +5477,7 @@ for thisSurprise_block_loop in surprise_block_loop:
             _timeToFirstFrame = win.getFutureFlipTime(clock="now")
             frameN = -1
             
-            # --- Run Routine "firstStim_D" ---
+            # --- Run Routine "firstStim_D1" ---
             while continueRoutine:
                 # get current time
                 t = routineTimer.getTime()
@@ -4181,66 +5486,67 @@ for thisSurprise_block_loop in surprise_block_loop:
                 frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
                 # update/draw components on each frame
                 
-                # *first_surpStimuli_4* updates
-                if first_surpStimuli_4.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *first_surpStimuliD1* updates
+                if first_surpStimuliD1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    first_surpStimuli_4.frameNStart = frameN  # exact frame index
-                    first_surpStimuli_4.tStart = t  # local t and not account for scr refresh
-                    first_surpStimuli_4.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(first_surpStimuli_4, 'tStartRefresh')  # time at next scr refresh
+                    first_surpStimuliD1.frameNStart = frameN  # exact frame index
+                    first_surpStimuliD1.tStart = t  # local t and not account for scr refresh
+                    first_surpStimuliD1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_surpStimuliD1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'first_surpStimuli_4.started')
-                    first_surpStimuli_4.setAutoDraw(True)
+                    thisExp.timestampOnFlip(win, 'first_surpStimuliD1.started')
+                    first_surpStimuliD1.setAutoDraw(True)
                 
-                # *topQ_4* updates
-                if topQ_4.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *fStim_D1* updates
+                if fStim_D1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    topQ_4.frameNStart = frameN  # exact frame index
-                    topQ_4.tStart = t  # local t and not account for scr refresh
-                    topQ_4.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(topQ_4, 'tStartRefresh')  # time at next scr refresh
+                    fStim_D1.frameNStart = frameN  # exact frame index
+                    fStim_D1.tStart = t  # local t and not account for scr refresh
+                    fStim_D1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(fStim_D1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'topQ_4.started')
-                    topQ_4.setAutoDraw(True)
+                    thisExp.timestampOnFlip(win, 'fStim_D1.started')
+                    fStim_D1.setAutoDraw(True)
                 
-                # *surprise_key_resp_4* updates
-                waitOnFlip = False
-                if surprise_key_resp_4.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # *firstStim_sliderD1* updates
+                if firstStim_sliderD1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
                     # keep track of start time/frame for later
-                    surprise_key_resp_4.frameNStart = frameN  # exact frame index
-                    surprise_key_resp_4.tStart = t  # local t and not account for scr refresh
-                    surprise_key_resp_4.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(surprise_key_resp_4, 'tStartRefresh')  # time at next scr refresh
+                    firstStim_sliderD1.frameNStart = frameN  # exact frame index
+                    firstStim_sliderD1.tStart = t  # local t and not account for scr refresh
+                    firstStim_sliderD1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(firstStim_sliderD1, 'tStartRefresh')  # time at next scr refresh
                     # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'surprise_key_resp_4.started')
-                    surprise_key_resp_4.status = STARTED
-                    # keyboard checking is just starting
-                    waitOnFlip = True
-                    win.callOnFlip(surprise_key_resp_4.clock.reset)  # t=0 on next screen flip
-                    win.callOnFlip(surprise_key_resp_4.clearEvents, eventType='keyboard')  # clear events on next screen flip
-                if surprise_key_resp_4.status == STARTED and not waitOnFlip:
-                    theseKeys = surprise_key_resp_4.getKeys(keyList=['1','8'], waitRelease=False)
-                    _surprise_key_resp_4_allKeys.extend(theseKeys)
-                    if len(_surprise_key_resp_4_allKeys):
-                        surprise_key_resp_4.keys = _surprise_key_resp_4_allKeys[-1].name  # just the last key pressed
-                        surprise_key_resp_4.rt = _surprise_key_resp_4_allKeys[-1].rt
-                        # a response ends the routine
-                        continueRoutine = False
+                    thisExp.timestampOnFlip(win, 'firstStim_sliderD1.started')
+                    firstStim_sliderD1.setAutoDraw(True)
                 
-                # *firstStim_sliderD* updates
-                if firstStim_sliderD.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                    # keep track of start time/frame for later
-                    firstStim_sliderD.frameNStart = frameN  # exact frame index
-                    firstStim_sliderD.tStart = t  # local t and not account for scr refresh
-                    firstStim_sliderD.tStartRefresh = tThisFlipGlobal  # on global time
-                    win.timeOnFlip(firstStim_sliderD, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'firstStim_sliderD.started')
-                    firstStim_sliderD.setAutoDraw(True)
-                
-                # Check firstStim_sliderD for response to end routine
-                if firstStim_sliderD.getRating() is not None and firstStim_sliderD.status == STARTED:
+                # Check firstStim_sliderD1 for response to end routine
+                if firstStim_sliderD1.getRating() is not None and firstStim_sliderD1.status == STARTED:
                     continueRoutine = False
+                # *first_mouseD1* updates
+                if first_mouseD1.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    first_mouseD1.frameNStart = frameN  # exact frame index
+                    first_mouseD1.tStart = t  # local t and not account for scr refresh
+                    first_mouseD1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_mouseD1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('first_mouseD1.started', t)
+                    first_mouseD1.status = STARTED
+                    first_mouseD1.mouseClock.reset()
+                    prevButtonState = first_mouseD1.getPressed()  # if button is down already this ISN'T a new click
+                if first_mouseD1.status == STARTED:  # only update if started and not finished!
+                    buttons = first_mouseD1.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = first_mouseD1.getPos()
+                            first_mouseD1.x.append(x)
+                            first_mouseD1.y.append(y)
+                            buttons = first_mouseD1.getPressed()
+                            first_mouseD1.leftButton.append(buttons[0])
+                            first_mouseD1.midButton.append(buttons[1])
+                            first_mouseD1.rightButton.append(buttons[2])
+                            first_mouseD1.time.append(first_mouseD1.mouseClock.getTime())
                 
                 # check for quit (typically the Esc key)
                 if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -4251,7 +5557,7 @@ for thisSurprise_block_loop in surprise_block_loop:
                     routineForceEnded = True
                     break
                 continueRoutine = False  # will revert to True if at least one component still running
-                for thisComponent in firstStim_DComponents:
+                for thisComponent in firstStim_D1Components:
                     if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                         continueRoutine = True
                         break  # at least one component has not yet finished
@@ -4260,20 +5566,534 @@ for thisSurprise_block_loop in surprise_block_loop:
                 if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
                     win.flip()
             
-            # --- Ending Routine "firstStim_D" ---
-            for thisComponent in firstStim_DComponents:
+            # --- Ending Routine "firstStim_D1" ---
+            for thisComponent in firstStim_D1Components:
                 if hasattr(thisComponent, "setAutoDraw"):
                     thisComponent.setAutoDraw(False)
-            # check responses
-            if surprise_key_resp_4.keys in ['', [], None]:  # No response was made
-                surprise_key_resp_4.keys = None
-            trials_2.addData('surprise_key_resp_4.keys',surprise_key_resp_4.keys)
-            if surprise_key_resp_4.keys != None:  # we had a response
-                trials_2.addData('surprise_key_resp_4.rt', surprise_key_resp_4.rt)
-            trials_2.addData('firstStim_sliderD.response', firstStim_sliderD.getRating())
-            trials_2.addData('firstStim_sliderD.rt', firstStim_sliderD.getRT())
-            # the Routine "firstStim_D" was not non-slip safe, so reset the non-slip timer
+            trials_2.addData('firstStim_sliderD1.response', firstStim_sliderD1.getRating())
+            trials_2.addData('firstStim_sliderD1.rt', firstStim_sliderD1.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('first_mouseD1.x', first_mouseD1.x)
+            trials_2.addData('first_mouseD1.y', first_mouseD1.y)
+            trials_2.addData('first_mouseD1.leftButton', first_mouseD1.leftButton)
+            trials_2.addData('first_mouseD1.midButton', first_mouseD1.midButton)
+            trials_2.addData('first_mouseD1.rightButton', first_mouseD1.rightButton)
+            trials_2.addData('first_mouseD1.time', first_mouseD1.time)
+            # the Routine "firstStim_D1" was not non-slip safe, so reset the non-slip timer
             routineTimer.reset()
+            
+            # --- Prepare to start Routine "secondStim_D1" ---
+            continueRoutine = True
+            routineForceEnded = False
+            # update component parameters for each repeat
+            second_surpStimuliD1.setImage(surpriseFaces)
+            sStimD1.setPos((0, -0.26))
+            sStimD1.setText('Old or New?')
+            sStimD1.setHeight(0.045)
+            secondStim_sliderD1.reset()
+            # setup some python lists for storing info about the sec_mouseD1
+            sec_mouseD1.x = []
+            sec_mouseD1.y = []
+            sec_mouseD1.leftButton = []
+            sec_mouseD1.midButton = []
+            sec_mouseD1.rightButton = []
+            sec_mouseD1.time = []
+            gotValidClick = False  # until a click is received
+            # Run 'Begin Routine' code from code_18
+            if expInfo['cb'] == 'D':
+                if surprise_block_loop.thisN == 0 :
+                    continueRoutine = True
+                elif surprise_block_loop.thisN == 1:
+                    continueRoutine = False
+            elif expInfo['cb'] != 'D':
+                continueRoutine = False
+            
+            sec_mouseD1.setPos([0,0])
+            # keep track of which components have finished
+            secondStim_D1Components = [second_surpStimuliD1, sStimD1, secondStim_sliderD1, sec_mouseD1]
+            for thisComponent in secondStim_D1Components:
+                thisComponent.tStart = None
+                thisComponent.tStop = None
+                thisComponent.tStartRefresh = None
+                thisComponent.tStopRefresh = None
+                if hasattr(thisComponent, 'status'):
+                    thisComponent.status = NOT_STARTED
+            # reset timers
+            t = 0
+            _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+            frameN = -1
+            
+            # --- Run Routine "secondStim_D1" ---
+            while continueRoutine:
+                # get current time
+                t = routineTimer.getTime()
+                tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+                tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+                # update/draw components on each frame
+                
+                # *second_surpStimuliD1* updates
+                if second_surpStimuliD1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    second_surpStimuliD1.frameNStart = frameN  # exact frame index
+                    second_surpStimuliD1.tStart = t  # local t and not account for scr refresh
+                    second_surpStimuliD1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(second_surpStimuliD1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'second_surpStimuliD1.started')
+                    second_surpStimuliD1.setAutoDraw(True)
+                
+                # *sStimD1* updates
+                if sStimD1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sStimD1.frameNStart = frameN  # exact frame index
+                    sStimD1.tStart = t  # local t and not account for scr refresh
+                    sStimD1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sStimD1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'sStimD1.started')
+                    sStimD1.setAutoDraw(True)
+                
+                # *secondStim_sliderD1* updates
+                if secondStim_sliderD1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    secondStim_sliderD1.frameNStart = frameN  # exact frame index
+                    secondStim_sliderD1.tStart = t  # local t and not account for scr refresh
+                    secondStim_sliderD1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(secondStim_sliderD1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'secondStim_sliderD1.started')
+                    secondStim_sliderD1.setAutoDraw(True)
+                
+                # Check secondStim_sliderD1 for response to end routine
+                if secondStim_sliderD1.getRating() is not None and secondStim_sliderD1.status == STARTED:
+                    continueRoutine = False
+                # *sec_mouseD1* updates
+                if sec_mouseD1.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sec_mouseD1.frameNStart = frameN  # exact frame index
+                    sec_mouseD1.tStart = t  # local t and not account for scr refresh
+                    sec_mouseD1.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sec_mouseD1, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('sec_mouseD1.started', t)
+                    sec_mouseD1.status = STARTED
+                    sec_mouseD1.mouseClock.reset()
+                    prevButtonState = sec_mouseD1.getPressed()  # if button is down already this ISN'T a new click
+                if sec_mouseD1.status == STARTED:  # only update if started and not finished!
+                    buttons = sec_mouseD1.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = sec_mouseD1.getPos()
+                            sec_mouseD1.x.append(x)
+                            sec_mouseD1.y.append(y)
+                            buttons = sec_mouseD1.getPressed()
+                            sec_mouseD1.leftButton.append(buttons[0])
+                            sec_mouseD1.midButton.append(buttons[1])
+                            sec_mouseD1.rightButton.append(buttons[2])
+                            sec_mouseD1.time.append(sec_mouseD1.mouseClock.getTime())
+                
+                # check for quit (typically the Esc key)
+                if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+                    core.quit()
+                
+                # check if all components have finished
+                if not continueRoutine:  # a component has requested a forced-end of Routine
+                    routineForceEnded = True
+                    break
+                continueRoutine = False  # will revert to True if at least one component still running
+                for thisComponent in secondStim_D1Components:
+                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                        continueRoutine = True
+                        break  # at least one component has not yet finished
+                
+                # refresh the screen
+                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                    win.flip()
+            
+            # --- Ending Routine "secondStim_D1" ---
+            for thisComponent in secondStim_D1Components:
+                if hasattr(thisComponent, "setAutoDraw"):
+                    thisComponent.setAutoDraw(False)
+            trials_2.addData('secondStim_sliderD1.response', secondStim_sliderD1.getRating())
+            trials_2.addData('secondStim_sliderD1.rt', secondStim_sliderD1.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('sec_mouseD1.x', sec_mouseD1.x)
+            trials_2.addData('sec_mouseD1.y', sec_mouseD1.y)
+            trials_2.addData('sec_mouseD1.leftButton', sec_mouseD1.leftButton)
+            trials_2.addData('sec_mouseD1.midButton', sec_mouseD1.midButton)
+            trials_2.addData('sec_mouseD1.rightButton', sec_mouseD1.rightButton)
+            trials_2.addData('sec_mouseD1.time', sec_mouseD1.time)
+            # the Routine "secondStim_D1" was not non-slip safe, so reset the non-slip timer
+            routineTimer.reset()
+            
+            # --- Prepare to start Routine "firstStim_D2" ---
+            continueRoutine = True
+            routineForceEnded = False
+            # update component parameters for each repeat
+            first_surpStimuliD2.setImage(surpriseFaces)
+            fStimD2.setPos((0, 0.4))
+            fStimD2.setText('Disapproving or Approving?')
+            fStimD2.setHeight(0.045)
+            firstStim_sliderD2.reset()
+            # setup some python lists for storing info about the first_mouseD2
+            first_mouseD2.x = []
+            first_mouseD2.y = []
+            first_mouseD2.leftButton = []
+            first_mouseD2.midButton = []
+            first_mouseD2.rightButton = []
+            first_mouseD2.time = []
+            gotValidClick = False  # until a click is received
+            # Run 'Begin Routine' code from code_19
+            if expInfo['cb'] == 'D':
+                if surprise_block_loop.thisN == 0 :
+                    continueRoutine = False
+                elif surprise_block_loop.thisN == 1:
+                    continueRoutine = True
+            elif expInfo['cb'] != 'D':
+                continueRoutine = False
+                
+            first_mouseD2.setPos([0,0])
+            # keep track of which components have finished
+            firstStim_D2Components = [first_surpStimuliD2, fStimD2, firstStim_sliderD2, first_mouseD2]
+            for thisComponent in firstStim_D2Components:
+                thisComponent.tStart = None
+                thisComponent.tStop = None
+                thisComponent.tStartRefresh = None
+                thisComponent.tStopRefresh = None
+                if hasattr(thisComponent, 'status'):
+                    thisComponent.status = NOT_STARTED
+            # reset timers
+            t = 0
+            _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+            frameN = -1
+            
+            # --- Run Routine "firstStim_D2" ---
+            while continueRoutine:
+                # get current time
+                t = routineTimer.getTime()
+                tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+                tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+                # update/draw components on each frame
+                
+                # *first_surpStimuliD2* updates
+                if first_surpStimuliD2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    first_surpStimuliD2.frameNStart = frameN  # exact frame index
+                    first_surpStimuliD2.tStart = t  # local t and not account for scr refresh
+                    first_surpStimuliD2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_surpStimuliD2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'first_surpStimuliD2.started')
+                    first_surpStimuliD2.setAutoDraw(True)
+                
+                # *fStimD2* updates
+                if fStimD2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    fStimD2.frameNStart = frameN  # exact frame index
+                    fStimD2.tStart = t  # local t and not account for scr refresh
+                    fStimD2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(fStimD2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'fStimD2.started')
+                    fStimD2.setAutoDraw(True)
+                
+                # *firstStim_sliderD2* updates
+                if firstStim_sliderD2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    firstStim_sliderD2.frameNStart = frameN  # exact frame index
+                    firstStim_sliderD2.tStart = t  # local t and not account for scr refresh
+                    firstStim_sliderD2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(firstStim_sliderD2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'firstStim_sliderD2.started')
+                    firstStim_sliderD2.setAutoDraw(True)
+                
+                # Check firstStim_sliderD2 for response to end routine
+                if firstStim_sliderD2.getRating() is not None and firstStim_sliderD2.status == STARTED:
+                    continueRoutine = False
+                # *first_mouseD2* updates
+                if first_mouseD2.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    first_mouseD2.frameNStart = frameN  # exact frame index
+                    first_mouseD2.tStart = t  # local t and not account for scr refresh
+                    first_mouseD2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(first_mouseD2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('first_mouseD2.started', t)
+                    first_mouseD2.status = STARTED
+                    first_mouseD2.mouseClock.reset()
+                    prevButtonState = first_mouseD2.getPressed()  # if button is down already this ISN'T a new click
+                if first_mouseD2.status == STARTED:  # only update if started and not finished!
+                    buttons = first_mouseD2.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = first_mouseD2.getPos()
+                            first_mouseD2.x.append(x)
+                            first_mouseD2.y.append(y)
+                            buttons = first_mouseD2.getPressed()
+                            first_mouseD2.leftButton.append(buttons[0])
+                            first_mouseD2.midButton.append(buttons[1])
+                            first_mouseD2.rightButton.append(buttons[2])
+                            first_mouseD2.time.append(first_mouseD2.mouseClock.getTime())
+                
+                # check for quit (typically the Esc key)
+                if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+                    core.quit()
+                
+                # check if all components have finished
+                if not continueRoutine:  # a component has requested a forced-end of Routine
+                    routineForceEnded = True
+                    break
+                continueRoutine = False  # will revert to True if at least one component still running
+                for thisComponent in firstStim_D2Components:
+                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                        continueRoutine = True
+                        break  # at least one component has not yet finished
+                
+                # refresh the screen
+                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                    win.flip()
+            
+            # --- Ending Routine "firstStim_D2" ---
+            for thisComponent in firstStim_D2Components:
+                if hasattr(thisComponent, "setAutoDraw"):
+                    thisComponent.setAutoDraw(False)
+            trials_2.addData('firstStim_sliderD2.response', firstStim_sliderD2.getRating())
+            trials_2.addData('firstStim_sliderD2.rt', firstStim_sliderD2.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('first_mouseD2.x', first_mouseD2.x)
+            trials_2.addData('first_mouseD2.y', first_mouseD2.y)
+            trials_2.addData('first_mouseD2.leftButton', first_mouseD2.leftButton)
+            trials_2.addData('first_mouseD2.midButton', first_mouseD2.midButton)
+            trials_2.addData('first_mouseD2.rightButton', first_mouseD2.rightButton)
+            trials_2.addData('first_mouseD2.time', first_mouseD2.time)
+            # the Routine "firstStim_D2" was not non-slip safe, so reset the non-slip timer
+            routineTimer.reset()
+            
+            # --- Prepare to start Routine "secondStim_D2" ---
+            continueRoutine = True
+            routineForceEnded = False
+            # update component parameters for each repeat
+            second_surpStimuliD2.setImage(surpriseFaces)
+            sStimD2.setPos((0, -0.26))
+            sStimD2.setText('Old or New?')
+            sStimD2.setHeight(0.045)
+            secondStim_sliderD2.reset()
+            # setup some python lists for storing info about the sec_mouseD2
+            sec_mouseD2.x = []
+            sec_mouseD2.y = []
+            sec_mouseD2.leftButton = []
+            sec_mouseD2.midButton = []
+            sec_mouseD2.rightButton = []
+            sec_mouseD2.time = []
+            gotValidClick = False  # until a click is received
+            # Run 'Begin Routine' code from code_20
+            if expInfo['cb'] == 'D':
+                if surprise_block_loop.thisN == 0 :
+                    continueRoutine = False
+                elif surprise_block_loop.thisN == 1:
+                    continueRoutine = True
+            elif expInfo['cb'] != 'D':
+                continueRoutine = False
+            
+            sec_mouseD2.setPos([0,0])
+            # keep track of which components have finished
+            secondStim_D2Components = [second_surpStimuliD2, sStimD2, secondStim_sliderD2, sec_mouseD2]
+            for thisComponent in secondStim_D2Components:
+                thisComponent.tStart = None
+                thisComponent.tStop = None
+                thisComponent.tStartRefresh = None
+                thisComponent.tStopRefresh = None
+                if hasattr(thisComponent, 'status'):
+                    thisComponent.status = NOT_STARTED
+            # reset timers
+            t = 0
+            _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+            frameN = -1
+            
+            # --- Run Routine "secondStim_D2" ---
+            while continueRoutine:
+                # get current time
+                t = routineTimer.getTime()
+                tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+                tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+                # update/draw components on each frame
+                
+                # *second_surpStimuliD2* updates
+                if second_surpStimuliD2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    second_surpStimuliD2.frameNStart = frameN  # exact frame index
+                    second_surpStimuliD2.tStart = t  # local t and not account for scr refresh
+                    second_surpStimuliD2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(second_surpStimuliD2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'second_surpStimuliD2.started')
+                    second_surpStimuliD2.setAutoDraw(True)
+                
+                # *sStimD2* updates
+                if sStimD2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sStimD2.frameNStart = frameN  # exact frame index
+                    sStimD2.tStart = t  # local t and not account for scr refresh
+                    sStimD2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sStimD2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'sStimD2.started')
+                    sStimD2.setAutoDraw(True)
+                
+                # *secondStim_sliderD2* updates
+                if secondStim_sliderD2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    secondStim_sliderD2.frameNStart = frameN  # exact frame index
+                    secondStim_sliderD2.tStart = t  # local t and not account for scr refresh
+                    secondStim_sliderD2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(secondStim_sliderD2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'secondStim_sliderD2.started')
+                    secondStim_sliderD2.setAutoDraw(True)
+                
+                # Check secondStim_sliderD2 for response to end routine
+                if secondStim_sliderD2.getRating() is not None and secondStim_sliderD2.status == STARTED:
+                    continueRoutine = False
+                # *sec_mouseD2* updates
+                if sec_mouseD2.status == NOT_STARTED and t >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    sec_mouseD2.frameNStart = frameN  # exact frame index
+                    sec_mouseD2.tStart = t  # local t and not account for scr refresh
+                    sec_mouseD2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(sec_mouseD2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.addData('sec_mouseD2.started', t)
+                    sec_mouseD2.status = STARTED
+                    sec_mouseD2.mouseClock.reset()
+                    prevButtonState = sec_mouseD2.getPressed()  # if button is down already this ISN'T a new click
+                if sec_mouseD2.status == STARTED:  # only update if started and not finished!
+                    buttons = sec_mouseD2.getPressed()
+                    if buttons != prevButtonState:  # button state changed?
+                        prevButtonState = buttons
+                        if sum(buttons) > 0:  # state changed to a new click
+                            x, y = sec_mouseD2.getPos()
+                            sec_mouseD2.x.append(x)
+                            sec_mouseD2.y.append(y)
+                            buttons = sec_mouseD2.getPressed()
+                            sec_mouseD2.leftButton.append(buttons[0])
+                            sec_mouseD2.midButton.append(buttons[1])
+                            sec_mouseD2.rightButton.append(buttons[2])
+                            sec_mouseD2.time.append(sec_mouseD2.mouseClock.getTime())
+                
+                # check for quit (typically the Esc key)
+                if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+                    core.quit()
+                
+                # check if all components have finished
+                if not continueRoutine:  # a component has requested a forced-end of Routine
+                    routineForceEnded = True
+                    break
+                continueRoutine = False  # will revert to True if at least one component still running
+                for thisComponent in secondStim_D2Components:
+                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                        continueRoutine = True
+                        break  # at least one component has not yet finished
+                
+                # refresh the screen
+                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                    win.flip()
+            
+            # --- Ending Routine "secondStim_D2" ---
+            for thisComponent in secondStim_D2Components:
+                if hasattr(thisComponent, "setAutoDraw"):
+                    thisComponent.setAutoDraw(False)
+            trials_2.addData('secondStim_sliderD2.response', secondStim_sliderD2.getRating())
+            trials_2.addData('secondStim_sliderD2.rt', secondStim_sliderD2.getRT())
+            # store data for trials_2 (TrialHandler)
+            trials_2.addData('sec_mouseD2.x', sec_mouseD2.x)
+            trials_2.addData('sec_mouseD2.y', sec_mouseD2.y)
+            trials_2.addData('sec_mouseD2.leftButton', sec_mouseD2.leftButton)
+            trials_2.addData('sec_mouseD2.midButton', sec_mouseD2.midButton)
+            trials_2.addData('sec_mouseD2.rightButton', sec_mouseD2.rightButton)
+            trials_2.addData('sec_mouseD2.time', sec_mouseD2.time)
+            # the Routine "secondStim_D2" was not non-slip safe, so reset the non-slip timer
+            routineTimer.reset()
+            
+            # --- Prepare to start Routine "fixation2" ---
+            continueRoutine = True
+            routineForceEnded = False
+            # update component parameters for each repeat
+            # keep track of which components have finished
+            fixation2Components = [fix_2]
+            for thisComponent in fixation2Components:
+                thisComponent.tStart = None
+                thisComponent.tStop = None
+                thisComponent.tStartRefresh = None
+                thisComponent.tStopRefresh = None
+                if hasattr(thisComponent, 'status'):
+                    thisComponent.status = NOT_STARTED
+            # reset timers
+            t = 0
+            _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+            frameN = -1
+            
+            # --- Run Routine "fixation2" ---
+            while continueRoutine and routineTimer.getTime() < 1.0:
+                # get current time
+                t = routineTimer.getTime()
+                tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+                tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+                # update/draw components on each frame
+                
+                # *fix_2* updates
+                if fix_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    fix_2.frameNStart = frameN  # exact frame index
+                    fix_2.tStart = t  # local t and not account for scr refresh
+                    fix_2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(fix_2, 'tStartRefresh')  # time at next scr refresh
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'fix_2.started')
+                    fix_2.setAutoDraw(True)
+                if fix_2.status == STARTED:
+                    # is it time to stop? (based on global clock, using actual start)
+                    if tThisFlipGlobal > fix_2.tStartRefresh + 1-frameTolerance:
+                        # keep track of stop time/frame for later
+                        fix_2.tStop = t  # not accounting for scr refresh
+                        fix_2.frameNStop = frameN  # exact frame index
+                        # add timestamp to datafile
+                        thisExp.timestampOnFlip(win, 'fix_2.stopped')
+                        fix_2.setAutoDraw(False)
+                
+                # check for quit (typically the Esc key)
+                if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+                    core.quit()
+                
+                # check if all components have finished
+                if not continueRoutine:  # a component has requested a forced-end of Routine
+                    routineForceEnded = True
+                    break
+                continueRoutine = False  # will revert to True if at least one component still running
+                for thisComponent in fixation2Components:
+                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                        continueRoutine = True
+                        break  # at least one component has not yet finished
+                
+                # refresh the screen
+                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                    win.flip()
+            
+            # --- Ending Routine "fixation2" ---
+            for thisComponent in fixation2Components:
+                if hasattr(thisComponent, "setAutoDraw"):
+                    thisComponent.setAutoDraw(False)
+            # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
+            if routineForceEnded:
+                routineTimer.reset()
+            else:
+                routineTimer.addTime(-1.000000)
             thisExp.nextEntry()
             
         # completed 1.0 repeats of 'trials_2'
