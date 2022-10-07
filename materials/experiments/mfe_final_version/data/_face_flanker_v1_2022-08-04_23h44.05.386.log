@@ -1,6 +1,0 @@
-3.0189 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
-19.2305 	INFO 	Loaded monitor calibration from ['2022_05_31 11:34']
-19.2321 	ERROR 	'0.5000, 0.5000, 0.5000' is not a valid rgb color
-19.3005 	DEBUG 	Saving data for face_flanker_v1 ExperimentHandler
-19.3018 	INFO 	saved data to C:\Users\kihossei\Documents\GitHub\memory-for-error-dataset\materials\experiments\mfe_final_version\data/_face_flanker_v1_2022-08-04_23h44.05.386.psydat
-19.3028 	INFO 	saved data to 'C:\\Users\\kihossei\\Documents\\GitHub\\memory-for-error-dataset\\materials\\experiments\\mfe_final_version\\data/_face_flanker_v1_2022-08-04_23h44.05.386.csv'

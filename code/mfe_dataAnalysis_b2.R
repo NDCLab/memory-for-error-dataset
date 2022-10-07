@@ -2,7 +2,7 @@
 # Author: Kianoosh Hosseini at NDCLab @FIU (May 2022; https://Kianoosh.info; https://NDClab.com)
 # Some parts are from scripts by George Buzzell, Jessica M. Alexander, and Arina Polyanskaya.
 ### This script is the second branch of this script as it only includes correct trials for pre-error and post-errors.
-# Last Update: 2022-07-11 (YYYY-MM-DD)
+# Last Update: 2022-08-15 (YYYY-MM-DD)
 
 
 library(tidyverse)
@@ -24,8 +24,8 @@ output_path <- paste(proje_wd, "stat_output", sep ="/", collapse = NULL) # outpu
 proc_fileName <- paste(today, "_mfeProj.csv", sep ="", collapse = NULL) # output filename
 
 #identify data files
-datafiles_list <- c() # an empty list that will be filled in the next for loop!
-csvSelect = list.files(input_path, pattern = ".csv") # listing only csv files
+datafiles_list <- c() # an empty list that will be filled in the next "for" loop!
+csvSelect <- list.files(input_path, pattern = ".csv") # listing only csv files
 for (lisar1 in 1:length(csvSelect)){
   temp_for_file <- ifelse (str_detect(csvSelect[lisar1], "face_flanker_v1", negate = FALSE), 1, 0)
   if (temp_for_file == 1){
@@ -50,7 +50,7 @@ mainDat <- setNames(data.frame(matrix(ncol = 46, nrow = 0)), c("id", "congAcc", 
                                                                "errorFaces_hit", "correctFaces_hit", "falseAlarm_for_both", "d_prime_error", "d_prime_correct",
                                                                "criterion_error", "criterion_correct"))
 
-percent_mainDat <- setNames(data.frame(matrix(ncol = 60, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
+percent_mainDat <- setNames(data.frame(matrix(ncol = 64, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
                                                                        "flankEff_meanACC", "flankEff_meanRT", "flankEff_logMeanRT",
                                                                        "reported_errors", "committed_errors", "memoryBias_score",
                                                                        "percent_incong_errorFaces_reported_old", "percent_incong_errorFaces_reported_new",
@@ -63,7 +63,7 @@ percent_mainDat <- setNames(data.frame(matrix(ncol = 60, nrow = 0)), c("id", "co
                                                                        "percent_post_incong_errorFaces_reported_friendly", "percent_post_incong_errorFaces_reported_unfriendly", "percent_post_incong_correctFaces_reported_friendly", "percent_post_incong_correctFaces_reported_unfriendly",
                                                                        "percent_pre_incong_errorFaces_reported_friendly", "percent_pre_incong_errorFaces_reported_unfriendly", "percent_pre_incong_correctFaces_reported_friendly", "percent_pre_incong_correctFaces_reported_unfriendly",
                                                                        "errorFaces_hit", "pre_errorFaces_hit", "post_errorFaces_hit", "correctFaces_hit", "pre_correctFaces_hit", "post_correctFaces_hit", "falseAlarm_for_both", "d_prime_error", "pre_d_prime_error", "post_d_prime_error", "d_prime_correct", "pre_d_prime_correct", "post_d_prime_correct",
-                                                                       "criterion_error", "pre_criterion_error", "post_criterion_error", "criterion_correct", "pre_criterion_correct", "post_criterion_correct", "gen_hit", "num_incong_errors"))
+                                                                       "criterion_error", "pre_criterion_error", "post_criterion_error", "criterion_correct", "pre_criterion_correct", "post_criterion_correct", "gen_hit", "num_incong_errors", "d_prime_error_minus_correct" ,"post_d_prime_error_minus_correct", "unfriendly_error_minus_correct", "unfriendly_post_error_minus_correct"))
 
 outlier_mainDat <- setNames(data.frame(matrix(ncol = 14, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
                                                                        "flankEff_meanACC", "flankEff_meanRT", "flankEff_logMeanRT",
@@ -151,8 +151,8 @@ for(i in 1:length(datafiles_list)){
   reported_errors <- subset(remove_prac_trials, complete.cases(remove_prac_trials$textbox_2.text))
   reported_errors <- reported_errors$textbox_2.text # number of reported errors by participants
   if (length(reported_errors) == 0){ # in case a participant does not answer the question, this code will prevent from future errors.
-    reported_errors <- 'Missing'
-    memoryBias_score <- 'Missing'
+    reported_errors <- NA
+    memoryBias_score <- NA
   } else {
     memoryBias_score <- (committed_errors - reported_errors)/ abs(committed_errors) # percent bias score calculation
   }
@@ -163,7 +163,8 @@ for(i in 1:length(datafiles_list)){
   surpDat$newKey <- replace(surpDat$newKey, surpDat$newKey =='left', 1)
   num_incong_errors <- nrow(incong_errorDat)
   # Participants with less than 4 incong errors are considered outliers. This may be updated according to the data mean and SD.
-  if (nrow(incong_errorDat) >= 4){ #for when the participant has 4 or more than 4 incongruent errors
+  outlier_num <- 7
+  if (nrow(incong_errorDat) >= outlier_num){ #for when the participant has outlier_num or more than outlier_num incongruent errors
     #######################################
     ######## SECTION 2: Surprise Task
     # Let's keep only the surprise trials that have faces from error trials in the main task. Then, we will be able to easily use that smaller dataframe to calculate the number of OLD faces among error trials.
@@ -570,14 +571,22 @@ for(i in 1:length(datafiles_list)){
     criterion_error <- (qnorm(errorFaces_hit) + qnorm(falseAlarm_for_both))/2
     pre_criterion_error <- (qnorm(pre_errorFaces_hit) + qnorm(falseAlarm_for_both))/2
     post_criterion_error <- (qnorm(post_errorFaces_hit) + qnorm(falseAlarm_for_both))/2
+
     criterion_correct <- (qnorm(correctFaces_hit) + qnorm(falseAlarm_for_both))/2
     pre_criterion_correct <- (qnorm(pre_correctFaces_hit) + qnorm(falseAlarm_for_both))/2
     post_criterion_correct <- (qnorm(post_correctFaces_hit) + qnorm(falseAlarm_for_both))/2
+
+    d_prime_error_minus_correct <- d_prime_error - d_prime_correct
+    post_d_prime_error_minus_correct <- post_d_prime_error - post_d_prime_correct
+
+    unfriendly_error_minus_correct <- percent_incong_errorFaces_reported_unfriendly - percent_incong_corrFaces_reported_unfriendly
+    unfriendly_post_error_minus_correct <- percent_post_incong_errorFaces_reported_unfriendly - percent_post_incong_correctFaces_reported_unfriendly
+
     ##########
     mainDat[nrow(mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_incong_errorFaces_reported_old, num_incong_errorFaces_reported_new,num_incong_corrFaces_reported_old, num_incong_corrFaces_reported_new, num_foilFaces_reported_new, num_foilFaces_reported_old, num_incong_errorFaces_reported_friendly, num_incong_errorFaces_reported_unfriendly, num_incong_corrFaces_reported_friendly, num_incong_corrFaces_reported_unfriendly, num_post_incong_errorFaces_reported_old, num_post_incong_errorFaces_reported_new, num_post_incong_correctFaces_reported_old, num_post_incong_correctFaces_reported_new, num_pre_incong_errorFaces_reported_old, num_pre_incong_errorFaces_reported_new, num_pre_incong_correctFaces_reported_old, num_pre_incong_correctFaces_reported_new, num_post_incong_errorFaces_reported_friendly, num_post_incong_errorFaces_reported_unfriendly, num_post_incong_correctFaces_reported_friendly, num_post_incong_correctFaces_reported_unfriendly, num_pre_incong_errorFaces_reported_friendly, num_pre_incong_errorFaces_reported_unfriendly, num_pre_incong_correctFaces_reported_friendly, num_pre_incong_correctFaces_reported_unfriendly, errorFaces_hit, correctFaces_hit, falseAlarm_for_both, d_prime_error, d_prime_correct, criterion_error, criterion_correct)
-    percent_mainDat[nrow(percent_mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, percent_incong_errorFaces_reported_old, percent_incong_errorFaces_reported_new,percent_incong_corrFaces_reported_old, percent_incong_corrFaces_reported_new, percent_foilFaces_reported_new, percent_foilFaces_reported_old, percent_incong_errorFaces_reported_friendly, percent_incong_errorFaces_reported_unfriendly, percent_incong_corrFaces_reported_friendly, percent_incong_corrFaces_reported_unfriendly, percent_post_incong_errorFaces_reported_old, percent_post_incong_errorFaces_reported_new, percent_post_incong_correctFaces_reported_old, percent_post_incong_correctFaces_reported_new, percent_pre_incong_errorFaces_reported_old, percent_pre_incong_errorFaces_reported_new, percent_pre_incong_correctFaces_reported_old, percent_pre_incong_correctFaces_reported_new, percent_post_incong_errorFaces_reported_friendly, percent_post_incong_errorFaces_reported_unfriendly, percent_post_incong_correctFaces_reported_friendly, percent_post_incong_correctFaces_reported_unfriendly, percent_pre_incong_errorFaces_reported_friendly, percent_pre_incong_errorFaces_reported_unfriendly, percent_pre_incong_correctFaces_reported_friendly, percent_pre_incong_correctFaces_reported_unfriendly, errorFaces_hit, pre_errorFaces_hit, post_errorFaces_hit, correctFaces_hit, pre_correctFaces_hit, post_correctFaces_hit, falseAlarm_for_both, d_prime_error, pre_d_prime_error, post_d_prime_error, d_prime_correct, pre_d_prime_correct, post_d_prime_correct, criterion_error, pre_criterion_error, post_criterion_error, criterion_correct, pre_criterion_correct, post_criterion_correct, gen_hit, num_incong_errors)
+    percent_mainDat[nrow(percent_mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, percent_incong_errorFaces_reported_old, percent_incong_errorFaces_reported_new,percent_incong_corrFaces_reported_old, percent_incong_corrFaces_reported_new, percent_foilFaces_reported_new, percent_foilFaces_reported_old, percent_incong_errorFaces_reported_friendly, percent_incong_errorFaces_reported_unfriendly, percent_incong_corrFaces_reported_friendly, percent_incong_corrFaces_reported_unfriendly, percent_post_incong_errorFaces_reported_old, percent_post_incong_errorFaces_reported_new, percent_post_incong_correctFaces_reported_old, percent_post_incong_correctFaces_reported_new, percent_pre_incong_errorFaces_reported_old, percent_pre_incong_errorFaces_reported_new, percent_pre_incong_correctFaces_reported_old, percent_pre_incong_correctFaces_reported_new, percent_post_incong_errorFaces_reported_friendly, percent_post_incong_errorFaces_reported_unfriendly, percent_post_incong_correctFaces_reported_friendly, percent_post_incong_correctFaces_reported_unfriendly, percent_pre_incong_errorFaces_reported_friendly, percent_pre_incong_errorFaces_reported_unfriendly, percent_pre_incong_correctFaces_reported_friendly, percent_pre_incong_correctFaces_reported_unfriendly, errorFaces_hit, pre_errorFaces_hit, post_errorFaces_hit, correctFaces_hit, pre_correctFaces_hit, post_correctFaces_hit, falseAlarm_for_both, d_prime_error, pre_d_prime_error, post_d_prime_error, d_prime_correct, pre_d_prime_correct, post_d_prime_correct, criterion_error, pre_criterion_error, post_criterion_error, criterion_correct, pre_criterion_correct, post_criterion_correct, gen_hit, num_incong_errors, d_prime_error_minus_correct ,post_d_prime_error_minus_correct, unfriendly_error_minus_correct, unfriendly_post_error_minus_correct)
 
-  } else if (nrow(incong_errorDat) == 0){
+  } else if (nrow(incong_errorDat) < outlier_num){
     outlier_mainDat[nrow(outlier_mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_incong_errors)
   }
 }
@@ -764,3 +773,177 @@ t.test((as.numeric(percent_mainDat$d_prime_error)), (as.numeric(percent_mainDat$
 t.test((as.numeric(percent_mainDat$gen_hit)), (as.numeric(percent_mainDat$falseAlarm_for_both)), paired = TRUE) # to test if incidental memory is above chance!
 t.test((as.numeric(percent_mainDat$post_d_prime_correct)), (as.numeric(percent_mainDat$post_d_prime_error)), paired = TRUE, alternative = "less")
 t.test((as.numeric(percent_mainDat$post_d_prime_correct)), (as.numeric(percent_mainDat$post_d_prime_error)), paired = TRUE)
+t.test((as.numeric(percent_mainDat$pre_d_prime_error)), (as.numeric(percent_mainDat$post_d_prime_error)), paired = TRUE)
+t.test((as.numeric(percent_mainDat$pre_d_prime_correct)), (as.numeric(percent_mainDat$post_d_prime_correct)), paired = TRUE)
+
+### Loading RedCap questionnaire data
+redcapDat <- read.csv(file = "/Users/kihossei/OneDrive - Florida International University/Projects/Memory_for_error/redcap_data_from_sfe/202203v0socialflanke_SCRD_2022-09-23_1133.csv")
+
+# Keeping the columns that we need!
+redcapDat <- redcapDat[c("record_id", "scaared_b_scrdSoc_s1_r1_e1", "scaared_b_scrdGA_s1_r1_e1", "scaared_b_scrdTotal_s1_r1_e1")]
+
+# adding new columns to the "percent_mainDat" dataframe from redcapDat
+for (ziba1 in 1:nrow(percent_mainDat)){
+  temp_id <- percent_mainDat$id[ziba1]
+  tempDat <- filter(redcapDat, record_id == temp_id)
+  percent_mainDat$scaared_b_scrdSoc_s1_r1_e1[ziba1] <- tempDat$scaared_b_scrdSoc_s1_r1_e1
+}
+for (ziba2 in 1:nrow(percent_mainDat)){
+  temp_id <- percent_mainDat$id[ziba2]
+  tempDat <- filter(redcapDat, record_id == temp_id)
+  percent_mainDat$scaared_b_scrdGA_s1_r1_e1[ziba2] <- tempDat$scaared_b_scrdGA_s1_r1_e1
+}
+for (ziba4 in 1:nrow(percent_mainDat)){
+  temp_id <- percent_mainDat$id[ziba4]
+  tempDat <- filter(redcapDat, record_id == temp_id)
+  percent_mainDat$scaared_b_scrdTotal_s1_r1_e1[ziba4] <- tempDat$scaared_b_scrdTotal_s1_r1_e1
+}
+
+# Removing outliers for variables of interest
+# list of variables of interest: memoryBias_score, d_prime_error, d_prime_correct, post_d_prime_error, post_d_prime_correct, scaared_b_scrdSoc_s1_r1_e1, scaared_b_scrdTotal_s1_r1_e1, scaared_b_scrdGA_s1_r1_e1, d_prime_error_minus_correct ,post_d_prime_error_minus_correct, unfriendly_error_minus_correct, unfriendly_post_error_minus_correct!
+mean_memoryBias_score <- mean(as.numeric(percent_mainDat$memoryBias_score), na.rm = TRUE)
+sd_memoryBias_score_threeTimes <- 3*sd(as.numeric(percent_mainDat$memoryBias_score), na.rm = TRUE)
+
+for (zesht4 in 1:nrow(percent_mainDat)){
+  if (!is.na(as.numeric(percent_mainDat$memoryBias_score[zesht4])) && !is.na(as.numeric(percent_mainDat$d_prime_error[zesht4])) && !is.na(as.numeric(percent_mainDat$d_prime_correct[zesht4])) && !is.na(as.numeric(percent_mainDat$post_d_prime_error[zesht4])) && !is.na(as.numeric(percent_mainDat$post_d_prime_correct[zesht4])) && !is.na(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1[zesht4])) && !is.na(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1[zesht4])) && !is.na(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1[zesht4])) && !is.na(as.numeric(percent_mainDat$d_prime_error_minus_correct[zesht4])) && !is.na(as.numeric(percent_mainDat$post_d_prime_error_minus_correct[zesht4])) && !is.na(as.numeric(percent_mainDat$unfriendly_error_minus_correct[zesht4])) && !is.na(as.numeric(percent_mainDat$unfriendly_post_error_minus_correct[zesht4]))){
+    if (as.numeric(percent_mainDat$memoryBias_score[zesht4]) >= (mean_memoryBias_score - sd_memoryBias_score_threeTimes) || as.numeric(percent_mainDat$memoryBias_score[zesht4]) <= (mean_memoryBias_score + sd_memoryBias_score_threeTimes)){
+      percent_mainDat$memoryBias_score[zesht4] <- as.numeric(percent_mainDat$memoryBias_score[zesht4])
+    } else {
+      percent_mainDat$memoryBias_score[zesht4] <- NA
+    }
+
+    if (as.numeric(percent_mainDat$d_prime_error[zesht4]) >= (mean(as.numeric(percent_mainDat$d_prime_error), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$d_prime_error), na.rm = TRUE))) || as.numeric(percent_mainDat$d_prime_error[zesht4]) <= (mean(as.numeric(percent_mainDat$d_prime_error), na.rm = TRUE) + (3*sd(as.numeric(percent_mainDat$d_prime_error), na.rm = TRUE)))){
+      percent_mainDat$d_prime_error[zesht4] <- as.numeric(percent_mainDat$d_prime_error[zesht4])
+    } else {
+      percent_mainDat$d_prime_error[zesht4] <- NA
+    }
+
+    if (as.numeric(percent_mainDat$d_prime_correct[zesht4]) >= (mean(as.numeric(percent_mainDat$d_prime_correct), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$d_prime_correct), na.rm = TRUE))) || as.numeric(percent_mainDat$d_prime_correct[zesht4]) <= (mean(as.numeric(percent_mainDat$d_prime_correct), na.rm = TRUE) + (3*sd(as.numeric(percent_mainDat$d_prime_correct), na.rm = TRUE)))){
+      percent_mainDat$d_prime_correct[zesht4] <- as.numeric(percent_mainDat$d_prime_correct[zesht4])
+    } else {
+      percent_mainDat$d_prime_correct[zesht4] <- NA
+    }
+
+    if (as.numeric(percent_mainDat$post_d_prime_error[zesht4]) >= (mean(as.numeric(percent_mainDat$post_d_prime_error), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$post_d_prime_error), na.rm = TRUE))) || as.numeric(percent_mainDat$post_d_prime_error[zesht4]) <= (mean(as.numeric(percent_mainDat$post_d_prime_error), na.rm = TRUE) + (3*sd(as.numeric(percent_mainDat$post_d_prime_error), na.rm = TRUE)))){
+      percent_mainDat$post_d_prime_error[zesht4] <- as.numeric(percent_mainDat$post_d_prime_error[zesht4])
+    } else {
+      percent_mainDat$post_d_prime_error[zesht4] <- NA
+    }
+
+    if (as.numeric(percent_mainDat$post_d_prime_correct[zesht4]) >= (mean(as.numeric(percent_mainDat$post_d_prime_correct), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$post_d_prime_correct), na.rm = TRUE))) || as.numeric(percent_mainDat$post_d_prime_correct[zesht4]) <= (mean(as.numeric(percent_mainDat$post_d_prime_correct), na.rm = TRUE) + (3*sd(as.numeric(percent_mainDat$post_d_prime_correct), na.rm = TRUE)))){
+      percent_mainDat$post_d_prime_correct[zesht4] <- as.numeric(percent_mainDat$post_d_prime_correct[zesht4])
+    } else {
+      percent_mainDat$post_d_prime_correct[zesht4] <- NA
+    }
+
+    if (as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1[zesht4]) >= (mean(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), na.rm = TRUE))) || as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1[zesht4]) <= (mean(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), na.rm = TRUE) + (3*sd(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), na.rm = TRUE)))){
+      percent_mainDat$scaared_b_scrdSoc_s1_r1_e1[zesht4] <- as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1[zesht4])
+    } else {
+      percent_mainDat$scaared_b_scrdSoc_s1_r1_e1[zesht4] <- NA
+    }
+
+    if (as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1[zesht4]) >= (mean(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), na.rm = TRUE))) || as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1[zesht4]) <= (mean(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), na.rm = TRUE) + (3*sd(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), na.rm = TRUE)))){
+      percent_mainDat$scaared_b_scrdTotal_s1_r1_e1[zesht4] <- as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1[zesht4])
+    } else {
+      percent_mainDat$scaared_b_scrdTotal_s1_r1_e1[zesht4] <- NA
+    }
+
+    if (as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1[zesht4]) >= (mean(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1), na.rm = TRUE))) || as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1[zesht4]) <= (mean(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1), na.rm = TRUE) + (3*sd(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1), na.rm = TRUE)))){
+      percent_mainDat$scaared_b_scrdGA_s1_r1_e1[zesht4] <- as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1[zesht4])
+    } else {
+      percent_mainDat$scaared_b_scrdGA_s1_r1_e1[zesht4] <- NA
+    }
+
+    if (as.numeric(percent_mainDat$d_prime_error_minus_correct[zesht4]) >= (mean(as.numeric(percent_mainDat$d_prime_error_minus_correct), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$d_prime_error_minus_correct), na.rm = TRUE))) || as.numeric(percent_mainDat$d_prime_error_minus_correct[zesht4]) <= (mean(as.numeric(percent_mainDat$d_prime_error_minus_correct), na.rm = TRUE) + (3*sd(as.numeric(percent_mainDat$d_prime_error_minus_correct), na.rm = TRUE)))){
+      percent_mainDat$d_prime_error_minus_correct[zesht4] <- as.numeric(percent_mainDat$d_prime_error_minus_correct[zesht4])
+    } else {
+      percent_mainDat$d_prime_error_minus_correct[zesht4] <- NA
+    }
+
+    if (as.numeric(percent_mainDat$post_d_prime_error_minus_correct[zesht4]) >= (mean(as.numeric(percent_mainDat$post_d_prime_error_minus_correct), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$post_d_prime_error_minus_correct), na.rm = TRUE))) || as.numeric(percent_mainDat$post_d_prime_error_minus_correct[zesht4]) <= (mean(as.numeric(percent_mainDat$post_d_prime_error_minus_correct), na.rm = TRUE) + (3*sd(as.numeric(percent_mainDat$post_d_prime_error_minus_correct), na.rm = TRUE)))){
+      percent_mainDat$post_d_prime_error_minus_correct[zesht4] <- as.numeric(percent_mainDat$post_d_prime_error_minus_correct[zesht4])
+    } else {
+      percent_mainDat$post_d_prime_error_minus_correct[zesht4] <- NA
+    }
+
+    if (as.numeric(percent_mainDat$unfriendly_error_minus_correct[zesht4]) >= (mean(as.numeric(percent_mainDat$unfriendly_error_minus_correct), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$unfriendly_error_minus_correct), na.rm = TRUE))) || as.numeric(percent_mainDat$unfriendly_error_minus_correct[zesht4]) <= (mean(as.numeric(percent_mainDat$unfriendly_error_minus_correct), na.rm = TRUE) + (3*sd(as.numeric(ercent_mainDat$unfriendly_error_minus_correct), na.rm = TRUE)))){
+      percent_mainDat$unfriendly_error_minus_correct[zesht4] <- as.numeric(percent_mainDat$unfriendly_error_minus_correct[zesht4])
+    } else {
+      percent_mainDat$unfriendly_error_minus_correct[zesht4] <- NA
+    }
+
+    if (as.numeric(percent_mainDat$unfriendly_post_error_minus_correct[zesht4]) >= (mean(as.numeric(percent_mainDat$unfriendly_post_error_minus_correct), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$unfriendly_post_error_minus_correct), na.rm = TRUE))) || as.numeric(percent_mainDat$unfriendly_post_error_minus_correct[zesht4]) <= (mean(as.numeric(percent_mainDat$unfriendly_post_error_minus_correct), na.rm = TRUE) + (3*sd(as.numeric(percent_mainDat$unfriendly_post_error_minus_correct), na.rm = TRUE)))){
+      percent_mainDat$unfriendly_post_error_minus_correct[zesht4] <- as.numeric(percent_mainDat$unfriendly_post_error_minus_correct[zesht4])
+    } else {
+      percent_mainDat$unfriendly_post_error_minus_correct[zesht4] <- NA
+    }
+  }
+}
+
+# Running correlation tests and plotting scatter plots
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(percent_mainDat$memoryBias_score), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$memoryBias_score), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1), as.numeric(percent_mainDat$memoryBias_score), method = 'pearson')
+ggplot(percent_mainDat, aes(x=memoryBias_score, y=scaared_b_scrdSoc_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=memoryBias_score, y=scaared_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=memoryBias_score, y=scaared_b_scrdGA_s1_r1_e1)) + geom_point() #scatterplot
+
+
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(percent_mainDat$unfriendly_post_error_minus_correct), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$unfriendly_post_error_minus_correct), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1), as.numeric(percent_mainDat$unfriendly_post_error_minus_correct), method = 'pearson')
+ggplot(percent_mainDat, aes(x=unfriendly_post_error_minus_correct, y=scaared_b_scrdSoc_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=unfriendly_post_error_minus_correct, y=scaared_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=unfriendly_post_error_minus_correct, y=scaared_b_scrdGA_s1_r1_e1)) + geom_point() #scatterplot
+
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(percent_mainDat$unfriendly_error_minus_correct), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$unfriendly_error_minus_correct), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1), as.numeric(percent_mainDat$unfriendly_error_minus_correct), method = 'pearson')
+ggplot(percent_mainDat, aes(x=unfriendly_error_minus_correct, y=scaared_b_scrdSoc_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=unfriendly_error_minus_correct, y=scaared_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=unfriendly_error_minus_correct, y=scaared_b_scrdGA_s1_r1_e1)) + geom_point() #scatterplot
+
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(percent_mainDat$post_d_prime_error_minus_correct), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$post_d_prime_error_minus_correct), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1), as.numeric(percent_mainDat$post_d_prime_error_minus_correct), method = 'pearson')
+ggplot(percent_mainDat, aes(x=post_d_prime_error_minus_correct, y=scaared_b_scrdSoc_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=post_d_prime_error_minus_correct, y=scaared_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=post_d_prime_error_minus_correct, y=scaared_b_scrdGA_s1_r1_e1)) + geom_point() #scatterplot
+
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(percent_mainDat$d_prime_error_minus_correct), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$d_prime_error_minus_correct), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1), as.numeric(percent_mainDat$d_prime_error_minus_correct), method = 'pearson')
+ggplot(percent_mainDat, aes(x=d_prime_error_minus_correct, y=scaared_b_scrdSoc_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=d_prime_error_minus_correct, y=scaared_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=d_prime_error_minus_correct, y=scaared_b_scrdGA_s1_r1_e1)) + geom_point() #scatterplot
+
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(percent_mainDat$post_d_prime_error), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$post_d_prime_error), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1), as.numeric(percent_mainDat$post_d_prime_error), method = 'pearson')
+ggplot(percent_mainDat, aes(x=post_d_prime_error, y=scaared_b_scrdSoc_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=post_d_prime_error, y=scaared_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=post_d_prime_error, y=scaared_b_scrdGA_s1_r1_e1)) + geom_point() #scatterplot
+
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(percent_mainDat$post_d_prime_correct), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$post_d_prime_correct), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1), as.numeric(percent_mainDat$post_d_prime_correct), method = 'pearson')
+ggplot(percent_mainDat, aes(x=post_d_prime_correct, y=scaared_b_scrdSoc_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=post_d_prime_correct, y=scaared_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=post_d_prime_correct, y=scaared_b_scrdGA_s1_r1_e1)) + geom_point() #scatterplot
+
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(percent_mainDat$d_prime_error), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$d_prime_error), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1), as.numeric(percent_mainDat$d_prime_error), method = 'pearson')
+ggplot(percent_mainDat, aes(x=d_prime_error, y=scaared_b_scrdSoc_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=d_prime_error, y=scaared_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=d_prime_error, y=scaared_b_scrdGA_s1_r1_e1)) + geom_point() #scatterplot
+
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(percent_mainDat$d_prime_correct), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$d_prime_correct), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1), as.numeric(percent_mainDat$d_prime_correct), method = 'pearson')
+ggplot(percent_mainDat, aes(x=d_prime_correct, y=scaared_b_scrdSoc_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=d_prime_correct, y=scaared_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=d_prime_correct, y=scaared_b_scrdGA_s1_r1_e1)) + geom_point() #scatterplot
+
+
+
