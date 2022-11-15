@@ -8,9 +8,10 @@ The protocol.md file may contain the protocol itself or be a link to a Google Do
 
 ### Project Notes
 
-# mfeFlanker folder contains the two main initial Psychopy tasks created by Kianoosh Hosseini based on the social flanker psychopy experiment created by Dr. George Buzzell.
-These two tasks are:
-- face flanker task
+# mfe_b folder contains the two main Psychopy tasks created by Kianoosh Hosseini based on the social flanker psychopy experiment created by Dr. George Buzzell.
+This task contains:
 - arrow flanker task and face flanker task with a straight face in the background
+- A surprise memory task 
 
-# arrowFlanker only contain the experiment that includes the arrow flanker + a straight face in ther background. This task also has the surprise memory and friendly tasks in the same experiment.
+# Other folders are the initial versions of this experiment. These versions had different types of faces, sizes of arrows, etc. These folders were used in some pilot behavioral data collections. 
+# Another version of this experiment is available in the mini_memory_for_error repo. That versions  includes the arrow flanker + a straight face in ther background. This task also has the surprise memory and friendly tasks in the same experiment.
