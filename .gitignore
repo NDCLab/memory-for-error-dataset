@@ -4,3 +4,4 @@
 # data specific files
 derivatives/*
 sourcedata/
+.Rproj.user
