@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" ?>
-<PsychoPy2experiment encoding="utf-8" version="2022.2.2">
+<PsychoPy2experiment encoding="utf-8" version="2022.2.4">
   <Settings>
     <Param val="use prefs" valType="str" updates="None" name="Audio latency priority"/>
     <Param val="use prefs" valType="str" updates="None" name="Audio lib"/>
@@ -7,7 +7,7 @@
     <Param val="auto" valType="str" updates="None" name="Data file delimiter"/>
     <Param val="u'data/%s_%s_%s' % (expInfo['id'], expName, expInfo['date'])" valType="code" updates="None" name="Data filename"/>
     <Param val="True" valType="bool" updates="None" name="Enable Escape"/>
-    <Param val="{'id': '', 'cb': &quot;['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']&quot;}" valType="code" updates="None" name="Experiment info"/>
+    <Param val="{'id': '', 'cb': &quot;['A', 'B']&quot;}" valType="code" updates="None" name="Experiment info"/>
     <Param val="True" valType="bool" updates="None" name="Force stereo"/>
     <Param val="True" valType="bool" updates="None" name="Full-screen window"/>
     <Param val="" valType="str" updates="None" name="HTML path"/>
@@ -25,7 +25,7 @@
     <Param val="False" valType="bool" updates="None" name="Show mouse"/>
     <Param val="height" valType="str" updates="None" name="Units"/>
     <Param val="" valType="str" updates="None" name="Use version"/>
-    <Param val="[1440, 900]" valType="code" updates="None" name="Window size (pixels)"/>
+    <Param val="[1536, 864]" valType="code" updates="None" name="Window size (pixels)"/>
     <Param val="avg" valType="str" updates="None" name="blendMode"/>
     <Param val="-1.0000, -1.0000, -1.0000" valType="str" updates="None" name="color"/>
     <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
@@ -39,7 +39,7 @@
     <Param val="False" valType="bool" updates="None" name="elSimMode"/>
     <Param val="RIGHT_EYE" valType="str" updates="None" name="elTrackEyes"/>
     <Param val="PUPIL_CR_TRACKING" valType="str" updates="None" name="elTrackingMode"/>
-    <Param val="mfe_flanker_v1" valType="str" updates="None" name="expName"/>
+    <Param val="mfe_b" valType="str" updates="None" name="expName"/>
     <Param val="on Sync" valType="str" updates="None" name="exportHTML"/>
     <Param val="None" valType="str" updates="None" name="eyetracker"/>
     <Param val="127.0.0.1" valType="str" updates="None" name="gpAddress"/>
@@ -160,7 +160,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="#no need to initialize thisISI, as already done in practice code snippit" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="ISIRange = linspace(1000, 1500, 500);&amp;#10;shuffle(ISIRange);&amp;#10;thisISI = (ISIRange[0] / 1000);&amp;#10;console.log(&quot;thisISI: &quot;, thisISI);&amp;#10;trials.addData(&quot;ISI&quot;, thisISI);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="# pick the ISI for the next routine&amp;#10;# this code component is set to 'both' because we need to remove the 'np'&amp;#10;# at the start of np.linspace (this is a python library JS won't know what to call. &amp;#10;&amp;#10;# make range from a to b in n stepsizes&amp;#10;ISIRange = np.linspace(3500, 4000, 500)&amp;#10;&amp;#10;# picking from a shuffled array is easier for random selection in JS&amp;#10;shuffle(ISIRange)&amp;#10;thisISI = ISIRange[0]/1000 # the first item of the shuffled array &amp;#10;&amp;#10;# save this ISI to our output file&amp;#10;task_trial_loop.addData('ISI', thisISI)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Both" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
@@ -213,7 +213,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="bigFace_trig_code_2" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <ImageComponent name="cover_background">
@@ -419,7 +419,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="task_stimTrigger_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <CodeComponent name="distractor_trig_code_2">
@@ -436,7 +436,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="distractor_trig_code_2" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <KeyboardComponent name="task1_stim_keyResp">
@@ -471,7 +471,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="&amp;#10;#instead of including here, should instead include something&amp;#10;#in each frame section that computes t at stim onset and then&amp;#10;#when thisISI - t &lt;= .05 (50 ms) and then at that point we throw&amp;#10;#the no-resp marker...&amp;#10;&amp;#10;#if not prac_stim_keyResp.keys or len(prac_stim_keyResp.keys) == 0:&amp;#10;#            port.write([0x63]) # 99&amp;#10;#            time.sleep(PulseWidth)&amp;#10;#            port.write([0x00])" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="task_respTrigger_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <CodeComponent name="task_accuracy_code">
@@ -498,7 +498,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="#initialize the thisISI variable&amp;#10;thisISI = 0" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="ISIRange = linspace(1000, 1500, 500);&amp;#10;shuffle(ISIRange);&amp;#10;thisISI = (ISIRange[0] / 1000);&amp;#10;console.log(&quot;thisISI: &quot;, thisISI);&amp;#10;trials.addData(&quot;ISI&quot;, thisISI);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="# pick the ISI for the next routine&amp;#10;# this code component is set to 'both' because we need to remove the 'np'&amp;#10;# at the start of np.linspace (this is a python library JS won't know what to call. &amp;#10;&amp;#10;# make range from a to b in n stepsizes&amp;#10;ISIRange = np.linspace(3500, 4000, 500)&amp;#10;&amp;#10;# picking from a shuffled array is easier for random selection in JS&amp;#10;shuffle(ISIRange)&amp;#10;thisISI = ISIRange[0]/1000 # the first item of the shuffled array &amp;#10;&amp;#10;# save this ISI to our output file&amp;#10;prac_trial_loop.addData('ISI', thisISI)&amp;#10;&amp;#10;&amp;#10;# show in console for debugging&amp;#10;#print('thisISI: ', thisISI)" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Both" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
@@ -551,7 +551,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="bigFace_trig_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <ImageComponent name="cover_background_2">
@@ -751,13 +751,13 @@
         <Param val="stimTriggerSent = false;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="#set stimTriggerSent to false at the start of the trial. this way&amp;#10;#when the stimulus is shown, we can change it to True. This variable&amp;#10;#is used to ensure we only throw the stimulus EEG trigger once.&amp;#10;stimTriggerSent = False" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="#the first if statement below ensures that the subsequent if statements (and throwing of triggers)&amp;#10;#only occurs once per trial. That is, only when the stimulus is presented (.status = STARTED) and&amp;#10;#stimTriggerSent is still False. Once a trigger is sent, we change stimTriggerSent to True so that &amp;#10;#the stimulus eeg trigger will not be sent again for this trial&amp;#10;if prac_centerImg.status == STARTED and not stimTriggerSent:&amp;#10;    if stimNum == 5: #code denoting which stimulus array was sent (from excel file)&amp;#10;        stimTriggerSent = True #switch stimTriggerSent to True so that the stimulus eeg trigger will not be sent again this trial&amp;#10;        port.write([0x05]) #hexcode = 5; eeg trigger sent&amp;#10;        time.sleep(PulseWidth) #how long to wait before clearing trigger port&amp;#10;        port.write([0x00]) #clear trigger port by sending hexcode = 0&amp;#10;    elif stimNum == 6:&amp;#10;        stimTriggerSent = True&amp;#10;        port.write([0x06])&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;    elif stimNum == 7:&amp;#10;        stimTriggerSent = True&amp;#10;        port.write([0x07])&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;    elif stimNum == 8:&amp;#10;        stimTriggerSent = True&amp;#10;        port.write([0x08])&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="if (((prac_centerImg.status === PsychoJS.Status.STARTED) &amp;&amp; (! stimTriggerSent))) {&amp;#10;    if ((stimNum === 5)) {&amp;#10;        stimTriggerSent = true;&amp;#10;        port.write([5]);&amp;#10;        time.sleep(PulseWidth);&amp;#10;        port.write([0]);&amp;#10;    } else {&amp;#10;        if ((stimNum === 6)) {&amp;#10;            stimTriggerSent = true;&amp;#10;            port.write([6]);&amp;#10;            time.sleep(PulseWidth);&amp;#10;            port.write([0]);&amp;#10;        } else {&amp;#10;            if ((stimNum === 7)) {&amp;#10;                stimTriggerSent = true;&amp;#10;                port.write([7]);&amp;#10;                time.sleep(PulseWidth);&amp;#10;                port.write([0]);&amp;#10;            } else {&amp;#10;                if ((stimNum === 8)) {&amp;#10;                    stimTriggerSent = true;&amp;#10;                    port.write([8]);&amp;#10;                    time.sleep(PulseWidth);&amp;#10;                    port.write([0]);&amp;#10;                }&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="#the first if statement below ensures that the subsequent if statements (and throwing of triggers)&amp;#10;#only occurs once per trial. That is, only when the stimulus is presented (.status = STARTED) and&amp;#10;#stimTriggerSent is still False. Once a trigger is sent, we change stimTriggerSent to True so that &amp;#10;#the stimulus eeg trigger will not be sent again for this trial&amp;#10;if prac_centerImg.status == STARTED and not stimTriggerSent:&amp;#10;    if stimNum == 5: #code denoting which stimulus array was sent (from excel file)&amp;#10;        stimTriggerSent = True #switch stimTriggerSent to True so that the stimulus eeg trigger will not be sent again this trial&amp;#10;        port.write([0x0D]) #hexcode = 13; eeg trigger sent&amp;#10;        time.sleep(PulseWidth) #how long to wait before clearing trigger port&amp;#10;        port.write([0x00]) #clear trigger port by sending hexcode = 0&amp;#10;    elif stimNum == 6:&amp;#10;        stimTriggerSent = True&amp;#10;        port.write([0x0E]) # S14&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;    elif stimNum == 7:&amp;#10;        stimTriggerSent = True&amp;#10;        port.write([0x0F]) # S15&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;    elif stimNum == 8:&amp;#10;        stimTriggerSent = True&amp;#10;        port.write([0x10]) # S16&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="if (((prac_centerImg.status === PsychoJS.Status.STARTED) &amp;&amp; (! stimTriggerSent))) {&amp;#10;    if ((stimNum === 5)) {&amp;#10;        stimTriggerSent = true;&amp;#10;        port.write([13]);&amp;#10;        time.sleep(PulseWidth);&amp;#10;        port.write([0]);&amp;#10;    } else {&amp;#10;        if ((stimNum === 6)) {&amp;#10;            stimTriggerSent = true;&amp;#10;            port.write([14]);&amp;#10;            time.sleep(PulseWidth);&amp;#10;            port.write([0]);&amp;#10;        } else {&amp;#10;            if ((stimNum === 7)) {&amp;#10;                stimTriggerSent = true;&amp;#10;                port.write([15]);&amp;#10;                time.sleep(PulseWidth);&amp;#10;                port.write([0]);&amp;#10;            } else {&amp;#10;                if ((stimNum === 8)) {&amp;#10;                    stimTriggerSent = true;&amp;#10;                    port.write([16]);&amp;#10;                    time.sleep(PulseWidth);&amp;#10;                    port.write([0]);&amp;#10;                }&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="prac_stimTrigger_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <CodeComponent name="distractor_trig_code">
@@ -774,7 +774,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="distractor_trig_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <KeyboardComponent name="prac_stim_keyResp">
@@ -809,7 +809,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="&amp;#10;#instead of including here, should instead include something&amp;#10;#in each frame section that computes t at stim onset and then&amp;#10;#when thisISI - t &lt;= .05 (50 ms) and then at that point we throw&amp;#10;#the no-resp marker...&amp;#10;&amp;#10;#if not prac_stim_keyResp.keys or len(prac_stim_keyResp.keys) == 0:&amp;#10;#            port.write([0x63]) # 99&amp;#10;#            time.sleep(PulseWidth)&amp;#10;#            port.write([0x00])" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="prac_respTrigger_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <CodeComponent name="prac_accuracy_code">
@@ -894,7 +894,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="You will now practice responding to the arrows. Remember to always respond to the direction of the MIDDLE arrow.&amp;#10;&amp;#10;Respond as quickly as you can without making mistakes.&amp;#10;&amp;#10;To get ready, rest your right and left index fingers on the right and left buttons, then press the right button when you are ready to begin.&amp;#10;" valType="extendedStr" updates="constant" name="text"/>
+        <Param val="You will now practice responding to the arrows. Remember to always respond to the direction of the MIDDLE arrow.&amp;#10;&amp;#10;Respond as quickly as you can without making mistakes.&amp;#10;&amp;#10;To get ready, rest your right and left thumbs on the right and left buttons, then press the right button when you are ready to begin.&amp;#10;" valType="extendedStr" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="1.3" valType="code" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -981,7 +981,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Remember to always respond to the direction of the MIDDLE arrow.&amp;#10;&amp;#10;Respond as quickly as you can without making mistakes.&amp;#10;&amp;#10;To get ready, rest your right and left index fingers on the right and left buttons, then press the right button when you are ready to begin.&amp;#10;" valType="extendedStr" updates="constant" name="text"/>
+        <Param val="Remember to always respond to the direction of the MIDDLE arrow.&amp;#10;&amp;#10;Respond as quickly as you can without making mistakes.&amp;#10;&amp;#10;To get ready, rest your right and left thumbs on the right and left buttons, then press the right button when you are ready to begin.&amp;#10;" valType="extendedStr" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="1.3" valType="code" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -1931,8 +1931,8 @@
       <CodeComponent name="setup_code">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="import serial #used for sending eeg triggers&amp;#10;import time #indirerctly used for sending eeg triggers (how long to wait before clearing port)&amp;#10;&amp;#10;&amp;#10;win.mouseVisible = False #hide mouse cursor&amp;#10;port = serial.Serial('COM3') #open specified port (COM3) for sending eeg triggers to           &amp;#10;PulseWidth = 0.002 #how long to wait before clearing port after sending trigger (2 ms is sufficient at 1000 hz sampling rate)&amp;#10;&amp;#10;port.write([0x00]) #clear serial port&amp;#10;time.sleep(PulseWidth) #wait PulseWidth amount of time before doing anything else" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="import * as serial from 'serial';&amp;#10;import * as time from 'time';&amp;#10;var PulseWidth, port;&amp;#10;psychoJS.window.mouseVisible = false;&amp;#10;port = new serial.Serial(&quot;COM3&quot;);&amp;#10;PulseWidth = 0.002;&amp;#10;port.write([0]);&amp;#10;time.sleep(PulseWidth);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="import serial #used for sending eeg triggers&amp;#10;import time #indirerctly used for sending eeg triggers (how long to wait before clearing port)&amp;#10;&amp;#10;&amp;#10;win.mouseVisible = False #hide mouse cursor&amp;#10;port = serial.Serial('COM3') #open specified port (COM3) for sending eeg triggers to           &amp;#10;PulseWidth = 0.002 #how long to wait before clearing port after sending trigger (2 ms is sufficient at 1000 hz sampling rate)&amp;#10;&amp;#10;port.write([0x00]) #clear serial port&amp;#10;time.sleep(PulseWidth) #wait PulseWidth amount of time before doing anything else&amp;#10;win.color=(-1,-1,-1);" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="import * as serial from 'serial';&amp;#10;import * as time from 'time';&amp;#10;var PulseWidth, port;&amp;#10;psychoJS.window.mouseVisible = false;&amp;#10;port = new serial.Serial(&quot;COM3&quot;);&amp;#10;PulseWidth = 0.002;&amp;#10;port.write([0]);&amp;#10;time.sleep(PulseWidth);&amp;#10;psychoJS.window.color = [(- 1), (- 1), (- 1)];&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
@@ -1942,8 +1942,25 @@
         <Param val="psychoJS.window.mouseVisible = true;&amp;#10;port.write([255]);&amp;#10;time.sleep(PulseWidth);&amp;#10;port.close();&amp;#10;" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="True" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="setup_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <CodeComponent name="code_6">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="# Initialize and assign the variables that will be used in the instructions of the surprise task.&amp;#10;if expInfo['cb'] == 'A':&amp;#10;    Left_first_inst = 'New'&amp;#10;    Right_first_inst = 'Old'&amp;#10;elif expInfo['cb'] == 'B':&amp;#10;    Left_first_inst = 'Old'&amp;#10;    Right_first_inst = 'New'" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="if ((expInfo[&quot;cb&quot;] === &quot;A&quot;)) {&amp;#10;    Left_first_inst = &quot;New&quot;;&amp;#10;    Right_first_inst = &quot;Old&quot;;&amp;#10;} else {&amp;#10;    if ((expInfo[&quot;cb&quot;] === &quot;B&quot;)) {&amp;#10;        Left_first_inst = &quot;Old&quot;;&amp;#10;        Right_first_inst = &quot;New&quot;;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code_6" valType="code" updates="None" name="name"/>
       </CodeComponent>
     </Routine>
     <Routine name="surpriseInstruct_2"/>
@@ -1969,7 +1986,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="You will now begin a task in which you will be asked two questions.&amp;#10;&amp;#10;Answers of these questions are presented on a slider and you will need to use the mouse to select one of them as your response. &amp;#10; &amp;#10;&amp;#10;To learn about this task and the questions, press the right button to continue. &amp;#10;" valType="str" updates="constant" name="text"/>
+        <Param val="You will now begin a task in which you will be shown images of faces and asked if you have seen them before or not.&amp;#10;&amp;#10;You will use the mouse for this task. &amp;#10; &amp;#10;Press the right button to continue. &amp;#10;" valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -2121,7 +2138,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="How much did it bother you when you made an error during the arrow game? &amp;#10;&amp;#10;To answer this question: &amp;#10;Please call the experimenter and let them know your answer on a scale from 0 (not at all) to 10 (very much). &amp;#10;&amp;#10;&amp;#10;&amp;#10;" valType="str" updates="constant" name="text"/>
+        <Param val="How much did it bother you when you made an error during the arrow game? &amp;#10;&amp;#10;Your answer should be on a scale from 0 (not at all) to 10 (very much). &amp;#10;&amp;#10;&amp;#10;Experimenter enters the answer for participant. &amp;#10;&amp;#10;&amp;#10;" valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -2204,7 +2221,7 @@
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="0.5" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="128" valType="num" updates="constant" name="texture resolution"/>
         <Param val="height" valType="str" updates="None" name="units"/>
@@ -2222,7 +2239,7 @@
         <Param val="fStimA1" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(0, 0.4)" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="(0, 0.32)" valType="list" updates="set every repeat" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
@@ -2269,7 +2286,7 @@
         <Param val="firstStim_sliderA1" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(0, 0.3)" valType="list" updates="constant" name="pos"/>
+        <Param val="(0, 0.22)" valType="list" updates="constant" name="pos"/>
         <Param val="False" valType="bool" updates="constant" name="readOnly"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="(0.85, 0.022)" valType="list" updates="constant" name="size"/>
@@ -2287,37 +2304,20 @@
         <Param val="[1, 2, 3, 4, 5, 6]" valType="list" updates="constant" name="ticks"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
       </SliderComponent>
-      <CodeComponent name="slider_trig_code">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="resp_triggerSentZ1 = false;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="resp_triggerSentZ1 = False" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="if firstStim_sliderA1.getRating() is not None and not resp_triggerSent:&amp;#10;        port.write([0x29]) # 41 # to get these converted hexcodes you can use this link https://www.rapidtables.com/convert/number/decimal-to-hex.html&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSent = True&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="if (((firstStim_sliderA1.getRating() !== null) &amp;&amp; (! resp_triggerSent))) {&amp;#10;    port.write([41]);&amp;#10;    time.sleep(PulseWidth);&amp;#10;    port.write([0]);&amp;#10;    resp_triggerSent = true;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="slider_trig_code" valType="code" updates="None" name="name"/>
-      </CodeComponent>
       <CodeComponent name="response_trigger_code_3">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="resp_triggerSent = false;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="&amp;#10;#already within a given trial.&amp;#10;&amp;#10;resp_triggerSent = False&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="resp_triggerSentQ1 = false;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="&amp;#10;#already within a given trial.&amp;#10;&amp;#10;resp_triggerSentQ1 = False&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="if firstStim_sliderA1.getRating() is not None and not resp_triggerSent:&amp;#10;    if firstStim_sliderA1.getRating() == 1:&amp;#10;        port.write([0x29]) # 41 # to get these converted hexcodes you can use this link https://www.rapidtables.com/convert/number/decimal-to-hex.html&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSent = True&amp;#10;    elif firstStim_sliderA1.getRating() == 2: &amp;#10;        port.write([0x2A])# 42&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSent = True&amp;#10;    elif firstStim_sliderA1.getRating() == 3: &amp;#10;        port.write([0x2B])# 43&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSent = True&amp;#10;    elif firstStim_sliderA1.getRating() == 4: &amp;#10;        port.write([0x2C])# 44&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSent = True&amp;#10;    elif firstStim_sliderA1.getRating() == 5: &amp;#10;        port.write([0x2D])# 45&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSent = True&amp;#10;    elif firstStim_sliderA1.getRating() == 6: &amp;#10;        port.write([0x2E])# 46&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSent = True&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="if (((firstStim_sliderA1.getRating() !== null) &amp;&amp; (! resp_triggerSent))) {&amp;#10;    if ((firstStim_sliderA1.getRating() === 1)) {&amp;#10;        port.write([41]);&amp;#10;        time.sleep(PulseWidth);&amp;#10;        port.write([0]);&amp;#10;        resp_triggerSent = true;&amp;#10;    } else {&amp;#10;        if ((firstStim_sliderA1.getRating() === 2)) {&amp;#10;            port.write([42]);&amp;#10;            time.sleep(PulseWidth);&amp;#10;            port.write([0]);&amp;#10;            resp_triggerSent = true;&amp;#10;        } else {&amp;#10;            if ((firstStim_sliderA1.getRating() === 3)) {&amp;#10;                port.write([43]);&amp;#10;                time.sleep(PulseWidth);&amp;#10;                port.write([0]);&amp;#10;                resp_triggerSent = true;&amp;#10;            } else {&amp;#10;                if ((firstStim_sliderA1.getRating() === 4)) {&amp;#10;                    port.write([44]);&amp;#10;                    time.sleep(PulseWidth);&amp;#10;                    port.write([0]);&amp;#10;                    resp_triggerSent = true;&amp;#10;                } else {&amp;#10;                    if ((firstStim_sliderA1.getRating() === 5)) {&amp;#10;                        port.write([45]);&amp;#10;                        time.sleep(PulseWidth);&amp;#10;                        port.write([0]);&amp;#10;                        resp_triggerSent = true;&amp;#10;                    } else {&amp;#10;                        if ((firstStim_sliderA1.getRating() === 6)) {&amp;#10;                            port.write([46]);&amp;#10;                            time.sleep(PulseWidth);&amp;#10;                            port.write([0]);&amp;#10;                            resp_triggerSent = true;&amp;#10;                        }&amp;#10;                    }&amp;#10;                }&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="if firstStim_sliderA1.getRating() is not None and not resp_triggerSentQ1:&amp;#10;    if firstStim_sliderA1.getRating() == 1:&amp;#10;        port.write([0x29]) # 41 # to get these converted hexcodes you can use this link https://www.rapidtables.com/convert/number/decimal-to-hex.html&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSentQ1 = True&amp;#10;    elif firstStim_sliderA1.getRating() == 2: &amp;#10;        port.write([0x2A])# 42&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSentQ1 = True&amp;#10;    elif firstStim_sliderA1.getRating() == 3: &amp;#10;        port.write([0x2B])# 43&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSentQ1 = True&amp;#10;    elif firstStim_sliderA1.getRating() == 4: &amp;#10;        port.write([0x2C])# 44&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSentQ1 = True&amp;#10;    elif firstStim_sliderA1.getRating() == 5: &amp;#10;        port.write([0x2D])# 45&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSentQ1 = True&amp;#10;    elif firstStim_sliderA1.getRating() == 6: &amp;#10;        port.write([0x2E])# 46&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSentQ1 = True&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="if (((firstStim_sliderA1.getRating() !== null) &amp;&amp; (! resp_triggerSentQ1))) {&amp;#10;    if ((firstStim_sliderA1.getRating() === 1)) {&amp;#10;        port.write([41]);&amp;#10;        time.sleep(PulseWidth);&amp;#10;        port.write([0]);&amp;#10;        resp_triggerSentQ1 = true;&amp;#10;    } else {&amp;#10;        if ((firstStim_sliderA1.getRating() === 2)) {&amp;#10;            port.write([42]);&amp;#10;            time.sleep(PulseWidth);&amp;#10;            port.write([0]);&amp;#10;            resp_triggerSentQ1 = true;&amp;#10;        } else {&amp;#10;            if ((firstStim_sliderA1.getRating() === 3)) {&amp;#10;                port.write([43]);&amp;#10;                time.sleep(PulseWidth);&amp;#10;                port.write([0]);&amp;#10;                resp_triggerSentQ1 = true;&amp;#10;            } else {&amp;#10;                if ((firstStim_sliderA1.getRating() === 4)) {&amp;#10;                    port.write([44]);&amp;#10;                    time.sleep(PulseWidth);&amp;#10;                    port.write([0]);&amp;#10;                    resp_triggerSentQ1 = true;&amp;#10;                } else {&amp;#10;                    if ((firstStim_sliderA1.getRating() === 5)) {&amp;#10;                        port.write([45]);&amp;#10;                        time.sleep(PulseWidth);&amp;#10;                        port.write([0]);&amp;#10;                        resp_triggerSentQ1 = true;&amp;#10;                    } else {&amp;#10;                        if ((firstStim_sliderA1.getRating() === 6)) {&amp;#10;                            port.write([46]);&amp;#10;                            time.sleep(PulseWidth);&amp;#10;                            port.write([0]);&amp;#10;                            resp_triggerSentQ1 = true;&amp;#10;                        }&amp;#10;                    }&amp;#10;                }&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="&amp;#10;#instead of including here, should instead include something&amp;#10;#in each frame section that computes t at stim onset and then&amp;#10;#when thisISI - t &lt;= .05 (50 ms) and then at that point we throw&amp;#10;#the no-resp marker...&amp;#10;&amp;#10;#if not prac_stim_keyResp.keys or len(prac_stim_keyResp.keys) == 0:&amp;#10;#            port.write([0x63]) # 99&amp;#10;#            time.sleep(PulseWidth)&amp;#10;#            port.write([0x00])" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="response_trigger_code_3" valType="code" updates="None" name="name"/>
       </CodeComponent>
@@ -2369,7 +2369,7 @@
         <Param val="text" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(-0.6, 0.3)" valType="list" updates="constant" name="pos"/>
+        <Param val="(-0.6, 0.22)" valType="list" updates="constant" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
@@ -2394,7 +2394,7 @@
         <Param val="text_2" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(0.6, 0.3)" valType="list" updates="constant" name="pos"/>
+        <Param val="(0.6, 0.22)" valType="list" updates="constant" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
@@ -2813,7 +2813,7 @@
         <Param val="secondStim_sliderA1" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(0, -0.27)" valType="list" updates="constant" name="pos"/>
+        <Param val="(0, -0.3)" valType="list" updates="constant" name="pos"/>
         <Param val="False" valType="bool" updates="constant" name="readOnly"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="(0.85, 0.022)" valType="list" updates="constant" name="size"/>
@@ -2836,11 +2836,11 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="resp_triggerSent = false;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="&amp;#10;#already within a given trial.&amp;#10;resp_triggerSent = False &amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="resp_triggerSentQ2 = false;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="&amp;#10;#already within a given trial.&amp;#10;resp_triggerSentQ2 = False &amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="if secondStim_sliderA1.getRating() is not None and not resp_triggerSent:&amp;#10;    if secondStim_sliderA1.getRating() == 1:&amp;#10;        port.write([0x33]) # 51&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSent = True&amp;#10;    elif firstStim_sliderA1.getRating() == 2: &amp;#10;        port.write([0x34])# 52&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSent = True&amp;#10;    elif secondStim_sliderA1.getRating() == 3: &amp;#10;        port.write([0x35])# 53&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSent = True&amp;#10;    elif secondStim_sliderA1.getRating() == 4: &amp;#10;        port.write([0x36])# 54&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSent = True&amp;#10;    elif secondStim_sliderA1.getRating() == 5: &amp;#10;        port.write([0x37])# 55&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSent = True&amp;#10;    elif secondStim_sliderA1.getRating() == 6: &amp;#10;        port.write([0x38])# 56&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSent = True&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="if (((secondStim_sliderA1.getRating() !== null) &amp;&amp; (! resp_triggerSent))) {&amp;#10;    if ((secondStim_sliderA1.getRating() === 1)) {&amp;#10;        port.write([51]);&amp;#10;        time.sleep(PulseWidth);&amp;#10;        port.write([0]);&amp;#10;        resp_triggerSent = true;&amp;#10;    } else {&amp;#10;        if ((firstStim_sliderA1.getRating() === 2)) {&amp;#10;            port.write([52]);&amp;#10;            time.sleep(PulseWidth);&amp;#10;            port.write([0]);&amp;#10;            resp_triggerSent = true;&amp;#10;        } else {&amp;#10;            if ((secondStim_sliderA1.getRating() === 3)) {&amp;#10;                port.write([53]);&amp;#10;                time.sleep(PulseWidth);&amp;#10;                port.write([0]);&amp;#10;                resp_triggerSent = true;&amp;#10;            } else {&amp;#10;                if ((secondStim_sliderA1.getRating() === 4)) {&amp;#10;                    port.write([54]);&amp;#10;                    time.sleep(PulseWidth);&amp;#10;                    port.write([0]);&amp;#10;                    resp_triggerSent = true;&amp;#10;                } else {&amp;#10;                    if ((secondStim_sliderA1.getRating() === 5)) {&amp;#10;                        port.write([55]);&amp;#10;                        time.sleep(PulseWidth);&amp;#10;                        port.write([0]);&amp;#10;                        resp_triggerSent = true;&amp;#10;                    } else {&amp;#10;                        if ((secondStim_sliderA1.getRating() === 6)) {&amp;#10;                            port.write([56]);&amp;#10;                            time.sleep(PulseWidth);&amp;#10;                            port.write([0]);&amp;#10;                            resp_triggerSent = true;&amp;#10;                        }&amp;#10;                    }&amp;#10;                }&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="if secondStim_sliderA1.getRating() is not None and not resp_triggerSentQ2:&amp;#10;    if secondStim_sliderA1.getRating() == 1:&amp;#10;        port.write([0x33]) # 51&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSentQ2 = True&amp;#10;    elif firstStim_sliderA1.getRating() == 2: &amp;#10;        port.write([0x34])# 52&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSentQ2 = True&amp;#10;    elif secondStim_sliderA1.getRating() == 3: &amp;#10;        port.write([0x35])# 53&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSentQ2 = True&amp;#10;    elif secondStim_sliderA1.getRating() == 4: &amp;#10;        port.write([0x36])# 54&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSentQ2 = True&amp;#10;    elif secondStim_sliderA1.getRating() == 5: &amp;#10;        port.write([0x37])# 55&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSentQ2 = True&amp;#10;    elif secondStim_sliderA1.getRating() == 6: &amp;#10;        port.write([0x38])# 56&amp;#10;        time.sleep(PulseWidth)&amp;#10;        port.write([0x00])&amp;#10;        resp_triggerSentQ2 = True&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="if (((secondStim_sliderA1.getRating() !== null) &amp;&amp; (! resp_triggerSentQ2))) {&amp;#10;    if ((secondStim_sliderA1.getRating() === 1)) {&amp;#10;        port.write([51]);&amp;#10;        time.sleep(PulseWidth);&amp;#10;        port.write([0]);&amp;#10;        resp_triggerSentQ2 = true;&amp;#10;    } else {&amp;#10;        if ((firstStim_sliderA1.getRating() === 2)) {&amp;#10;            port.write([52]);&amp;#10;            time.sleep(PulseWidth);&amp;#10;            port.write([0]);&amp;#10;            resp_triggerSentQ2 = true;&amp;#10;        } else {&amp;#10;            if ((secondStim_sliderA1.getRating() === 3)) {&amp;#10;                port.write([53]);&amp;#10;                time.sleep(PulseWidth);&amp;#10;                port.write([0]);&amp;#10;                resp_triggerSentQ2 = true;&amp;#10;            } else {&amp;#10;                if ((secondStim_sliderA1.getRating() === 4)) {&amp;#10;                    port.write([54]);&amp;#10;                    time.sleep(PulseWidth);&amp;#10;                    port.write([0]);&amp;#10;                    resp_triggerSentQ2 = true;&amp;#10;                } else {&amp;#10;                    if ((secondStim_sliderA1.getRating() === 5)) {&amp;#10;                        port.write([55]);&amp;#10;                        time.sleep(PulseWidth);&amp;#10;                        port.write([0]);&amp;#10;                        resp_triggerSentQ2 = true;&amp;#10;                    } else {&amp;#10;                        if ((secondStim_sliderA1.getRating() === 6)) {&amp;#10;                            port.write([56]);&amp;#10;                            time.sleep(PulseWidth);&amp;#10;                            port.write([0]);&amp;#10;                            resp_triggerSentQ2 = true;&amp;#10;                        }&amp;#10;                    }&amp;#10;                }&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="End JS Routine"/>
@@ -2871,8 +2871,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="sec_mouseA1.setPos([0, 0.4]);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="&amp;#10;sec_mouseA1.setPos([0, 0.4])" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="sec_mouseA1.setPos([0, 0.2]);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="&amp;#10;sec_mouseA1.setPos([0, 0.2])" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -2896,7 +2896,7 @@
         <Param val="text_3" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(-0.6, -0.27)" valType="list" updates="constant" name="pos"/>
+        <Param val="(-0.6, -0.3)" valType="list" updates="constant" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
@@ -2921,7 +2921,7 @@
         <Param val="text_4" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(0.6, -0.27)" valType="list" updates="constant" name="pos"/>
+        <Param val="(0.6, -0.3)" valType="list" updates="constant" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
@@ -2940,8 +2940,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="psychoJS.eventManager.clearEvents();&amp;#10;ISIRange3 = np.linspace(1000, 1500, 500);&amp;#10;util.shuffle(ISIRange3);&amp;#10;thisISI3 = (ISIRange3[0] / 1000);&amp;#10;trials_2.addData(&quot;thisISI3&quot;, thisISI3);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="event.clearEvents()&amp;#10;# make range from a to b in n stepsizes&amp;#10;ISIRange3 = np.linspace(1000, 1500, 500)&amp;#10;&amp;#10;# picking from a shuffled array is easier for random selection in JS&amp;#10;shuffle(ISIRange3)&amp;#10;thisISI3 = ISIRange3[0]/1000 # the first item of the shuffled array &amp;#10;trials_2.addData('thisISI3', thisISI3)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="psychoJS.eventManager.clearEvents();&amp;#10;ISIRange3 = np.linspace(800, 1200, 400);&amp;#10;util.shuffle(ISIRange3);&amp;#10;thisISI3 = (ISIRange3[0] / 1000);&amp;#10;trials_2.addData(&quot;thisISI3&quot;, thisISI3);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="event.clearEvents()&amp;#10;# make range from a to b in n stepsizes&amp;#10;ISIRange3 = np.linspace(800, 1200, 400)&amp;#10;&amp;#10;# picking from a shuffled array is easier for random selection in JS&amp;#10;shuffle(ISIRange3)&amp;#10;thisISI3 = ISIRange3[0]/1000 # the first item of the shuffled array &amp;#10;trials_2.addData('thisISI3', thisISI3)" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -2952,58 +2952,33 @@
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="code_4" valType="code" updates="None" name="name"/>
       </CodeComponent>
-      <TextComponent name="fix_2">
-        <Param val="white" valType="color" updates="constant" name="color"/>
-        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
-        <Param val="1" valType="num" updates="constant" name="contrast"/>
-        <Param val="True" valType="bool" updates="None" name="disabled"/>
-        <Param val="1" valType="code" updates="None" name="durationEstim"/>
-        <Param val="None" valType="str" updates="constant" name="flip"/>
-        <Param val="Open Sans" valType="str" updates="constant" name="font"/>
-        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
-        <Param val="0.1" valType="num" updates="constant" name="letterHeight"/>
-        <Param val="fix_2" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
-        <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0.0" valType="code" updates="None" name="startVal"/>
-        <Param val="condition" valType="str" updates="None" name="stopType"/>
-        <Param val="thisISI3" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="+" valType="str" updates="constant" name="text"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
-      </TextComponent>
-      <ImageComponent name="image_fixation2">
+      <PolygonComponent name="polygon">
         <Param val="center" valType="str" updates="constant" name="anchor"/>
-        <Param val="$[1,1,1]" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="1" valType="code" updates="None" name="durationEstim"/>
-        <Param val="False" valType="bool" updates="constant" name="flipHoriz"/>
-        <Param val="False" valType="bool" updates="constant" name="flipVert"/>
-        <Param val="img/fixationCross.png" valType="file" updates="constant" name="image"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
         <Param val="linear" valType="str" updates="constant" name="interpolate"/>
-        <Param val="" valType="str" updates="constant" name="mask"/>
-        <Param val="image_fixation2" valType="code" updates="None" name="name"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="polygon" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
         <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="(0.035, 0.035)" valType="list" updates="constant" name="size"/>
+        <Param val="cross" valType="str" updates="None" name="shape"/>
+        <Param val="(0.05, 0.05)" valType="list" updates="constant" name="size"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="$thisISI3" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="128" valType="num" updates="constant" name="texture resolution"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
-      </ImageComponent>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
       <CodeComponent name="fixation_trig">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
@@ -3012,8 +2987,8 @@
         <Param val="stimulusTriggerSentQ1 = false;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="#set stimTriggerSent to false at the start of the trial. this way&amp;#10;#when the stimulus is shown, we can change it to True. This variable&amp;#10;#is used to ensure we only throw the stimulus EEG trigger once.&amp;#10;stimulusTriggerSentQ1 = False" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="&amp;#10;if image_fixation2.status == STARTED and not stimulusTriggerSentQ1:&amp;#10;    stimulusTriggerSentQ1 = True #switch stimTriggerSent to True so that the stimulus eeg trigger will not be sent again this trial&amp;#10;    port.write([0x3D]) #hexcode = 61; eeg trigger sent&amp;#10;    time.sleep(PulseWidth) #how long to wait before clearing trigger port&amp;#10;    port.write([0x00]) #clear trigger port by sending hexcode = 0&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="if (((image_fixation2.status === PsychoJS.Status.STARTED) &amp;&amp; (! stimulusTriggerSentQ1))) {&amp;#10;    stimulusTriggerSentQ1 = true;&amp;#10;    port.write([61]);&amp;#10;    time.sleep(PulseWidth);&amp;#10;    port.write([0]);&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="&amp;#10;if polygon.status == STARTED and not stimulusTriggerSentQ1:&amp;#10;    stimulusTriggerSentQ1 = True #switch stimTriggerSent to True so that the stimulus eeg trigger will not be sent again this trial&amp;#10;    port.write([0x3D]) #hexcode = 61; eeg trigger sent&amp;#10;    time.sleep(PulseWidth) #how long to wait before clearing trigger port&amp;#10;    port.write([0x00]) #clear trigger port by sending hexcode = 0&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="if (((polygon.status === PsychoJS.Status.STARTED) &amp;&amp; (! stimulusTriggerSentQ1))) {&amp;#10;    stimulusTriggerSentQ1 = true;&amp;#10;    port.write([61]);&amp;#10;    time.sleep(PulseWidth);&amp;#10;    port.write([0]);&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
@@ -3049,7 +3024,7 @@
         <Param val="1" valType="code" updates="None" name="durationEstim"/>
         <Param val="False" valType="bool" updates="constant" name="flipHoriz"/>
         <Param val="False" valType="bool" updates="constant" name="flipVert"/>
-        <Param val="img/leftArrow.png" valType="file" updates="set every repeat" name="image"/>
+        <Param val="$surpriseFaces" valType="file" updates="set every repeat" name="image"/>
         <Param val="linear" valType="str" updates="constant" name="interpolate"/>
         <Param val="" valType="str" updates="constant" name="mask"/>
         <Param val="face_stimA" valType="code" updates="None" name="name"/>
@@ -3090,7 +3065,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="One question asks whether the face displayed on screen looks OLD (you saw it in the previous game) or NEW (you didn’t see it in the previous game).&amp;#10;You have six options: “definitely OLD,” “probably OLD,” “maybe OLD,” “maybe NEW,” “probably NEW,”  or “definitely NEW.”&amp;#10;&amp;#10;Randomly choose a response from the slider below to continue and learn about these answers." valType="str" updates="constant" name="text"/>
+        <Param val="For each face displayed, you must indicate whether you saw it in the previous game (OLD face) or if you did not see it in the previous game (NEW face).&amp;#10;&amp;#10;You have six options: “definitely OLD,” “probably OLD,” “maybe OLD,” “maybe NEW,” “probably NEW,”  or “definitely NEW.”&amp;#10;&amp;#10;Practice using the mouse now by selecting a response to continue. " valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3151,7 +3126,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Old" valType="str" updates="set every repeat" name="text"/>
+        <Param val="$Left_first_inst" valType="str" updates="set every repeat" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3176,7 +3151,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="New" valType="str" updates="set every repeat" name="text"/>
+        <Param val="$Right_first_inst" valType="str" updates="set every repeat" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3264,7 +3239,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Approving" valType="str" updates="set every repeat" name="text"/>
+        <Param val="$Left_sec_inst" valType="str" updates="set every repeat" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3289,7 +3264,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Disapproving" valType="str" updates="set every repeat" name="text"/>
+        <Param val="$Right_sec_inst" valType="str" updates="set every repeat" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3316,7 +3291,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Ring the bell to let the experimenter that you finished the practice." valType="str" updates="constant" name="text"/>
+        <Param val="Ring the bell to let the experimenter know that you finished the practice." valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3451,7 +3426,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="For example, if you are 100% confident that you saw the face in the previous game, choose “definitely OLD.”&amp;#10;&amp;#10;If you are less confident, but think you probably saw the face in the previous game, choose “probably OLD.”&amp;#10;&amp;#10;If you really aren’t sure, but think it’s a little more likely that you saw the face in the previous game, choose “maybe OLD.”&amp;#10;&amp;#10;If you really aren’t sure, but think it’s a little more likely that you didn’t see the face in the previous game, choose “maybe NEW.”&amp;#10;&amp;#10;If you aren’t certain, but think you probably haven’t seen the face before, choose “probably NEW.”&amp;#10;&amp;#10;If you are 100% confident that you haven’t seen the face before, choose “definitely NEW.”&amp;#10;&amp;#10;&amp;#10;Randomly choose a response from the slider below to learn about the other question." valType="str" updates="constant" name="text"/>
+        <Param val="If you are 100% confident that you saw the face in the previous game, choose “definitely OLD.”&amp;#10;&amp;#10;If you are less confident, but think you probably saw the face in the previous game, choose “probably OLD.”&amp;#10;&amp;#10;If you really aren’t sure, but think it’s a little more likely that you saw the face in the previous game, choose “maybe OLD.”&amp;#10;&amp;#10;If you really aren’t sure, but think it’s a little more likely that you didn’t see the face in the previous game, choose “maybe NEW.”&amp;#10;&amp;#10;If you aren’t certain, but think you probably haven’t seen the face before, choose “probably NEW.”&amp;#10;&amp;#10;If you are 100% confident that you haven’t seen the face before, choose “definitely NEW.”&amp;#10;&amp;#10;Practice using the mouse now by selecting a response to continue. " valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3512,7 +3487,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="New" valType="str" updates="set every repeat" name="text"/>
+        <Param val="$Left_first_inst" valType="str" updates="set every repeat" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3537,7 +3512,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Old" valType="str" updates="set every repeat" name="text"/>
+        <Param val="$Right_first_inst" valType="str" updates="set every repeat" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3564,7 +3539,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="For example, if you are 100% confident that the face looks like a person who has a positive opinion, choose “definitely Approving”.&amp;#10;&amp;#10;If you are less confident, but think probably that the face looks like a person who has a positive opinion, choose “probably Approving”.&amp;#10;&amp;#10;If you really aren’t sure, but think it’s a little more likely that the face looks like a person who has a positive opinion, choose “maybe Approving”.&amp;#10;&amp;#10;If you really aren’t sure, but think it’s a little more likely that the face looks like a person who has a negative opinion, choose “maybe Disapproving”.&amp;#10;&amp;#10;If you aren’t certain, but think you probably that the face looks like a person who has a negative opinion, choose “probably Disapproving”.&amp;#10;&amp;#10;If you are 100% confident that the face looks like a person who has a negative opinion, choose “definitely Disapproving”.&amp;#10;&amp;#10;Randomly choose a response from the slider below to proceed." valType="str" updates="constant" name="text"/>
+        <Param val="For example, if you are 100% confident that the face looks approving (showing positive opinion), choose “definitely Approving”.&amp;#10;&amp;#10;If you are less confident, but think probably that the face looks approving (showing positive opinion), choose “probably Approving”.&amp;#10;&amp;#10;If you really aren’t sure, but think it’s a little more likely that the face looks approving (showing positive opinion), choose “maybe Approving”.&amp;#10;&amp;#10;If you really aren’t sure, but think it’s a little more likely that the face looks disapproving (showing negative opinion), choose “maybe Disapproving”.&amp;#10;&amp;#10;If you aren’t certain, but think probably that the face looks disapproving (showing negative opinion), choose “probably Disapproving”.&amp;#10;&amp;#10;If you are 100% confident that the face looks disapproving (showing negative opinion), choose “definitely Disapproving”.&amp;#10;&amp;#10;Randomly choose a response from the slider below to proceed." valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3625,7 +3600,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Disapproving" valType="str" updates="set every repeat" name="text"/>
+        <Param val="$Left_sec_inst" valType="str" updates="set every repeat" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3650,7 +3625,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Approving" valType="str" updates="set every repeat" name="text"/>
+        <Param val="$Right_sec_inst" valType="str" updates="set every repeat" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3677,7 +3652,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Ring the bell to let the experimenter know completed the game." valType="str" updates="constant" name="text"/>
+        <Param val="Ring the bell to let the experimenter know you completed the game." valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3791,8 +3766,8 @@
       <CodeComponent name="code_2">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="win.color=(-1,-1,-1);" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="psychoJS.window.color = [(- 1), (- 1), (- 1)];&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="psychoJS.eventManager.clearEvents();&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="event.clearEvents()" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
@@ -3826,7 +3801,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Excluding the practice, how many errors do you think you made during the arrow game? &amp;#10;&amp;#10;Please provide a single number as your best estimate.&amp;#10;&amp;#10;&amp;#10;Experimenter enters the answer for participant. &amp;#10;&amp;#10;" valType="str" updates="constant" name="text"/>
+        <Param val="Excluding the practice, how many errors do you think you made during the arrow game? &amp;#10;&amp;#10;Please provide a number as your best estimate.&amp;#10;&amp;#10;&amp;#10;Experimenter enters the answer for participant. &amp;#10;&amp;#10;" valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3925,7 +3900,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Excluding the practice, what percentage of your responses do you think were errors during the arrow game? &amp;#10;&amp;#10;Please provide a single number as your best estimate.&amp;#10;&amp;#10;&amp;#10;Experimenter enters the answer for participant. &amp;#10;&amp;#10;" valType="str" updates="constant" name="text"/>
+        <Param val="Excluding the practice, what percentage of your responses do you think were errors during the arrow game? &amp;#10;&amp;#10;Please provide a number as your best estimate.&amp;#10;&amp;#10;&amp;#10;Experimenter enters the answer for participant. &amp;#10;&amp;#10;" valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -3985,6 +3960,35 @@
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
     </Routine>
+    <Routine name="init_fixation2">
+      <PolygonComponent name="polygon2">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="polygon2" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="cross" valType="str" updates="None" name="shape"/>
+        <Param val="(0.02, 0.02)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2.0" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+    </Routine>
   </Routines>
   <Flow>
     <Routine name="JS_code"/>
@@ -4001,7 +4005,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="999" valType="code"/>
+      <Param name="nReps" updates="None" val="0" valType="code"/>
       <Param name="name" updates="None" val="prac_block_loop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -4059,8 +4063,6 @@
     <Routine name="surpriseInstruct"/>
     <Routine name="surpIns2"/>
     <Routine name="surpIns2_2"/>
-    <Routine name="surpIns3"/>
-    <Routine name="surpIns3_2"/>
     <LoopInitiator loopType="TrialHandler" name="surprise_block_loop">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
@@ -4073,6 +4075,7 @@
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
     <Routine name="surp_taskReminders"/>
+    <Routine name="init_fixation2"/>
     <LoopInitiator loopType="TrialHandler" name="trials">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>

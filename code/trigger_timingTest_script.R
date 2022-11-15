@@ -5,7 +5,7 @@
 # This script reads text files that include triggers sent to the recorder laptop.
 # This script is changed for different timing tests.
 # These files have ".vmrk" extension.
-install.packages("pracma")
+# install.packages("pracma")
 library(stringr)
 library(pracma)
 library(dplyr)
@@ -13,7 +13,7 @@ library(dplyr)
 #setwd("~/Users/kihossei/Desktop") #set working directory to where your text file (the one that you have triggers and their times) is located.
 path <- ("/Users/kihossei/OneDrive - Florida International University/time_test")
 
-mrkTxt <- readLines(paste(path, "/stim_surp_time_test.vmrk", sep = "")) # load the .vmrk file into the workspace.
+mrkTxt <- readLines(paste(path, "/resp_time_buttonBox_01.vmrk", sep = "")) # load the .vmrk file into the workspace.
 myDat <- setNames(data.frame(matrix(nrow = length(mrkTxt), ncol = 1)), c("colA")) # creates an empty data frame with a single column and row # = length(mrkTxt)
 
 # This for loop creates a dataframe from the loaded text file. 
@@ -72,6 +72,21 @@ timeVal <- na.omit(timeVal, na.action = "omit")
 mean(timeVal$timeDiff)
 sd(timeVal$timeDiff)
 
+# If you wana perform the Surprise timing test for response run the code below!
+for (i in 1:nrow(newDat)) {
+  if (str_detect(newDat$colC[i], "S128")) {
+    firstVal <- str2num(gsub(".*S128,", "", newDat$colC[i]))
+    secondVal <- str2num(gsub(".*,", "", newDat$colC[i+1]))
+    diffVal <- secondVal - firstVal
+    dVal[1,] <- diffVal
+    timeVal <- rbind(timeVal, dVal)
+  } else {
+    next
+  }
+}
+timeVal <- na.omit(timeVal, na.action = "omit")
+mean(timeVal$timeDiff)
+sd(timeVal$timeDiff)
 
 ######## Below is the timing test results for the Flanker task of the memory for error task######
 # stimulus presentation for mfe_b study

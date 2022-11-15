@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2022.2.2),
-    on Wed Oct  5 21:48:46 2022
+    on Tue Nov  8 20:45:04 2022
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -68,7 +68,7 @@ frameTolerance = 0.001  # how close to onset before 'same' frame
 
 # --- Setup the Window ---
 win = visual.Window(
-    size=[1440, 900], fullscr=True, screen=0, 
+    size=[1536, 864], fullscr=True, screen=0, 
     winType='pyglet', allowStencil=False,
     monitor='testMonitor', color='0.5000, 0.5000, 0.5000', colorSpace='rgb',
     blendMode='avg', useFBO=True, 
@@ -369,7 +369,7 @@ cover_background_2 = visual.ImageStim(
     ori=0.0, pos=(0, -.015), size=(0.26, 0.22),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
-    texRes=128.0, interpolate=True, depth=-2.0)
+    texRes=128.0, interpolate=True, depth=-3.0)
 prac_centerImg = visual.ImageStim(
     win=win,
     name='prac_centerImg', 
@@ -377,7 +377,7 @@ prac_centerImg = visual.ImageStim(
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
-    texRes=512, interpolate=True, depth=-3.0)
+    texRes=512, interpolate=True, depth=-4.0)
 prac_rightImg1 = visual.ImageStim(
     win=win,
     name='prac_rightImg1', 
@@ -385,7 +385,7 @@ prac_rightImg1 = visual.ImageStim(
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
-    texRes=512, interpolate=True, depth=-4.0)
+    texRes=512, interpolate=True, depth=-5.0)
 prac_rightImg2 = visual.ImageStim(
     win=win,
     name='prac_rightImg2', 
@@ -393,7 +393,7 @@ prac_rightImg2 = visual.ImageStim(
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
-    texRes=512, interpolate=True, depth=-5.0)
+    texRes=512, interpolate=True, depth=-6.0)
 prac_leftImg1 = visual.ImageStim(
     win=win,
     name='prac_leftImg1', 
@@ -401,7 +401,7 @@ prac_leftImg1 = visual.ImageStim(
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
-    texRes=512, interpolate=True, depth=-6.0)
+    texRes=512, interpolate=True, depth=-7.0)
 prac_leftImg2 = visual.ImageStim(
     win=win,
     name='prac_leftImg2', 
@@ -409,7 +409,7 @@ prac_leftImg2 = visual.ImageStim(
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
-    texRes=512, interpolate=True, depth=-7.0)
+    texRes=512, interpolate=True, depth=-8.0)
 prac_fixImg = visual.ImageStim(
     win=win,
     name='prac_fixImg', 
@@ -417,7 +417,7 @@ prac_fixImg = visual.ImageStim(
     ori=0, pos=(0, -.015), size=(0.26, 0.22),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
-    texRes=512, interpolate=True, depth=-8.0)
+    texRes=512, interpolate=True, depth=-9.0)
 prac_stim_keyResp = keyboard.Keyboard()
 
 # --- Initialize components for Routine "prac_blockFeed" ---
@@ -498,7 +498,7 @@ cover_background = visual.ImageStim(
     ori=0.0, pos=(0, -.015), size=(0.26, 0.22),
     color=[1,1,1], colorSpace='rgb', opacity=None,
     flipHoriz=False, flipVert=False,
-    texRes=128.0, interpolate=True, depth=-2.0)
+    texRes=128.0, interpolate=True, depth=-3.0)
 task_centerImg = visual.ImageStim(
     win=win,
     name='task_centerImg', 
@@ -506,7 +506,7 @@ task_centerImg = visual.ImageStim(
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
-    texRes=512, interpolate=True, depth=-3.0)
+    texRes=512, interpolate=True, depth=-4.0)
 task_rightImg1 = visual.ImageStim(
     win=win,
     name='task_rightImg1', 
@@ -514,7 +514,7 @@ task_rightImg1 = visual.ImageStim(
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
-    texRes=512, interpolate=True, depth=-4.0)
+    texRes=512, interpolate=True, depth=-5.0)
 task_rightImg2 = visual.ImageStim(
     win=win,
     name='task_rightImg2', 
@@ -522,7 +522,7 @@ task_rightImg2 = visual.ImageStim(
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
-    texRes=512, interpolate=True, depth=-5.0)
+    texRes=512, interpolate=True, depth=-6.0)
 task_leftImg1 = visual.ImageStim(
     win=win,
     name='task_leftImg1', 
@@ -530,7 +530,7 @@ task_leftImg1 = visual.ImageStim(
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
-    texRes=512, interpolate=True, depth=-6.0)
+    texRes=512, interpolate=True, depth=-7.0)
 task_leftImg2 = visual.ImageStim(
     win=win,
     name='task_leftImg2', 
@@ -538,7 +538,7 @@ task_leftImg2 = visual.ImageStim(
     ori=0, pos=[0,0], size=1.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
-    texRes=512, interpolate=True, depth=-7.0)
+    texRes=512, interpolate=True, depth=-8.0)
 task_fixImg = visual.ImageStim(
     win=win,
     name='task_fixImg', 
@@ -546,7 +546,7 @@ task_fixImg = visual.ImageStim(
     ori=0, pos=(0, -.015), size=(0.26, 0.22),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
-    texRes=512, interpolate=True, depth=-8.0)
+    texRes=512, interpolate=True, depth=-9.0)
 task1_stim_keyResp = keyboard.Keyboard()
 
 # --- Initialize components for Routine "task_blockFeed" ---
@@ -1551,7 +1551,7 @@ for thisComponent in instructInconLeftComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-prac_block_loop = data.TrialHandler(nReps=999, method='random', 
+prac_block_loop = data.TrialHandler(nReps=0, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('blockSelect_practice.csv'),
     seed=None, name='prac_block_loop')
@@ -1573,6 +1573,9 @@ for thisPrac_block_loop in prac_block_loop:
     continueRoutine = True
     routineForceEnded = False
     # update component parameters for each repeat
+    # Run 'Begin Routine' code from prac_initAcc_code
+    port.close()
+    port.open()
     prac_reminder_keyResp.keys = []
     prac_reminder_keyResp.rt = []
     _prac_reminder_keyResp_allKeys = []
@@ -1794,6 +1797,11 @@ for thisPrac_block_loop in prac_block_loop:
         # show in console for debugging
         #print('thisISI: ', thisISI)
         bigFace.setImage(straightFace)
+        # Run 'Begin Routine' code from bigFace_trig_code
+        #set stimTriggerSent to false at the start of the trial. this way
+        #when the stimulus is shown, we can change it to True. This variable
+        #is used to ensure we only throw the stimulus EEG trigger once.
+        stimTriggerSentZ1 = False
         cover_background_2.setImage('img/cover_background.png')
         prac_centerImg.setPos(locationC)
         prac_centerImg.setSize(imageSize)
@@ -1811,9 +1819,24 @@ for thisPrac_block_loop in prac_block_loop:
         prac_leftImg2.setSize(imageSize)
         prac_leftImg2.setImage(leftStim)
         prac_fixImg.setImage('img/transp_fixation.png')
+        # Run 'Begin Routine' code from prac_stimTrigger_code
+        #set stimTriggerSent to false at the start of the trial. this way
+        #when the stimulus is shown, we can change it to True. This variable
+        #is used to ensure we only throw the stimulus EEG trigger once.
+        stimTriggerSent = False
+        # Run 'Begin Routine' code from distractor_trig_code
+        #set stimTriggerSent to false at the start of the trial. this way
+        #when the stimulus is shown, we can change it to True. This variable
+        #is used to ensure we only throw the stimulus EEG trigger once.
+        stimTriggerSentZ2 = False
         prac_stim_keyResp.keys = []
         prac_stim_keyResp.rt = []
         _prac_stim_keyResp_allKeys = []
+        # Run 'Begin Routine' code from prac_respTrigger_code
+        #clear out the keys_counbted variable at the start of the trial
+        #this variable will hold the keys that have had eeg triggers thrown
+        #already within a given trial.
+        keys_counted = []
         # keep track of which components have finished
         prac_stimRoutineComponents = [bigFace, cover_background_2, prac_centerImg, prac_rightImg1, prac_rightImg2, prac_leftImg1, prac_leftImg2, prac_fixImg, prac_stim_keyResp]
         for thisComponent in prac_stimRoutineComponents:
@@ -1856,6 +1879,17 @@ for thisPrac_block_loop in prac_block_loop:
                     # add timestamp to datafile
                     thisExp.timestampOnFlip(win, 'bigFace.stopped')
                     bigFace.setAutoDraw(False)
+            # Run 'Each Frame' code from bigFace_trig_code
+            #the first if statement below ensures that the subsequent if statements (and throwing of triggers)
+            #only occurs once per trial. That is, only when the stimulus is presented (.status = STARTED) and
+            #stimTriggerSent is still False. Once a trigger is sent, we change stimTriggerSent to True so that 
+            #the stimulus eeg trigger will not be sent again for this trial
+            if bigFace.status == STARTED and not stimTriggerSentZ1:
+                    stimTriggerSentZ1 = True #switch stimTriggerSent to True so that the stimulus eeg trigger will not be sent again this trial
+                    port.write([0x03]) #hexcode = 3; eeg trigger sent
+                    time.sleep(PulseWidth) #how long to wait before clearing trigger port
+                    port.write([0x00]) #clear trigger port by sending hexcode = 0
+            
             
             # *cover_background_2* updates
             if cover_background_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
@@ -1976,6 +2010,58 @@ for thisPrac_block_loop in prac_block_loop:
                     prac_fixImg.tStop = t  # not accounting for scr refresh
                     prac_fixImg.frameNStop = frameN  # exact frame index
                     prac_fixImg.setAutoDraw(False)
+            # Run 'Each Frame' code from prac_stimTrigger_code
+            #the first if statement below ensures that the subsequent if statements (and throwing of triggers)
+            #only occurs once per trial. That is, only when the stimulus is presented (.status = STARTED) and
+            #stimTriggerSent is still False. Once a trigger is sent, we change stimTriggerSent to True so that 
+            #the stimulus eeg trigger will not be sent again for this trial
+            if prac_centerImg.status == STARTED and not stimTriggerSent:
+                if stimNum == 5: #code denoting which stimulus array was sent (from excel file)
+                    stimTriggerSent = True #switch stimTriggerSent to True so that the stimulus eeg trigger will not be sent again this trial
+                    port.write([0x0D]) #hexcode = 13; eeg trigger sent
+                    time.sleep(PulseWidth) #how long to wait before clearing trigger port
+                    port.write([0x00]) #clear trigger port by sending hexcode = 0
+                elif stimNum == 6:
+                    stimTriggerSent = True
+                    port.write([0x0E]) # S14
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
+                elif stimNum == 7:
+                    stimTriggerSent = True
+                    port.write([0x0F]) # S15
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
+                elif stimNum == 8:
+                    stimTriggerSent = True
+                    port.write([0x10]) # S16
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
+            # Run 'Each Frame' code from distractor_trig_code
+            #the first if statement below ensures that the subsequent if statements (and throwing of triggers)
+            #only occurs once per trial. That is, only when the stimulus is presented (.status = STARTED) and
+            #stimTriggerSent is still False. Once a trigger is sent, we change stimTriggerSent to True so that 
+            #the stimulus eeg trigger will not be sent again for this trial
+            if prac_leftImg1.status == STARTED and not stimTriggerSentZ2:
+                if stimNum == 5: #code denoting which stimulus array was sent (from excel file)
+                    stimTriggerSentZ2 = True #switch stimTriggerSent to True so that the stimulus eeg trigger will not be sent again this trial
+                    port.write([0x0F]) #hexcode = 15; eeg trigger sent
+                    time.sleep(PulseWidth) #how long to wait before clearing trigger port
+                    port.write([0x00]) #clear trigger port by sending hexcode = 0
+                elif stimNum == 6:
+                    stimTriggerSentZ2 = True
+                    port.write([0x10]) #16
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
+                elif stimNum == 7:
+                    stimTriggerSentZ2 = True
+                    port.write([0x11]) #17
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
+                elif stimNum == 8:
+                    stimTriggerSentZ2 = True
+                    port.write([0x12]) #18
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
             
             # *prac_stim_keyResp* updates
             waitOnFlip = False
@@ -2007,6 +2093,47 @@ for thisPrac_block_loop in prac_block_loop:
                 if len(_prac_stim_keyResp_allKeys):
                     prac_stim_keyResp.keys = [key.name for key in _prac_stim_keyResp_allKeys]  # storing all keys
                     prac_stim_keyResp.rt = [key.rt for key in _prac_stim_keyResp_allKeys]
+            # Run 'Each Frame' code from prac_respTrigger_code
+            if prac_stim_keyResp.keys and len(prac_stim_keyResp.keys) > len(keys_counted):# A key response has been made but we haven't yet "counted" it
+                keys_counted.append(prac_stim_keyResp.keys[-1]) #add this response to list of keys pressed this trial
+                if len(prac_stim_keyResp.keys) < 2: #if this is  the first response
+                    if prac_stim_keyResp.keys[-1] == '1':
+                        if target == 'left': #correct response
+                            port.write([0x0B]) # 11
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                        elif target == 'right': #error response
+                            port.write([0x0C])# 12
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                    elif prac_stim_keyResp.keys[-1] == '8':
+                        if target == 'right': #correct response
+                            port.write([0x0B]) # 11
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                        elif target == 'left': #error response
+                            port.write([0x0C])# 12
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                elif len(prac_stim_keyResp.keys) >= 2: #if this is NOT the first response
+                    if prac_stim_keyResp.keys[-1] == '1':
+                        if target == 'left': #technically correct response, but not the first response made
+                            port.write([0x15]) # 21
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                        elif target == 'right': #technically error response, but not the first response made
+                            port.write([0x16])# 22
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                    elif prac_stim_keyResp.keys[-1] == '8':
+                        if target == 'right': #technically correct response, but not the first response made
+                            port.write([0x15]) # 21
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                        elif target == 'left': #technically error response, but not the first response made
+                            port.write([0x16])# 22
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
             
             # check for quit (typically the Esc key)
             if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -2036,6 +2163,17 @@ for thisPrac_block_loop in prac_block_loop:
         prac_trial_loop.addData('prac_stim_keyResp.keys',prac_stim_keyResp.keys)
         if prac_stim_keyResp.keys != None:  # we had a response
             prac_trial_loop.addData('prac_stim_keyResp.rt', prac_stim_keyResp.rt)
+        # Run 'End Routine' code from prac_respTrigger_code
+        
+        #instead of including here, should instead include something
+        #in each frame section that computes t at stim onset and then
+        #when thisISI - t <= .05 (50 ms) and then at that point we throw
+        #the no-resp marker...
+        
+        #if not prac_stim_keyResp.keys or len(prac_stim_keyResp.keys) == 0:
+        #            port.write([0x63]) # 99
+        #            time.sleep(PulseWidth)
+        #            port.write([0x00])
         # Run 'End Routine' code from prac_accuracy_code
         trialNum = trialNum + 1 #iterate trial number for this block
         
@@ -2184,7 +2322,7 @@ for thisPrac_block_loop in prac_block_loop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 999 repeats of 'prac_block_loop'
+# completed 0 repeats of 'prac_block_loop'
 
 
 # --- Prepare to start Routine "ringBell" ---
@@ -2285,7 +2423,7 @@ thisExp.nextEntry()
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-task_block_loop = data.TrialHandler(nReps=1.0, method='random', 
+task_block_loop = data.TrialHandler(nReps=0.0, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('blockSelect.csv'),
     seed=None, name='task_block_loop')
@@ -2308,6 +2446,9 @@ for thisTask_block_loop in task_block_loop:
     routineForceEnded = False
     # update component parameters for each repeat
     # Run 'Begin Routine' code from task_blockReminder_code
+    port.close()
+    port.open()
+    
     blockCounter = blockCounter +1
     
     if blockCounter == 1:
@@ -2553,6 +2694,11 @@ for thisTask_block_loop in task_block_loop:
         task_trial_loop.addData('ISI', thisISI)
         
         bigFace_2.setImage(straightFace)
+        # Run 'Begin Routine' code from bigFace_trig_code_2
+        #set stimTriggerSent to false at the start of the trial. this way
+        #when the stimulus is shown, we can change it to True. This variable
+        #is used to ensure we only throw the stimulus EEG trigger once.
+        stimTriggerSentZ1 = False
         task_centerImg.setPos(locationC)
         task_centerImg.setSize(imageSize)
         task_centerImg.setImage(middleStim)
@@ -2569,9 +2715,24 @@ for thisTask_block_loop in task_block_loop:
         task_leftImg2.setSize(imageSize)
         task_leftImg2.setImage(leftStim)
         task_fixImg.setImage('img/transp_fixation.png')
+        # Run 'Begin Routine' code from task_stimTrigger_code
+        #set stimTriggerSent to false at the start of the trial. this way
+        #when the stimulus is shown, we can change it to True. This variable
+        #is used to ensure we only throw the stimulus EEG trigger once.
+        stimTriggerSent = False
+        # Run 'Begin Routine' code from distractor_trig_code_2
+        #set stimTriggerSent to false at the start of the trial. this way
+        #when the stimulus is shown, we can change it to True. This variable
+        #is used to ensure we only throw the stimulus EEG trigger once.
+        stimTriggerSentZ2 = False
         task1_stim_keyResp.keys = []
         task1_stim_keyResp.rt = []
         _task1_stim_keyResp_allKeys = []
+        # Run 'Begin Routine' code from task_respTrigger_code
+        #clear out the keys_counbted variable at the start of the trial
+        #this variable will hold the keys that have had eeg triggers thrown
+        #already within a given trial.
+        keys_counted = []
         # keep track of which components have finished
         task_stimRoutineComponents = [bigFace_2, cover_background, task_centerImg, task_rightImg1, task_rightImg2, task_leftImg1, task_leftImg2, task_fixImg, task1_stim_keyResp]
         for thisComponent in task_stimRoutineComponents:
@@ -2614,6 +2775,17 @@ for thisTask_block_loop in task_block_loop:
                     # add timestamp to datafile
                     thisExp.timestampOnFlip(win, 'bigFace_2.stopped')
                     bigFace_2.setAutoDraw(False)
+            # Run 'Each Frame' code from bigFace_trig_code_2
+            #the first if statement below ensures that the subsequent if statements (and throwing of triggers)
+            #only occurs once per trial. That is, only when the stimulus is presented (.status = STARTED) and
+            #stimTriggerSent is still False. Once a trigger is sent, we change stimTriggerSent to True so that 
+            #the stimulus eeg trigger will not be sent again for this trial
+            if bigFace_2.status == STARTED and not stimTriggerSentZ1:
+                    stimTriggerSentZ1 = True #switch stimTriggerSent to True so that the stimulus eeg trigger will not be sent again this trial
+                    port.write([0x03]) #hexcode = 3; eeg trigger sent
+                    time.sleep(PulseWidth) #how long to wait before clearing trigger port
+                    port.write([0x00]) #clear trigger port by sending hexcode = 0
+            
             
             # *cover_background* updates
             if cover_background.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
@@ -2738,6 +2910,58 @@ for thisTask_block_loop in task_block_loop:
                     # add timestamp to datafile
                     thisExp.timestampOnFlip(win, 'task_fixImg.stopped')
                     task_fixImg.setAutoDraw(False)
+            # Run 'Each Frame' code from task_stimTrigger_code
+            #the first if statement below ensures that the subsequent if statements (and throwing of triggers)
+            #only occurs once per trial. That is, only when the stimulus is presented (.status = STARTED) and
+            #stimTriggerSent is still False. Once a trigger is sent, we change stimTriggerSent to True so that 
+            #the stimulus eeg trigger will not be sent again for this trial
+            if task_centerImg.status == STARTED and not stimTriggerSent:
+                if stimNum == 5: #code denoting which stimulus array was sent (from excel file)
+                    stimTriggerSent = True #switch stimTriggerSent to True so that the stimulus eeg trigger will not be sent again this trial
+                    port.write([0x05]) #hexcode = 1; eeg trigger sent
+                    time.sleep(PulseWidth) #how long to wait before clearing trigger port
+                    port.write([0x00]) #clear trigger port by sending hexcode = 0
+                elif stimNum == 6:
+                    stimTriggerSent = True
+                    port.write([0x06])
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
+                elif stimNum == 7:
+                    stimTriggerSent = True
+                    port.write([0x07])
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
+                elif stimNum == 8:
+                    stimTriggerSent = True
+                    port.write([0x08])
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
+            # Run 'Each Frame' code from distractor_trig_code_2
+            #the first if statement below ensures that the subsequent if statements (and throwing of triggers)
+            #only occurs once per trial. That is, only when the stimulus is presented (.status = STARTED) and
+            #stimTriggerSent is still False. Once a trigger is sent, we change stimTriggerSent to True so that 
+            #the stimulus eeg trigger will not be sent again for this trial
+            if task_leftImg1.status == STARTED and not stimTriggerSentZ2:
+                if stimNum == 5: #code denoting which stimulus array was sent (from excel file)
+                    stimTriggerSentZ2 = True #switch stimTriggerSent to True so that the stimulus eeg trigger will not be sent again this trial
+                    port.write([0x0F]) #hexcode = 15; eeg trigger sent
+                    time.sleep(PulseWidth) #how long to wait before clearing trigger port
+                    port.write([0x00]) #clear trigger port by sending hexcode = 0
+                elif stimNum == 6:
+                    stimTriggerSentZ2 = True
+                    port.write([0x10]) #16
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
+                elif stimNum == 7:
+                    stimTriggerSentZ2 = True
+                    port.write([0x11]) #17
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
+                elif stimNum == 8:
+                    stimTriggerSentZ2 = True
+                    port.write([0x12]) #18
+                    time.sleep(PulseWidth)
+                    port.write([0x00])
             
             # *task1_stim_keyResp* updates
             waitOnFlip = False
@@ -2769,6 +2993,47 @@ for thisTask_block_loop in task_block_loop:
                 if len(_task1_stim_keyResp_allKeys):
                     task1_stim_keyResp.keys = [key.name for key in _task1_stim_keyResp_allKeys]  # storing all keys
                     task1_stim_keyResp.rt = [key.rt for key in _task1_stim_keyResp_allKeys]
+            # Run 'Each Frame' code from task_respTrigger_code
+            if task1_stim_keyResp.keys and len(task1_stim_keyResp.keys) > len(keys_counted):# A key response has been made but we haven't yet "counted" it
+                keys_counted.append(task1_stim_keyResp.keys[-1]) #add this response to list of keys pressed this trial
+                if len(task1_stim_keyResp.keys) < 2: #if this is  the first response
+                    if task1_stim_keyResp.keys[-1] == '1':
+                        if target == 'left': #correct response
+                            port.write([0x0B]) # 11
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                        elif target == 'right': #error response
+                            port.write([0x0C])# 12
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                    elif task1_stim_keyResp.keys[-1] == '8':
+                        if target == 'right': #correct response
+                            port.write([0x0B]) # 11
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                        elif target == 'left': #error response
+                            port.write([0x0C])# 12
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                elif len(task1_stim_keyResp.keys) >= 2: #if this is NOT the first response
+                    if task1_stim_keyResp.keys[-1] == '1':
+                        if target == 'left': #technically correct response, but not the first response made
+                            port.write([0x15]) # 21
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                        elif target == 'right': #technically error response, but not the first response made
+                            port.write([0x16])# 22
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                    elif task1_stim_keyResp.keys[-1] == '8':
+                        if target == 'right': #technically correct response, but not the first response made
+                            port.write([0x15]) # 21
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
+                        elif target == 'left': #technically error response, but not the first response made
+                            port.write([0x16])# 22
+                            time.sleep(PulseWidth)
+                            port.write([0x00])
             
             # check for quit (typically the Esc key)
             if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -2798,6 +3063,17 @@ for thisTask_block_loop in task_block_loop:
         task_trial_loop.addData('task1_stim_keyResp.keys',task1_stim_keyResp.keys)
         if task1_stim_keyResp.keys != None:  # we had a response
             task_trial_loop.addData('task1_stim_keyResp.rt', task1_stim_keyResp.rt)
+        # Run 'End Routine' code from task_respTrigger_code
+        
+        #instead of including here, should instead include something
+        #in each frame section that computes t at stim onset and then
+        #when thisISI - t <= .05 (50 ms) and then at that point we throw
+        #the no-resp marker...
+        
+        #if not prac_stim_keyResp.keys or len(prac_stim_keyResp.keys) == 0:
+        #            port.write([0x63]) # 99
+        #            time.sleep(PulseWidth)
+        #            port.write([0x00])
         # Run 'End Routine' code from task_accuracy_code
         trialNum = trialNum + 1 #iterate trial number for this block
         
@@ -2955,7 +3231,7 @@ for thisTask_block_loop in task_block_loop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 1.0 repeats of 'task_block_loop'
+# completed 0.0 repeats of 'task_block_loop'
 
 
 # --- Prepare to start Routine "ringBell2" ---
@@ -3817,6 +4093,9 @@ for thisSurprise_block_loop in surprise_block_loop:
     routineForceEnded = False
     # update component parameters for each repeat
     # Run 'Begin Routine' code from task_blockReminder_code_2
+    #port.close()
+    #port.open()
+    
     blockCounterZ1 = blockCounterZ1 +1
     
     if blockCounterZ1 == 1:
