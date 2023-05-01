@@ -1,4 +1,4 @@
-# This script allows to run statistical analysis on Psychopy output of the mini memory for error project.
+# This script allows to run statistical analysis on Psychopy output of the big memory for error project.
 # Author: Kianoosh Hosseini at NDCLab @FIU (May-September 2022; https://Kianoosh.info; https://NDClab.com)
 # Last Update: 2022-11-07 (YYYY-MM-DD)
 

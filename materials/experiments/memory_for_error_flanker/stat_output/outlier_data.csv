@@ -1,3 +1,0 @@
-"id","congAcc","incongAcc","congCorr_meanRT","incongCorr_meanRT","congCorr_logMeanRT","incongCorr_logMeanRT","flankEff_meanACC","flankEff_meanRT","flankEff_logMeanRT","reported_errors","committed_errors","memoryBias_score","num_incong_errors"
-170017,0.95,1,0.48914926447469,0.530021706249318,0.397638141573397,0.424606047235311,0.05,0.0408724417746271,0.0269679056619134,6,4,-0.5,0
-170022,1,1,0.552374746249961,0.632328481250033,0.437788711725049,0.482729370985144,0,0.0799537350000719,0.0449406592600946,0,0,NA,0

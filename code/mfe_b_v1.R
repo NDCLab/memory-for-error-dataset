@@ -1,4 +1,4 @@
-# This script allows to run statistical analysis on Psychopy output of the mini memory for error project.
+# This script allows to run statistical analysis on Psychopy output of the big memory for error project.
 # Author: Kianoosh Hosseini at NDCLab @FIU (May-September 2022; https://Kianoosh.info; https://NDClab.com)
 # Last Update: 2022-11-07 (YYYY-MM-DD)
 
@@ -32,18 +32,8 @@ for (lisar1 in 1:length(csvSelect)){
 }
 
 # Creating the main empty dataframe that will be filled with the data from the loop below:
-mainDat <- setNames(data.frame(matrix(ncol = 34, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
-                                                               "flankEff_meanACC", "flankEff_meanRT", "flankEff_logMeanRT",
-                                                               "reported_errors", "committed_errors", "memoryBias_score",
-                                                               "num_incong_errorFaces_reported_old", "num_incong_errorFaces_reported_new",
-                                                               "num_incong_corrFaces_reported_old", "num_incong_corrFaces_reported_new",
-                                                               "num_foilFaces_reported_new", "num_foilFaces_reported_old",
-                                                               "num_post_incong_errorFaces_reported_old", "num_post_incong_errorFaces_reported_new", "num_post_incong_correctFaces_reported_old", "num_post_incong_correctFaces_reported_new",
-                                                               "num_pre_incong_errorFaces_reported_old", "num_pre_incong_errorFaces_reported_new", "num_pre_incong_correctFaces_reported_old", "num_pre_incong_correctFaces_reported_new",
-                                                               "errorFaces_hit", "correctFaces_hit", "falseAlarm_for_both", "d_prime_error", "d_prime_correct",
-                                                               "criterion_error", "criterion_correct"))
 
-percent_mainDat <- setNames(data.frame(matrix(ncol = 62, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
+percent_mainDat <- setNames(data.frame(matrix(ncol = 69, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
                                                                        "flankEff_meanACC", "flankEff_meanRT", "flankEff_logMeanRT",
                                                                        "reported_errors", "committed_errors", "memoryBias_score",
                                                                        "percent_incong_errorFaces_reported_old", "percent_incong_errorFaces_reported_new",
@@ -51,12 +41,20 @@ percent_mainDat <- setNames(data.frame(matrix(ncol = 62, nrow = 0)), c("id", "co
                                                                        "percent_foilFaces_reported_new", "percent_foilFaces_reported_old",
                                                                        "percent_post_incong_errorFaces_reported_old", "percent_post_incong_errorFaces_reported_new", "percent_post_incong_correctFaces_reported_old", "percent_post_incong_correctFaces_reported_new",
                                                                        "percent_pre_incong_errorFaces_reported_old", "percent_pre_incong_errorFaces_reported_new", "percent_pre_incong_correctFaces_reported_old", "percent_pre_incong_correctFaces_reported_new",
-                                                                       "errorFaces_hit", "pre_errorFaces_hit", "post_errorFaces_hit", "correctFaces_hit", "pre_correctFaces_hit", "post_correctFaces_hit", "falseAlarm_for_both", "d_prime_error", "pre_d_prime_error", "post_d_prime_error", "d_prime_correct", "pre_d_prime_correct", "post_d_prime_correct",
-                                                                       "criterion_error", "pre_criterion_error", "post_criterion_error", "criterion_correct",
-                                                                       "pre_criterion_correct", "post_criterion_correct", "gen_hit", "num_incong_errors",
-                                                                       "d_prime_error_minus_correct" ,"post_d_prime_error_minus_correct", "post_error_rt_mean", "post_error_rt_sd", "post_correct_rt_mean", "post_correct_rt_sd",
+                                                                       "num_incong_errors",
+                                                                       "post_error_rt_mean", "post_error_rt_sd", "post_correct_rt_mean", "post_correct_rt_sd",
                                                                        "post_error_slowing_score", "post_error_accuracy_mean", "post_error_accuracy_sd",
-                                                                       "post_correct_accuracy_mean", "post_correct_accuracy_sd", "post_error_accuracy_score", "d_prime_overall", "overall_hit"))
+                                                                       "post_correct_accuracy_mean", "post_correct_accuracy_sd", "post_error_accuracy_score",
+                                                                       "committed_errors_in_percentage", "memoryBias_score_in_percentage", "reported_errors_in_percentage", "hit_num", "miss_num", "corr_rej_num", "false_alrams_num",
+                                                                       "incong_error_hit_num", "incong_error_miss_num", "incong_correct_hit_num", "incong_correct_miss_num",
+                                                                       "incong_post_correct_hit_num", "incong_post_correct_miss_num",
+                                                                       "incong_pre_correct_hit_num", "incong_pre_correct_miss_num", "incong_pre_error_hit_num", "incong_pre_error_miss_num",
+                                                                       "incong_post_error_hit_num", "incong_post_error_miss_num", "num_pre_incong_errorFaces_reported_old",
+                                                                       "num_incong_errorFaces_reported_old", "num_post_incong_errorFaces_reported_old",
+                                                                       "num_pre_incong_correctFaces_reported_old", "num_incong_corrFaces_reported_old",
+                                                                       "num_post_incong_correctFaces_reported_old", "num_pre_incong_errorFaces_reported_new", "num_incong_errorFaces_reported_new",
+                                                                       "num_post_incong_errorFaces_reported_new", "num_pre_incong_correctFaces_reported_new",
+                                                                       "num_incong_corrFaces_reported_new", "num_post_incong_correctFaces_reported_new"))
 
 outlier_mainDat <- setNames(data.frame(matrix(ncol = 14, nrow = 0)), c("id", "congAcc", "incongAcc", "congCorr_meanRT", "incongCorr_meanRT", "congCorr_logMeanRT", "incongCorr_logMeanRT",
                                                                        "flankEff_meanACC", "flankEff_meanRT", "flankEff_logMeanRT",
@@ -83,8 +81,7 @@ for(i in 1:length(datafiles_list)){
                                    "straightFace",
                                    "task1_stim_keyResp.rt", #  this stores reaction time for each trial
                                    "task_trial_loop.thisTrialN",
-                                   "cb")] # This stores the number of trial in a block; For this study it starts from 0 to 31
-  #                                                                 as we have 32 trials in each block.
+                                   "cb", "textbox_errorPercent.text")]
   ###################################
   #### SECTION 1:
   if (psychopyDatTrim$cb[1] == "A"){
@@ -158,19 +155,28 @@ for(i in 1:length(datafiles_list)){
       committed_errors <- committed_errors +1
     }
   }
+  committed_errors_in_percentage <- (committed_errors/384)*100
   reported_errors <- subset(remove_prac_trials, complete.cases(remove_prac_trials$textbox_errorNum.text))
   reported_errors <- reported_errors$textbox_errorNum.text # number of reported errors by participants
+  reported_errors_in_percentage <- subset(remove_prac_trials, complete.cases(remove_prac_trials$textbox_errorPercent.text))
+  reported_errors_in_percentage <- reported_errors_in_percentage$textbox_errorPercent.text
   if (length(reported_errors) == 0){ # in case a participant does not answer the question, this code will prevent from future errors.
     reported_errors <- NA
     memoryBias_score <- NA
   } else {
     memoryBias_score <- ( reported_errors - committed_errors)/ abs(reported_errors) # percent bias score calculation
   }
+  if (length(reported_errors_in_percentage) == 0){ # in case a participant does not answer the question, this code will prevent from future errors.
+    reported_errors_in_percentage <- NA
+    memoryBias_score_in_percentage <- NA
+  } else {
+    memoryBias_score_in_percentage <- ( reported_errors_in_percentage - committed_errors_in_percentage)/ abs(reported_errors_in_percentage) # percent bias score calculation
+  }
   surpDat <- subset(remove_prac_trials, complete.cases(remove_prac_trials$new)) #contains all the data we need from the surprise task
 
   num_incong_errors <- nrow(incong_errorDat)
   # Participants with less than 8 incong errors are considered outliers. This may be updated according to the data mean and SD.
-  outlier_num <- 8
+  outlier_num <- 10
   if (nrow(incong_errorDat) >= outlier_num){ #for when the participant has outlier_num or more than outlier_num incongruent errors
     #######################################
     ######## SECTION 2: Surprise Task
@@ -393,97 +399,104 @@ for(i in 1:length(datafiles_list)){
     # We make use of SDT in the surprise memory task.
     # OLD is our target.
     # OLD faces are going to be divided into old_errorFaces and old_correctFaces
-    # We first compute hit and false alarm for each individual.
+    # Overall hits, misses, FAs, and Correct rejections regardless of errors and corrects.
+    hit_num <- 0
+    miss_num <- 0
+    corr_rej_num <- 0 # Correct rejections number is the same for Errors, corrects as it is overall. It means they identify new faces as new!
+    false_alrams_num <- 0
+    for (donya in 1:nrow(surpDat)){
+      temp_cut_from_surp <- surpDat$surpriseFaces[donya]
+      temp_cut_from_flanker <- filter(keep_rows_with_acc_vals, straightFace == temp_cut_from_surp)
+      if (nrow(temp_cut_from_flanker) == 1){ # The face is old
+        if (surpDat$firstStim_sliderA1.response[donya] == 'New'){
+          miss_num <- miss_num + 1
+        } else if (surpDat$firstStim_sliderA1.response[donya] == 'Old'){
+          hit_num <- hit_num + 1
+        }
+      } else if (nrow(temp_cut_from_flanker) == 0){ # The face is new
+        if (surpDat$firstStim_sliderA1.response[donya] == 'New'){
+          corr_rej_num <- corr_rej_num + 1
+        } else if (surpDat$firstStim_sliderA1.response[donya] == 'Old'){
+          false_alrams_num <- false_alrams_num + 1
+        }
+      }
+    }
+    # Corrections area
     if (num_incong_errorFaces_reported_old == 0){
       num_incong_errorFaces_reported_old <- 0.5
     }
-    errorFaces_hit <- num_incong_errorFaces_reported_old/nrow(incong_errorDat) #this is the hit (true positives) for old_errorFaces (only incongruent)
-    if (num_pre_incong_errorFaces_reported_old == 0){
-      num_pre_incong_errorFaces_reported_old <- 0.5
+    if (num_incong_errorFaces_reported_new == 0){
+      num_incong_errorFaces_reported_new <- 0.5
     }
-    pre_errorFaces_hit <- num_pre_incong_errorFaces_reported_old/nrow(pre_error_faces)
-    if (num_post_incong_errorFaces_reported_old == 0){
-      num_post_incong_errorFaces_reported_old <- 0.5
-    }
-    post_errorFaces_hit <- num_post_incong_errorFaces_reported_old/nrow(post_error_faces)
     if (num_incong_corrFaces_reported_old == 0){
       num_incong_corrFaces_reported_old <- 0.5
     }
-    gen_hit <- (num_incong_errorFaces_reported_old + num_incong_corrFaces_reported_old)/(nrow(incong_errorDat)+ nrow(incong_corrDat))
-
-    if (num_pre_incong_correctFaces_reported_old == 0){
-      num_pre_incong_correctFaces_reported_old <- 0.5
+    if (num_incong_corrFaces_reported_new == 0){
+      num_incong_corrFaces_reported_new <- 0.5
     }
     if (num_post_incong_correctFaces_reported_old == 0){
       num_post_incong_correctFaces_reported_old <- 0.5
     }
-    if (num_foilFaces_reported_old == 0){
-      num_foilFaces_reported_old <- 0.5
+    if (num_pre_incong_correctFaces_reported_old == 0){
+      num_pre_incong_correctFaces_reported_old <- 0.5
     }
-    if (num_foilFaces_reported_new == 0){
-      num_foilFaces_reported_new <- 0.5
+    if (num_post_incong_correctFaces_reported_new == 0){
+      num_post_incong_correctFaces_reported_new <- 0.5
     }
-    correctFaces_hit <- num_incong_corrFaces_reported_old/nrow(incong_corrDat) # hit for old_correctFaces
-
-    pre_correctFaces_hit <- num_pre_incong_correctFaces_reported_old/nrow(pre_correct_faces)
-
-    post_correctFaces_hit <- num_post_incong_correctFaces_reported_old/nrow(post_correct_faces)
-
-    falseAlarm_for_both <- num_foilFaces_reported_old/(num_foilFaces_reported_new + num_foilFaces_reported_old) # False alarm rate for old_correctFaces and old_errorFaces
-
-    # To compute z-score associated with a probability, we use "qnorm" function.
-    # https://brain.mcmaster.ca/SDT/dprime.html # To compute d-prime, take a look at this! d_prime = Z_hit - Z_falseAlarm
-
-    d_prime_error <- qnorm(errorFaces_hit) - qnorm(falseAlarm_for_both)
-    pre_d_prime_error <- qnorm(pre_errorFaces_hit) - qnorm(falseAlarm_for_both)
-    post_d_prime_error <- qnorm(post_errorFaces_hit) - qnorm(falseAlarm_for_both)
-
-    d_prime_correct <- qnorm(correctFaces_hit) - qnorm(falseAlarm_for_both)
-    pre_d_prime_correct <- qnorm(pre_correctFaces_hit) - qnorm(falseAlarm_for_both)
-    post_d_prime_correct <- qnorm(post_correctFaces_hit) - qnorm(falseAlarm_for_both)
-
-    criterion_error <- (qnorm(errorFaces_hit) + qnorm(falseAlarm_for_both))/2
-    pre_criterion_error <- (qnorm(pre_errorFaces_hit) + qnorm(falseAlarm_for_both))/2
-    post_criterion_error <- (qnorm(post_errorFaces_hit) + qnorm(falseAlarm_for_both))/2
-
-    criterion_correct <- (qnorm(correctFaces_hit) + qnorm(falseAlarm_for_both))/2
-    pre_criterion_correct <- (qnorm(pre_correctFaces_hit) + qnorm(falseAlarm_for_both))/2
-    post_criterion_correct <- (qnorm(post_correctFaces_hit) + qnorm(falseAlarm_for_both))/2
-
-    d_prime_error_minus_correct <- d_prime_error - d_prime_correct
-    post_d_prime_error_minus_correct <- post_d_prime_error - post_d_prime_correct
-    ###################### Overall d' area ##############################
-    num_oldFaces_identified_correctly <- 0 # this is the number of old faces identifeied correctly
-    num_newFaces_identified_correctly <- 0 # this is the number of new faces identifeied correctly
-    # and will be updated in the loop below:
-    for (Jafa in 1:nrow(surpDat)){
-      if (surpDat$new[Jafa] == 0){ # The displayed face in the surprise is old!
-        identified_old_correctly <- ifelse (surpDat$firstStim_sliderA1.response[Jafa] == 'Old', 1, 0) #returns 1 when participant correctly identifies the face as OLD!
-        if (identified_old_correctly == 1){
-          num_oldFaces_identified_correctly <- num_oldFaces_identified_correctly + 1 # The number of old faces identified correctly
-        }
-      } else if (surpDat$new[Jafa] == 1){ # The displayed face in the surprise is new!
-        identified_correctly_new <- ifelse (surpDat$firstStim_sliderA1.response[Jafa] == 'New', 1, 0) #returns 1 when participant correctly identifies the face as NEW!
-        if (identified_correctly_new == 1){
-          num_newFaces_identified_correctly <- num_newFaces_identified_correctly + 1 # The number of new faces faces identified correctly
-        }
-      }
+    if (num_pre_incong_correctFaces_reported_new == 0){
+      num_pre_incong_correctFaces_reported_new <- 0.5
     }
-    total_num_newFaces <- 192 # I have this number frtom my MATLAB script that I have made for the Psychopy task.
-    num_newFaces_identified_incorrectly <- total_num_newFaces - num_newFaces_identified_correctly
-    num_faces_identified_correctly <- num_oldFaces_identified_correctly + num_newFaces_identified_correctly # nmuber of faces identified correctly in the surprise task
-    overall_hit <- (num_faces_identified_correctly)/(nrow(surpDat))
-    if  (overall_hit == 0 || is.nan(overall_hit) || length(overall_hit) == 0){
-      overall_hit <- 0.5
+    if (num_pre_incong_errorFaces_reported_old == 0){
+      num_pre_incong_errorFaces_reported_old <- 0.5
     }
-    overall_falseAlarm <- num_newFaces_identified_incorrectly/total_num_newFaces # False Alarm rate
-    if  (overall_falseAlarm == 0 || is.nan(overall_falseAlarm) || length(overall_falseAlarm) == 0){
-      overall_falseAlarm <- 0.5
+    if (num_pre_incong_errorFaces_reported_new == 0){
+      num_pre_incong_errorFaces_reported_new <- 0.5
     }
-    d_prime_overall <- qnorm(overall_hit) - qnorm(overall_falseAlarm)
-    ################################## End of Overall d' area ######################################################
-    d_prime_based_outlier <- 0.526936 - 0.314217 # mean - 1SD below mean!
-    if (d_prime_overall >= d_prime_based_outlier){
+    if (num_post_incong_errorFaces_reported_old == 0){
+      num_post_incong_errorFaces_reported_old <- 0.5
+    }
+    if (num_post_incong_errorFaces_reported_new == 0){
+      num_post_incong_errorFaces_reported_new <- 0.5
+    }
+    ############ d' calculations for Error faces ###########################
+    # False alaram numbers is the same for Error, and correct faces as it is the overall FA! I computed it above with "false_alrams_num" name.
+    incong_error_hit_num <- num_incong_errorFaces_reported_old
+    incong_error_miss_num <- num_incong_errorFaces_reported_new
+    ########### End of d' calculations for Error faces #####################
+
+    ############ d' calculations for Correct faces #########################
+    # False alaram numbers is the same for Error, and correct faces as it is the overall FA! I computed it above with "false_alrams_num" name.
+    incong_correct_hit_num <- num_incong_corrFaces_reported_old
+    incong_correct_miss_num <- num_incong_corrFaces_reported_new
+    ############ End of d' calculations for Correct faces ##################
+
+    ############ d' calculations for post-Correct faces #########################
+    # False alaram numbers is the same for Error, and correct faces as it is the overall FA! I computed it above with "false_alrams_num" name.
+    incong_post_correct_hit_num <- num_post_incong_correctFaces_reported_old
+    incong_post_correct_miss_num <- num_post_incong_correctFaces_reported_new
+    ############ End of d' calculations for post-Correct faces ##################
+
+    ############ d' calculations for pre-Correct faces #########################
+    # False alaram numbers is the same for Error, and correct faces as it is the overall FA! I computed it above with "false_alrams_num" name.
+    incong_pre_correct_hit_num <- num_pre_incong_correctFaces_reported_old
+    incong_pre_correct_miss_num <- num_pre_incong_correctFaces_reported_new
+    ############ End of d' calculations for pre-Correct faces ##################
+
+    ############ d' calculations for pre-error faces #########################
+    # False alaram numbers is the same for Error, and correct faces as it is the overall FA! I computed it above with "false_alrams_num" name.
+    incong_pre_error_hit_num <- num_pre_incong_errorFaces_reported_old
+    incong_pre_error_miss_num <- num_pre_incong_errorFaces_reported_new
+    ############ End of d' calculations for pre-error faces ##################
+
+    ############ d' calculations for post-error faces #########################
+    # False alaram numbers is the same for Error, and correct faces as it is the overall FA! I computed it above with "false_alrams_num" name.
+    incong_post_error_hit_num <- num_post_incong_errorFaces_reported_old
+    incong_post_error_miss_num <- num_post_incong_errorFaces_reported_new
+    ############ End of d' calculations for post-error faces ##################
+
+    ################################## End of SDT area ######################################################
+    #d_prime_based_outlier <- 0.526936 - 0.314217 # mean - 1SD below mean!
+    #if (d_prime_overall >= d_prime_based_outlier){
     ####### The zone below is for computing post-error slowing (PES) value for each subject! ###########
     # Let's create a dataframe that has only post-error rows. After having this data frame, we can compute the mean
     # post-error RT for each subject.
@@ -596,7 +609,7 @@ for(i in 1:length(datafiles_list)){
     ################### END of post-error/correct accuracy code zone! #####################################
 
     ##########
-    mainDat[nrow(mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_incong_errorFaces_reported_old, num_incong_errorFaces_reported_new,num_incong_corrFaces_reported_old, num_incong_corrFaces_reported_new, num_foilFaces_reported_new, num_foilFaces_reported_old, num_post_incong_errorFaces_reported_old, num_post_incong_errorFaces_reported_new, num_post_incong_correctFaces_reported_old, num_post_incong_correctFaces_reported_new, num_pre_incong_errorFaces_reported_old, num_pre_incong_errorFaces_reported_new, num_pre_incong_correctFaces_reported_old, num_pre_incong_correctFaces_reported_new, errorFaces_hit, correctFaces_hit, falseAlarm_for_both, d_prime_error, d_prime_correct, criterion_error, criterion_correct)
+
     percent_mainDat[nrow(percent_mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT,
                                                     incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT,
                                                     reported_errors, committed_errors, memoryBias_score, percent_incong_errorFaces_reported_old,
@@ -605,25 +618,48 @@ for(i in 1:length(datafiles_list)){
                                                     percent_foilFaces_reported_old, percent_post_incong_errorFaces_reported_old,
                                                     percent_post_incong_errorFaces_reported_new, percent_post_incong_correctFaces_reported_old, percent_post_incong_correctFaces_reported_new,
                                                     percent_pre_incong_errorFaces_reported_old, percent_pre_incong_errorFaces_reported_new,
-                                                    percent_pre_incong_correctFaces_reported_old, percent_pre_incong_correctFaces_reported_new, errorFaces_hit, pre_errorFaces_hit, post_errorFaces_hit, correctFaces_hit,
-                                                    pre_correctFaces_hit, post_correctFaces_hit, falseAlarm_for_both, d_prime_error, pre_d_prime_error, post_d_prime_error,
-                                                    d_prime_correct, pre_d_prime_correct, post_d_prime_correct, criterion_error, pre_criterion_error, post_criterion_error,
-                                                    criterion_correct, pre_criterion_correct, post_criterion_correct, gen_hit, num_incong_errors, d_prime_error_minus_correct,
-                                                    post_d_prime_error_minus_correct,
+                                                    percent_pre_incong_correctFaces_reported_old, percent_pre_incong_correctFaces_reported_new, num_incong_errors,
                                                     post_error_rt_mean, post_error_rt_sd, post_correct_rt_mean, post_correct_rt_sd, post_error_slowing_score,
                                                     post_error_accuracy_mean, post_error_accuracy_sd,
-                                                    post_correct_accuracy_mean, post_correct_accuracy_sd, post_error_accuracy_score, d_prime_overall, overall_hit)
-    } else if (d_prime_overall < d_prime_based_outlier){
-      outlier_mainDat[nrow(outlier_mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_incong_errors)
+                                                    post_correct_accuracy_mean, post_correct_accuracy_sd, post_error_accuracy_score, memoryBias_score_in_percentage, reported_errors_in_percentage, committed_errors_in_percentage, hit_num, miss_num, corr_rej_num, false_alrams_num, incong_error_hit_num, incong_error_miss_num, incong_correct_hit_num, incong_correct_miss_num, incong_post_correct_hit_num, incong_post_correct_miss_num, incong_pre_correct_hit_num, incong_pre_correct_miss_num, incong_pre_error_hit_num, incong_pre_error_miss_num, incong_post_error_hit_num, incong_post_error_miss_num, num_pre_incong_errorFaces_reported_old, num_incong_errorFaces_reported_old, num_post_incong_errorFaces_reported_old, num_pre_incong_correctFaces_reported_old, num_incong_corrFaces_reported_old, num_post_incong_correctFaces_reported_old, num_pre_incong_errorFaces_reported_new, num_incong_errorFaces_reported_new, num_post_incong_errorFaces_reported_new, num_pre_incong_correctFaces_reported_new, num_incong_corrFaces_reported_new, num_post_incong_correctFaces_reported_new)
+    #} else if (d_prime_overall < d_prime_based_outlier){
+      #outlier_mainDat[nrow(outlier_mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_incong_errors)
     } else if (nrow(incong_errorDat) < outlier_num){
       outlier_mainDat[nrow(outlier_mainDat) + 1,] <-c(id, congAcc, incongAcc, congCorr_meanRT, incongCorr_meanRT, congCorr_logMeanRT, incongCorr_logMeanRT, flankEff_meanACC, flankEff_meanRT, flankEff_logMeanRT, reported_errors, committed_errors, memoryBias_score, num_incong_errors)
     }
   }
+
+################# Computing d prime using Psycho library #################################
+dprime.stats <- psycho::dprime(as.numeric(percent_mainDat$hit_num),as.numeric(percent_mainDat$false_alrams_num), as.numeric(percent_mainDat$miss_num), as.numeric(percent_mainDat$corr_rej_num))
+percent_mainDat$dprime <- dprime.stats$dprime
+
+d_prime_error.stats <- psycho::dprime(as.numeric(percent_mainDat$incong_error_hit_num),as.numeric(percent_mainDat$false_alrams_num), as.numeric(percent_mainDat$incong_error_miss_num), as.numeric(percent_mainDat$corr_rej_num))
+percent_mainDat$d_prime_error <- d_prime_error.stats$dprime
+
+pre_d_prime_error.stats <- psycho::dprime(as.numeric(percent_mainDat$incong_pre_error_hit_num),as.numeric(percent_mainDat$false_alrams_num), as.numeric(percent_mainDat$incong_pre_error_miss_num), as.numeric(percent_mainDat$corr_rej_num))
+percent_mainDat$pre_d_prime_error <- pre_d_prime_error.stats$dprime
+
+post_d_prime_error.stats <- psycho::dprime(as.numeric(percent_mainDat$incong_post_error_hit_num),as.numeric(percent_mainDat$false_alrams_num), as.numeric(percent_mainDat$incong_post_error_miss_num), as.numeric(percent_mainDat$corr_rej_num))
+percent_mainDat$post_d_prime_error <- post_d_prime_error.stats$dprime
+
+d_prime_correct.stats <- psycho::dprime(as.numeric(percent_mainDat$incong_correct_hit_num),as.numeric(percent_mainDat$false_alrams_num), as.numeric(percent_mainDat$incong_correct_miss_num), as.numeric(percent_mainDat$corr_rej_num))
+percent_mainDat$d_prime_correct <- d_prime_correct.stats$dprime
+
+pre_d_prime_correct.stats <- psycho::dprime(as.numeric(percent_mainDat$incong_pre_correct_hit_num),as.numeric(percent_mainDat$false_alrams_num), as.numeric(percent_mainDat$incong_pre_correct_miss_num), as.numeric(percent_mainDat$corr_rej_num))
+percent_mainDat$pre_d_prime_correct <- pre_d_prime_correct.stats$dprime
+
+post_d_prime_correct.stats <- psycho::dprime(as.numeric(percent_mainDat$incong_post_correct_hit_num),as.numeric(percent_mainDat$false_alrams_num), as.numeric(percent_mainDat$incong_post_correct_miss_num), as.numeric(percent_mainDat$corr_rej_num))
+percent_mainDat$post_d_prime_correct <- post_d_prime_correct.stats$dprime
+
+for (farideh in 1:nrow(percent_mainDat)){
+  percent_mainDat$d_prime_error_minus_correct[farideh] <- percent_mainDat$d_prime_error[farideh] - percent_mainDat$d_prime_correct[farideh]
+  percent_mainDat$post_d_prime_error_minus_correct[farideh] <- percent_mainDat$post_d_prime_error[farideh] - percent_mainDat$post_d_prime_correct[farideh]
 }
 
+######################## Excluding based on 1SD below d' ########################################
+percent_mainDat <- filter(percent_mainDat, dprime >= (0.3453483 - 0.2324162))
 
-
-
+##############################################################################################
 #write the extracted summary scores to disk
 write.csv(percent_mainDat,paste(output_path,proc_fileName, sep = "/", collapse = NULL), row.names=FALSE)
 write.csv(outlier_mainDat,paste(output_path,"outlier_data.csv", sep = "/", collapse = NULL), row.names=FALSE)
@@ -654,19 +690,15 @@ sample_size <- length(datafiles_list) # total number of participants. This will 
 
 
 
-longDat_old <- gather(mainDat, column_name, value, num_pre_incong_errorFaces_reported_old,
-                      num_incong_errorFaces_reported_old, num_post_incong_errorFaces_reported_old,
-                      num_pre_incong_correctFaces_reported_old, num_incong_corrFaces_reported_old,
-                      num_post_incong_correctFaces_reported_old)
+longDat_old <- gather(percent_mainDat, column_name, value, num_pre_incong_errorFaces_reported_old, num_incong_errorFaces_reported_old, num_post_incong_errorFaces_reported_old, num_pre_incong_correctFaces_reported_old, num_incong_corrFaces_reported_old, num_post_incong_correctFaces_reported_old)
 
-longDat_new <- gather(mainDat, column_name, value, num_pre_incong_errorFaces_reported_new,
-                      num_incong_errorFaces_reported_new, num_post_incong_errorFaces_reported_new,
-                      num_pre_incong_correctFaces_reported_new, num_incong_corrFaces_reported_new,
-                      num_post_incong_correctFaces_reported_new)
-longDat_sdt_error <- gather(percent_mainDat, column_name, value, errorFaces_hit, pre_errorFaces_hit, post_errorFaces_hit, falseAlarm_for_both,
-                            d_prime_error, pre_d_prime_error, post_d_prime_error, criterion_error, pre_criterion_error, post_criterion_error)
-longDat_sdt_correct <- gather(percent_mainDat, column_name, value, correctFaces_hit, pre_correctFaces_hit, post_correctFaces_hit, falseAlarm_for_both,
-                              d_prime_correct, pre_d_prime_correct, post_d_prime_correct, criterion_correct, pre_criterion_correct, post_criterion_correct)
+longDat_new <- gather(percent_mainDat, column_name, value, num_pre_incong_errorFaces_reported_new, num_incong_errorFaces_reported_new, num_post_incong_errorFaces_reported_new, num_pre_incong_correctFaces_reported_new, num_incong_corrFaces_reported_new, num_post_incong_correctFaces_reported_new)
+
+
+longDat_sdt_error <- gather(percent_mainDat, column_name, value, d_prime_error, pre_d_prime_error, post_d_prime_error)
+
+longDat_sdt_correct <- gather(percent_mainDat, column_name, value, d_prime_correct, pre_d_prime_correct, post_d_prime_correct)
+
 longDat_post <- gather(percent_mainDat, column_name, value, pre_d_prime_error, d_prime_error, post_d_prime_error, pre_d_prime_correct, d_prime_correct, post_d_prime_correct)
 
 # for percent longDat
@@ -774,26 +806,47 @@ t.test((as.numeric(percent_mainDat$post_error_accuracy_mean)), (as.numeric(perce
 
 
 ### Loading RedCap questionnaire data
-redcapDat <- read.csv(file = "/Users/kihossei/OneDrive - Florida International University/Projects/Memory_for_error/redcap_for_mfe_b/202205v0memoryforerr_SCRD_2022-11-07_1036.csv")
+redcapDat <- read.csv(file = "/Users/kihossei/OneDrive - Florida International University/Projects/Memory_for_error/redcap_for_mfe_b/202205v0memoryforerr_SCRD_2022-12-12_1100.csv")
 
 # Keeping the columns that we need!
-redcapDat <- redcapDat[c("record_id", "scaared_b_scrdSoc_s1_r1_e1", "scaared_b_scrdGA_s1_r1_e1", "scaared_b_scrdTotal_s1_r1_e1")]
+redcapDat <- redcapDat[c("record_id", "scaared_b_scrdSoc_s1_r1_e1", "scaared_b_scrdGA_s1_r1_e1", "scaared_b_scrdTotal_s1_r1_e1", "bfne_b_scrdTotal_s1_r1_e1")]
 
 # adding new columns to the "percent_mainDat" dataframe from redcapDat
 for (ziba1 in 1:nrow(percent_mainDat)){
   temp_id <- percent_mainDat$id[ziba1]
   tempDat <- filter(redcapDat, record_id == temp_id)
-  percent_mainDat$scaared_b_scrdSoc_s1_r1_e1[ziba1] <- tempDat$scaared_b_scrdSoc_s1_r1_e1
+  if (nrow(tempDat) == 0){
+    percent_mainDat$scaared_b_scrdSoc_s1_r1_e1[ziba1] <- NA
+  } else {
+    percent_mainDat$scaared_b_scrdSoc_s1_r1_e1[ziba1] <- tempDat$scaared_b_scrdSoc_s1_r1_e1
+  }
 }
 for (ziba2 in 1:nrow(percent_mainDat)){
   temp_id <- percent_mainDat$id[ziba2]
   tempDat <- filter(redcapDat, record_id == temp_id)
-  percent_mainDat$scaared_b_scrdGA_s1_r1_e1[ziba2] <- tempDat$scaared_b_scrdGA_s1_r1_e1
+  if (nrow(tempDat) == 0){
+    percent_mainDat$scaared_b_scrdGA_s1_r1_e1[ziba1] <- NA
+  } else {
+    percent_mainDat$scaared_b_scrdGA_s1_r1_e1[ziba2] <- tempDat$scaared_b_scrdGA_s1_r1_e1
+  }
 }
 for (ziba4 in 1:nrow(percent_mainDat)){
   temp_id <- percent_mainDat$id[ziba4]
   tempDat <- filter(redcapDat, record_id == temp_id)
-  percent_mainDat$scaared_b_scrdTotal_s1_r1_e1[ziba4] <- tempDat$scaared_b_scrdTotal_s1_r1_e1
+  if (nrow(tempDat) == 0){
+    percent_mainDat$scaared_b_scrdTotal_s1_r1_e1[ziba1] <- NA
+  } else {
+    percent_mainDat$scaared_b_scrdTotal_s1_r1_e1[ziba4] <- tempDat$scaared_b_scrdTotal_s1_r1_e1
+  }
+}
+for (ziba5 in 1:nrow(percent_mainDat)){
+  temp_id <- percent_mainDat$id[ziba5]
+  tempDat <- filter(redcapDat, record_id == temp_id)
+  if (nrow(tempDat) == 0){
+    percent_mainDat$bfne_b_scrdTotal_s1_r1_e1[ziba1] <- NA
+  } else {
+    percent_mainDat$bfne_b_scrdTotal_s1_r1_e1[ziba5] <- tempDat$bfne_b_scrdTotal_s1_r1_e1
+  }
 }
 
 # Removing outliers for variables of interest
@@ -802,13 +855,27 @@ mean_memoryBias_score <- mean(as.numeric(percent_mainDat$memoryBias_score), na.r
 sd_memoryBias_score_threeTimes <- 3*sd(as.numeric(percent_mainDat$memoryBias_score), na.rm = TRUE)
 
 for (zesht4 in 1:nrow(percent_mainDat)){
-  if (!is.na(as.numeric(percent_mainDat$memoryBias_score[zesht4])) && !is.na(as.numeric(percent_mainDat$d_prime_error[zesht4])) && !is.na(as.numeric(percent_mainDat$d_prime_correct[zesht4])) && !is.na(as.numeric(percent_mainDat$post_d_prime_error[zesht4])) && !is.na(as.numeric(percent_mainDat$post_d_prime_correct[zesht4])) && !is.na(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1[zesht4])) && !is.na(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1[zesht4])) && !is.na(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1[zesht4])) && !is.na(as.numeric(percent_mainDat$d_prime_error_minus_correct[zesht4])) && !is.na(as.numeric(percent_mainDat$post_d_prime_error_minus_correct[zesht4]))){
+  if (!is.na(as.numeric(percent_mainDat$memoryBias_score[zesht4])) && !is.na(as.numeric(percent_mainDat$d_prime_error[zesht4])) && !is.na(as.numeric(percent_mainDat$d_prime_correct[zesht4])) && !is.na(as.numeric(percent_mainDat$post_d_prime_error[zesht4])) && !is.na(as.numeric(percent_mainDat$post_d_prime_correct[zesht4])) && !is.na(as.numeric(percent_mainDat$bfne_b_scrdTotal[zesht4])) && !is.na(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1[zesht4])) && !is.na(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1[zesht4])) && !is.na(as.numeric(percent_mainDat$scaared_b_scrdGA_s1_r1_e1[zesht4])) && !is.na(as.numeric(percent_mainDat$d_prime_error_minus_correct[zesht4])) && !is.na(as.numeric(percent_mainDat$post_d_prime_error_minus_correct[zesht4]))){
     if (as.numeric(percent_mainDat$memoryBias_score[zesht4]) >= (mean_memoryBias_score - sd_memoryBias_score_threeTimes) || as.numeric(percent_mainDat$memoryBias_score[zesht4]) <= (mean_memoryBias_score + sd_memoryBias_score_threeTimes)){
       percent_mainDat$memoryBias_score[zesht4] <- as.numeric(percent_mainDat$memoryBias_score[zesht4])
     } else {
       percent_mainDat$memoryBias_score[zesht4] <- NA
     }
-
+    if (as.numeric(percent_mainDat$memoryBias_score_in_percentage[zesht4]) >= (mean(as.numeric(percent_mainDat$memoryBias_score_in_percentage), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$memoryBias_score_in_percentage), na.rm = TRUE))) || as.numeric(percent_mainDat$memoryBias_score_in_percentage[zesht4]) <= (mean(as.numeric(percent_mainDat$memoryBias_score_in_percentage), na.rm = TRUE) + (3*sd(as.numeric(percent_mainDat$memoryBias_score_in_percentage), na.rm = TRUE)))){
+      percent_mainDat$memoryBias_score_in_percentage[zesht4] <- as.numeric(percent_mainDat$memoryBias_score_in_percentage[zesht4])
+    } else {
+      percent_mainDat$memoryBias_score_in_percentage[zesht4] <- NA
+    }
+    if (as.numeric(percent_mainDat$reported_errors[zesht4]) >= (mean(as.numeric(percent_mainDat$reported_errors), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$reported_errors), na.rm = TRUE))) || as.numeric(percent_mainDat$reported_errors[zesht4]) <= (mean(as.numeric(percent_mainDat$reported_errors), na.rm = TRUE) + (3*sd(as.numeric(percent_mainDat$reported_errors), na.rm = TRUE)))){
+      percent_mainDat$reported_errors[zesht4] <- as.numeric(percent_mainDat$reported_errors[zesht4])
+    } else {
+      percent_mainDat$reported_errors[zesht4] <- NA
+    }
+    if (as.numeric(percent_mainDat$reported_errors_in_percentage[zesht4]) >= (mean(as.numeric(percent_mainDat$reported_errors_in_percentage), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$reported_errors_in_percentage), na.rm = TRUE))) || as.numeric(percent_mainDat$reported_errors_in_percentage[zesht4]) <= (mean(as.numeric(percent_mainDat$reported_errors_in_percentage), na.rm = TRUE) + (3*sd(as.numeric(percent_mainDat$reported_errors_in_percentage), na.rm = TRUE)))){
+      percent_mainDat$reported_errors_in_percentage[zesht4] <- as.numeric(percent_mainDat$reported_errors_in_percentage[zesht4])
+    } else {
+      percent_mainDat$reported_errors_in_percentage[zesht4] <- NA
+    }
     if (as.numeric(percent_mainDat$d_prime_error[zesht4]) >= (mean(as.numeric(percent_mainDat$d_prime_error), na.rm = TRUE) - (3*sd(as.numeric(percent_mainDat$d_prime_error), na.rm = TRUE))) || as.numeric(percent_mainDat$d_prime_error[zesht4]) <= (mean(as.numeric(percent_mainDat$d_prime_error), na.rm = TRUE) + (3*sd(as.numeric(percent_mainDat$d_prime_error), na.rm = TRUE)))){
       percent_mainDat$d_prime_error[zesht4] <- as.numeric(percent_mainDat$d_prime_error[zesht4])
     } else {
@@ -873,6 +940,23 @@ cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(perc
 cor.test(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$memoryBias_score), method = 'pearson')
 ggplot(percent_mainDat, aes(x=memoryBias_score, y=scaared_b_scrdSoc_s1_r1_e1)) + geom_point(size =4) + geom_abline(slope = coef(lm_for_cor_fit_line)[["memoryBias_score"]],intercept = coef(lm_for_cor_fit_line)[["(Intercept)"]])
 ggplot(percent_mainDat, aes(x=memoryBias_score, y=scaared_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(percent_mainDat$memoryBias_score), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(percent_mainDat$memoryBias_score_in_percentage), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(percent_mainDat$reported_errors_in_percentage), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(percent_mainDat$reported_errors), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$bfne_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$memoryBias_score), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$bfne_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$memoryBias_score_in_percentage), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$bfne_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$reported_errors_in_percentage), method = 'pearson')
+cor.test(as.numeric(percent_mainDat$bfne_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$reported_errors), method = 'pearson')
+ggplot(percent_mainDat, aes(x=memoryBias_score, y=scaared_b_scrdSoc_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=memoryBias_score_in_percentage, y=scaared_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=reported_errors_in_percentage, y=scaared_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=reported_errors, y=scaared_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=memoryBias_score, y=bfne_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=memoryBias_score_in_percentage, y=bfne_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=reported_errors_in_percentage, y=bfne_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
+ggplot(percent_mainDat, aes(x=reported_errors, y=bfne_b_scrdTotal_s1_r1_e1)) + geom_point() #scatterplot
 
 cor.test(as.numeric(percent_mainDat$scaared_b_scrdSoc_s1_r1_e1), as.numeric(percent_mainDat$post_d_prime_error_minus_correct), method = 'pearson')
 cor.test(as.numeric(percent_mainDat$scaared_b_scrdTotal_s1_r1_e1), as.numeric(percent_mainDat$post_d_prime_error_minus_correct), method = 'pearson')
