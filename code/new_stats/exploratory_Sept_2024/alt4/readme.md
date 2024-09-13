@@ -1,0 +1,1 @@
+Computes measures of interest by putting error and correct trials together.

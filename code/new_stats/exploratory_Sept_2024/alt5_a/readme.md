@@ -1,0 +1,1 @@
+Computes HR after individualized binning of confidence ratings. Using only Old images

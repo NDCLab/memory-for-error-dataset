@@ -1,0 +1,1 @@
+This version only include DEFINITELY answers to compute HR.

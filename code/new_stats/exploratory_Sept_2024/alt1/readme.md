@@ -1,0 +1,1 @@
+This version only include probably and definitely answers to compute HR.

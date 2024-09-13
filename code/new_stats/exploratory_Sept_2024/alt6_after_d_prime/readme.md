@@ -1,0 +1,1 @@
+Computes average confidence ratings. We exclude subjects based on overall dPrime

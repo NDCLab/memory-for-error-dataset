@@ -1,0 +1,1 @@
+Computes average confidence ratings.
